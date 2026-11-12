@@ -1,34 +1,30 @@
-# BriefLab | Economist English Trainer
+# BriefLab
 
-Independent learning companion for *The Economist*'s The World in Brief.
+English writing practice from *The Economist · The World in Brief*.
 
-## Fixed URL
-After one-time GitHub Pages authorization, the site address is:
-
+## Website
 https://logan-ycl.github.io/wib-cloze/
 
-In repository **Settings → Pages → Build and deployment**, set **Source = GitHub Actions** and save. The deployment workflow is already committed at `.github/workflows/pages.yml`; then open **Actions → Publish BriefLab Website → Run workflow** once to publish. Future content changes deploy automatically. Setting up the Pages site requires GitHub administrator permissions that are not exposed to this connected editor.
+The site opens directly to fill-in-the-blank writing exercises. Answers and explanations appear **only after submission**. Missed expressions enter a spaced-repetition queue for later days. Progress is stored locally in the browser, with manual JSON import/export under 学习记录. The public site contains no hosting or setup jargon.
 
-## Daily workflow
-The site presents original bilingual expression notes, next-day open-ended fill-in exercises, due reviews from earlier editions, a wrong-answer list, and statistics. The browser saves progress in localStorage; export/import JSON for backup and moving to a new device.
+## Daily data source and publishing
 
-The GitHub Actions workflow `.github/workflows/daily.yml` runs around 09:00 and 13:00 **Asia/Singapore**. Scheduled GitHub jobs may be delayed. It runs `scripts/update_daily.py`, which reads the **public description of the Economist's The World in Brief podcast**, then uses the OpenAI API to generate 3 to 6 original learning notes. Expressions are checked against source text. It commits the resulting `content/latest.json` and `content/catalog.json`. The site always shows the actual content date.
+**Primary source:** the user's subscribed Economist email, read by the already connected Gmail integration inside the scheduled ChatGPT task **BriefLab 每日 Gmail 出题**. The task is configured for approximately **21:30 Asia/Singapore daily**, after the newsletter normally arrives. It creates new original practice sentences using genuine phrases, words and reporting logic from the mail, updates `content/latest.json`, and appends to `content/catalog.json` through the connected GitHub integration.
 
-**Required for automatic updates:** In repository **Settings → Secrets and variables → Actions**, create a repository secret named `OPENAI_API_KEY`. Only the account owner can securely provide an API key, and the GitHub code connection does not expose a secret-editing operation. API costs are separate from a ChatGPT Plus subscription. Then go to **Actions → Build Daily BriefLab Edition → Run workflow** and verify that the action finishes successfully and commits new JSON.
+This task was created on 2026-11-12. Successful future email access and updates must be verified from task runs. The original email body, personal inbox URLs, and private details must **never** be published in this public repo. The public study material contains only short target expressions and new original example sentences.
 
-### Important source limitation
-This public-preview mode covers only words and expressions available in the podcast's public description. It does **not** retrieve or represent the complete subscription article. To analyse the full text of The Economist's daily column, a licensed Economist content integration or a user-provided article is required. The site doesn't bypass paywalls or republish the original article.
+**Fallback, manually triggered only:** `.github/workflows/daily.yml` provides an OpenAI API-based generator from publicly available podcast previews. It is deliberately **not scheduled** because the preview is incomplete and must not overwrite an email-based lesson. To use it manually, add an `OPENAI_API_KEY` repository secret, then trigger `Manual Fallback - Public Podcast Preview`. ChatGPT Plus and API billing are separate. This optional API route does not read Gmail and does not represent the full Economist article.
 
-The initial 2026-11-11 course is explicitly labelled **DEMO** and is made of original generic sample sentences, not factually sourced news. It is replaced after the first successful generator run.
+## Format
+`content/latest.json` holds the current issue and its cloze items.
+`content/catalog.json` holds the cumulative question bank; item IDs are preserved across updates to keep review histories aligned.
 
-### Review logic
-New material appears in the quiz on the next calendar day (Singapore time). Incorrect answers reappear the following day; correct ones return after 3, 7, 14, 30 and 60 days as their correct streak increases. The previous wrong-answer history remains visible for reference. Review history is stored in the user's **current browser**, not in GitHub or ChatGPT Memory. Clearing browser data can remove it.
+Each item needs `id,date,type,expression,meaning_zh,example,analysis_zh,cloze,answer,accepted,hint_zh,why_zh`. The blank must be exactly `______` once; `example` equals cloze with answer inserted.
 
-### Run and validate
-```bash
-python scripts/update_daily.py --validate-only
-python -m http.server 8000
-```
-Open http://localhost:8000 to preview.
+## Deploy
+The `Publish BriefLab Website` workflow in `.github/workflows/pages.yml` publishes a static copy of `index.html` and both JSON files to GitHub Pages after pushes to `main`. In Settings → Pages, Source must be GitHub Actions. Repository code should never include API secrets.
 
-Official reading link: https://www.economist.com/the-world-in-brief
+## Dates and privacy
+An issue's date is its newsletter edition date, which can differ from the delivery date. The first quiz for a given issue appears on the next Singapore calendar day. All review records live in this browser's localStorage. GitHub does not store the user's submitted answers or incorrect attempts.
+
+Read the Economist using your own subscription. This companion does not republish the full article.
