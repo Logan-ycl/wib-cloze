@@ -6,7 +6,7 @@ on:
       - index.html
       - app.js
       - scripts/validate_cloze.py
-      - content/**
+      - content/catalog.json
       - .github/workflows/pages.yml
   workflow_dispatch:
 permissions:
