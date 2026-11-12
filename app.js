@@ -1,16 +1,19 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
 const KEY='brieflab-progress-v1';
+const GUEST=window.location.hash==='#guest';
 const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const norm=value=>String(value||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 const addDays=(str,n)=>{const date=new Date(str+'T12:00:00Z');date.setUTCDate(date.getUTCDate()+n);return date.toISOString().slice(0,10);};
 let edition=null,items=[],passages=[],progress={records:{},read:{}},session=[],idx=0,feedback=null,hints={},tab='quiz';
-try{
- const old=JSON.parse(localStorage.getItem(KEY)||'{}');
- if(old&&typeof old==='object')progress={records:old.records||{},read:old.read||{}};
-}catch{}
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(progress))}catch{notice('学习记录无法保存在本浏览器中，请检查存储权限。');}};
+if(!GUEST){
+ try{
+  const old=JSON.parse(localStorage.getItem(KEY)||'{}');
+  if(old&&typeof old==='object')progress={records:old.records||{},read:old.read||{}};
+ }catch{}
+}
+const save=()=>{if(GUEST)return;try{localStorage.setItem(KEY,JSON.stringify(progress))}catch{notice('学习记录无法保存在本浏览器中，请检查存储权限。');}};
 const itemById=id=>items.find(x=>x.id===id);
 const passageById=id=>passages.find(x=>x.id===id);
 const idsInPassage=p=>[...p.body.matchAll(/\{\{([^}]+)\}\}/g)].map(m=>m[1]);
@@ -187,7 +190,7 @@ function renderMistakes(){
 }
 function renderStats(){
  const rs=Object.values(progress.records),total=rs.reduce((n,r)=>n+r.attempts,0),correct=rs.reduce((n,r)=>n+r.correct,0),wrong=rs.filter(r=>r.wrongCount>0).length;
- $('stats').innerHTML='<div class="grid">'+[['累计填写',total+' 处'],['正确率',total?Math.round(correct/total*100)+'%':'—'],['历史错题',wrong+' 处'],['今日待复习',dueGroups().length+' 组']].map(x=>'<div class="box"><p class="number">'+E(x[1])+'</p><div class="muted">'+E(x[0])+'</div></div>').join('')+'</div>';
+ $('stats').innerHTML=(GUEST?'<p class="muted">访客练习结果仅在当前页面有效，刷新后从零开始。</p>':'')+'<div class="grid">'+[['累计填写',total+' 处'],['正确率',total?Math.round(correct/total*100)+'%':'—'],['历史错题',wrong+' 处'],['今日待复习',dueGroups().length+' 组']].map(x=>'<div class="box"><p class="number">'+E(x[1])+'</p><div class="muted">'+E(x[0])+'</div></div>').join('')+'</div>';
 }
 async function load(){
  try{
@@ -206,14 +209,22 @@ async function load(){
  }catch(err){notice('课程加载失败：'+err.message+'。请刷新页面后重试。');}
 }
 $('today').textContent='SINGAPORE TIME / '+today();
+if(GUEST){
+ const statsTab=document.querySelector('[data-tab="stats"]');
+ if(statsTab)statsTab.textContent='临时练习';
+ const backup=$('backup-tools');if(backup)backup.hidden=true;
+ const guestNote=$('guest-note');if(guestNote){guestNote.hidden=false;guestNote.textContent='访客模式 · 作答记录仅在当前页面临时使用，关闭后不保存';}
+}
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>nav(b.dataset.tab));
 
 $('export').onclick=()=>{
+ if(GUEST)return;
  const blob=new Blob([JSON.stringify({app:'BriefLab',progress,exported_at:new Date().toISOString()},null,2)],{type:'application/json'});
  const url=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=url;a.download='brieflab-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
 $('import').onchange=async e=>{
+ if(GUEST)return;
  const file=e.target.files[0];if(!file)return;
  try{
   const obj=JSON.parse(await file.text());
