@@ -1,7 +1,7 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
 const KEY='brieflab-progress-v1';
-const GUEST=window.location.hash==='#guest';
+const GUEST=window.location.hash!=='#mine';
 const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const norm=value=>String(value||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
@@ -37,6 +37,7 @@ function orderedGroups(ids){
  }).map(p=>p.id);
 }
 function dueGroups(){
+ if(GUEST)return passages.filter(p=>p.date===edition?.date).map(p=>p.id);
  return orderedGroups(items.filter(isDue).map(x=>x.id));
 }
 function labelDue(){
@@ -130,7 +131,7 @@ function checkBlank(id){
  const hintCount=hints[id]||0,independent=correct&&hintCount===0,old=record(id);
  const streak=independent?old.streak+1:0,days=independent?([0,3,7,14,30,60][Math.min(streak,5)]||60):1;
  feedback[id]={answer,correct,hintCount};
- progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(independent?1:0),
+ if(!GUEST)progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(independent?1:0),
   wrongCount:old.wrongCount+(correct?0:1),hintAssisted:(old.hintAssisted||0)+(correct&&hintCount?1:0),
   streak,nextDue:addDays(today(),days),lastReviewed:today(),
   history:[...(old.history||[]).slice(-49),{date:today(),answer,correct,hintCount}]};
@@ -169,6 +170,7 @@ function startForGroups(groupIds){
  session=[...new Set(groupIds)];idx=0;feedback=null;hints={};nav('quiz');
 }
 function renderMistakes(){
+ if(GUEST){$('mistakes').innerHTML='<div class="box">访客模式不保留错题。</div>';return;}
  const usable=new Set(passages.flatMap(idsInPassage));
  const archived=items.filter(x=>record(x.id).wrongCount>0&&!usable.has(x.id));
  const missed=items.filter(x=>record(x.id).wrongCount>0&&usable.has(x.id)).sort((a,b)=>(record(a.id).nextDue||'').localeCompare(record(b.id).nextDue||''));
@@ -189,6 +191,7 @@ function renderMistakes(){
  });
 }
 function renderStats(){
+ if(GUEST){$('stats').innerHTML='<div class="box">访客模式不保留学习记录。</div>';return;}
  const rs=Object.values(progress.records),total=rs.reduce((n,r)=>n+r.attempts,0),correct=rs.reduce((n,r)=>n+r.correct,0),wrong=rs.filter(r=>r.wrongCount>0).length;
  $('stats').innerHTML=(GUEST?'<p class="muted">访客练习结果仅在当前页面有效，刷新后从零开始。</p>':'')+'<div class="grid">'+[['累计填写',total+' 处'],['正确率',total?Math.round(correct/total*100)+'%':'—'],['历史错题',wrong+' 处'],['今日待复习',dueGroups().length+' 组']].map(x=>'<div class="box"><p class="number">'+E(x[1])+'</p><div class="muted">'+E(x[0])+'</div></div>').join('')+'</div>';
 }
@@ -211,9 +214,10 @@ async function load(){
 $('today').textContent='SINGAPORE TIME / '+today();
 if(GUEST){
  const statsTab=document.querySelector('[data-tab="stats"]');
- if(statsTab)statsTab.textContent='临时练习';
+ if(statsTab)statsTab.hidden=true;
+ const mistakesTab=document.querySelector('[data-tab="mistakes"]');if(mistakesTab)mistakesTab.hidden=true;
  const backup=$('backup-tools');if(backup)backup.hidden=true;
- const guestNote=$('guest-note');if(guestNote){guestNote.hidden=false;guestNote.textContent='访客模式 · 作答记录仅在当前页面临时使用，关闭后不保存';}
+ const guestNote=$('guest-note');if(guestNote){guestNote.hidden=false;guestNote.textContent='访客练习 · 每次刷新获取最新一期，不保存成绩或错题';}
 }
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>nav(b.dataset.tab));
 
