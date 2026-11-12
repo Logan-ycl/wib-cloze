@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "demo-2026-11-11-allegations",
+      "date": "2026-11-11",
+      "type": "logic",
+      "expression": "on allegations of",
+      "meaning_zh": "因涉嫌……；基于某项指控",
+      "example": "The official was questioned on allegations of misconduct.",
+      "analysis_zh": "新闻报道用 allegations 标记未经法院确认的指控，避免把指控表述为已证实事实。",
+      "cloze": "The official was questioned ______ misconduct.",
+      "answer": "on allegations of",
+      "accepted": [],
+      "hint_zh": "三个词；表达审慎归因",
+      "why_zh": "on allegations of 后接名词或动名词，表示某人被指控涉嫌某事。"
+    },
+    {
+      "id": "demo-2026-11-11-fall-short",
+      "date": "2026-11-11",
+      "type": "phrase",
+      "expression": "fall short of expectations",
+      "meaning_zh": "未达到预期",
+      "example": "The company's quarterly revenue fell short of expectations.",
+      "analysis_zh": "财经报道用 fall short of 描述指标低于预测，适用于增长率、盈利和产量。",
+      "cloze": "The company's quarterly revenue ______.",
+      "answer": "fell short of expectations",
+      "accepted": [],
+      "hint_zh": "四个词；注意过去式",
+      "why_zh": "fall 的过去式为 fell；fell short of expectations 表示表现低于预期。"
+    },
+    {
+      "id": "demo-2026-11-11-mounting",
+      "date": "2026-11-11",
+      "type": "phrase",
+      "expression": "amid mounting pressure",
+      "meaning_zh": "在持续增加的压力下",
+      "example": "The minister stepped down amid mounting pressure.",
+      "analysis_zh": "amid 强调事件所处的背景环境，mounting 说明压力不断累积。",
+      "cloze": "The minister stepped down ______.",
+      "answer": "amid mounting pressure",
+      "accepted": [],
+      "hint_zh": "三个词；介词开头",
+      "why_zh": "amid mounting pressure 是新闻写作中的高度凝练的背景补充。"
+    },
+    {
+      "id": "demo-2026-11-11-signal",
+      "date": "2026-11-11",
+      "type": "logic",
+      "expression": "signal a shift",
+      "meaning_zh": "预示某种转变",
+      "example": "The announcement could signal a shift in policy.",
+      "analysis_zh": "could 表示尚有不确定性，signal a shift 用于报道对政策方向的谨慎判断。",
+      "cloze": "The announcement could ______ in policy.",
+      "answer": "signal a shift",
+      "accepted": [],
+      "hint_zh": "三个词；情态动词后用原形",
+      "why_zh": "could 后接动词原形 signal，表示可能预示某种变化。"
+    }
+  ]
+}
