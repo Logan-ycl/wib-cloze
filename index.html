@@ -23,21 +23,29 @@
 .answer-feedback p{font-size:13px;color:#6a685f;margin:8px 0 0}
 @media(max-width:600px){.passage-text{font-size:19px;line-height:2.25}.word-slot{width:86px;font-size:15px}.box{padding:17px}.snippet-title{font-size:23px}.blank-tag{font-size:11px}}
 
-/* Each news snippet has exactly three single-word blanks. */
+/* Compact inline cloze with independent per-blank controls. */
 .single-word-slot{
- display:inline-block;vertical-align:baseline;
- width:clamp(104px,12vw,148px);max-width:42vw;
- border:0;border-bottom:2px solid #b45b3b;border-radius:0;
- background:#f5f0e5;color:#252820;
- padding:3px 8px;margin:3px 5px 3px 4px;
- font:normal .82em Georgia,"Times New Roman",serif;
- min-height:1.68em;line-height:1.35;text-align:center;outline:none;
+ display:inline-block;vertical-align:baseline;width:clamp(94px,10vw,125px);
+ border:0;border-bottom:2px solid #b45b3b;border-radius:0;background:#f5f0e5;
+ color:#252820;padding:5px 8px;margin:0;font:normal .8em Georgia,"Times New Roman",serif;
+ min-height:1.6em;line-height:1.2;text-align:center;outline:none;
 }
 .single-word-slot:focus{background:#fff;border-bottom-color:#252820}
-.answer-group{display:inline-block;max-width:100%;white-space:nowrap;margin:0 3px}
+.answer-group{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px;max-width:100%;vertical-align:middle;white-space:normal;margin:2px 4px}
+.gap-action{cursor:pointer;background:transparent;border:1px solid #ddd3c4;color:#755b49;
+ padding:3px 6px;border-radius:3px;font:500 12px/1.4 Inter,"Microsoft YaHei",sans-serif}
+.gap-check{background:#272a22;color:#fff;border-color:#272a22}
+.gap-action:hover{opacity:.78}
+.letter-reveal{display:inline-block;color:#ab573a;font:600 12px/1.6 Inter,"Microsoft YaHei",sans-serif}
+.letter-reveal:empty{display:none}
+.gap-message{color:#b24332;font:500 12px/1.5 Inter,"Microsoft YaHei",sans-serif}
+.gap-message:empty{display:none}
 .passage-text{line-height:2.0}
+.completed-answer{margin:0 3px}
 @media(max-width:600px){
- .single-word-slot{width:106px;max-width:38vw;font-size:16px;padding:5px}
- .passage-text{line-height:2.15}
+ .single-word-slot{width:96px;font-size:16px}
+ .gap-action{padding:3px 5px;font-size:11px}
+ .passage-text{line-height:2.1}
+ .answer-group{margin:4px 1px}
 }
-</style></head><body><header><div class="wrap top"><div class="brand">BRIEF<b>LAB.</b></div><nav class="nav"><button class="active" data-tab="quiz">今日填空 <span id="due-count"></span></button><button data-tab="mistakes">错题本</button><button data-tab="stats">学习记录</button></nav></div></header><main class="wrap"><section class="hero"><div class="eyebrow">THE WORLD IN BRIEF · DAILY CLOZE</div><h1>Write what <em>you know.</em></h1><p class="sub">你认识的英语，能准确写出来吗？</p><div class="meta" id="today"></div></section><div id="notice" class="notice" hidden></div><section class="panel" hidden id="panel-quiz"><div class="head"><div><div class="eyebrow">TODAY / ACTIVE RECALL</div><h2>今日挖空</h2><div class="muted" id="edition-label"></div></div></div><div id="quiz"></div></section><section class="panel" hidden id="panel-mistakes"><div class="head"><div><div class="eyebrow">REVISIT / SPACED REPETITION</div><h2>错题本</h2></div></div><div id="mistakes"></div></section><section class="panel" hidden id="panel-stats"><div class="head"><div><div class="eyebrow">PROGRESS / YOUR WRITING</div><h2>学习记录</h2></div></div><div id="stats"></div><div class="box"><h3>进度备份</h3><p class="muted">当前使用浏览器本地存储。同一浏览器跨天保留，换设备需要手动导出和导入。</p><div class="actions"><button class="btn" id="export">导出学习记录</button><label class="btn secondary" for="import">导入学习记录</label><input type="file" accept=".json,application/json" id="import"></div></div></section></main><footer><div class="wrap">BriefLab · Daily writing practice · 本地保存学习记录</div></footer><script src="./app.js?v=20261112-oneword"></script></body></html>
+</style></head><body><header><div class="wrap top"><div class="brand">BRIEF<b>LAB.</b></div><nav class="nav"><button class="active" data-tab="quiz">今日填空 <span id="due-count"></span></button><button data-tab="mistakes">错题本</button><button data-tab="stats">学习记录</button></nav></div></header><main class="wrap"><section class="hero"><div class="eyebrow">THE WORLD IN BRIEF · DAILY CLOZE</div><h1>Write what <em>you know.</em></h1><p class="sub">你认识的英语，能准确写出来吗？</p><div class="meta" id="today"></div></section><div id="notice" class="notice" hidden></div><section class="panel" hidden id="panel-quiz"><div class="head"><div><div class="eyebrow">TODAY / ACTIVE RECALL</div><h2>今日挖空</h2><div class="muted" id="edition-label"></div></div></div><div id="quiz"></div></section><section class="panel" hidden id="panel-mistakes"><div class="head"><div><div class="eyebrow">REVISIT / SPACED REPETITION</div><h2>错题本</h2></div></div><div id="mistakes"></div></section><section class="panel" hidden id="panel-stats"><div class="head"><div><div class="eyebrow">PROGRESS / YOUR WRITING</div><h2>学习记录</h2></div></div><div id="stats"></div><div class="box"><h3>进度备份</h3><p class="muted">当前使用浏览器本地存储。同一浏览器跨天保留，换设备需要手动导出和导入。</p><div class="actions"><button class="btn" id="export">导出学习记录</button><label class="btn secondary" for="import">导入学习记录</label><input type="file" accept=".json,application/json" id="import"></div></div></section></main><footer><div class="wrap">BriefLab · Daily writing practice · 本地保存学习记录</div></footer><script src="./app.js?v=20261112-pergap-hints"></script></body></html>
