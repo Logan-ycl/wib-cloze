@@ -61,42 +61,14 @@ function renderPassage(p){
     const mark=feedback[id];
     return '<span class="completed-answer '+(mark?.correct?'is-correct':'is-wrong')+'"><sup>'+n+'</sup> '+E(item.answer)+'</span>';
    }
-   const slots=item.answer.trim().split(/\s+/).map((_,j)=>
-    '<input class="word-slot" data-item="'+E(id)+'" data-part="'+j+'" type="text" aria-label="第'+n+'处，第'+(j+1)+'个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>'
-   ).join(' ');
-   return '<span class="answer-group"><sup class="blank-tag">'+n+'</sup>'+slots+'</span>';
+   return '<span class="answer-group"><sup class="blank-tag">'+n+'</sup><input class="phrase-slot" data-item="'+E(id)+'" type="text" aria-label="第'+n+'处表达，可输入一个或多个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></span>';
   }).join('');
   return '<p class="passage-text">'+inner+'</p>';
  }).join('');
 }
 function attachNavigation(){
- const fields=[...document.querySelectorAll('#answer-form .word-slot')];
- fields.forEach((field,i)=>{
-  field.addEventListener('keydown',ev=>{
-   if((ev.key===' '||ev.key==='Enter')&&i<fields.length-1){
-    ev.preventDefault();fields[i+1].focus();return;
-   }
-   if(ev.key==='Backspace'&&!field.value&&i>0){fields[i-1].focus();}
-  });
-  field.addEventListener('input',()=>{
-   if(/\s/.test(field.value)){
-    const tokens=field.value.trim().split(/\s+/).filter(Boolean);
-    tokens.forEach((word,j)=>{if(fields[i+j])fields[i+j].value=word;});
-    const next=fields[i+tokens.length];
-    if(next)next.focus();
-   }
-  });
-  field.addEventListener('paste',ev=>{
-   const text=ev.clipboardData?.getData('text')||'';
-   if(/\s/.test(text.trim())){
-    ev.preventDefault();
-    const tokens=text.trim().split(/\s+/);
-    tokens.forEach((word,j)=>{if(fields[i+j])fields[i+j].value=word;});
-    const next=fields[i+tokens.length];
-    if(next)next.focus();
-   }
-  });
- });
+ const fields=[...document.querySelectorAll('#answer-form .phrase-slot')];
+ // Keep spaces inside the same phrase input. Tab moves naturally between numbered gaps.
  fields[0]?.focus();
 }
 function showAnswers(p){
@@ -129,7 +101,7 @@ function renderQuiz(){
  el.innerHTML='<div class="box"><div class="row"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+blanks.length+' 处挖空</span></div>'
   +'<h3 class="snippet-title">'+E(p.title)+'</h3>'
   +(feedback?'<div class="passage-wrap">'+renderPassage(p)+'</div>':
-  '<form id="answer-form"><div class="passage-wrap">'+renderPassage(p)+'</div><p class="word-count">一个输入框对应一个单词；整段填写完成后提交。</p><button class="btn" type="submit">提交整组答案</button><p class="validation-note" id="validation" aria-live="polite"></p></form>')
+  '<form id="answer-form"><div class="passage-wrap">'+renderPassage(p)+'</div><p class="word-count">本段共 '+blanks.length+' 处挖空，每个空可填写一个完整的词或短语；填完统一提交。</p><button class="btn" type="submit">提交整组答案</button><p class="validation-note" id="validation" aria-live="polite"></p></form>')
   +(feedback?showAnswers(p):'')+'</div>';
  if(feedback){
   $('next').onclick=()=>{feedback=null;idx++;renderQuiz();};
@@ -140,13 +112,10 @@ function submit(){
  const p=passageById(session[idx]),ids=idsInPassage(p),answers={};
  let firstEmpty=null;
  for(const id of ids){
-  const inputs=[...document.querySelectorAll('#answer-form [data-item="'+id+'"]')];
-  if(!inputs.length)return;
-  for(const input of inputs){
-   if(!input.value.trim()){firstEmpty=input;break;}
-  }
-  if(firstEmpty)break;
-  answers[id]=inputs.map(el=>el.value.trim()).join(' ');
+  const input=document.querySelector('#answer-form [data-item="'+id+'"]');
+  if(!input)return;
+  if(!input.value.trim()){firstEmpty=input;break;}
+  answers[id]=input.value.trim();
  }
  if(firstEmpty){
   $('validation').textContent='请先填写所有空白。';
