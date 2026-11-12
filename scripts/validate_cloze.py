@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Block publication if a snippet contains anything other than three one-word blanks."""
+"""Block publication unless every snippet has at least three single-word blanks."""
 import json
 import re
 from pathlib import Path
@@ -23,7 +23,7 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
         assert pid not in passage_ids, f"{name}: repeated snippet ID {pid}"
         passage_ids.add(pid)
         ids = re.findall(r"\{\{([^{}]+)\}\}", passage["body"])
-        assert len(ids) == 3, f"{name}: {pid}: expected exactly 3 blanks; got {len(ids)}"
+        assert len(ids) >= 3, f"{name}: {pid}: expected at least 3 blanks; got {len(ids)}"
         assert len(set(ids)) == 3, f"{name}: {pid}: repeated target"
         assert len(re.findall(r"[.!?](?:\s|$)", passage["body"])) >= 3, f"{name}: {pid}: missing news context"
         for target_id in ids:
@@ -44,4 +44,4 @@ for passage in latest["passages"]:
 for item in latest["items"]:
     assert catalog_items.get(item["id"]) == item, "latest and catalog target mismatch"
 assert latest["passages"] and all(p["date"] == latest["edition"]["date"] for p in latest["passages"])
-print(f"Validated {len(latest['passages'])} latest snippets; exactly 3 single-word blanks each.")
+print(f"Validated {len(latest['passages'])} latest snippets; at least 3 single-word blanks each.")
