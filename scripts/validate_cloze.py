@@ -24,7 +24,7 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
         passage_ids.add(pid)
         ids = re.findall(r"\{\{([^{}]+)\}\}", passage["body"])
         assert len(ids) >= 3, f"{name}: {pid}: expected at least 3 blanks; got {len(ids)}"
-        assert len(set(ids)) == 3, f"{name}: {pid}: repeated target"
+        assert len(set(ids)) == len(ids), f"{name}: {pid}: repeated target"
         assert len(re.findall(r"[.!?](?:\s|$)", passage["body"])) >= 3, f"{name}: {pid}: missing news context"
         for target_id in ids:
             assert target_id in item_map, f"{name}: {pid}: missing {target_id}"
