@@ -1,8 +1,5 @@
-name: Build Daily BriefLab Edition
+name: Manual Fallback - Public Podcast Preview
 on:
-  schedule:
-    # 09:00 and 13:00 Asia/Singapore
-    - cron: '0 1,5 * * *'
   workflow_dispatch:
 permissions:
   contents: write
