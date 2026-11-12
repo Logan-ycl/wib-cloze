@@ -84,7 +84,7 @@ function attachNavigation(){
    if(event.key==='Enter'){event.preventDefault();checkBlank(field.dataset.item);}
   });
  });
- root.querySelector('.single-word-slot')?.focus();
+ if(window.matchMedia('(min-width:651px)').matches) root.querySelector('.single-word-slot')?.focus();
 }
 function giveHint(id){
  if(feedback?.[id])return;
