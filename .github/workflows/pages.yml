@@ -5,6 +5,7 @@ on:
     paths:
       - index.html
       - app.js
+      - scripts/validate_cloze.py
       - content/**
       - .github/workflows/pages.yml
   workflow_dispatch:
@@ -23,6 +24,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Validate single-word cloze rules
+        run: python3 scripts/validate_cloze.py
       - name: Prepare static website
         run: |
           mkdir -p _site/content
