@@ -1,0 +1,226 @@
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const KEY='brieflab-progress-v1';
+const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const norm=value=>String(value||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
+const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+const addDays=(str,n)=>{const date=new Date(str+'T12:00:00Z');date.setUTCDate(date.getUTCDate()+n);return date.toISOString().slice(0,10);};
+let edition=null,items=[],passages=[],progress={records:{},read:{}},session=[],idx=0,feedback=null,tab='quiz';
+try{
+ const old=JSON.parse(localStorage.getItem(KEY)||'{}');
+ if(old&&typeof old==='object')progress={records:old.records||{},read:old.read||{}};
+}catch{}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(progress))}catch{notice('学习记录无法保存在本浏览器中，请检查存储权限。');}};
+const itemById=id=>items.find(x=>x.id===id);
+const passageById=id=>passages.find(x=>x.id===id);
+const idsInPassage=p=>[...p.body.matchAll(/\{\{([^}]+)\}\}/g)].map(m=>m[1]);
+const record=id=>progress.records[id]||{attempts:0,correct:0,wrongCount:0,streak:0,nextDue:null,history:[]};
+const notice=msg=>{$('notice').hidden=false;$('notice').textContent=msg;};
+function isDue(item){
+ if(item.date>=today())return false;
+ const r=record(item.id);
+ return !r.attempts||(r.nextDue&&r.nextDue<=today());
+}
+function orderedGroups(ids){
+ const selected=new Set(ids);
+ return passages.filter(p=>idsInPassage(p).some(id=>selected.has(id))).sort((a,b)=>{
+  function rank(p){
+   const rr=idsInPassage(p).map(id=>({id,r:record(id)}));
+   if(rr.some(x=>!x.r.attempts&&p.date===addDays(today(),-1)))return 0;
+   if(rr.some(x=>x.r.wrongCount&&x.r.nextDue<=today()))return 1;
+   return 2;
+  }
+  return rank(a)-rank(b)||b.date.localeCompare(a.date)||a.id.localeCompare(b.id);
+ }).map(p=>p.id);
+}
+function dueGroups(){
+ return orderedGroups(items.filter(isDue).map(x=>x.id));
+}
+function labelDue(){
+ const count=dueGroups().length;
+ $('due-count').textContent=count?'('+count+'组)':'';
+}
+function nav(next){
+ tab=next;
+ document.querySelectorAll('[data-tab]').forEach(btn=>btn.classList.toggle('active',btn.dataset.tab===next));
+ document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!=='panel-'+next);
+ if(next==='quiz')renderQuiz();
+ if(next==='mistakes')renderMistakes();
+ if(next==='stats')renderStats();
+ window.scrollTo(0,0);
+}
+function renderPassage(p){
+ let n=0;
+ return p.body.split(/\n\s*\n/).map(par=>{
+  const inner=par.split(/(\{\{[^}]+\}\})/g).map(part=>{
+   if(!part.startsWith('{{')||!part.endsWith('}}'))return E(part);
+   const id=part.slice(2,-2),item=itemById(id);
+   if(!item)return '<b>（题目缺失）</b>';
+   n++;
+   if(feedback){
+    const mark=feedback[id];
+    return '<span class="completed-answer '+(mark?.correct?'is-correct':'is-wrong')+'"><sup>'+n+'</sup> '+E(item.answer)+'</span>';
+   }
+   const slots=item.answer.trim().split(/\s+/).map((_,j)=>
+    '<input class="word-slot" data-item="'+E(id)+'" data-part="'+j+'" type="text" aria-label="第'+n+'处，第'+(j+1)+'个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>'
+   ).join(' ');
+   return '<span class="answer-group"><sup class="blank-tag">'+n+'</sup>'+slots+'</span>';
+  }).join('');
+  return '<p class="passage-text">'+inner+'</p>';
+ }).join('');
+}
+function attachNavigation(){
+ const fields=[...document.querySelectorAll('#answer-form .word-slot')];
+ fields.forEach((field,i)=>{
+  field.addEventListener('keydown',ev=>{
+   if((ev.key===' '||ev.key==='Enter')&&i<fields.length-1){
+    ev.preventDefault();fields[i+1].focus();return;
+   }
+   if(ev.key==='Backspace'&&!field.value&&i>0){fields[i-1].focus();}
+  });
+  field.addEventListener('input',()=>{
+   if(/\s/.test(field.value)){
+    const tokens=field.value.trim().split(/\s+/).filter(Boolean);
+    tokens.forEach((word,j)=>{if(fields[i+j])fields[i+j].value=word;});
+    const next=fields[i+tokens.length];
+    if(next)next.focus();
+   }
+  });
+  field.addEventListener('paste',ev=>{
+   const text=ev.clipboardData?.getData('text')||'';
+   if(/\s/.test(text.trim())){
+    ev.preventDefault();
+    const tokens=text.trim().split(/\s+/);
+    tokens.forEach((word,j)=>{if(fields[i+j])fields[i+j].value=word;});
+    const next=fields[i+tokens.length];
+    if(next)next.focus();
+   }
+  });
+ });
+ fields[0]?.focus();
+}
+function showAnswers(p){
+ const ids=idsInPassage(p),n=ids.filter(id=>feedback[id]?.correct).length;
+ return '<div class="feedback review-panel"><h3>本组 '+n+' / '+ids.length+' 处正确</h3>'
+  +ids.map((id,i)=>{
+   const x=itemById(id),v=feedback[id];
+   return '<div class="answer-feedback '+(v.correct?'correct':'wrong')+'"><div><b>第'+(i+1)+'处 · '+(v.correct?'✓ 正确':'✕ 待复习')+'</b></div>'
+    +'<div>你的填写：<span>'+E(v.answer)+'</span></div>'
+    +'<div>目标表达：<strong>'+E(x.answer)+'</strong></div>'
+    +'<p>'+E(x.meaning_zh)+'。'+E(x.why_zh||x.analysis_zh||'')+'</p></div>';
+  }).join('')
+  +'</div><div class="actions"><button class="btn" id="next">下一组</button></div>';
+}
+function renderQuiz(){
+ const el=$('quiz');
+ if(edition&&$('edition-label'))$('edition-label').textContent='邮件日期：'+edition.date+' · 阅读完整段落，填写所有空白后统一提交';
+ if(!session.length){
+  el.innerHTML='<div class="box"><h3>今日暂无到期练习</h3><p>新一期内容会在次日出题，错题按复习计划再次出现。</p></div>';
+  return;
+ }
+ if(idx>=session.length){
+  el.innerHTML='<div class="box"><h3>本轮练习完成 ✓</h3><p>本次填写会按表达逐项计分。下次复习仍会带上完整段落。</p><div class="actions"><button class="btn secondary" id="mistakes-go">查看错题本</button></div></div>';
+  $('mistakes-go').onclick=()=>nav('mistakes');
+  return;
+ }
+ const p=passageById(session[idx]);
+ if(!p){idx++;renderQuiz();return;}
+ const blanks=idsInPassage(p);
+ el.innerHTML='<div class="box"><div class="row"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+blanks.length+' 处挖空</span></div>'
+  +'<h3 class="snippet-title">'+E(p.title)+'</h3>'
+  +(feedback?'<div class="passage-wrap">'+renderPassage(p)+'</div>':
+  '<form id="answer-form"><div class="passage-wrap">'+renderPassage(p)+'</div><p class="word-count">一个输入框对应一个单词；整段填写完成后提交。</p><button class="btn" type="submit">提交整组答案</button><p class="validation-note" id="validation" aria-live="polite"></p></form>')
+  +(feedback?showAnswers(p):'')+'</div>';
+ if(feedback){
+  $('next').onclick=()=>{feedback=null;idx++;renderQuiz();};
+ }else attachNavigation();
+}
+function submit(){
+ if(feedback||idx>=session.length)return;
+ const p=passageById(session[idx]),ids=idsInPassage(p),answers={};
+ let firstEmpty=null;
+ for(const id of ids){
+  const inputs=[...document.querySelectorAll('#answer-form [data-item="'+id+'"]')];
+  if(!inputs.length)return;
+  for(const input of inputs){
+   if(!input.value.trim()){firstEmpty=input;break;}
+  }
+  if(firstEmpty)break;
+  answers[id]=inputs.map(el=>el.value.trim()).join(' ');
+ }
+ if(firstEmpty){
+  $('validation').textContent='请先填写所有空白。';
+  firstEmpty.focus();
+  return;
+ }
+ feedback={};
+ for(const id of ids){
+  const x=itemById(id),answer=answers[id];
+  const correct=[x.answer,...(x.accepted||[])].some(v=>norm(v)===norm(answer));
+  feedback[id]={answer,correct};
+  const old=record(id),streak=correct?old.streak+1:0;
+  const days=correct?([0,3,7,14,30,60][Math.min(streak,5)]||60):1;
+  progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(correct?1:0),wrongCount:old.wrongCount+(correct?0:1),streak,nextDue:addDays(today(),days),lastReviewed:today(),history:[...(old.history||[]).slice(-49),{date:today(),answer,correct}]};
+ }
+ save();labelDue();renderQuiz();
+}
+function startForGroups(groupIds){
+ session=[...new Set(groupIds)];idx=0;feedback=null;nav('quiz');
+}
+function renderMistakes(){
+ const missed=items.filter(x=>record(x.id).wrongCount>0).sort((a,b)=>(record(a.id).nextDue||'').localeCompare(record(b.id).nextDue||''));
+ const holder=$('mistakes');
+ if(!missed.length){holder.innerHTML='<div class="box">错题本为空。每一处错误都会被独立记录。</div>';return;}
+ const groups=orderedGroups(missed.map(x=>x.id));
+ holder.innerHTML='<div class="box"><p class="muted">共 '+missed.length+' 处曾经填错的表达，涉及 '+groups.length+' 组新闻语境。复习时会重新呈现整段。</p>'
+  +missed.map(x=>'<div class="mistake"><div><b>'+E(x.expression)+'</b><div class="muted">'+E(x.meaning_zh)+'</div><button class="reset-one" data-item="'+E(x.id)+'">撤销误判并重做</button></div><div class="muted">错 '+record(x.id).wrongCount+' 次<br>下次 '+E(record(x.id).nextDue||'待安排')+'</div></div>').join('')
+  +'<div class="actions"><button class="btn" id="review-all">复习全部错题段落</button></div></div>';
+ $('review-all').onclick=()=>startForGroups(groups);
+ holder.querySelectorAll('.reset-one').forEach(btn=>btn.onclick=()=>{
+  const id=btn.getAttribute('data-item');
+  const p=passages.find(p=>idsInPassage(p).includes(id));
+  if(!p)return;
+  if(!confirm('撤销这处表达的判题记录，并重新练习该新闻段落？'))return;
+  delete progress.records[id];save();labelDue();startForGroups([p.id]);
+ });
+}
+function renderStats(){
+ const rs=Object.values(progress.records),total=rs.reduce((n,r)=>n+r.attempts,0),correct=rs.reduce((n,r)=>n+r.correct,0),wrong=rs.filter(r=>r.wrongCount>0).length;
+ $('stats').innerHTML='<div class="grid">'+[['累计填写',total+' 处'],['正确率',total?Math.round(correct/total*100)+'%':'—'],['历史错题',wrong+' 处'],['今日待复习',dueGroups().length+' 组']].map(x=>'<div class="box"><p class="number">'+E(x[1])+'</p><div class="muted">'+E(x[0])+'</div></div>').join('')+'</div>';
+}
+async function load(){
+ try{
+  const v='?v='+Date.now();
+  const [a,b]=await Promise.all([fetch('./content/latest.json'+v,{cache:'no-store'}),fetch('./content/catalog.json'+v,{cache:'no-store'})]);
+  if(!a.ok||!b.ok)throw Error('无法获取练习数据');
+  const latest=await a.json(),all=await b.json();
+  if(!latest.edition||!Array.isArray(latest.items)||!Array.isArray(all.items)||!Array.isArray(all.passages))throw Error('题库格式不完整');
+  edition=latest.edition;
+  items=[...new Map([...all.items,...latest.items].map(x=>[x.id,x])).values()];
+  passages=[...new Map([...(all.passages||[]),...(latest.passages||[])].map(x=>[x.id,x])).values()];
+  const ready=passages.filter(p=>idsInPassage(p).length>=3&&idsInPassage(p).every(id=>itemById(id)));
+  if(ready.length!==passages.length||!ready.length)throw Error('题库缺少完整段落或三处挖空');
+  passages=ready;session=dueGroups();idx=0;feedback=null;
+  $('notice').hidden=true;labelDue();nav(tab);
+ }catch(err){notice('课程加载失败：'+err.message+'。请刷新页面后重试。');}
+}
+$('today').textContent='SINGAPORE TIME / '+today();
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>nav(b.dataset.tab));
+document.body.addEventListener('submit',e=>{if(e.target.id==='answer-form'){e.preventDefault();submit();}});
+$('export').onclick=()=>{
+ const blob=new Blob([JSON.stringify({app:'BriefLab',progress,exported_at:new Date().toISOString()},null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='brieflab-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+$('import').onchange=async e=>{
+ const file=e.target.files[0];if(!file)return;
+ try{
+  const obj=JSON.parse(await file.text());
+  if(obj.app!=='BriefLab'||!obj.progress?.records)throw Error('文件格式不正确');
+  if(!confirm('导入将覆盖此浏览器现有的学习记录，继续吗？'))return;
+  progress={records:obj.progress.records,read:obj.progress.read||{}};
+  save();session=dueGroups();idx=0;feedback=null;labelDue();nav('stats');
+ }catch(err){notice('导入失败：'+err.message);}
+};
+load();
+})();
