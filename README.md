@@ -7,8 +7,8 @@ Personal English writing trainer based on *The Economist, The World in Brief*.
 ## Current learning flow
 
 - Website homepage opens directly to contextual cloze practice.
-- Each **snippet** is one coherent 3+ sentence news passage, with at least **three independent target-expression blanks**.
-- Each numbered blank corresponds to **one complete target expression** and renders exactly **one text input**. The user may enter a single word or a multiword phrase with spaces. All blanks in a passage appear together.
+- Each snippet presents a coherent multi-sentence news passage with **exactly three blanks**.
+- **Each blank equals exactly one English word and one text box.** No multiword answers are accepted. The rest of a collocation stays visible for context.
 - Users submit the **whole passage once**. Feedback and explanations are revealed **after submission**, for each blank independently.
 - Each target expression has a permanent ID. Incorrect answers are stored in the browser and rescheduled individually; during review the **complete original study passage** with at least three blanks is presented again.
 - The "错题本" tab lists missed expressions and lets a user restart the full passage. "学习记录" allows export and import of local browser progress. There is no cross-device server sync yet.
@@ -37,7 +37,7 @@ A passage:
   "body": "Officials resumed {{YYYY-MM-DD-trilateral-talks}}. The meeting was ... {{YYYY-MM-DD-substantive}} ... {{YYYY-MM-DD-did-little-to}} ..."
 }
 ```
-The body must be a coherent multi-sentence passage with 3 or more different placeholders, not separate one-sentence questions. Each `{{id}}` matches an item with `id,date,type,expression,meaning_zh,example,analysis_zh,cloze,answer,accepted,hint_zh,why_zh`. Existing `cloze` and `example` fields remain as metadata for backward compatibility; the public quiz renders each passage's `body` in full.
+The body must be a coherent multi-sentence passage with exactly 3 different placeholders; every referenced answer must match the single-word pattern ^[A-Za-z]+$. Each `{{id}}` matches an item with `id,date,type,expression,meaning_zh,example,analysis_zh,cloze,answer,accepted,hint_zh,why_zh`. Existing `cloze` and `example` fields remain as metadata for backward compatibility; the public quiz renders each passage's `body` in full.
 
 ## Daily update
 
@@ -54,3 +54,7 @@ A separate `.github/workflows/daily.yml` is a **manually triggered podcast-previ
 ## Privacy
 
 This is a public static website. Do not put subscription emails, full paywalled passages, personally identifying information, email links, login cookies, secrets, or users' answers in the repository. Answer history stays in each browser's localStorage.
+
+## Quality gate
+
+Every Pages deployment runs `python3 scripts/validate_cloze.py` before publishing. Any snippet with more or fewer than three gaps, any duplicate target, or any multiword answer in an active passage fails validation and blocks deployment. Old unused multiword records can remain in the cumulative item archive for learning-history continuity.
