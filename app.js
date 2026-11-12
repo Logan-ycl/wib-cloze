@@ -61,14 +61,14 @@ function renderPassage(p){
     const mark=feedback[id];
     return '<span class="completed-answer '+(mark?.correct?'is-correct':'is-wrong')+'"><sup>'+n+'</sup> '+E(item.answer)+'</span>';
    }
-   return '<span class="answer-group"><sup class="blank-tag">'+n+'</sup><input class="phrase-slot" data-item="'+E(id)+'" type="text" aria-label="第'+n+'处表达，可输入一个或多个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></span>';
+   return '<span class="answer-group"><sup class="blank-tag">'+n+'</sup><input class="single-word-slot" data-item="'+E(id)+'" type="text" aria-label="第'+n+'处，只能填写一个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></span>';
   }).join('');
   return '<p class="passage-text">'+inner+'</p>';
  }).join('');
 }
 function attachNavigation(){
- const fields=[...document.querySelectorAll('#answer-form .phrase-slot')];
- // Keep spaces inside the same phrase input. Tab moves naturally between numbered gaps.
+ const fields=[...document.querySelectorAll('#answer-form .single-word-slot')];
+ // One input field per single-word target. Tab moves between blanks.
  fields[0]?.focus();
 }
 function showAnswers(p){
@@ -101,7 +101,7 @@ function renderQuiz(){
  el.innerHTML='<div class="box"><div class="row"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+blanks.length+' 处挖空</span></div>'
   +'<h3 class="snippet-title">'+E(p.title)+'</h3>'
   +(feedback?'<div class="passage-wrap">'+renderPassage(p)+'</div>':
-  '<form id="answer-form"><div class="passage-wrap">'+renderPassage(p)+'</div><p class="word-count">本段共 '+blanks.length+' 处挖空，每个空可填写一个完整的词或短语；填完统一提交。</p><button class="btn" type="submit">提交整组答案</button><p class="validation-note" id="validation" aria-live="polite"></p></form>')
+  '<form id="answer-form"><div class="passage-wrap">'+renderPassage(p)+'</div><p class="word-count">本段恰好 3 个空，每空只填写 1 个单词；全部填完后统一提交。</p><button class="btn" type="submit">提交整组答案</button><p class="validation-note" id="validation" aria-live="polite"></p></form>')
   +(feedback?showAnswers(p):'')+'</div>';
  if(feedback){
   $('next').onclick=()=>{feedback=null;idx++;renderQuiz();};
@@ -115,6 +115,7 @@ function submit(){
   const input=document.querySelector('#answer-form [data-item="'+id+'"]');
   if(!input)return;
   if(!input.value.trim()){firstEmpty=input;break;}
+  if(/\s/.test(input.value.trim())){ $('validation').textContent='每个空只能填写一个单词，不能输入多个单词。';input.focus();return; }
   answers[id]=input.value.trim();
  }
  if(firstEmpty){
@@ -137,14 +138,17 @@ function startForGroups(groupIds){
  session=[...new Set(groupIds)];idx=0;feedback=null;nav('quiz');
 }
 function renderMistakes(){
- const missed=items.filter(x=>record(x.id).wrongCount>0).sort((a,b)=>(record(a.id).nextDue||'').localeCompare(record(b.id).nextDue||''));
+ const usable=new Set(passages.flatMap(idsInPassage));
+ const archived=items.filter(x=>record(x.id).wrongCount>0&&!usable.has(x.id));
+ const missed=items.filter(x=>record(x.id).wrongCount>0&&usable.has(x.id)).sort((a,b)=>(record(a.id).nextDue||'').localeCompare(record(b.id).nextDue||''));
  const holder=$('mistakes');
- if(!missed.length){holder.innerHTML='<div class="box">错题本为空。每一处错误都会被独立记录。</div>';return;}
+ if(!missed.length&&!archived.length){holder.innerHTML='<div class="box">错题本为空。每一处错误都会被独立记录。</div>';return;}
  const groups=orderedGroups(missed.map(x=>x.id));
  holder.innerHTML='<div class="box"><p class="muted">共 '+missed.length+' 处曾经填错的表达，涉及 '+groups.length+' 组新闻语境。复习时会重新呈现整段。</p>'
   +missed.map(x=>'<div class="mistake"><div><b>'+E(x.expression)+'</b><div class="muted">'+E(x.meaning_zh)+'</div><button class="reset-one" data-item="'+E(x.id)+'">撤销误判并重做</button></div><div class="muted">错 '+record(x.id).wrongCount+' 次<br>下次 '+E(record(x.id).nextDue||'待安排')+'</div></div>').join('')
-  +'<div class="actions"><button class="btn" id="review-all">复习全部错题段落</button></div></div>';
- $('review-all').onclick=()=>startForGroups(groups);
+  +(groups.length?'<div class="actions"><button class="btn" id="review-all">复习全部错题段落</button></div>':'')
+  +(archived.length?'<div class="muted" style="margin-top:20px">旧版记录保留（原多词填空已停用）：'+archived.map(x=>E(x.expression)).join('、')+'</div>':'')+'</div>';
+ const review=$('review-all');if(review)review.onclick=()=>startForGroups(groups);
  holder.querySelectorAll('.reset-one').forEach(btn=>btn.onclick=()=>{
   const id=btn.getAttribute('data-item');
   const p=passages.find(p=>idsInPassage(p).includes(id));
@@ -167,8 +171,8 @@ async function load(){
   edition=latest.edition;
   items=[...new Map([...all.items,...latest.items].map(x=>[x.id,x])).values()];
   passages=[...new Map([...(all.passages||[]),...(latest.passages||[])].map(x=>[x.id,x])).values()];
-  const ready=passages.filter(p=>idsInPassage(p).length>=3&&idsInPassage(p).every(id=>itemById(id)));
-  if(ready.length!==passages.length||!ready.length)throw Error('题库缺少完整段落或三处挖空');
+  const ready=passages.filter(p=>{ const ids=idsInPassage(p); return ids.length===3&&new Set(ids).size===3&&ids.every(id=>{const item=itemById(id);return item&&/^[A-Za-z]+$/.test(item.answer);});});
+  if(ready.length!==passages.length||!ready.length)throw Error('题库规则错误：每篇必须恰好3个单词空');
   passages=ready;session=dueGroups();idx=0;feedback=null;
   $('notice').hidden=true;labelDue();nav(tab);
  }catch(err){notice('课程加载失败：'+err.message+'。请刷新页面后重试。');}
