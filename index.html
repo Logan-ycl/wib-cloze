@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ee">
+  <meta name="description" content="The World in Brief 英语精读、昨日挖空测验和历史错题循环复习">
+  <title>BriefLab · Daily English</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="BriefLab 首页"><span class="wordmark-symbol">B<span class="dot">.</span></span><span>BRIEFLAB</span></a>
+      <nav class="tabs" aria-label="学习导航">
+        <button class="tab active" data-tab="read">今日精读</button>
+        <button class="tab" data-tab="quiz">昨日测验 <span class="tab-count" id="quiz-count">0</span></button>
+        <button class="tab" data-tab="mistakes">历史错题</button>
+        <button class="tab" data-tab="stats">学习记录</button>
+      </nav>
+      <button id="reload" class="icon-button" title="刷新今日内容" aria-label="刷新今日内容">↻</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">THE DAILY LANGUAGE EDITION <span class="tiny-rule"></span> LEARN WITH THE NEWS</p>
+        <div class="hero-grid">
+          <div>
+            <h1>The World <em>in Brief.</em></h1>
+            <p class="subhead">读懂世界，也读懂英语的表达方式。</p>
+            <div class="hero-meta"><span id="date-today">—</span><span class="meta-sep">/</span><span>Singapore time</span><span class="meta-sep">/</span><span id="source-status">正在载入</span></div>
+          </div>
+          <div class="daily-quote"><div class="quote-num">01 <span> / DAILY PRACTICE</span></div><p>Read today.<br>Recall tomorrow.<br><i>Retain for life.</i></p></div>
+        </div>
+      </section>
+
+      <section id="alert-bar" class="notice" hidden role="status"></section>
+      <section id="panel-read" class="panel" aria-label="今日精读">
+        <div class="section-heading"><div><p class="eyebrow">01 / TODAY'S READING</p><h2>今日精读 <span class="accent-line"></span></h2></div><span class="section-note">观点 · 表达 · 逻辑</span></div>
+        <div id="edition-intro"></div>
+        <div class="reading-list" id="reading-list"></div>
+        <div class="after-content"><a class="source-link" id="source-link" target="_blank" rel="noopener noreferrer" href="https://www.economist.com/the-world-in-brief">前往 The Economist 阅读原文 <span>↗</span></a><button class="secondary-btn" id="mark-read">标记今日已读 ✓</button></div>
+      </section>
+
+      <section id="panel-quiz" class="panel" hidden aria-label="昨日测验">
+        <div class="section-heading"><div><p class="eyebrow">02 / ACTIVE RECALL</p><h2>昨日测验 <span class="accent-line"></span></h2></div><span class="section-note">先尝试回忆，再查看答案</span></div>
+        <div class="quiz-summary" id="quiz-summary"></div>
+        <div id="quiz-stage"></div>
+      </section>
+
+      <section id="panel-mistakes" class="panel" hidden aria-label="历史错题">
+        <div class="section-heading"><div><p class="eyebrow">03 / SPACED REPETITION</p><h2>历史错题 <span class="accent-line"></span></h2></div><span class="section-note">回答错误会进入次日复习</span></div>
+        <div id="mistake-stage"></div>
+      </section>
+
+      <section id="panel-stats" class="panel" hidden aria-label="学习记录">
+        <div class="section-heading"><div><p class="eyebrow">04 / YOUR PROGRESS</p><h2>学习记录 <span class="accent-line"></span></h2></div><span class="section-note">进度只保存在当前浏览器</span></div>
+        <div class="stat-grid" id="stat-grid"></div>
+        <div class="backup-box"><div><h3>备份你的学习记录</h3><p>当前版本使用浏览器本地存储。换电脑或清理浏览器数据前，请导出备份；另一台设备可导入恢复。</p></div><div class="backup-actions"><button class="secondary-btn" id="export-btn">导出记录 ↓</button><label class="secondary-btn import-label">导入记录 ↑<input type="file" id="import-file" accept="application/json,.json" hidden></label></div></div>
+      </section>
+    </main>
+
+    <footer class="footer"><div><strong>BRIEFLAB</strong> <span>Independent language-learning companion</span></div><p>Source-linked learning notes only. The Economist owns its original journalism.</p></footer>
+  </div>
+  <script src="./demo-data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
