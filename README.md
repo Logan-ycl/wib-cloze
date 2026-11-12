@@ -51,6 +51,13 @@ A separate `.github/workflows/daily.yml` is a **manually triggered podcast-previ
 
 `.github/workflows/pages.yml` publishes `index.html`, `app.js`, and both content JSON files to GitHub Pages automatically when site code or content changes. Pages should use `Source: GitHub Actions`.
 
+
+## Shared access and privacy
+
+- Public link for friends: `https://logan-ycl.github.io/wib-cloze/`. The site loads **only the newest published issue**. The content updates when the connected Gmail-to-repository task publishes a fresh edition, not on every same-day refresh. Friends can immediately check answers but **no history or mistake records are retained**, including localStorage.
+- Personal link: `https://logan-ycl.github.io/wib-cloze/#mine`. Keeps the original `brieflab-progress-v1` browser records and scheduled historical mistake review. This fragment is a local-mode selector, **not authentication**. Records are specific to each browser/device and are not uploaded to the public repository.
+- The legacy `#guest` link also works as a stateless visitor view.
+
 ## Privacy
 
 This is a public static website. Do not put subscription emails, full paywalled passages, personally identifying information, email links, login cookies, secrets, or users' answers in the repository. Answer history stays in each browser's localStorage.
