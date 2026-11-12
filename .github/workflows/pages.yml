@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - index.html
+      - app.js
       - content/**
       - .github/workflows/pages.yml
   workflow_dispatch:
@@ -25,7 +26,7 @@ jobs:
       - name: Prepare static website
         run: |
           mkdir -p _site/content
-          cp index.html _site/
+          cp index.html app.js _site/
           cp content/latest.json content/catalog.json _site/content/
           touch _site/.nojekyll
       - name: Setup GitHub Pages
