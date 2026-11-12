@@ -1,0 +1,39 @@
+name: Publish BriefLab Website
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - content/**
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare static website
+        run: |
+          mkdir -p _site/content
+          cp index.html _site/
+          cp content/latest.json content/catalog.json _site/content/
+          touch _site/.nojekyll
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
