@@ -3,7 +3,7 @@
   "edition": {
     "date": "2026-11-11",
     "title": "The World in Brief · Contextual Cloze · 11 November 2026",
-    "summary_zh": "每篇新闻段落恰好三个单词填空，阅读完整上下文，一次提交三个答案。",
+    "summary_zh": "每篇至少三处高价值单词挖空，逐空独立检查并提供渐进首字母提示。",
     "source_url": "https://www.economist.com/the-world-in-brief",
     "source_label": "The Economist · 订阅邮件学习版",
     "source_mode": "gmail",
@@ -96,6 +96,48 @@
       "accepted": []
     },
     {
+      "id": "2026-11-11-clashed",
+      "date": "2026-11-11",
+      "type": "word",
+      "expression": "clashed",
+      "meaning_zh": "发生冲突",
+      "example": "Police clashed with protesters at the rallies.",
+      "analysis_zh": "clash with 描述示威者、警方或群体之间的冲突。",
+      "cloze": "Police ______ with protesters at the rallies.",
+      "answer": "clashed",
+      "accepted": [],
+      "hint_zh": "",
+      "why_zh": "clash with 描述示威者、警方或群体之间的冲突。"
+    },
+    {
+      "id": "2026-11-11-consensual",
+      "date": "2026-11-11",
+      "type": "word",
+      "expression": "consensual",
+      "meaning_zh": "双方自愿的",
+      "example": "The ruling concerned consensual relations between adults.",
+      "analysis_zh": "consensual 强调行为在自愿和同意基础上发生，常见于法律新闻。",
+      "cloze": "The ruling concerned ______ relations between adults.",
+      "answer": "consensual",
+      "accepted": [],
+      "hint_zh": "",
+      "why_zh": "consensual 强调行为在自愿和同意基础上发生，常见于法律新闻。"
+    },
+    {
+      "id": "2026-11-11-criminalising",
+      "date": "2026-11-11",
+      "type": "word",
+      "expression": "criminalising",
+      "meaning_zh": "将……定为犯罪",
+      "example": "The court overturned laws criminalising consensual acts.",
+      "analysis_zh": "criminalise 在法律报道中表示将某种行为纳入刑事处罚。",
+      "cloze": "The court overturned laws ______ consensual acts.",
+      "answer": "criminalising",
+      "accepted": [],
+      "hint_zh": "",
+      "why_zh": "criminalise 在法律报道中表示将某种行为纳入刑事处罚。"
+    },
+    {
       "id": "2026-11-11-denounced-the-suspension",
       "date": "2026-11-11",
       "type": "word",
@@ -164,6 +206,20 @@
       "why_zh": "general strike 指跨行业大规模罢工。",
       "hint_zh": "",
       "accepted": []
+    },
+    {
+      "id": "2026-11-11-humanitarian",
+      "date": "2026-11-11",
+      "type": "word",
+      "expression": "humanitarian",
+      "meaning_zh": "人道主义的",
+      "example": "The talks covered humanitarian concerns.",
+      "analysis_zh": "humanitarian issues 表示与人道主义援助、人员安全等相关议题。",
+      "cloze": "The talks covered ______ concerns.",
+      "answer": "humanitarian",
+      "accepted": [],
+      "hint_zh": "",
+      "why_zh": "humanitarian issues 表示与人道主义援助、人员安全等相关议题。"
     },
     {
       "id": "2026-11-11-impeach",
@@ -334,6 +390,20 @@
       "why_zh": "surpassing 表示实际指标超出市场预期。"
     },
     {
+      "id": "2026-11-11-suspended",
+      "date": "2026-11-11",
+      "type": "word",
+      "expression": "suspended",
+      "meaning_zh": "被停职；被暂停职务",
+      "example": "The court president was suspended after the dispute.",
+      "analysis_zh": "suspended 可表示被停职、资格被暂时中止。",
+      "cloze": "The court president was ______ after the dispute.",
+      "answer": "suspended",
+      "accepted": [],
+      "hint_zh": "",
+      "why_zh": "suspended 可表示被停职、资格被暂时中止。"
+    },
+    {
       "id": "2026-11-11-sweeping-tariffs",
       "date": "2026-11-11",
       "type": "word",
@@ -376,6 +446,20 @@
       "why_zh": "trilateral 修饰 talks，强调三方参加。"
     },
     {
+      "id": "2026-11-11-upcoming",
+      "date": "2026-11-11",
+      "type": "word",
+      "expression": "upcoming",
+      "meaning_zh": "即将举行的",
+      "example": "The firm is preparing for its upcoming IPO.",
+      "analysis_zh": "upcoming 修饰即将发生的事件，常搭配 IPO、election、meeting。",
+      "cloze": "The firm is preparing for its ______ IPO.",
+      "answer": "upcoming",
+      "accepted": [],
+      "hint_zh": "",
+      "why_zh": "upcoming 修饰即将发生的事件，常搭配 IPO、election、meeting。"
+    },
+    {
       "id": "2026-11-11-valuation",
       "date": "2026-11-11",
       "type": "word",
@@ -388,6 +472,34 @@
       "why_zh": "valuation 与实际募集资金规模有区别。",
       "hint_zh": "",
       "accepted": []
+    },
+    {
+      "id": "2026-11-11-walkout",
+      "date": "2026-11-11",
+      "type": "word",
+      "expression": "walkout",
+      "meaning_zh": "罢工；集体离岗",
+      "example": "The walkout was triggered by anger over housing costs.",
+      "analysis_zh": "walkout 指集体停工或离岗，常见于劳资争议新闻。",
+      "cloze": "The ______ was triggered by anger over housing costs.",
+      "answer": "walkout",
+      "accepted": [],
+      "hint_zh": "",
+      "why_zh": "walkout 指集体停工或离岗，常见于劳资争议新闻。"
+    },
+    {
+      "id": "2026-11-11-yields",
+      "date": "2026-11-11",
+      "type": "word",
+      "expression": "yields",
+      "meaning_zh": "收益率",
+      "example": "Treasury yields rose after the inflation report.",
+      "analysis_zh": "Treasury yields 指美国国债收益率，财经新闻高频搭配。",
+      "cloze": "Treasury ______ rose after the inflation report.",
+      "answer": "yields",
+      "accepted": [],
+      "hint_zh": "",
+      "why_zh": "Treasury yields 指美国国债收益率，财经新闻高频搭配。"
     }
   ],
   "passages": [
@@ -395,7 +507,7 @@
       "id": "2026-11-11-passage-ukraine",
       "date": "2026-11-11",
       "title": "Ukraine · Negotiations and fighting",
-      "body": "Officials from America, Russia and Ukraine convened for {{2026-11-11-trilateral-talks}} talks in the Gulf after a long pause in negotiations. Ukraine's president described the first discussion as {{2026-11-11-substantive}}, saying that humanitarian questions were on the agenda. Yet the diplomatic effort did {{2026-11-11-did-little-to}} to slow the fighting, and Ukraine reported further attacks on energy facilities."
+      "body": "Officials from America, Russia and Ukraine convened for {{2026-11-11-trilateral-talks}} talks in the Gulf after a long pause in negotiations. Ukraine's president described the first discussion as {{2026-11-11-substantive}}, saying that {{2026-11-11-humanitarian}} questions were on the agenda. Yet the diplomatic effort did {{2026-11-11-did-little-to}} to slow the fighting, and Ukraine reported further attacks on energy facilities."
     },
     {
       "id": "2026-11-11-passage-congress",
@@ -407,37 +519,37 @@
       "id": "2026-11-11-passage-anthropic",
       "date": "2026-11-11",
       "title": "Markets · Anthropic's planned IPO",
-      "body": "Anthropic is considering a larger stock-market offering and additional funding from other firms. It is seeking capital through a private {{2026-11-11-private-allocation}} of shares as part of the proposed transaction. Bankers are {{2026-11-11-reportedly}} considering a much higher {{2026-11-11-valuation}} for the listing. These figures describe proposals and estimates, with no final IPO terms yet announced."
+      "body": "Anthropic is considering a higher offer price for its {{2026-11-11-upcoming}} IPO and additional funding from other firms. It is seeking capital through a private {{2026-11-11-private-allocation}} of shares as part of the proposed transaction. Bankers are {{2026-11-11-reportedly}} considering a much higher {{2026-11-11-valuation}} for the listing. These figures describe proposals and estimates, with no final IPO terms yet announced."
     },
     {
       "id": "2026-11-11-passage-inflation",
       "date": "2026-11-11",
       "title": "United States · Inflation and bond yields",
-      "body": "American consumer prices rose more quickly than economists had expected, {{2026-11-11-surpassing-expectations}} market forecasts. Yields on Treasury bonds increased as investors reassessed the outlook for interest rates. The move recalled earlier volatility after the announcement of {{2026-11-11-sweeping-tariffs}} tariffs. Traders {{2026-11-11-reckon}} that rates could rise again next month."
+      "body": "American consumer prices rose more quickly than economists had expected, {{2026-11-11-surpassing-expectations}} market forecasts. Treasury {{2026-11-11-yields}} increased as investors reassessed the outlook for interest rates. The move recalled earlier volatility after the announcement of {{2026-11-11-sweeping-tariffs}} tariffs. Traders {{2026-11-11-reckon}} that rates could rise again next month."
     },
     {
       "id": "2026-11-11-passage-bangladesh",
       "date": "2026-11-11",
       "title": "Bangladesh · A former leader's return",
-      "body": "Police in Bangladesh clashed with demonstrators at rallies {{2026-11-11-prompted-by}} by a former prime minister's plan to return home. She fled to India after a student-led uprising and was later sentenced in {{2026-11-11-in-absentia}}. She denies the charges. Prosecutors said the authorities would {{2026-11-11-carry-out-sentence}} out the sentence if she returned."
+      "body": "Police in Bangladesh {{2026-11-11-clashed}} with demonstrators at rallies {{2026-11-11-prompted-by}} by a former prime minister's plan to return home. She fled to India after a student-led uprising and was later sentenced in {{2026-11-11-in-absentia}}. She denies the charges. Prosecutors said the authorities would {{2026-11-11-carry-out-sentence}} out the sentence if she returned."
     },
     {
       "id": "2026-11-11-passage-court",
       "date": "2026-11-11",
       "title": "Trinidad and Tobago · An appeal judgment",
-      "body": "An appeals court in Trinidad and Tobago {{2026-11-11-overturned}} laws criminalising consensual sex between men. The judges found that the laws violated {{2026-11-11-fundamental-rights}} rights protected by the constitution. They described the older bans as a {{2026-11-11-relic-from}} from British colonial rule. Campaigners hope the ruling encourages similar legal challenges elsewhere."
+      "body": "An appeals court in Trinidad and Tobago {{2026-11-11-overturned}} laws {{2026-11-11-criminalising}} homosexuality. The judges found that banning {{2026-11-11-consensual}} sex between men violated {{2026-11-11-fundamental-rights}} rights protected by the constitution. They described the older bans as a {{2026-11-11-relic-from}} from British colonial rule. Campaigners hope the ruling encourages similar legal challenges elsewhere."
     },
     {
       "id": "2026-11-11-passage-spain",
       "date": "2026-11-11",
       "title": "Spain · Housing and labour protests",
-      "body": "Spain's trade unions organised a {{2026-11-11-general-strike}} strike to protest the cost of housing. Union leaders say that higher rents have {{2026-11-11-eroded}} workers' living standards. The governing party is {{2026-11-11-trailing-behind}} behind its right-leaning rivals in opinion polls. The housing issue has become central to the country's political debate."
+      "body": "Spain's trade unions organised a {{2026-11-11-general-strike}} strike to protest the cost of housing. Union leaders say that higher rents have {{2026-11-11-eroded}} workers' living standards. The governing party is {{2026-11-11-trailing-behind}} behind its right-leaning rivals in opinion polls. The {{2026-11-11-walkout}} came amid wider anger over the shortage of affordable housing."
     },
     {
       "id": "2026-11-11-passage-poland",
       "date": "2026-11-11",
       "title": "Poland · A judicial dispute",
-      "body": "Poland was on {{2026-11-11-on-edge}} ahead of Independence Day following a deadly shooting in Krakow. A long-running dispute over the constitutional court came to a {{2026-11-11-came-to-a-head}} when its president was suspended. Opposition parties {{2026-11-11-denounced-the-suspension}} the suspension, deepening arguments over the judiciary. The disputes have heightened tensions ahead of the public celebrations."
+      "body": "Poland was on {{2026-11-11-on-edge}} ahead of Independence Day following a deadly shooting in Krakow. A long-running dispute over the constitutional court came to a {{2026-11-11-came-to-a-head}} when its president was {{2026-11-11-suspended}}. Opposition parties {{2026-11-11-denounced-the-suspension}} the suspension, deepening arguments over the judiciary. The disputes have heightened tensions ahead of the public celebrations."
     }
   ]
 }
