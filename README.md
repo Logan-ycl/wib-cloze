@@ -8,7 +8,7 @@ Personal English writing trainer based on *The Economist, The World in Brief*.
 
 - Website homepage opens directly to contextual cloze practice.
 - Each **snippet** is one coherent 3+ sentence news passage, with at least **three independent target-expression blanks**.
-- Every phrase is split into one input box per word. All blanks in a passage appear together.
+- Each numbered blank corresponds to **one complete target expression** and renders exactly **one text input**. The user may enter a single word or a multiword phrase with spaces. All blanks in a passage appear together.
 - Users submit the **whole passage once**. Feedback and explanations are revealed **after submission**, for each blank independently.
 - Each target expression has a permanent ID. Incorrect answers are stored in the browser and rescheduled individually; during review the **complete original study passage** with at least three blanks is presented again.
 - The "错题本" tab lists missed expressions and lets a user restart the full passage. "学习记录" allows export and import of local browser progress. There is no cross-device server sync yet.
