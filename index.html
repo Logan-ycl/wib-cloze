@@ -104,6 +104,8 @@ header{background:var(--page);border-bottom:1px solid var(--line)}
 #panel-stats .box h3{font-size:16px}
 #panel-stats .box p{line-height:1.65}
 input[type=file]{display:none}
+[hidden]{display:none!important}
+.guest-note{display:inline-block;margin-top:12px;padding:7px 10px;background:#efe8dc;border-radius:6px;font-size:12px;color:#795b42}
 footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-size:11px}
 @media(max-width:650px){
   html{scroll-padding-top:10px}
@@ -168,6 +170,7 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
   <h1>The World in Brief.</h1>
   <p class="sub">读新闻，练表达，记住真正会写的英语。</p>
   <div class="meta" id="today"></div>
+  <div id="guest-note" class="guest-note" hidden></div>
  </section>
  <div id="notice" class="notice" hidden></div>
  <section class="panel" id="panel-quiz" hidden>
@@ -181,7 +184,7 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
  <section class="panel" id="panel-stats" hidden>
   <div class="head"><h2>学习记录</h2></div>
   <div id="stats"></div>
-  <div class="box">
+  <div class="box" id="backup-tools">
    <h3>备份学习记录</h3>
    <p class="muted">本机自动保存，换设备时可以导出、导入。</p>
    <div class="actions">
@@ -193,6 +196,6 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
  </section>
 </main>
 <footer><div class="wrap">BriefLab · Daily English Practice</div></footer>
-<script src="./app.js?v=20261112-mobile2"></script>
+<script src="./app.js?v=20261112-guest"></script>
 </body>
 </html>
