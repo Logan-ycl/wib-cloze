@@ -71,7 +71,6 @@ function renderPassage(p){
    const hintText=revealed?'提示：'+item.answer.slice(0,revealed):'';
    return '<span class="answer-group" data-group="'+E(id)+'"><sup class="blank-tag">'+n+'</sup>'
     +'<input class="single-word-slot" data-item="'+E(id)+'" type="text" aria-label="第'+n+'空，只填写一个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">'
-    +'<button type="button" class="gap-action gap-check" data-item="'+E(id)+'">检查</button>'
     +'<button type="button" class="gap-action gap-hint" data-item="'+E(id)+'">提示</button>'
     +'<small class="letter-reveal" data-hint="'+E(id)+'" aria-live="polite">'+E(hintText)+'</small>'
     +'<small class="gap-message" data-error="'+E(id)+'" role="status"></small></span>';
@@ -81,11 +80,10 @@ function renderPassage(p){
 }
 function attachNavigation(){
  const root=$('quiz');
- root.querySelectorAll('.gap-check').forEach(btn=>btn.onclick=()=>checkBlank(btn.dataset.item));
  root.querySelectorAll('.gap-hint').forEach(btn=>btn.onclick=()=>giveHint(btn.dataset.item));
  root.querySelectorAll('.single-word-slot').forEach(field=>{
   field.addEventListener('keydown',event=>{
-   if(event.key==='Enter'){event.preventDefault();checkBlank(field.dataset.item);}
+   if(event.key==='Enter'){event.preventDefault();checkAll();}
   });
  });
  if(window.matchMedia('(min-width:651px)').matches) root.querySelector('.single-word-slot')?.focus();
@@ -118,8 +116,24 @@ function updateResults(){
  if(p&&el)el.innerHTML=showAnswers(p);
  labelDue();
 }
+function checkAll(){
+ const root=$('quiz');
+ const fields=[...root.querySelectorAll('.single-word-slot')];
+ let count=0;
+ for(const field of fields){
+  if(!field.value.trim())continue;
+  if(/\s/.test(field.value.trim())){
+   const error=field.closest('.answer-group')?.querySelector('.gap-message');
+   if(error)error.textContent='每空只填写一个单词';
+   continue;
+  }
+  if(checkBlank(field.dataset.item))count++;
+ }
+ const msg=$('check-summary');
+ if(msg)msg.textContent=count?'已检查 '+count+' 空；未填写的空保持隐藏，可继续作答。':'没有可检查的填写内容。';
+}
 function checkBlank(id){
- if(feedback?.[id])return;
+ if(feedback?.[id])return false;
  const item=itemById(id);
  const root=$('quiz'),group=root.querySelector('[data-group="'+id+'"]');
  const input=group?.querySelector('.single-word-slot');
@@ -139,10 +153,11 @@ function checkBlank(id){
  const n=idsInPassage(passageById(session[idx])).indexOf(id)+1;
  group.outerHTML='<span class="completed-answer '+(correct?'is-correct':'is-wrong')+'"><sup>'+n+'</sup> '+E(item.answer)+'</span>';
  updateResults();
+ return true;
 }
 function renderQuiz(){
  const el=$('quiz');
- if(edition&&$('edition-label'))$('edition-label').textContent='邮件日期：'+edition.date+' · 每个空独立检查，提示逐字增加';
+ if(edition&&$('edition-label'))$('edition-label').textContent='邮件日期：'+edition.date+' · 统一检查已填写的空，提示逐字增加';
  if(!session.length){
   el.innerHTML='<div class="box"><h3>今日暂无到期练习</h3><p>新一期内容会在次日出题，错题按复习计划再次出现。</p></div>';
   return;
@@ -159,10 +174,13 @@ function renderQuiz(){
  el.innerHTML='<div class="box"><div class="row"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+blanks.length+' 处单词挖空</span></div>'
   +'<h3 class="snippet-title">'+E(p.title)+'</h3>'
   +'<div class="passage-wrap">'+renderPassage(p)+'</div>'
-  +'<p class="word-count">每空填写一个单词，单独检查；提示每次多显示一个首字母位置的字母。</p>'
+  +'<p class="word-count">每空填写一个单词，点击下方统一检查。未填写的空不会公布答案，也不会计错。</p>'
+  +'<div class="actions"><button type="button" class="btn" id="check-all">检查对错</button></div>'
+  +'<p id="check-summary" class="muted" role="status" aria-live="polite"></p>'
   +'<div id="review-results">'+showAnswers(p)+'</div>'
   +'<div class="actions"><button type="button" class="btn" id="next">下一篇</button></div>'
   +'</div>';
+ $('check-all').onclick=checkAll;
  $('next').onclick=()=>{feedback=null;hints={};idx++;renderQuiz();};
  attachNavigation();
 }
