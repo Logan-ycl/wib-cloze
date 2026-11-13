@@ -86,6 +86,9 @@ header{background:var(--page);border-bottom:1px solid var(--line)}
 .btn.secondary{background:transparent;color:var(--ink)}
 .btn:hover{opacity:.83}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.quiz-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+.quiz-toolbar .btn{min-width:112px}
+#check-summary:empty{display:none}
 .feedback{background:#faf7f1;border:1px solid var(--line);border-radius:9px;padding:18px;margin-top:18px}
 .review-panel h3{font-size:16px;font-weight:700;margin:0 0 13px}
 .answer-feedback{border-top:1px solid var(--line);padding:13px 0;font-size:13px;line-height:1.75}
@@ -137,6 +140,8 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
   .word-count{margin:22px 0 4px}
   .btn{min-height:44px}
   .actions .btn{width:100%}
+  .quiz-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .quiz-toolbar .btn{width:100%;min-width:0}
   .feedback{padding:14px 13px}
   .review-panel h3{font-size:14px}
   .mistake{gap:10px}
@@ -195,6 +200,6 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
  </section>
 </main>
 <footer><div class="wrap">BriefLab · Daily English Practice</div></footer>
-<script src="./app.js?v=20261113-bulk-check"></script>
+<script src="./app.js?v=20261113-toolbar"></script>
 </body>
 </html>
