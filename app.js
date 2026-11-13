@@ -2,7 +2,6 @@
 const $=id=>document.getElementById(id);
 const KEY='brieflab-progress-v1';
 const GUEST=window.location.hash!=='#mine';
-const AI_URL='https://brieflab-ai.loganchunlong.workers.dev/judge';
 let drafts={};if(window.location.hash==='#mine')try{drafts=JSON.parse(sessionStorage.getItem('brieflab-drafts-v2')||'{}')}catch{}
 const saveDrafts=()=>{if(window.location.hash!=='#mine')return;try{sessionStorage.setItem('brieflab-drafts-v2',JSON.stringify(drafts))}catch{}};
 const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -105,36 +104,23 @@ function showAnswers(p){
  const ids=idsInPassage(p),checked=ids.filter(id=>feedback?.[id]||drafts[id]?.result);
  if(!checked.length)return '';
  return '<div class="feedback review-panel"><h3>已检查 '+checked.length+' / '+ids.length+' 空</h3>'+checked.map(id=>{
-  const x=itemById(id),v=feedback?.[id]||drafts[id].result,i=ids.indexOf(id)+1,ai=v.ai||{};
-  return '<div class="answer-feedback '+(v.correct?'correct':'wrong')+'"><b>第'+i+'空 · '+(!v.correct?'需要复习':v.hintCount>=3?'提示较多，次日复习':v.hintCount?'提示后答对':'独立正确')+'</b>'
-  +'<div>你的填写：'+E(v.answer)+' · 目标词：<strong>'+E(x.answer)+'</strong></div>'
-  +'<p><b>你的用词：</b>'+E(ai.student_analysis_zh||x.analysis_zh||'')+'</p>'
-  +'<p><b>目标词：</b>'+E(ai.expected_analysis_zh||x.why_zh||'')+'</p>'
-  +'<p><b>差异：</b>'+E(ai.difference_zh||'')+'</p>'
-  +(Array.isArray(ai.examples)?ai.examples.map(y=>'<p>'+E(y.en)+'<br>'+E(y.zh)+'</p>').join(''):'')+'</div>';
+  const x=itemById(id),v=feedback?.[id]||drafts[id].result,i=ids.indexOf(id)+1;
+  return '<div class="answer-feedback '+(v.correct?'correct':'wrong')+'"><b>第'+i+'空 · '+(!v.correct?'需要复习':v.hintCount>=3?'提示较多，次日复习':'正确')+'</b>'
+  +'<div>你的填写：'+E(v.answer)+' · 正确答案：<strong>'+E(x.answer)+'</strong></div>'
+  +'<p>'+E(x.meaning_zh||'')+(x.analysis_zh?' · '+E(x.analysis_zh):'')+'</p></div>';
  }).join('')+'</div>';
 }
 function updateResults(){const p=passageById(session[idx]),el=$('review-results');if(p&&el)el.innerHTML=showAnswers(p);labelDue();}
-async function checkBlank(id){
+function checkBlank(id){
  if(feedback?.[id]||drafts[id]?.result)return;
  const item=itemById(id),group=$('quiz').querySelector('[data-group="'+id+'"]'),input=group?.querySelector('input');
  if(!item||!input)return;
  const answer=input.value.trim(),error=group.querySelector('.gap-message');
  if(!/^[A-Za-z]+$/.test(answer)){error.textContent='请填写一个英文单词';return;}
- const btn=group.querySelector('.gap-check');btn.disabled=true;btn.textContent='判题中';error.textContent='AI 正在分析…';
- const p=passageById(session[idx]);let ai;
- try{
-  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
-  let response;
-  try{response=await fetch(AI_URL,{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,
-   body:JSON.stringify({passage:p.body.replace(/\{\{([^}]+)\}\}/g,(_,k)=>itemById(k)?.answer||''),sentence:item.cloze,
-    answer,expected:item.answer,meaning:item.meaning_zh,analysis:item.analysis_zh})});}
-  finally{clearTimeout(timer);}
-  ai=await response.json();if(!response.ok||!ai.ok||typeof ai.correct!=='boolean')throw Error(ai.error||'判题失败');
- }catch(err){error.textContent='AI 暂不可用：'+err.message+'，未计分，可重试';btn.disabled=false;btn.textContent='重试';return;}
- const correct=ai.correct,hintCount=hints[id]||drafts[id]?.hints||0,needsReview=!correct||hintCount>=3;
+ const accepted=[item.answer,...(Array.isArray(item.accepted)?item.accepted:[])].map(norm);
+ const correct=accepted.includes(norm(answer)),hintCount=hints[id]||drafts[id]?.hints||0,needsReview=!correct||hintCount>=3;
  const old=record(id),streak=needsReview?0:old.streak+1,days=needsReview?1:([0,3,7,14,30,60][Math.min(streak,5)]||60);
- const result={answer,correct,hintCount,needsReview,ai};
+ const result={answer,correct,hintCount,needsReview};
  if(!feedback)feedback={};feedback[id]=result;drafts[id]={...(drafts[id]||{}),value:answer,result};saveDrafts();
  if(!GUEST){progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(correct?1:0),
   wrongCount:old.wrongCount+(correct?0:1),reviewCount:(old.reviewCount||0)+(needsReview?1:0),
