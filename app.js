@@ -101,15 +101,15 @@ function giveHint(id){
 function showAnswers(p){
  const ids=idsInPassage(p),checked=ids.filter(id=>feedback?.[id]);
  if(!checked.length)return '';
- const independentlyCorrect=checked.filter(id=>feedback[id].correct&&!feedback[id].hintCount).length;
- return '<div class="feedback review-panel"><h3>已检查 '+checked.length+' / '+ids.length+' 空 · 独立正确 '+independentlyCorrect+' 处</h3>'
+ const independentlyCorrect=checked.filter(id=>feedback[id].correct&&feedback[id].hintCount<=2).length;
+ return '<div class="feedback review-panel"><h3>已检查 '+checked.length+' / '+ids.length+' 空 · 计入正确 '+independentlyCorrect+' 处</h3>'
   +checked.map(id=>{
    const x=itemById(id),v=feedback[id],i=ids.indexOf(id)+1;
-   const heading=!v.correct?'✕ 需要复习':v.hintCount?'✓ 提示后答对':'✓ 独立正确';
+   const heading=!v.correct?'✕ 需要复习':v.hintCount<=2?'✓ 正确':'✓ 提示后答对，明天复习';
    return '<div class="answer-feedback '+(v.correct?'correct':'wrong')+'">'
     +'<b>第'+i+'空 · '+heading+'</b><div>你的填写：'+E(v.answer)+'</div>'
     +'<div>目标答案：<strong>'+E(x.answer)+'</strong></div>'
-    +(v.hintCount?'<div class="muted">使用了 '+v.hintCount+' 次字母提示，明天再练</div>':'')
+    +(v.hintCount>=3?'<div class="muted">使用了 '+v.hintCount+' 次字母提示，明天再练</div>':'')
     +'<p>'+E(x.meaning_zh)+'。'+E(x.why_zh||x.analysis_zh||'')+'</p></div>';
   }).join('')+'</div>';
 }
@@ -128,7 +128,7 @@ function checkBlank(id){
  if(!answer){error.textContent='请先填写此空';input.focus();return;}
  if(/\s/.test(answer)){error.textContent='每空只填写一个单词';input.focus();return;}
  const correct=[item.answer,...(item.accepted||[])].some(v=>norm(v)===norm(answer));
- const hintCount=hints[id]||0,independent=correct&&hintCount===0,old=record(id);
+ const hintCount=hints[id]||0,independent=correct&&hintCount<=2,old=record(id);
  const streak=independent?old.streak+1:0,days=independent?([0,3,7,14,30,60][Math.min(streak,5)]||60):1;
  feedback[id]={answer,correct,hintCount};
  if(!GUEST)progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(independent?1:0),
