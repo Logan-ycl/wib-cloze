@@ -126,7 +126,8 @@ function checkBlank(id){
   wrongCount:old.wrongCount+(correct?0:1),reviewCount:(old.reviewCount||0)+(needsReview?1:0),
   hintAssisted:(old.hintAssisted||0)+(correct&&hintCount?1:0),streak,nextDue:addDays(today(),days),
   lastReviewed:today(),history:[...(old.history||[]).slice(-49),{date:today(),answer,correct,hintCount,needsReview}]};save();}
- const n=idsInPassage(p).indexOf(id)+1;
+ const p=passageById(session[idx]);
+ const n=p?idsInPassage(p).indexOf(id)+1:1;
  group.outerHTML='<span class="completed-answer '+(correct?'is-correct':'is-wrong')+'"><sup>'+n+'</sup> '+E(item.answer)+'</span>';
  updateResults();
 }
