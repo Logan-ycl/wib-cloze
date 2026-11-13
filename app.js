@@ -1,12 +1,34 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
 const KEY='brieflab-progress-v1';
+const WORK_KEY='brieflab-working-v1';
 const GUEST=window.location.hash!=='#mine';
 const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const norm=value=>String(value||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 const addDays=(str,n)=>{const date=new Date(str+'T12:00:00Z');date.setUTCDate(date.getUTCDate()+n);return date.toISOString().slice(0,10);};
-let edition=null,items=[],passages=[],progress={records:{},read:{}},session=[],idx=0,feedback=null,hints={},tab='quiz';
+let edition=null,items=[],passages=[],progress={records:{},read:{}},session=[],idx=0,feedback=null,hints={},answers={},tab='quiz';
+let work={day:today(),session:[],idx:0,entries:{}};
+if(!GUEST){
+ try{
+  const saved=JSON.parse(localStorage.getItem(WORK_KEY)||'null');
+  if(saved&&saved.day===today()&&Array.isArray(saved.session)&&saved.entries&&typeof saved.entries==='object')work=saved;
+ }catch{}
+}
+const saveWork=()=>{
+ if(GUEST)return;
+ try{localStorage.setItem(WORK_KEY,JSON.stringify(work))}catch{notice('本次练习进度无法保存，请检查浏览器存储权限。');}
+};
+function activatePassage(id){
+ const current=work.entries[id]||{};
+ const entry={answers:current.answers||{},hints:current.hints||{},feedback:current.feedback||{}};
+ work.entries[id]=entry;
+ answers=entry.answers;hints=entry.hints;feedback=entry.feedback;
+}
+function moveTo(position){
+ idx=Math.max(0,Math.min(position,session.length));
+ work.idx=idx;saveWork();renderQuiz();window.scrollTo(0,0);
+}
 if(!GUEST){
  try{
   const old=JSON.parse(localStorage.getItem(KEY)||'{}');
@@ -70,7 +92,7 @@ function renderPassage(p){
    const revealed=Math.min(hints[id]||0,item.answer.length);
    const hintText=revealed?'提示：'+item.answer.slice(0,revealed):'';
    return '<span class="answer-group" data-group="'+E(id)+'"><sup class="blank-tag">'+n+'</sup>'
-    +'<input class="single-word-slot" data-item="'+E(id)+'" type="text" aria-label="第'+n+'空，只填写一个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">'
+    +'<input class="single-word-slot" data-item="'+E(id)+'" value="'+E(answers[id]||'')+'" type="text" aria-label="第'+n+'空，只填写一个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">'
     +'<button type="button" class="gap-action gap-hint" data-item="'+E(id)+'">提示</button>'
     +'<small class="letter-reveal" data-hint="'+E(id)+'" aria-live="polite">'+E(hintText)+'</small>'
     +'<small class="gap-message" data-error="'+E(id)+'" role="status"></small></span>';
@@ -82,6 +104,7 @@ function attachNavigation(){
  const root=$('quiz');
  root.querySelectorAll('.gap-hint').forEach(btn=>btn.onclick=()=>giveHint(btn.dataset.item));
  root.querySelectorAll('.single-word-slot').forEach(field=>{
+  field.addEventListener('input',()=>{answers[field.dataset.item]=field.value;saveWork();});
   field.addEventListener('keydown',event=>{
    if(event.key==='Enter'){event.preventDefault();checkAll();}
   });
@@ -93,6 +116,7 @@ function giveHint(id){
  const item=itemById(id);
  if(!item)return;
  hints[id]=Math.min(item.answer.length,(hints[id]||0)+1);
+ saveWork();
  const el=$('quiz').querySelector('[data-hint="'+id+'"]');
  if(el)el.textContent='提示：'+item.answer.slice(0,hints[id])+(hints[id]<item.answer.length?'…':'');
 }
@@ -144,7 +168,9 @@ function checkBlank(id){
  const correct=[item.answer,...(item.accepted||[])].some(v=>norm(v)===norm(answer));
  const hintCount=hints[id]||0,independent=correct&&hintCount<=2,old=record(id);
  const streak=independent?old.streak+1:0,days=independent?([0,3,7,14,30,60][Math.min(streak,5)]||60):1;
+ answers[id]=answer;
  feedback[id]={answer,correct,hintCount};
+ saveWork();
  if(!GUEST)progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(independent?1:0),
   wrongCount:old.wrongCount+(correct?0:1),hintAssisted:(old.hintAssisted||0)+(correct&&hintCount?1:0),
   streak,nextDue:addDays(today(),days),lastReviewed:today(),
@@ -163,28 +189,33 @@ function renderQuiz(){
   return;
  }
  if(idx>=session.length){
-  el.innerHTML='<div class="box"><h3>本轮练习完成 ✓</h3><p>未检查的空白不会计错，下次仍可练习。</p><div class="actions"><button class="btn secondary" id="mistakes-go">查看错题本</button></div></div>';
-  $('mistakes-go').onclick=()=>nav('mistakes');
+  el.innerHTML='<div class="box"><h3>本轮已浏览完成 ✓</h3><p>可以返回任何一篇查看已填写的内容、批改记录，也可以补答空白。</p>'
+   +'<div class="quiz-toolbar"><button type="button" class="btn secondary" id="back-last">上一篇</button><button type="button" class="btn secondary" id="review-first">回到第一篇</button></div></div>';
+  $('back-last').onclick=()=>moveTo(session.length-1);
+  $('review-first').onclick=()=>moveTo(0);
   return;
  }
  const p=passageById(session[idx]);
  if(!p){idx++;renderQuiz();return;}
- if(!feedback)feedback={};
+ activatePassage(p.id);
  const blanks=idsInPassage(p);
  el.innerHTML='<div class="box"><div class="row"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+blanks.length+' 处单词挖空</span></div>'
   +'<h3 class="snippet-title">'+E(p.title)+'</h3>'
   +'<div class="passage-wrap">'+renderPassage(p)+'</div>'
   +'<p class="word-count">每空填写一个单词，点击下方统一检查。未填写的空不会公布答案，也不会计错。</p>'
-  +'<div class="quiz-toolbar"><button type="button" class="btn" id="check-all">检查对错</button><button type="button" class="btn secondary" id="next">下一篇</button></div>'
+  +'<div class="quiz-toolbar"><button type="button" class="btn" id="check-all">检查对错</button><div class="quiz-pager"><button type="button" class="btn secondary" id="previous" '+(idx===0?'disabled':'')+'>上一篇</button><button type="button" class="btn secondary" id="next">'+(idx===session.length-1?'完成本轮':'下一篇')+'</button></div></div>'
   +'<p id="check-summary" class="muted" role="status" aria-live="polite"></p>'
   +'<div id="review-results">'+showAnswers(p)+'</div>'
   +'</div>';
  $('check-all').onclick=checkAll;
- $('next').onclick=()=>{feedback=null;hints={};idx++;renderQuiz();};
+ $('previous').onclick=()=>moveTo(idx-1);
+ $('next').onclick=()=>moveTo(idx+1);
  attachNavigation();
 }
 function startForGroups(groupIds){
- session=[...new Set(groupIds)];idx=0;feedback=null;hints={};nav('quiz');
+ session=[...new Set(groupIds)];idx=0;
+ for(const id of session)delete work.entries[id];
+ work.session=[...session];work.idx=0;saveWork();nav('quiz');
 }
 function renderMistakes(){
  if(GUEST){$('mistakes').innerHTML='<div class="box">访客模式不保留错题。</div>';return;}
@@ -224,7 +255,11 @@ async function load(){
   passages=[...new Map([...(all.passages||[]),...(latest.passages||[])].map(x=>[x.id,x])).values()];
   const ready=passages.filter(p=>{ const ids=idsInPassage(p); return ids.length>=3&&new Set(ids).size===ids.length&&ids.every(id=>{const item=itemById(id);return item&&/^[A-Za-z]+$/.test(item.answer);});});
   if(ready.length!==passages.length||!ready.length)throw Error('题库规则错误：每篇至少3个不同的单词空');
-  passages=ready;session=dueGroups();idx=0;feedback=null;hints={};
+  passages=ready;
+  const retained=work.session.filter(id=>passageById(id));
+  session=retained.length?retained:dueGroups();
+  idx=retained.length?Math.max(0,Math.min(Number(work.idx)||0,session.length)):0;
+  work.session=[...session];work.idx=idx;saveWork();
   $('notice').hidden=true;labelDue();nav(tab);
  }catch(err){notice('课程加载失败：'+err.message+'。请刷新页面后重试。');}
 }
@@ -252,7 +287,7 @@ $('import').onchange=async e=>{
   if(obj.app!=='BriefLab'||!obj.progress?.records)throw Error('文件格式不正确');
   if(!confirm('导入将覆盖此浏览器现有的学习记录，继续吗？'))return;
   progress={records:obj.progress.records,read:obj.progress.read||{}};
-  save();session=dueGroups();idx=0;feedback=null;hints={};labelDue();nav('stats');
+  save();work={day:today(),session:[],idx:0,entries:{}};session=dueGroups();idx=0;work.session=[...session];saveWork();labelDue();nav('stats');
  }catch(err){notice('导入失败：'+err.message);}
 };
 load();
