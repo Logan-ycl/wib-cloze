@@ -175,10 +175,9 @@ function renderQuiz(){
   +'<h3 class="snippet-title">'+E(p.title)+'</h3>'
   +'<div class="passage-wrap">'+renderPassage(p)+'</div>'
   +'<p class="word-count">每空填写一个单词，点击下方统一检查。未填写的空不会公布答案，也不会计错。</p>'
-  +'<div class="actions"><button type="button" class="btn" id="check-all">检查对错</button></div>'
+  +'<div class="quiz-toolbar"><button type="button" class="btn" id="check-all">检查对错</button><button type="button" class="btn secondary" id="next">下一篇</button></div>'
   +'<p id="check-summary" class="muted" role="status" aria-live="polite"></p>'
   +'<div id="review-results">'+showAnswers(p)+'</div>'
-  +'<div class="actions"><button type="button" class="btn" id="next">下一篇</button></div>'
   +'</div>';
  $('check-all').onclick=checkAll;
  $('next').onclick=()=>{feedback=null;hints={};idx++;renderQuiz();};
