@@ -3,8 +3,8 @@ const $=id=>document.getElementById(id);
 const KEY='brieflab-progress-v1';
 const GUEST=window.location.hash!=='#mine';
 const AI_URL='https://brieflab-ai.loganchunlong.workers.dev/judge';
-let drafts={};try{drafts=JSON.parse(sessionStorage.getItem('brieflab-drafts-v2')||'{}')}catch{}
-const saveDrafts=()=>{try{sessionStorage.setItem('brieflab-drafts-v2',JSON.stringify(drafts))}catch{}};
+let drafts={};if(window.location.hash==='#mine')try{drafts=JSON.parse(sessionStorage.getItem('brieflab-drafts-v2')||'{}')}catch{}
+const saveDrafts=()=>{if(window.location.hash!=='#mine')return;try{sessionStorage.setItem('brieflab-drafts-v2',JSON.stringify(drafts))}catch{}};
 const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const norm=value=>String(value||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
@@ -176,8 +176,8 @@ function startForGroups(groupIds){
 function renderMistakes(){
  if(GUEST){$('mistakes').innerHTML='<div class="box">访客模式不保留错题。</div>';return;}
  const usable=new Set(passages.flatMap(idsInPassage));
- const archived=items.filter(x=>record(x.id).wrongCount>0&&!usable.has(x.id));
- const missed=items.filter(x=>record(x.id).wrongCount>0&&usable.has(x.id)).sort((a,b)=>(record(a.id).nextDue||'').localeCompare(record(b.id).nextDue||''));
+ const archived=items.filter(x=>(record(x.id).wrongCount>0||record(x.id).reviewCount>0)&&!usable.has(x.id));
+ const missed=items.filter(x=>(record(x.id).wrongCount>0||record(x.id).reviewCount>0)&&usable.has(x.id)).sort((a,b)=>(record(a.id).nextDue||'').localeCompare(record(b.id).nextDue||''));
  const holder=$('mistakes');
  if(!missed.length&&!archived.length){holder.innerHTML='<div class="box">错题本为空。每一处错误都会被独立记录。</div>';return;}
  const groups=orderedGroups(missed.map(x=>x.id));
@@ -191,7 +191,7 @@ function renderMistakes(){
   const p=passages.find(p=>idsInPassage(p).includes(id));
   if(!p)return;
   if(!confirm('撤销这处表达的判题记录，并重新练习该新闻段落？'))return;
-  delete progress.records[id];save();labelDue();startForGroups([p.id]);
+  delete progress.records[id];delete drafts[id];saveDrafts();save();labelDue();startForGroups([p.id]);
  });
 }
 function renderStats(){
