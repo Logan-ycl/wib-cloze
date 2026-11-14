@@ -5,6 +5,8 @@ on:
     paths:
       - index.html
       - app.js
+      - cloud-sync.js
+      - cloud-config.js
       - scripts/validate_cloze.py
       - content/catalog.json
       - .github/workflows/pages.yml
@@ -29,8 +31,8 @@ jobs:
       - name: Prepare static website
         run: |
           mkdir -p _site/content
-          cp index.html app.js _site/
-          cp content/latest.json content/catalog.json _site/content/
+          cp index.html app.js cloud-sync.js cloud-config.js _site/
+          cp -R content/. _site/content/
           touch _site/.nojekyll
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
