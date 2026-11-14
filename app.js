@@ -30,6 +30,8 @@ if(!GUEST){
 }
 const saveWork=()=>{
  if(GUEST)return;
+ const active=session[idx],k=active?work.day+'|'+active:null;
+ if(k&&work.entries[k])work.entries[k].updatedAt=new Date().toISOString();
  try{localStorage.setItem(WORK_KEY,JSON.stringify(work));window.dispatchEvent(new Event('brieflab:local-write'))}catch{notice('本次练习进度无法保存，请检查浏览器存储权限。');}
 };
 function activatePassage(id){
@@ -187,7 +189,7 @@ function checkBlank(id){
  saveWork();
  if(!GUEST)progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(independent?1:0),
   wrongCount:old.wrongCount+(correct?0:1),hintAssisted:(old.hintAssisted||0)+(correct&&hintCount?1:0),
-  streak,nextDue:addDays(today(),days),lastReviewed:today(),
+  streak,nextDue:addDays(today(),days),lastReviewed:today(),lastReviewedAt:new Date().toISOString(),
   history:[...(old.history||[]).slice(-49),{date:today(),answer,correct,hintCount,attemptId:crypto.randomUUID(),at:new Date().toISOString()}]};
  save();
  const n=idsInPassage(passageById(session[idx])).indexOf(id)+1;
@@ -261,7 +263,7 @@ function offerScreenshotRecovery(){
    const date='2026-11-14';
    progress.records[x.id]={
     attempts:1,correct:0,wrongCount:x.correct?0:1,hintAssisted:x.hintCount>0?1:0,
-    streak:0,nextDue:'2026-11-15',lastReviewed:date,
+    streak:0,nextDue:'2026-11-15',lastReviewed:date,lastReviewedAt:new Date().toISOString(),
     history:[{date,answer:x.answer,correct:x.correct,hintCount:x.hintCount,recoveredFromScreenshot:true,attemptId:crypto.randomUUID(),at:new Date().toISOString()}]
    };
    entry.answers[x.id]=x.answer;
