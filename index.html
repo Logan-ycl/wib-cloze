@@ -193,6 +193,17 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
  <section class="panel" id="panel-stats" hidden>
   <div class="head"><h2>学习记录</h2></div>
   <div id="stats"></div>
+  <div class="box" id="cloud-backup">
+   <h3>云端错题本</h3>
+   <p class="muted" id="cloud-status">检查云同步状态中…</p>
+   <div id="cloud-controls" class="actions" hidden>
+    <button type="button" class="btn" id="cloud-create">建立云端备份</button>
+    <button type="button" class="btn secondary" id="cloud-copy" hidden>复制恢复密钥</button>
+    <button type="button" class="btn secondary" id="cloud-now" hidden>立即同步</button>
+    <button type="button" class="btn secondary" id="cloud-switch" hidden>其他设备恢复</button>
+   </div>
+   <p class="muted">云端仅接收加密后的记录。恢复密钥必须自行安全保存；不同设备使用同一密钥才能同步。</p>
+  </div>
   <div class="box" id="backup-tools">
    <h3>备份学习记录</h3>
    <p class="muted">本机自动保存，换设备时可以导出、导入。</p>
@@ -205,6 +216,8 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
  </section>
 </main>
 <footer><div class="wrap">BriefLab · Daily English Practice</div></footer>
-<script src="./app.js?v=20261114-screenshot-restore"></script>
+<script src="./app.js?v=20261114-daily-history"></script>
+<script src="./cloud-config.js?v=1"></script>
+<script src="./cloud-sync.js?v=1"></script>
 </body>
 </html>
