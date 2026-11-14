@@ -208,15 +208,17 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
    <h3>备份学习记录</h3>
    <p class="muted">本机自动保存，换设备时可以导出、导入。</p>
    <div class="actions">
+    <button class="btn" id="copy-mistakes">复制今日错题</button>
     <button class="btn" id="export">导出</button>
     <label class="btn secondary" for="import">导入</label>
     <input type="file" accept=".json,application/json" id="import">
    </div>
+   <p class="muted" id="copy-mistakes-status" role="status" aria-live="polite"></p>
   </div>
  </section>
 </main>
 <footer><div class="wrap">BriefLab · Daily English Practice</div></footer>
-<script src="./app.js?v=20261114-cloudsync-v2"></script>
+<script src="./app.js?v=20261114-share-mistakes"></script>
 <script src="./cloud-config.js?v=1"></script>
 <script src="./cloud-sync.js?v=2"></script>
 </body>
