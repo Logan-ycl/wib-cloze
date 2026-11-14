@@ -30,7 +30,7 @@ export default {
    const raw=await request.text();
    if(raw.length>LIMIT)return reply({error:'payload_too_large'},413,origin);
    let body;try{body=JSON.parse(raw)}catch{return reply({error:'invalid_json'},400,origin)}
-   if(!Number.isSafeInteger(body.revision)||body.revision<0||typeof body.blob!=='object'||!body.blob
+   if(!body||!Number.isSafeInteger(body.revision)||body.revision<0||typeof body.blob!=='object'||!body.blob
        ||body.blob.v!==1||!(/^[A-Za-z0-9_-]{16}$/.test(body.blob.iv||''))
        ||typeof body.blob.ct!=='string'||!(/^[A-Za-z0-9_-]+$/.test(body.blob.ct))
        ||body.blob.ct.length>LIMIT-100)return reply({error:'invalid_payload'},400,origin);
