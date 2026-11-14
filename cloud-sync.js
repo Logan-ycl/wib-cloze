@@ -170,7 +170,9 @@ function updateUI(){
  document.getElementById('cloud-create').hidden=connected;
  document.getElementById('cloud-copy').hidden=!connected;
  document.getElementById('cloud-now').hidden=!connected;
- document.getElementById('cloud-switch').hidden=!connected;
+ const switchButton=document.getElementById('cloud-switch');
+ switchButton.hidden=false;
+ switchButton.textContent=connected?'更换恢复密钥':'输入已有恢复密钥';
  document.getElementById('cloud-share-mistakes').hidden=!connected;
  if(!API){
   setStatus('云同步服务尚未部署，当前仅保存于本机；部署后可以在这里启用跨设备同步。');
@@ -205,7 +207,7 @@ document.getElementById('cloud-share-mistakes').onclick=async()=>{
  }catch(err){setStatus('错题链接暂不可用：'+err.message);}
 };
 document.getElementById('cloud-switch').onclick=async()=>{
- const input=prompt('输入另一设备的43字符恢复密钥。将合并两端记录，不会直接清空本机数据。');
+ const input=prompt('粘贴原设备复制的43字符恢复密钥。输入正确后自动合并学习记录。');
  if(input===null)return;
  const t=input.trim();
  if(!/^[A-Za-z0-9_-]{43}$/.test(t)){setStatus('恢复密钥格式错误，应为43个字符。');return;}
