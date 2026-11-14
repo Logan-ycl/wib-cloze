@@ -25,6 +25,15 @@ for(let attempt=0;;attempt++){
  try{const r=await fetch(origin+'/health');assert.equal(r.status,200);assert.equal((await r.json()).storage,true);break;}
  catch(e){if(attempt>=11)throw e;await new Promise(r=>setTimeout(r,5000));}
 }
+// Keep both origins functional during migration to the custom hostname.
+for(const site of ['https://logan-ycl.github.io','https://brief.loganyu.cc']){
+ const preflight=await fetch(origin+'/v1/state',{
+  method:'OPTIONS',
+  headers:{Origin:site,'Access-Control-Request-Method':'PUT','Access-Control-Request-Headers':'authorization,content-type'}
+ });
+ assert.equal(preflight.status,204);
+ assert.equal(preflight.headers.get('access-control-allow-origin'),site);
+}
 // Independent clients share only a randomly generated disposable test recovery key.
 const key=Buffer.from(crypto.getRandomValues(new Uint8Array(32))).toString('base64url');
 const aes=await crypto.subtle.importKey('raw',await crypto.subtle.digest('SHA-256',new TextEncoder().encode('brieflab-encryption-v1:'+key)),{name:'AES-GCM'},false,['encrypt','decrypt']);
