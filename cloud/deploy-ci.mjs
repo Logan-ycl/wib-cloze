@@ -13,7 +13,9 @@ let db=databases.find(x=>x.name==='brieflab-progress');
 if(!db)db=await cf('/d1/database','POST',{name:'brieflab-progress'});
 const config=readFileSync('cloud/wrangler.toml.example','utf8').replace('REPLACE_WITH_YOUR_D1_DATABASE_ID',db.uuid);
 writeFileSync('cloud/wrangler.toml',config);
-await cf(`/d1/database/${db.uuid}/query`,'POST',{sql:readFileSync('cloud/schema.sql','utf8')});
+for(const sql of readFileSync('cloud/schema.sql','utf8').split(';').map(x=>x.trim()).filter(Boolean)){
+ await cf(`/d1/database/${db.uuid}/query`,'POST',{sql});
+}
 execFileSync('npx',['--yes','wrangler@4','deploy','--config','cloud/wrangler.toml'],{stdio:'inherit'});
 const sub=await cf('/workers/subdomain');
 if(!sub.subdomain)throw Error('Cloudflare workers.dev subdomain must be configured in the account.');
@@ -26,7 +28,7 @@ for(let attempt=0;;attempt++){
 // Independent clients share only a randomly generated disposable test recovery key.
 const key=Buffer.from(crypto.getRandomValues(new Uint8Array(32))).toString('base64url');
 const aes=await crypto.subtle.importKey('raw',await crypto.subtle.digest('SHA-256',new TextEncoder().encode('brieflab-encryption-v1:'+key)),{name:'AES-GCM'},false,['encrypt','decrypt']);
-async function client(method,body,secret=key){return fetch(origin+'/v1/state',{method,headers:{Origin:'https://logan-ycl.github.io',Authorization:'Bearer '+secret,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});}
+async function client(method,body,secret=key,path='/v1/state'){return fetch(origin+path,{method,headers:{Origin:'https://logan-ycl.github.io',Authorization:'Bearer '+secret,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});}
 try{
  assert.equal((await client('GET',null,'invalid')).status,401);
  const first=await (await client('GET')).json();assert.equal(first.revision,0);
@@ -40,7 +42,17 @@ try{
  assert.equal(new TextDecoder().decode(restored),plain);
  assert.equal((await client('PUT',{revision:0,blob})).status,409);
  assert.equal((await client('PUT',{revision:1,blob})).status,200);
- console.log('PASS: encrypted write/read, wrong-answer restoration, authentication and revision conflict checks.');
+ const readKey=Buffer.from(await crypto.subtle.digest('SHA-256',new TextEncoder().encode('brieflab-mistake-reader-key-v1:'+key))).toString('base64url');
+ const mistakePath='/v1/mistakes/'+readKey;
+ assert.equal((await client('GET',null,key,mistakePath)).status,404);
+ const mistakeEvent={attempt_key:'ci-smoke-'+Date.now(),id:'2026-11-14-ci-test',date:'2026-11-14',entered:'tester',hints:1};
+ assert.equal((await client('POST',{read_key:readKey,events:[mistakeEvent]},key,'/v1/mistakes')).status,200);
+ assert.equal((await client('POST',{read_key:readKey,events:[mistakeEvent]},key,'/v1/mistakes')).status,200);
+ const readable=await (await client('GET',null,key,mistakePath)).json();
+ assert.equal(readable.unique_mistakes,1);
+ assert.equal(readable.items[0].id,mistakeEvent.id);
+ assert.equal(readable.items[0].wrong_count,1);
+ console.log('PASS: encrypted progress, wrong-only upload, read-only link and duplicate-safe mistakes.');
 }finally{assert.equal((await client('DELETE')).status,200);}
 writeFileSync('cloud-config.js',`window.BRIEFLAB_CLOUD_API=${JSON.stringify(origin)};\n`);
 if(process.env.GITHUB_STEP_SUMMARY)appendFileSync(process.env.GITHUB_STEP_SUMMARY,`Worker: ${origin}\n\nAPI smoke checks passed. Physical-device browser testing remains separate.\n`);
