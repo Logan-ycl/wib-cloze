@@ -1,7 +1,7 @@
 // BriefLab encrypted cloud sync API. The Worker never receives plaintext progress.
 // Bind Cloudflare D1 as DB and apply schema.sql before deployment.
 const ALLOWED_ORIGIN='https://logan-ycl.github.io';
-const LIMIT=180000;
+const LIMIT=1000000;
 function cors(origin){return {'Access-Control-Allow-Origin':origin===ALLOWED_ORIGIN?origin:ALLOWED_ORIGIN,'Access-Control-Allow-Methods':'GET,PUT,DELETE,OPTIONS','Access-Control-Allow-Headers':'Authorization,Content-Type','Cache-Control':'no-store','Vary':'Origin'};}
 function reply(data,status,origin){return new Response(JSON.stringify(data),{status,headers:{...cors(origin),'Content-Type':'application/json; charset=utf-8'}});}
 function bytesHex(bytes){return [...new Uint8Array(bytes)].map(x=>x.toString(16).padStart(2,'0')).join('');}
