@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - .github/workflows/deploy-cloud.yml
+      - cloud/worker.js
+      - cloud/schema.sql
+      - cloud/deploy-ci.mjs
 permissions:
   contents: write
   pages: write
