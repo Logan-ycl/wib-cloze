@@ -70,14 +70,25 @@ async function aesKey(secret){
 }
 async function encrypt(obj,secret){
  const key=await aesKey(secret),iv=crypto.getRandomValues(new Uint8Array(12));
- const bytes=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,utf.encode(JSON.stringify(obj)));
- return {v:1,iv:base64url(iv),ct:base64url(bytes)};
+ let plain=utf.encode(JSON.stringify(obj)),zip='none';
+ if(typeof CompressionStream!=='undefined'){
+  const stream=new Blob([plain]).stream().pipeThrough(new CompressionStream('gzip'));
+  plain=new Uint8Array(await new Response(stream).arrayBuffer());zip='gzip';
+ }
+ const bytes=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,plain);
+ return {v:1,iv:base64url(iv),ct:base64url(bytes),zip};
 }
 async function decrypt(obj,secret){
  if(!obj||obj.v!==1)throw Error('云端数据格式不正确');
  try{
   const bytes=await crypto.subtle.decrypt({name:'AES-GCM',iv:from64(obj.iv)},await aesKey(secret),from64(obj.ct));
-  return JSON.parse(decode.decode(bytes));
+  let plain=new Uint8Array(bytes);
+  if(obj.zip==='gzip'){
+   if(typeof DecompressionStream==='undefined')throw Error('当前浏览器不支持解压云端记录');
+   const stream=new Blob([plain]).stream().pipeThrough(new DecompressionStream('gzip'));
+   plain=new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+  return JSON.parse(decode.decode(plain));
  }catch{throw Error('无法解密云记录，请确认恢复密钥准确。');}
 }
 async function api(method,data){
@@ -152,13 +163,20 @@ document.getElementById('cloud-copy').onclick=async()=>{
  catch{prompt('复制这串恢复密钥并安全保存：',token);}
 };
 document.getElementById('cloud-now').onclick=sync;
-document.getElementById('cloud-switch').onclick=()=>{
+document.getElementById('cloud-switch').onclick=async()=>{
  const input=prompt('输入另一设备的43字符恢复密钥。将合并两端记录，不会直接清空本机数据。');
  if(input===null)return;
  const t=input.trim();
  if(!/^[A-Za-z0-9_-]{43}$/.test(t)){setStatus('恢复密钥格式错误，应为43个字符。');return;}
  if(token&&t!==token&&!confirm('确认切换到另一套云记录，并将本机学习记录合并到该账户？'))return;
- token=t;localStorage.setItem(TOKEN,token);updateUI();sync();
+ const previous=token;
+ token=t;setStatus('正在验证恢复密钥…');
+ try{
+  const remote=await api('GET');
+  if(!remote.blob)throw Error('该密钥尚无云端备份。请检查是否正确，或先在原设备完成同步。');
+  await decrypt(remote.blob,t);
+  localStorage.setItem(TOKEN,t);updateUI();sync();
+ }catch(error){token=previous;setStatus('恢复失败：'+error.message+'；原设备记录与密钥保持不变。');}
 };
 window.addEventListener('brieflab:local-write',schedule);
 window.addEventListener('online',schedule);
