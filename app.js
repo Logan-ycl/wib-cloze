@@ -219,6 +219,68 @@ function renderQuiz(){
  $('next').onclick=()=>moveTo(idx+1);
  attachNavigation();
 }
+
+// One-time opt-in recovery from a user-supplied screenshot. Never overwrites existing answers.
+// This restores the verdicts originally displayed, even though two synonyms are now accepted.
+function offerScreenshotRecovery(){
+ const qp=new URLSearchParams(window.location.search);
+ if(GUEST||qp.get('recover')!=='nvidia-20261114')return;
+ const passageId='2026-11-13-nvidia';
+ const p=passageById(passageId);
+ const samples=[
+  {id:'2026-11-13-nvidia-stepped',answer:'resigned',correct:false,hintCount:0},
+  {id:'2026-11-13-nvidia-pledged',answer:'committed',correct:false,hintCount:0},
+  {id:'2026-11-13-nvidia-stand',answer:'stand',correct:true,hintCount:5}
+ ];
+ if(!p||!samples.every(x=>itemById(x.id)&&idsInPassage(p).includes(x.id))){
+  notice('截图恢复失败：原题未在题库中找到，未修改已有学习记录。');
+  return;
+ }
+ const pending=samples.filter(x=>!progress.records[x.id]?.attempts&&!work.entries[passageId]?.feedback?.[x.id]);
+ if(!pending.length){
+  notice('这3处答题已有本机记录，无需重复导入，原数据均未覆盖。');
+  return;
+ }
+ const n=$('notice');
+ n.hidden=false;
+ n.innerHTML='可以把截图中的 '+pending.length+' 处答题结果补入此浏览器。已存在的记录不会覆盖。两处原判错继续安排复习，stand 作为提示后答对安排次日复习。 <button type="button" class="btn" id="restore-nvidia" style="margin:10px 0 2px">恢复截图中的答题记录</button>';
+ $('restore-nvidia').onclick=()=>{
+  const entry=work.entries[passageId]||{answers:{},hints:{},feedback:{}};
+  entry.answers=entry.answers||{};entry.hints=entry.hints||{};entry.feedback=entry.feedback||{};
+  let restored=0;
+  for(const x of samples){
+   if(progress.records[x.id]?.attempts||entry.feedback[x.id])continue;
+   const date='2026-11-14';
+   progress.records[x.id]={
+    attempts:1,correct:0,wrongCount:x.correct?0:1,hintAssisted:x.hintCount>0?1:0,
+    streak:0,nextDue:'2026-11-15',lastReviewed:date,
+    history:[{date,answer:x.answer,correct:x.correct,hintCount:x.hintCount,recoveredFromScreenshot:true}]
+   };
+   entry.answers[x.id]=x.answer;
+   entry.hints[x.id]=x.hintCount;
+   entry.feedback[x.id]={answer:x.answer,correct:x.correct,hintCount:x.hintCount};
+   restored++;
+  }
+  work.entries[passageId]=entry;
+  if(!work.session.includes(passageId))work.session.unshift(passageId);
+  work.idx=work.session.indexOf(passageId);
+  work.day=today();
+  save();saveWork();
+  let persisted=false;
+  try{
+   const a=JSON.parse(localStorage.getItem(KEY)||'{}');
+   const b=JSON.parse(localStorage.getItem(WORK_KEY)||'{}');
+   persisted=samples.every(x=>a.records?.[x.id]&&b.entries?.[passageId]?.feedback?.[x.id]);
+  }catch{}
+  if(!persisted){notice('恢复未能保存：请检查此浏览器是否禁止网站数据存储。');return;}
+  session=[...work.session];idx=work.idx;
+  qp.delete('recover');
+  const suffix=qp.toString();
+  try{window.history.replaceState(null,'',window.location.pathname+(suffix?'?'+suffix:'')+window.location.hash)}catch{}
+  nav('quiz');
+  notice('已恢复 '+restored+' 道答题并验证本机存储成功。明日（11月15日）安排复习。你可以刷新页面确认记录仍在。');
+ };
+}
 function startForGroups(groupIds){
  session=[...new Set(groupIds)];idx=0;
  for(const id of session)delete work.entries[id];
@@ -267,7 +329,7 @@ async function load(){
   session=retained.length?retained:dueGroups();
   idx=retained.length?Math.max(0,Math.min(Number(work.idx)||0,session.length)):0;
   work.session=[...session];work.idx=idx;saveWork();
-  $('notice').hidden=true;labelDue();nav(tab);
+  $('notice').hidden=true;labelDue();nav(tab);offerScreenshotRecovery();
  }catch(err){notice('课程加载失败：'+err.message+'。请刷新页面后重试。');}
 }
 $('today').textContent='SINGAPORE TIME / '+today();
