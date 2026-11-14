@@ -362,6 +362,39 @@ window.addEventListener('brieflab:cloud-updated',()=>{
 });
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>nav(b.dataset.tab));
 
+// Share only the selected day's learning outcomes; never publish browser records to GitHub.
+$('copy-mistakes').onclick=async()=>{
+ if(GUEST)return;
+ const day=today();
+ const results=[];
+ for(const [id,rec] of Object.entries(progress.records)){
+  const matching=(rec.history||[]).filter(h=>h.date===day&&(!h.correct||(h.hintCount||0)>=3));
+  if(!matching.length)continue;
+  const item=itemById(id);
+  for(const h of matching)results.push({
+   id,word:item?.answer||'',entered:h.answer||'',
+   hints:h.hintCount||0,reason:h.correct?'提示超过两次':'填写错误',
+   meaning:item?.meaning_zh||'',analysis:item?.analysis_zh||''
+  });
+ }
+ const lines=['BriefLab 今日复习记录 · '+day,'需复习 '+results.length+' 次'];
+ for(const [i,x] of results.entries()){
+  lines.push((i+1)+'. '+x.id+' · '+x.word+'（'+x.reason+'，提示'+x.hints+'次）');
+  lines.push('填写：'+x.entered+'；释义：'+x.meaning);
+  if(x.analysis)lines.push('解析：'+x.analysis);
+ }
+ if(!results.length)lines.push('本日记录中没有填错或提示超过两次的题目。');
+ const report=lines.join('\n');
+ const status=$('copy-mistakes-status');
+ try{
+  await navigator.clipboard.writeText(report);
+  if(status)status.textContent='已复制 '+results.length+' 条今日复习记录，可直接粘贴到 ChatGPT。';
+ }catch{
+  window.prompt('浏览器复制受限，请手动复制以下内容：',report);
+  if(status)status.textContent='已打开可复制的今日复习记录。';
+ }
+};
+
 $('export').onclick=()=>{
  if(GUEST)return;
  const blob=new Blob([JSON.stringify({app:'BriefLab',progress,exported_at:new Date().toISOString()},null,2)],{type:'application/json'});
