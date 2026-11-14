@@ -15,6 +15,12 @@ if(!GUEST){
   const saved=JSON.parse(localStorage.getItem(WORK_KEY)||'null');
   if(saved&&Array.isArray(saved.session)&&saved.entries&&typeof saved.entries==='object'){
    work=saved;
+   // Migrate legacy passage-only keys to day-specific entries without losing history.
+   for(const [id,entry] of Object.entries(work.entries))if(!id.includes('|')){
+    const dest=(work.day||today())+'|'+id;
+    if(!work.entries[dest])work.entries[dest]=entry;
+    delete work.entries[id];
+   }
    if(work.day!==today()){
     // Preserve every checked answer and hint; begin a fresh due-session for the new day.
     work.day=today();work.session=[];work.idx=0;
@@ -24,12 +30,13 @@ if(!GUEST){
 }
 const saveWork=()=>{
  if(GUEST)return;
- try{localStorage.setItem(WORK_KEY,JSON.stringify(work))}catch{notice('本次练习进度无法保存，请检查浏览器存储权限。');}
+ try{localStorage.setItem(WORK_KEY,JSON.stringify(work));window.dispatchEvent(new Event('brieflab:local-write'))}catch{notice('本次练习进度无法保存，请检查浏览器存储权限。');}
 };
 function activatePassage(id){
- const current=work.entries[id]||{};
- const entry={answers:current.answers||{},hints:current.hints||{},feedback:current.feedback||{}};
- work.entries[id]=entry;
+ const k=work.day+'|'+id;
+ const current=work.entries[k]||{};
+ const entry={answers:current.answers||{},hints:current.hints||{},feedback:current.feedback||{},updatedAt:current.updatedAt||''};
+ work.entries[k]=entry;
  answers=entry.answers;hints=entry.hints;feedback=entry.feedback;
 }
 function moveTo(position){
@@ -42,7 +49,7 @@ if(!GUEST){
   if(old&&typeof old==='object')progress={records:old.records||{},read:old.read||{}};
  }catch{}
 }
-const save=()=>{if(GUEST)return;try{localStorage.setItem(KEY,JSON.stringify(progress))}catch{notice('学习记录无法保存在本浏览器中，请检查存储权限。');}};
+const save=()=>{if(GUEST)return;try{localStorage.setItem(KEY,JSON.stringify(progress));window.dispatchEvent(new Event('brieflab:local-write'))}catch{notice('学习记录无法保存在本浏览器中，请检查存储权限。');}};
 const itemById=id=>items.find(x=>x.id===id);
 const passageById=id=>passages.find(x=>x.id===id);
 const idsInPassage=p=>[...p.body.matchAll(/\{\{([^}]+)\}\}/g)].map(m=>m[1]);
@@ -181,7 +188,7 @@ function checkBlank(id){
  if(!GUEST)progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(independent?1:0),
   wrongCount:old.wrongCount+(correct?0:1),hintAssisted:(old.hintAssisted||0)+(correct&&hintCount?1:0),
   streak,nextDue:addDays(today(),days),lastReviewed:today(),
-  history:[...(old.history||[]).slice(-49),{date:today(),answer,correct,hintCount}]};
+  history:[...(old.history||[]).slice(-49),{date:today(),answer,correct,hintCount,attemptId:crypto.randomUUID(),at:new Date().toISOString()}]};
  save();
  const n=idsInPassage(passageById(session[idx])).indexOf(id)+1;
  group.outerHTML='<span class="completed-answer '+(correct?'is-correct':'is-wrong')+'"><sup>'+n+'</sup> '+E(item.answer)+'</span>';
@@ -236,7 +243,8 @@ function offerScreenshotRecovery(){
   notice('截图恢复失败：原题未在题库中找到，未修改已有学习记录。');
   return;
  }
- const pending=samples.filter(x=>!progress.records[x.id]?.attempts&&!work.entries[passageId]?.feedback?.[x.id]);
+ const recoveryKey=today()+'|'+passageId;
+ const pending=samples.filter(x=>!progress.records[x.id]?.attempts&&!work.entries[recoveryKey]?.feedback?.[x.id]);
  if(!pending.length){
   notice('这3处答题已有本机记录，无需重复导入，原数据均未覆盖。');
   return;
@@ -245,7 +253,7 @@ function offerScreenshotRecovery(){
  n.hidden=false;
  n.innerHTML='可以把截图中的 '+pending.length+' 处答题结果补入此浏览器。已存在的记录不会覆盖。两处原判错继续安排复习，stand 作为提示后答对安排次日复习。 <button type="button" class="btn" id="restore-nvidia" style="margin:10px 0 2px">恢复截图中的答题记录</button>';
  $('restore-nvidia').onclick=()=>{
-  const entry=work.entries[passageId]||{answers:{},hints:{},feedback:{}};
+  const entry=work.entries[recoveryKey]||{answers:{},hints:{},feedback:{}};
   entry.answers=entry.answers||{};entry.hints=entry.hints||{};entry.feedback=entry.feedback||{};
   let restored=0;
   for(const x of samples){
@@ -254,14 +262,14 @@ function offerScreenshotRecovery(){
    progress.records[x.id]={
     attempts:1,correct:0,wrongCount:x.correct?0:1,hintAssisted:x.hintCount>0?1:0,
     streak:0,nextDue:'2026-11-15',lastReviewed:date,
-    history:[{date,answer:x.answer,correct:x.correct,hintCount:x.hintCount,recoveredFromScreenshot:true}]
+    history:[{date,answer:x.answer,correct:x.correct,hintCount:x.hintCount,recoveredFromScreenshot:true,attemptId:crypto.randomUUID(),at:new Date().toISOString()}]
    };
    entry.answers[x.id]=x.answer;
    entry.hints[x.id]=x.hintCount;
    entry.feedback[x.id]={answer:x.answer,correct:x.correct,hintCount:x.hintCount};
    restored++;
   }
-  work.entries[passageId]=entry;
+  work.entries[recoveryKey]=entry;
   if(!work.session.includes(passageId))work.session.unshift(passageId);
   work.idx=work.session.indexOf(passageId);
   work.day=today();
@@ -270,7 +278,7 @@ function offerScreenshotRecovery(){
   try{
    const a=JSON.parse(localStorage.getItem(KEY)||'{}');
    const b=JSON.parse(localStorage.getItem(WORK_KEY)||'{}');
-   persisted=samples.every(x=>a.records?.[x.id]&&b.entries?.[passageId]?.feedback?.[x.id]);
+   persisted=samples.every(x=>a.records?.[x.id]&&b.entries?.[recoveryKey]?.feedback?.[x.id]);
   }catch{}
   if(!persisted){notice('恢复未能保存：请检查此浏览器是否禁止网站数据存储。');return;}
   session=[...work.session];idx=work.idx;
@@ -283,7 +291,7 @@ function offerScreenshotRecovery(){
 }
 function startForGroups(groupIds){
  session=[...new Set(groupIds)];idx=0;
- for(const id of session)delete work.entries[id];
+ for(const id of session)delete work.entries[today()+'|'+id];
  work.session=[...session];work.idx=0;saveWork();nav('quiz');
 }
 function renderMistakes(){
@@ -340,6 +348,16 @@ if(GUEST){
  const backup=$('backup-tools');if(backup)backup.hidden=true;
  const guestNote=$('guest-note');if(guestNote){guestNote.hidden=false;guestNote.textContent='访客练习 · 每次刷新获取最新一期，不保存成绩或错题';}
 }
+window.addEventListener('brieflab:cloud-updated',()=>{
+ if(GUEST)return;
+ try{
+  const p=JSON.parse(localStorage.getItem(KEY)||'{}');
+  const w=JSON.parse(localStorage.getItem(WORK_KEY)||'{}');
+  progress={records:p.records||{},read:p.read||{}};
+  if(w.entries&&Array.isArray(w.session)){work=w;session=work.session.filter(id=>passageById(id));idx=Math.max(0,Math.min(Number(work.idx)||0,session.length));}
+  labelDue();nav(tab);
+ }catch(error){notice('云端数据已保存，但本页刷新学习记录失败：'+error.message);}
+});
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>nav(b.dataset.tab));
 
 $('export').onclick=()=>{
