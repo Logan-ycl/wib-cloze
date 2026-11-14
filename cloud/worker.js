@@ -1,15 +1,15 @@
 // BriefLab encrypted cloud sync API. The Worker never receives plaintext progress.
 // Bind Cloudflare D1 as DB and apply schema.sql before deployment.
-const ALLOWED_ORIGIN='https://logan-ycl.github.io';
+const ALLOWED_ORIGINS=new Set(['https://logan-ycl.github.io','https://brief.loganyu.cc']);
 const LIMIT=1000000;
-function cors(origin){return {'Access-Control-Allow-Origin':origin===ALLOWED_ORIGIN?origin:ALLOWED_ORIGIN,'Access-Control-Allow-Methods':'GET,POST,PUT,DELETE,OPTIONS','Access-Control-Allow-Headers':'Authorization,Content-Type','Cache-Control':'no-store','Vary':'Origin'};}
+function cors(origin){return {'Access-Control-Allow-Origin':ALLOWED_ORIGINS.has(origin)?origin:'https://logan-ycl.github.io','Access-Control-Allow-Methods':'GET,POST,PUT,DELETE,OPTIONS','Access-Control-Allow-Headers':'Authorization,Content-Type','Cache-Control':'no-store','Vary':'Origin'};}
 function reply(data,status,origin){return new Response(JSON.stringify(data),{status,headers:{...cors(origin),'Content-Type':'application/json; charset=utf-8'}});}
 function bytesHex(bytes){return [...new Uint8Array(bytes)].map(x=>x.toString(16).padStart(2,'0')).join('');}
 export default {
  async fetch(request,env){
   const origin=request.headers.get('Origin')||'';
   if(request.method==='OPTIONS')return new Response(null,{status:204,headers:cors(origin)});
-  if(origin&&origin!==ALLOWED_ORIGIN)return reply({error:'origin_not_allowed'},403,origin);
+  if(origin&&!ALLOWED_ORIGINS.has(origin))return reply({error:'origin_not_allowed'},403,origin);
   const url=new URL(request.url);
   if(url.pathname==='/health'&&request.method==='GET')return reply({ok:true,storage:!!env.DB},200,origin);
   const readMatch=/^\/v1\/mistakes\/([A-Za-z0-9_-]{43})$/.exec(url.pathname);
