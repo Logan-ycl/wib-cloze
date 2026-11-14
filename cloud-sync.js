@@ -101,6 +101,35 @@ async function api(method,data){
  if(!response.ok)throw Error(result.error||('HTTP '+response.status));
  return result;
 }
+// Publish wrong answers only. Correct attempts remain in the encrypted progress backup.
+async function mistakeReaderKey(){
+ const digest=await crypto.subtle.digest('SHA-256',utf.encode('brieflab-mistake-reader-key-v1:'+token));
+ return base64url(digest);
+}
+function collectMistakes(){
+ const records=readJson(STORAGE,{records:{}}).records||{},list=[];
+ for(const [id,rec] of Object.entries(records)){
+  if(!/^[A-Za-z0-9_-]{3,140}$/.test(id))continue;
+  (rec.history||[]).forEach((h,i)=>{
+   if(h.correct!==false||typeof h.answer!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(h.date||''))return;
+   list.push({attempt_key:String(h.attemptId||('legacy:'+id+':'+h.date+':'+i)).slice(0,200),
+    id,date:h.date,entered:h.answer.slice(0,80),hints:Math.min(100,Math.max(0,Math.trunc(Number(h.hintCount)||0)))});
+  });
+ }
+ return list;
+}
+async function sendMistakes(){
+ if(!token||!API)return;
+ const key=await mistakeReaderKey(),all=collectMistakes();
+ // Include an empty batch so the read-only link works even when no errors exist yet.
+ for(let i=0;i<Math.max(1,Math.ceil(all.length/100));i++){
+  const events=all.slice(i*100,i*100+100);
+  const response=await fetch(API+'/v1/mistakes',{method:'POST',headers:{
+   Authorization:'Bearer '+token,'Content-Type':'application/json'
+  },body:JSON.stringify({read_key:key,events}),cache:'no-store'});
+  if(!response.ok)throw Error('错题上传失败（HTTP '+response.status+'）');
+ }
+}
 async function syncOnce(){
  for(let retry=0;retry<4;retry++){
   const remote=await api('GET'),server=remote.blob?await decrypt(remote.blob,token):null;
@@ -126,6 +155,7 @@ async function sync(){
   try{
    setStatus('正在加密并同步学习记录…');
    await syncOnce();
+   await sendMistakes();
    setStatus('云端已同步 · '+new Date().toLocaleString('zh-CN'));
   }catch(error){
    setStatus('云端同步暂不可用：'+error.message+'；本机记录仍会保存');
@@ -141,6 +171,7 @@ function updateUI(){
  document.getElementById('cloud-copy').hidden=!connected;
  document.getElementById('cloud-now').hidden=!connected;
  document.getElementById('cloud-switch').hidden=!connected;
+ document.getElementById('cloud-share-mistakes').hidden=!connected;
  if(!API){
   setStatus('云同步服务尚未部署，当前仅保存于本机；部署后可以在这里启用跨设备同步。');
   controls.hidden=true;
@@ -163,6 +194,16 @@ document.getElementById('cloud-copy').onclick=async()=>{
  catch{prompt('复制这串恢复密钥并安全保存：',token);}
 };
 document.getElementById('cloud-now').onclick=sync;
+document.getElementById('cloud-share-mistakes').onclick=async()=>{
+ if(!token||!API)return;
+ try{
+  setStatus('正在核对错题保存状态…');
+  await sendMistakes();
+  const link=API+'/v1/mistakes/'+await mistakeReaderKey();
+  try{await navigator.clipboard.writeText(link);setStatus('错题只读链接已复制。请仅在私人聊天中发送；持有链接的人能查看错题。');}
+  catch{window.prompt('复制这条只读错题链接并私下发送给 ChatGPT：',link);setStatus('错题只读链接已生成。');}
+ }catch(err){setStatus('错题链接暂不可用：'+err.message);}
+};
 document.getElementById('cloud-switch').onclick=async()=>{
  const input=prompt('输入另一设备的43字符恢复密钥。将合并两端记录，不会直接清空本机数据。');
  if(input===null)return;
