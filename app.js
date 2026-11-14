@@ -2,7 +2,8 @@
 const $=id=>document.getElementById(id);
 const KEY='brieflab-progress-v1';
 const WORK_KEY='brieflab-working-v1';
-const GUEST=window.location.hash!=='#mine';
+// Personal progress is device-local by default; ?guest=1 opts into stateless sharing.
+const GUEST=new URLSearchParams(window.location.search).get('guest')==='1'||window.location.hash==='#guest';
 const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const norm=value=>String(value||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
@@ -12,7 +13,13 @@ let work={day:today(),session:[],idx:0,entries:{}};
 if(!GUEST){
  try{
   const saved=JSON.parse(localStorage.getItem(WORK_KEY)||'null');
-  if(saved&&saved.day===today()&&Array.isArray(saved.session)&&saved.entries&&typeof saved.entries==='object')work=saved;
+  if(saved&&Array.isArray(saved.session)&&saved.entries&&typeof saved.entries==='object'){
+   work=saved;
+   if(work.day!==today()){
+    // Preserve every checked answer and hint; begin a fresh due-session for the new day.
+    work.day=today();work.session=[];work.idx=0;
+   }
+  }
  }catch{}
 }
 const saveWork=()=>{
@@ -132,7 +139,7 @@ function showAnswers(p){
     +'<b>第'+i+'空 · '+heading+'</b><div>你的填写：'+E(v.answer)+'</div>'
     +'<div>目标答案：<strong>'+E(x.answer)+'</strong></div>'
     +(v.hintCount>=3?'<div class="muted">使用了 '+v.hintCount+' 次字母提示，明天再练</div>':'')
-    +'<p>'+E(x.meaning_zh)+'。'+E(x.why_zh||x.analysis_zh||'')+'</p></div>';
+    +'<p><strong>解析：</strong>'+E(x.analysis_zh||x.why_zh||x.meaning_zh||'暂无解析')+'</p></div>';
   }).join('')+'</div>';
 }
 function updateResults(){
