@@ -181,7 +181,7 @@ function updateUI(){
  }
  controls.hidden=false;
  if(!API.startsWith('https://')){controls.hidden=true;setStatus('云端地址必须使用 HTTPS');return;}
- setStatus(connected?'已关联云端恢复密钥，准备同步':'尚未关联云端。创建恢复密钥后可跨设备同步。');
+ setStatus(connected?'已关联云端恢复密钥，准备同步':'首次使用新设备：点击“输入已有恢复密钥”；仅首台设备需要“建立云端备份”。');
  if(connected)schedule();
 }
 document.getElementById('cloud-create').onclick=()=>{
