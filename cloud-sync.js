@@ -20,9 +20,9 @@ function mergeRecord(a,b){
   if(!h.has(id)||(!h.get(id).at&&x.at))h.set(id,x);
  }
  const history=[...h.values()].sort((x,y)=>String(x.at||x.date).localeCompare(String(y.at||y.date))).slice(-50);
- const recent=String(a.lastReviewed||'')>=String(b.lastReviewed||'')?a:b;
+ const recent=String(a.lastReviewedAt||a.lastReviewed||'')>=String(b.lastReviewedAt||b.lastReviewed||'')?a:b;
  const earlier=recent===a?b:a;
- const due=String(a.nextDue||'')&&String(b.nextDue||'')?([a.nextDue,b.nextDue].sort()[0]):(a.nextDue||b.nextDue||null);
+ const due=recent.nextDue||earlier.nextDue||null;
  const correctFromHistory=history.filter(x=>x.correct&&(x.hintCount||0)<=2).length;
  return {...earlier,...recent,history,
   attempts:Math.max(a.attempts||0,b.attempts||0,history.length),
