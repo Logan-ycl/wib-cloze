@@ -50,10 +50,20 @@ function merge(a,b){
     updatedAt:newer.updatedAt||older.updatedAt||''};
   }
  }
+ const drafts={};
+ for(const date of new Set([...Object.keys(wa.drafts||{}),...Object.keys(wb.drafts||{})])){
+  const x=wa.drafts?.[date],y=wb.drafts?.[date];
+  drafts[date]=clone(!x?y:!y?x:String(x.updatedAt||'')>=String(y.updatedAt||'')?x:y);
+ }
+ const notes={};
+ for(const id of new Set([...Object.keys(wa.notes||{}),...Object.keys(wb.notes||{})])){
+  const x=wa.notes?.[id],y=wb.notes?.[id];
+  notes[id]=clone(!x?y:!y?x:String(x.updatedAt||'')>=String(y.updatedAt||'')?x:y);
+ }
  const preferred=wa.day&&wa.session?.length?wa:wb;
  return {v:1,progress:{records,read:{...(pb.read||{}),...(pa.read||{})}},
   work:{day:preferred.day||wa.day||wb.day||'',session:preferred.session||[],
-   idx:Number(preferred.idx)||0,entries}};
+   idx:Number(preferred.idx)||0,entries,drafts,notes}};
 }
 function localData(){return {v:1,progress:readJson(STORAGE,{records:{},read:{}}),
  work:readJson(WORK,{day:'',session:[],idx:0,entries:{}})};}
