@@ -86,6 +86,8 @@ header{background:var(--page);border-bottom:1px solid var(--line)}
 .completed-answer{display:inline;color:#315e45;border-bottom:2px solid #97b9a0;font-weight:700;padding:0 3px;margin:0 3px}
 .completed-answer.is-wrong{color:#a0523c;border-bottom-color:#bf8879}
 .completed-answer sup{font:700 10px system-ui,sans-serif;color:var(--accent)}
+.reviewed-context.previously-correct{color:#347050;background:rgba(64,124,89,.085);border-bottom:1px solid #85ab8e;border-radius:3px;padding:0 3px;font-weight:600}
+.reviewed-context.previously-correct sup{margin-left:2px;font:700 10px system-ui,sans-serif;vertical-align:super;color:#347050}
 .word-count{font-size:12px;color:var(--muted);line-height:1.6;margin:24px 0 8px}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;min-height:43px;
@@ -265,7 +267,7 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
  </div>
 </main>
 <footer><div class="wrap">BriefLab · Daily English Practice</div></footer>
-<script src="./app.js?v=20261115-due-filter"></script>
+<script src="./app.js?v=20261115-correct-mark"></script>
 <script src="./cloud-config.js?v=1"></script>
 <script src="./cloud-sync.js?v=20261115-due-filter"></script>
 </body>
