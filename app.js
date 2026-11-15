@@ -414,6 +414,9 @@ async function load(){
 }
 $('today').textContent='SINGAPORE TIME / '+today();
 if(GUEST){
+ const draftBox=$('daily-draft-box'),notebook=$('expression-notebook');
+ if(draftBox)draftBox.hidden=true;
+ if(notebook)notebook.hidden=true;
  const statsTab=document.querySelector('[data-tab="stats"]');
  if(statsTab)statsTab.hidden=true;
  const mistakesTab=document.querySelector('[data-tab="mistakes"]');if(mistakesTab)mistakesTab.hidden=true;
