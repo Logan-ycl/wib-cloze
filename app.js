@@ -309,8 +309,9 @@ function prepareNotes(){
  work.drafts=work.drafts&&typeof work.drafts==='object'?work.drafts:{};
  work.notes=work.notes&&typeof work.notes==='object'?work.notes:{};
 }
+const NOTEBOOK_ID='brieflab-continuous-notebook';
 function noteElements(){
- return {draft:$('daily-draft'),saved:$('draft-save-status'),list:$('expression-list'),entry:$('expression-new')};
+ return {draft:$('daily-draft'),saved:$('draft-save-status'),list:$('expression-list'),entry:$('expression-new'),notebookStatus:$('expression-save-status')};
 }
 function renderPersonalNotes(){
  if(GUEST)return;
@@ -318,13 +319,14 @@ function renderPersonalNotes(){
  const el=noteElements(),day=today();
  const current=work.drafts[day]||{text:''};
  if(el.draft&&document.activeElement!==el.draft)el.draft.value=current.text||'';
- const active=Object.entries(work.notes).filter(([,note])=>note&&!note.deleted)
+ const notebook=work.notes[NOTEBOOK_ID];
+ if(el.entry&&document.activeElement!==el.entry)el.entry.value=notebook&&!notebook.deleted?notebook.text||'':'';
+ const active=Object.entries(work.notes).filter(([id,note])=>id!==NOTEBOOK_ID&&note&&!note.deleted)
   .sort((a,b)=>String(b[1].createdAt||b[1].updatedAt||'').localeCompare(String(a[1].createdAt||a[1].updatedAt||'')));
  if(el.list){
-  el.list.innerHTML=active.length?active.map(([id,note])=>
+  el.list.innerHTML=active.map(([id,note])=>
    '<div class="expression-entry" data-note="'+E(id)+'"><textarea class="expression-edit" data-note-edit="'+E(id)+'" aria-label="编辑积累的表达" rows="2">'+E(note.text||'')+'</textarea>'+
-   '<button type="button" class="reset-one" data-note-delete="'+E(id)+'">删除</button></div>').join('')
-   :'<p class="muted">暂无长期笔记。写下值得反复使用的表达，之后每天都能看到。</p>';
+   '<button type="button" class="reset-one" data-note-delete="'+E(id)+'">删除</button></div>').join('');
   el.list.querySelectorAll('[data-note-edit]').forEach(field=>field.addEventListener('input',()=>{
    const id=field.dataset.noteEdit,existing=work.notes[id];
    if(!existing||existing.deleted)return;
@@ -353,19 +355,17 @@ function initPersonalNotes(){
    if(el.saved)el.saved.textContent='已自动保存';
   });
  }
- const add=$('expression-add');
- if(add)add.onclick=()=>{
-  const text=el.entry?.value.trim();
-  if(!text)return;
-  const id=crypto.randomUUID(),stamp=new Date().toISOString();
-  work.notes[id]={text,createdAt:stamp,updatedAt:stamp};
-  saveWork();
-  el.entry.value='';
-  renderPersonalNotes();
- };
+ if(el.entry){
+  el.entry.addEventListener('input',()=>{
+   const existing=work.notes[NOTEBOOK_ID]||{};
+   const now=new Date().toISOString();
+   work.notes[NOTEBOOK_ID]={...existing,text:el.entry.value,deleted:false,createdAt:existing.createdAt||now,updatedAt:now};
+   saveWork();
+   if(el.notebookStatus)el.notebookStatus.textContent='已自动保存';
+  });
+ }
  renderPersonalNotes();
 }
-
 function renderMistakes(){
  if(GUEST){$('mistakes').innerHTML='<div class="box">访客模式不保留错题。</div>';return;}
  const usable=new Set(passages.flatMap(idsInPassage));
@@ -415,6 +415,8 @@ async function load(){
 $('today').textContent='SINGAPORE TIME / '+today();
 if(GUEST){
  const draftBox=$('daily-draft-box'),notebook=$('expression-notebook');
+ const sidebar=$('notes-sidebar');if(sidebar)sidebar.hidden=true;
+ document.querySelector('.content-layout')?.classList.add('single-column');
  if(draftBox)draftBox.hidden=true;
  if(notebook)notebook.hidden=true;
  const statsTab=document.querySelector('[data-tab="stats"]');
