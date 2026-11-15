@@ -18,9 +18,9 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--page);color:var(--ink);min-width:280px}
-button,input{font:inherit}
+button,input,textarea{font:inherit}
 button{touch-action:manipulation;cursor:pointer}
-button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .wrap{width:min(100% - 48px,880px);margin-inline:auto}
 header{background:var(--page);border-bottom:1px solid var(--line)}
 .top{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -112,6 +112,17 @@ input[type=file]{display:none}
 [hidden]{display:none!important}
 .guest-note{display:inline-block;margin-top:12px;padding:7px 10px;background:#efe8dc;border-radius:6px;font-size:12px;color:#795b42}
 footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-size:11px}
+
+.study-notes{margin-top:18px}
+.study-notes h3{margin:0 0 7px;font-size:17px}
+.study-notes textarea{display:block;width:100%;padding:13px 14px;background:#fffefa;border:1px solid #d6cec0;border-radius:8px;color:var(--ink);font-size:15px;line-height:1.6;resize:vertical}
+.study-notes textarea:focus{border-color:var(--accent)}
+.study-notes .notes-help{margin:0 0 13px}
+.expression-entry{border-top:1px solid var(--line);padding:12px 0 4px}
+.expression-entry textarea{min-height:68px}
+.expression-entry .reset-one{margin-top:4px}
+.note-compose{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.note-compose .btn{align-self:flex-start}
 @media(max-width:650px){
   html{scroll-padding-top:10px}
   .wrap{width:calc(100% - 32px)}
@@ -185,6 +196,21 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
  <section class="panel" id="panel-quiz" hidden>
   <div class="head"><h2>今日填空</h2><div class="muted" id="edition-label"></div></div>
   <div id="quiz"></div>
+  <section class="box study-notes" id="daily-draft-box" aria-label="每日随笔草稿">
+   <h3>随笔草稿</h3>
+   <p class="muted notes-help" id="draft-day"></p>
+   <textarea id="daily-draft" rows="5" placeholder="随手记下想到的关联表达，例如：compromise on sth · deliver on a promise"></textarea>
+   <p class="muted" id="draft-save-status" role="status">自动保存到个人学习记录，次日显示新空白草稿；历史草稿保留在云端备份中。</p>
+  </section>
+  <section class="box study-notes" id="expression-notebook" aria-label="长期表达笔记">
+   <h3>表达积累</h3>
+   <p class="muted notes-help">长期保留的个人笔记。每天显示全部内容，可随时编辑。</p>
+   <div class="note-compose">
+    <textarea id="expression-new" rows="3" placeholder="例如：deliver on a promise = 兑现承诺"></textarea>
+    <button type="button" class="btn" id="expression-add">加入长期笔记</button>
+   </div>
+   <div id="expression-list"></div>
+  </section>
  </section>
  <section class="panel" id="panel-mistakes" hidden>
   <div class="head"><h2>错题本</h2></div>
@@ -219,8 +245,8 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
  </section>
 </main>
 <footer><div class="wrap">BriefLab · Daily English Practice</div></footer>
-<script src="./app.js?v=20261114-share-mistakes"></script>
+<script src="./app.js?v=20261115-personal-notes"></script>
 <script src="./cloud-config.js?v=1"></script>
-<script src="./cloud-sync.js?v=4"></script>
+<script src="./cloud-sync.js?v=20261115-notes"></script>
 </body>
 </html>
