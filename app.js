@@ -2,8 +2,9 @@
 const $=id=>document.getElementById(id);
 const KEY='brieflab-progress-v1';
 const WORK_KEY='brieflab-working-v1';
-// Personal progress is device-local by default; ?guest=1 opts into stateless sharing.
-const GUEST=new URLSearchParams(window.location.search).get('guest')==='1'||window.location.hash==='#guest';
+// Public links are stateless by default. Only an explicit #mine link enables personal progress.
+// The legacy ?guest=1 and #guest links continue to work as stateless public views.
+const GUEST=new URLSearchParams(window.location.search).get('guest')==='1'||window.location.hash!=='#mine';
 const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const norm=value=>String(value||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
