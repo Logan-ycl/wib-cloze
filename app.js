@@ -143,13 +143,18 @@ function giveHint(id){
  if(feedback?.[id])return;
  const item=itemById(id);
  if(!item)return;
- // Persist historical hint usage for scoring while keeping display state local.
- hints[id]=(hints[id]||0)+1;
- visibleHintClicks[id]=(visibleHintClicks[id]||0)+1;
- saveWork();
- const el=$('quiz').querySelector('[data-hint="'+id+'"]');
+ // A hint counts only when it reveals an additional letter. Restored hints remain
+ // hidden until the user explicitly clicks, and repeated clicks cannot inflate scoring.
  const maxVisible=Math.max(0,item.answer.length-1);
- const revealed=Math.min(visibleHintClicks[id],maxVisible);
+ const before=Math.min(visibleHintClicks[id]||0,maxVisible);
+ const revealed=Math.min(before+1,maxVisible);
+ const el=$('quiz').querySelector('[data-hint="'+id+'"]');
+ if(revealed>before){
+  visibleHintClicks[id]=revealed;
+  // Retain prior usage for historical answers; never count an unproductive click.
+  hints[id]=Math.max(Math.min(Number(hints[id])||0,maxVisible),revealed);
+  saveWork();
+ }
  if(el)el.textContent=revealed?'提示：'+item.answer.slice(0,revealed)+'…':'此单词无法提供字母提示';
 }
 function showAnswers(p){
@@ -198,7 +203,7 @@ function checkBlank(id){
  if(!answer){error.textContent='请先填写此空';input.focus();return;}
  if(/\s/.test(answer)){error.textContent='每空只填写一个单词';input.focus();return;}
  const correct=[item.answer,...(item.accepted||[])].some(v=>norm(v)===norm(answer));
- const hintCount=hints[id]||0,independent=correct&&hintCount<=2,old=record(id);
+ const hintCount=Math.min(Math.max(0,Number(hints[id])||0),Math.max(0,item.answer.length-1)),independent=correct&&hintCount<=2,old=record(id);
  const streak=independent?old.streak+1:0,days=independent?([0,3,7,14,30,60][Math.min(streak,5)]||60):1;
  answers[id]=answer;
  feedback[id]={answer,correct,hintCount};
