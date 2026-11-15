@@ -106,7 +106,12 @@ function renderPassage(p){
    const result=feedback?.[id];
    // Keep the full news passage as context, but only quiz expressions due today.
    if(!GUEST&&record(id).attempts&&!isDue(item)&&!result){
-    return '<span class="reviewed-context">'+E(item.answer)+'</span>';
+    const history=record(id).history||[];
+    const last=history[history.length-1];
+    const mastered=last?.correct&&(last.hintCount||0)<=2;
+    return mastered
+     ?'<span class="reviewed-context previously-correct" title="此前答对 · 今日无需填写" aria-label="'+E(item.answer)+'，此前答对">'+E(item.answer)+'<sup aria-hidden="true">✓</sup></span>'
+     :'<span class="reviewed-context">'+E(item.answer)+'</span>';
    }
    if(result){
     const cls=result.correct?'is-correct':'is-wrong';
