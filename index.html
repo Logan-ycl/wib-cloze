@@ -21,7 +21,16 @@ body{margin:0;background:var(--page);color:var(--ink);min-width:280px}
 button,input,textarea{font:inherit}
 button{touch-action:manipulation;cursor:pointer}
 button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.wrap{width:min(100% - 48px,880px);margin-inline:auto}
+.wrap{width:min(100% - 48px,1260px);margin-inline:auto}
+.content-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;align-items:start}
+.content-layout.single-column{grid-template-columns:minmax(0,1fr)}
+.content-layout.single-column>.panel{max-width:880px}
+.notes-sidebar{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 24px);overflow-y:auto;padding:10px 2px 20px;scrollbar-width:thin}
+.notes-sidebar .study-notes{margin:12px 0}
+.notes-sidebar .study-notes h3{font-size:16px}
+.notes-sidebar textarea{font-size:14px;min-height:112px}
+.notes-sidebar .expression-entry textarea{min-height:70px}
+.notes-sidebar .notes-help{font-size:11px}
 header{background:var(--page);border-bottom:1px solid var(--line)}
 .top{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{font-size:19px;font-weight:800;letter-spacing:1.8px;white-space:nowrap}
@@ -123,6 +132,11 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 .expression-entry .reset-one{margin-top:4px}
 .note-compose{display:flex;flex-direction:column;gap:10px;margin:14px 0}
 .note-compose .btn{align-self:flex-start}
+@media(max-width:1020px){
+ .content-layout{grid-template-columns:minmax(0,1fr)}
+ .notes-sidebar{position:static;max-height:none;overflow:visible;padding:0 0 24px}
+ .notes-sidebar .study-notes{margin:12px 0}
+}
 @media(max-width:650px){
   html{scroll-padding-top:10px}
   .wrap{width:calc(100% - 32px)}
@@ -193,24 +207,11 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
   <div id="guest-note" class="guest-note" hidden></div>
  </section>
  <div id="notice" class="notice" hidden></div>
+ <div class="content-layout">
+ <div class="primary-content">
  <section class="panel" id="panel-quiz" hidden>
   <div class="head"><h2>今日填空</h2><div class="muted" id="edition-label"></div></div>
   <div id="quiz"></div>
-  <section class="box study-notes" id="daily-draft-box" aria-label="每日随笔草稿">
-   <h3>随笔草稿</h3>
-   <p class="muted notes-help" id="draft-day"></p>
-   <textarea id="daily-draft" rows="5" placeholder="随手记下想到的关联表达，例如：compromise on sth · deliver on a promise"></textarea>
-   <p class="muted" id="draft-save-status" role="status">自动保存到个人学习记录，次日显示新空白草稿；历史草稿保留在云端备份中。</p>
-  </section>
-  <section class="box study-notes" id="expression-notebook" aria-label="长期表达笔记">
-   <h3>表达积累</h3>
-   <p class="muted notes-help">长期保留的个人笔记。每天显示全部内容，可随时编辑。</p>
-   <div class="note-compose">
-    <textarea id="expression-new" rows="3" placeholder="例如：deliver on a promise = 兑现承诺"></textarea>
-    <button type="button" class="btn" id="expression-add">加入长期笔记</button>
-   </div>
-   <div id="expression-list"></div>
-  </section>
  </section>
  <section class="panel" id="panel-mistakes" hidden>
   <div class="head"><h2>错题本</h2></div>
@@ -243,9 +244,28 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
    <p class="muted" id="copy-mistakes-status" role="status" aria-live="polite"></p>
   </div>
  </section>
+ </div>
+ <aside class="notes-sidebar" id="notes-sidebar" aria-label="个人英语笔记">
+  <section class="box study-notes" id="daily-draft-box" aria-label="每日随笔草稿">
+   <h3>随笔草稿</h3>
+   <p class="muted notes-help" id="draft-day"></p>
+   <textarea id="daily-draft" rows="5" placeholder="随手记下想到的关联表达，例如：compromise on sth · deliver on a promise"></textarea>
+   <p class="muted" id="draft-save-status" role="status">自动保存到个人学习记录，次日显示新空白草稿；历史草稿保留在云端备份中。</p>
+  </section>
+  <section class="box study-notes" id="expression-notebook" aria-label="长期表达笔记">
+   <h3>表达积累</h3>
+   <p class="muted notes-help">输入即自动保存。每天显示全部内容，可随时编辑。</p>
+   <div class="note-compose">
+    <textarea id="expression-new" rows="7" placeholder="在此持续积累表达，每行记录一条。例如：&#10;deliver on a promise = 兑现承诺"></textarea>
+    <p id="expression-save-status" class="muted" role="status">自动保存</p>
+   </div>
+   <div id="expression-list"></div>
+  </section>
+ </aside>
+ </div>
 </main>
 <footer><div class="wrap">BriefLab · Daily English Practice</div></footer>
-<script src="./app.js?v=20261115-personal-notes"></script>
+<script src="./app.js?v=20261115-sidebar-autosave"></script>
 <script src="./cloud-config.js?v=1"></script>
 <script src="./cloud-sync.js?v=20261115-notes"></script>
 </body>
