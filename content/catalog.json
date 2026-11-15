@@ -946,14 +946,14 @@
       "expression": "stepped",
       "meaning_zh": "辞去职位",
       "example": "After Jensen Huang stepped down as Nvidia's chief executive, investors faced an abrupt leadership change.",
-      "analysis_zh": "step down as + 职务表示卸任、辞去领导职务。这里用过去式 stepped，与 faced 对应。resigned as 同样符合句法及基本语义，可作为可接受答案。",
+      "analysis_zh": "step down as + 职务表示卸任、辞去领导职务。这里用过去式 stepped，与 faced 对应。resigned as 同样符合句法及基本语义，可作为可接受答案。 在公司治理新闻中，step down as CEO 与 step down from a position 都是常见说法；其中 as 后接职位，from 后接岗位或职务名称。step aside 可能表示暂时让位，retire 则通常涉及退休，不能无条件互换。此句的 After 引出已发生的先行事件，主句再交代投资者面临的变化。",
       "cloze": "After Jensen Huang ______ down as Nvidia's chief executive, investors faced an abrupt leadership change.",
       "answer": "stepped",
       "accepted": [
         "resigned"
       ],
       "hint_zh": "辞去职位",
-      "why_zh": "step down as + 职务表示卸任、辞去领导职务。这里用过去式 stepped，与 faced 对应。resigned as 同样符合句法及基本语义，可作为可接受答案。"
+      "why_zh": "step down as + 职务表示卸任、辞去领导职务。这里用过去式 stepped，与 faced 对应。resigned as 同样符合句法及基本语义，可作为可接受答案。 在公司治理新闻中，step down as CEO 与 step down from a position 都是常见说法；其中 as 后接职位，from 后接岗位或职务名称。step aside 可能表示暂时让位，retire 则通常涉及退休，不能无条件互换。此句的 After 引出已发生的先行事件，主句再交代投资者面临的变化。"
     },
     {
       "id": "2026-11-13-nvidia-pledged",
@@ -962,14 +962,14 @@
       "expression": "pledged",
       "meaning_zh": "承诺投入",
       "example": "The company pledged large sums to AI startups and had signed major data-centre leases.",
-      "analysis_zh": "pledge money/funds to + 对象表示承诺提供资金，比 commit 更突出明确作出的承诺。句子是过去发生的承诺，因此用 pledged。",
+      "analysis_zh": "pledge money/funds to + 对象表示承诺提供资金，比 commit 更突出明确作出的承诺。句子是过去发生的承诺，因此用 pledged。 注意 pledge funds to a project 与 commit funds to a project 都可用于资金安排；pledge 特别突出公开承诺，commit 也可能强调已作资源配置。例句中的 had signed 是过去完成时，表示签约发生在另一过去参照时间之前，不能因并列出现就把两个动词理解成同一时间。项目管理可说 pledge additional resources to a launch。",
       "cloze": "The company ______ large sums to AI startups and had signed major data-centre leases.",
       "answer": "pledged",
       "accepted": [
         "committed"
       ],
       "hint_zh": "承诺投入",
-      "why_zh": "pledge money/funds to + 对象表示承诺提供资金，比 commit 更突出明确作出的承诺。句子是过去发生的承诺，因此用 pledged。"
+      "why_zh": "pledge money/funds to + 对象表示承诺提供资金，比 commit 更突出明确作出的承诺。句子是过去发生的承诺，因此用 pledged。 注意 pledge funds to a project 与 commit funds to a project 都可用于资金安排；pledge 特别突出公开承诺，commit 也可能强调已作资源配置。例句中的 had signed 是过去完成时，表示签约发生在另一过去参照时间之前，不能因并列出现就把两个动词理解成同一时间。项目管理可说 pledge additional resources to a launch。"
     },
     {
       "id": "2026-11-13-nvidia-stand",
@@ -978,12 +978,12 @@
       "expression": "stand",
       "meaning_zh": "继续有效",
       "example": "Interim boss Colette Kress must reassure partners that these deals stand.",
-      "analysis_zh": "deals stand 表示协议仍然有效或继续成立。stand 在这里是不及物动词，主语是复数 deals，使用原形；remain valid 也可表达同义，但不符合单词空的形式。",
+      "analysis_zh": "deals stand 表示协议仍然有效或继续成立。stand 在这里是不及物动词，主语是复数 deals，使用原形；remain valid 也可表达同义，但不符合单词空的形式。 stand 在这里表示协议依然成立，常见于 the agreement still stands 或 the offer stands。它无需宾语，不能写成 stand the deal。注意 reassure somebody that... 表示让合作方确信某事，宾语是 partners，that 引出所确认的内容。谈判邮件可写 Our original quotation still stands。",
       "cloze": "Interim boss Colette Kress must reassure partners that these deals ______.",
       "answer": "stand",
       "accepted": [],
       "hint_zh": "继续有效",
-      "why_zh": "deals stand 表示协议仍然有效或继续成立。stand 在这里是不及物动词，主语是复数 deals，使用原形；remain valid 也可表达同义，但不符合单词空的形式。"
+      "why_zh": "deals stand 表示协议仍然有效或继续成立。stand 在这里是不及物动词，主语是复数 deals，使用原形；remain valid 也可表达同义，但不符合单词空的形式。 stand 在这里表示协议依然成立，常见于 the agreement still stands 或 the offer stands。它无需宾语，不能写成 stand the deal。注意 reassure somebody that... 表示让合作方确信某事，宾语是 partners，that 引出所确认的内容。谈判邮件可写 Our original quotation still stands。"
     },
     {
       "id": "2026-11-13-iran-focus",
@@ -992,14 +992,14 @@
       "expression": "focus",
       "meaning_zh": "集中精力",
       "example": "Donald Trump told his vice-president to focus on domestic corruption allegations rather than negotiations with Iran.",
-      "analysis_zh": "focus on + 名词/动名词表示把注意力集中于某事。tell somebody to 后接动词原形，所以填 focus。",
+      "analysis_zh": "focus on + 名词/动名词表示把注意力集中于某事。tell somebody to 后接动词原形，所以填 focus。 focus on negotiations 是关注谈判，focus on resolving an issue 则在 on 后使用动名词。与 concentrate on 接近，但 focus 常用于工作优先级或议程安排。rather than 将国内议题与对外谈判对置，体现优先级选择；项目会上可说 We need to focus on the critical path rather than minor issues。",
       "cloze": "Donald Trump told his vice-president to ______ on domestic corruption allegations rather than negotiations with Iran.",
       "answer": "focus",
       "accepted": [
         "concentrate"
       ],
       "hint_zh": "集中精力",
-      "why_zh": "focus on + 名词/动名词表示把注意力集中于某事。tell somebody to 后接动词原形，所以填 focus。"
+      "why_zh": "focus on + 名词/动名词表示把注意力集中于某事。tell somebody to 后接动词原形，所以填 focus。 focus on negotiations 是关注谈判，focus on resolving an issue 则在 on 后使用动名词。与 concentrate on 接近，但 focus 常用于工作优先级或议程安排。rather than 将国内议题与对外谈判对置，体现优先级选择；项目会上可说 We need to focus on the critical path rather than minor issues。"
     },
     {
       "id": "2026-11-13-iran-insisted",
@@ -1008,12 +1008,12 @@
       "expression": "insisted",
       "meaning_zh": "坚称",
       "example": "The president insisted that America controlled the Strait of Hormuz and argued that a deal was no longer necessary.",
-      "analysis_zh": "insist that + 从句表示坚持声称某事为真，语气比 say 强。该句与 argued 并列，采用过去式 insisted。",
+      "analysis_zh": "insist that + 从句表示坚持声称某事为真，语气比 say 强。该句与 argued 并列，采用过去式 insisted。 insist that something is true 表示坚称某事实成立，insist on doing something 则表示坚持做某事，两种结构不能混淆。句中 insisted 和 argued 均为报道发言的动词，保留发言人的立场归属；不能把其主张改写成已经独立证实的客观事实。新闻阅读时要区分 claimed、insisted 与 confirmed 的证据强度。",
       "cloze": "The president ______ that America controlled the Strait of Hormuz and argued that a deal was no longer necessary.",
       "answer": "insisted",
       "accepted": [],
       "hint_zh": "坚称",
-      "why_zh": "insist that + 从句表示坚持声称某事为真，语气比 say 强。该句与 argued 并列，采用过去式 insisted。"
+      "why_zh": "insist that + 从句表示坚持声称某事为真，语气比 say 强。该句与 argued 并列，采用过去式 insisted。 insist that something is true 表示坚称某事实成立，insist on doing something 则表示坚持做某事，两种结构不能混淆。句中 insisted 和 argued 均为报道发言的动词，保留发言人的立场归属；不能把其主张改写成已经独立证实的客观事实。新闻阅读时要区分 claimed、insisted 与 confirmed 的证据强度。"
     },
     {
       "id": "2026-11-13-iran-reportedly",
@@ -1022,12 +1022,12 @@
       "expression": "reportedly",
       "meaning_zh": "据报道",
       "example": "Vance was reportedly considering direct talks with an Iranian official.",
-      "analysis_zh": "reportedly 是报道中的证据距离词，表示消息来自报道而未被作者直接证实；放在 was 与 considering 之间修饰整个动作。",
+      "analysis_zh": "reportedly 是报道中的证据距离词，表示消息来自报道而未被作者直接证实；放在 was 与 considering 之间修饰整个动作。 reportedly 指据报道，是消息来源限定词，防止读者误将尚未核实的谈判动向视为定论。was reportedly considering 属于过去进行时结构，reportedly 插在助动词 was 与现在分词 considering 之间；也可置于句首 Reportedly, ...。与 allegedly 相比，后者常用于尚未证实的不当行为指控。",
       "cloze": "Vance was ______ considering direct talks with an Iranian official.",
       "answer": "reportedly",
       "accepted": [],
       "hint_zh": "据报道",
-      "why_zh": "reportedly 是报道中的证据距离词，表示消息来自报道而未被作者直接证实；放在 was 与 considering 之间修饰整个动作。"
+      "why_zh": "reportedly 是报道中的证据距离词，表示消息来自报道而未被作者直接证实；放在 was 与 considering 之间修饰整个动作。 reportedly 指据报道，是消息来源限定词，防止读者误将尚未核实的谈判动向视为定论。was reportedly considering 属于过去进行时结构，reportedly 插在助动词 was 与现在分词 considering 之间；也可置于句首 Reportedly, ...。与 allegedly 相比，后者常用于尚未证实的不当行为指控。"
     },
     {
       "id": "2026-11-13-microsoft-outage",
@@ -1036,12 +1036,12 @@
       "expression": "outage",
       "meaning_zh": "服务中断",
       "example": "Microsoft reported an outage involving Teams, Outlook and Copilot.",
-      "analysis_zh": "an outage 指网络或软件服务中断，常搭配 service outage / widespread outage。前面的 an 提示这里需要元音音素开头的单数名词。",
+      "analysis_zh": "an outage 指网络或软件服务中断，常搭配 service outage / widespread outage。前面的 an 提示这里需要元音音素开头的单数名词。 outage 常指可用性层面的服务中断，可说 experience an outage、suffer an outage 或 a widespread outage；disruption 更宽泛，也可能只影响部分功能。involving Teams, Outlook and Copilot 补充受影响服务，不能直接推断所有地区与所有用户均完全离线。故障通报可写 We experienced a temporary service outage。",
       "cloze": "Microsoft reported an ______ involving Teams, Outlook and Copilot.",
       "answer": "outage",
       "accepted": [],
       "hint_zh": "服务中断",
-      "why_zh": "an outage 指网络或软件服务中断，常搭配 service outage / widespread outage。前面的 an 提示这里需要元音音素开头的单数名词。"
+      "why_zh": "an outage 指网络或软件服务中断，常搭配 service outage / widespread outage。前面的 an 提示这里需要元音音素开头的单数名词。 outage 常指可用性层面的服务中断，可说 experience an outage、suffer an outage 或 a widespread outage；disruption 更宽泛，也可能只影响部分功能。involving Teams, Outlook and Copilot 补充受影响服务，不能直接推断所有地区与所有用户均完全离线。故障通报可写 We experienced a temporary service outage。"
     },
     {
       "id": "2026-11-13-microsoft-elevated",
@@ -1050,14 +1050,14 @@
       "expression": "elevated",
       "meaning_zh": "升高的",
       "example": "The company attributed the disruption to elevated infrastructure load and unexpectedly unavailable servers.",
-      "analysis_zh": "elevated infrastructure load 指高于正常水平的系统负载。elevated 在名词 load 前作定语，比 high 更具有技术报告的正式语气。",
+      "analysis_zh": "elevated infrastructure load 指高于正常水平的系统负载。elevated 在名词 load 前作定语，比 high 更具有技术报告的正式语气。 elevated load 是基础设施或服务器负载高于正常基线，常见搭配还有 elevated latency、elevated error rates。attribute A to B 表示将 A 归因于 B，主语是作出判断的一方；在故障分析中仍应与已验证根因区分。unexpectedly unavailable servers 强调服务器异常不可用，不能直接等同于已确认的硬件损坏。",
       "cloze": "The company attributed the disruption to ______ infrastructure load and unexpectedly unavailable servers.",
       "answer": "elevated",
       "accepted": [
         "high"
       ],
       "hint_zh": "升高的",
-      "why_zh": "elevated infrastructure load 指高于正常水平的系统负载。elevated 在名词 load 前作定语，比 high 更具有技术报告的正式语气。"
+      "why_zh": "elevated infrastructure load 指高于正常水平的系统负载。elevated 在名词 load 前作定语，比 high 更具有技术报告的正式语气。 elevated load 是基础设施或服务器负载高于正常基线，常见搭配还有 elevated latency、elevated error rates。attribute A to B 表示将 A 归因于 B，主语是作出判断的一方；在故障分析中仍应与已验证根因区分。unexpectedly unavailable servers 强调服务器异常不可用，不能直接等同于已确认的硬件损坏。"
     },
     {
       "id": "2026-11-13-microsoft-expected",
@@ -1066,12 +1066,12 @@
       "expression": "expected",
       "meaning_zh": "预期的",
       "example": "Attempts to fix the issue were not proceeding as expected.",
-      "analysis_zh": "as expected 意为按预期，是固定表达。not proceeding as expected 表示修复进展未达到预期，expected 是过去分词，不表示这里一定有过去时动作。",
+      "analysis_zh": "as expected 意为按预期，是固定表达。not proceeding as expected 表示修复进展未达到预期，expected 是过去分词，不表示这里一定有过去时动作。 as expected 是 as + 过去分词构成的省略表达，可理解为 as had been expected，表示按此前预期。proceed as expected 用于计划、审批和故障修复进度，proceed smoothly 则强调过程顺利，判断维度不同。工作邮件可说 The validation is not progressing as expected; we are assessing the impact on the timeline。",
       "cloze": "Attempts to fix the issue were not proceeding as ______.",
       "answer": "expected",
       "accepted": [],
       "hint_zh": "预期的",
-      "why_zh": "as expected 意为按预期，是固定表达。not proceeding as expected 表示修复进展未达到预期，expected 是过去分词，不表示这里一定有过去时动作。"
+      "why_zh": "as expected 意为按预期，是固定表达。not proceeding as expected 表示修复进展未达到预期，expected 是过去分词，不表示这里一定有过去时动作。 as expected 是 as + 过去分词构成的省略表达，可理解为 as had been expected，表示按此前预期。proceed as expected 用于计划、审批和故障修复进度，proceed smoothly 则强调过程顺利，判断维度不同。工作邮件可说 The validation is not progressing as expected; we are assessing the impact on the timeline。"
     },
     {
       "id": "2026-11-13-luxury-performed",
@@ -1080,12 +1080,12 @@
       "expression": "performed",
       "meaning_zh": "表现",
       "example": "Richemont said its jewellery brands performed particularly strongly during the latest reporting period.",
-      "analysis_zh": "perform strongly 是财报中描述业务表现强劲的常用搭配。句子的 said 引出过去报告期的业绩，因此用 performed。",
+      "analysis_zh": "perform strongly 是财报中描述业务表现强劲的常用搭配。句子的 said 引出过去报告期的业绩，因此用 performed。 perform strongly 描述业务或品牌在某报告期内取得良好业绩；与 sales grew 相比，它未必仅指营收增长，须依据原报道的衡量指标理解。particularly 修饰 strongly，增强程度但没有给出具体增长率。业务回顾可写 The premium segment performed strongly despite weaker demand elsewhere。",
       "cloze": "Richemont said its jewellery brands ______ particularly strongly during the latest reporting period.",
       "answer": "performed",
       "accepted": [],
       "hint_zh": "表现",
-      "why_zh": "perform strongly 是财报中描述业务表现强劲的常用搭配。句子的 said 引出过去报告期的业绩，因此用 performed。"
+      "why_zh": "perform strongly 是财报中描述业务表现强劲的常用搭配。句子的 said 引出过去报告期的业绩，因此用 performed。 perform strongly 描述业务或品牌在某报告期内取得良好业绩；与 sales grew 相比，它未必仅指营收增长，须依据原报道的衡量指标理解。particularly 修饰 strongly，增强程度但没有给出具体增长率。业务回顾可写 The premium segment performed strongly despite weaker demand elsewhere。"
     },
     {
       "id": "2026-11-13-luxury-headwinds",
@@ -1094,12 +1094,12 @@
       "expression": "headwinds",
       "meaning_zh": "经营阻力",
       "example": "Sales rose even as the broader luxury industry faced headwinds from weak Chinese demand and instability in the Middle East.",
-      "analysis_zh": "face headwinds 指面临不利因素，headwinds 原意是逆风，在财经报道中常指需求疲软等外部阻力。与 tailwinds（顺风因素）形成对比。",
+      "analysis_zh": "face headwinds 指面临不利因素，headwinds 原意是逆风，在财经报道中常指需求疲软等外部阻力。与 tailwinds（顺风因素）形成对比。 face headwinds from weak demand 指需求疲弱构成经营阻力，headwind 在财经英语中常用复数。与 challenge 相比，headwind 更突出外部环境造成的不利力量，tailwind 则为有利推动力。even as 引导让步或反差：公司销售增长的同时，行业仍面临逆风；汇报可说 Growth continued despite macroeconomic headwinds。",
       "cloze": "Sales rose even as the broader luxury industry faced ______ from weak Chinese demand and instability in the Middle East.",
       "answer": "headwinds",
       "accepted": [],
       "hint_zh": "经营阻力",
-      "why_zh": "face headwinds 指面临不利因素，headwinds 原意是逆风，在财经报道中常指需求疲软等外部阻力。与 tailwinds（顺风因素）形成对比。"
+      "why_zh": "face headwinds 指面临不利因素，headwinds 原意是逆风，在财经报道中常指需求疲软等外部阻力。与 tailwinds（顺风因素）形成对比。 face headwinds from weak demand 指需求疲弱构成经营阻力，headwind 在财经英语中常用复数。与 challenge 相比，headwind 更突出外部环境造成的不利力量，tailwind 则为有利推动力。even as 引导让步或反差：公司销售增长的同时，行业仍面临逆风；汇报可说 Growth continued despite macroeconomic headwinds。"
     },
     {
       "id": "2026-11-13-luxury-profit",
@@ -1108,12 +1108,12 @@
       "expression": "profit",
       "meaning_zh": "利润",
       "example": "The company reported a substantial increase in net profit.",
-      "analysis_zh": "net profit 是净利润，区别于 revenue（营收）及 gross profit（毛利润）。本句为固定财务术语 net profit。",
+      "analysis_zh": "net profit 是净利润，区别于 revenue（营收）及 gross profit（毛利润）。本句为固定财务术语 net profit。 net profit 是扣除相关成本与费用后的净利润，区别于 gross profit 毛利润和 revenue 营收。increase in net profit 中 in 表示某项指标的增长，不能把 increase of 和 increase in 在所有语境下随意替换：前者常引出增量数额，后者引出发生增长的指标。财报解读应核对利润增长的基期与金额。",
       "cloze": "The company reported a substantial increase in net ______.",
       "answer": "profit",
       "accepted": [],
       "hint_zh": "利润",
-      "why_zh": "net profit 是净利润，区别于 revenue（营收）及 gross profit（毛利润）。本句为固定财务术语 net profit。"
+      "why_zh": "net profit 是净利润，区别于 revenue（营收）及 gross profit（毛利润）。本句为固定财务术语 net profit。 net profit 是扣除相关成本与费用后的净利润，区别于 gross profit 毛利润和 revenue 营收。increase in net profit 中 in 表示某项指标的增长，不能把 increase of 和 increase in 在所有语境下随意替换：前者常引出增量数额，后者引出发生增长的指标。财报解读应核对利润增长的基期与金额。"
     },
     {
       "id": "2026-11-13-ukraine-compromise",
@@ -1122,12 +1122,12 @@
       "expression": "compromise",
       "meaning_zh": "妥协",
       "example": "Vladimir Putin said Russia would not compromise on its conditions for ending the war in Ukraine.",
-      "analysis_zh": "compromise on + 条件/原则表示在特定要求上让步。would not 后接动词原形，故用 compromise；它既可作动词也可作名词。",
+      "analysis_zh": "compromise on + 条件/原则表示在特定要求上让步。would not 后接动词原形，故用 compromise；它既可作动词也可作名词。 compromise on conditions 表示在条件或立场上妥协，compromise with somebody 强调与某一方达成折中，reach a compromise 则用名词。would not compromise 中 would 后接原形；在过去叙述中可能表示当时的立场或预测，不能机械理解成已经发生的让步。商务谈判可说 We cannot compromise on product safety requirements。",
       "cloze": "Vladimir Putin said Russia would not ______ on its conditions for ending the war in Ukraine.",
       "answer": "compromise",
       "accepted": [],
       "hint_zh": "妥协",
-      "why_zh": "compromise on + 条件/原则表示在特定要求上让步。would not 后接动词原形，故用 compromise；它既可作动词也可作名词。"
+      "why_zh": "compromise on + 条件/原则表示在特定要求上让步。would not 后接动词原形，故用 compromise；它既可作动词也可作名词。 compromise on conditions 表示在条件或立场上妥协，compromise with somebody 强调与某一方达成折中，reach a compromise 则用名词。would not compromise 中 would 后接原形；在过去叙述中可能表示当时的立场或预测，不能机械理解成已经发生的让步。商务谈判可说 We cannot compromise on product safety requirements。"
     },
     {
       "id": "2026-11-13-ukraine-insisted",
@@ -1136,12 +1136,12 @@
       "expression": "insisted",
       "meaning_zh": "坚称",
       "example": "He insisted that Russia would control territories it claims to have annexed.",
-      "analysis_zh": "insist that + 从句，强调发言人坚持某个立场。这里用 insisted 与叙述时态一致；新闻中此词不代表所述内容已获独立证实。",
+      "analysis_zh": "insist that + 从句，强调发言人坚持某个立场。这里用 insisted 与叙述时态一致；新闻中此词不代表所述内容已获独立证实。 insist that + 从句用于坚持某项主张；insist on + 名词或动名词用于坚持某要求或做法。这里通过 insisted 把领土控制的说法明确归于发言人，不能据此推定主张已获得承认。比较 claim、maintain 和 insist：insist 更突出在分歧中仍坚持原立场。",
       "cloze": "He ______ that Russia would control territories it claims to have annexed.",
       "answer": "insisted",
       "accepted": [],
       "hint_zh": "坚称",
-      "why_zh": "insist that + 从句，强调发言人坚持某个立场。这里用 insisted 与叙述时态一致；新闻中此词不代表所述内容已获独立证实。"
+      "why_zh": "insist that + 从句，强调发言人坚持某个立场。这里用 insisted 与叙述时态一致；新闻中此词不代表所述内容已获独立证实。 insist that + 从句用于坚持某项主张；insist on + 名词或动名词用于坚持某要求或做法。这里通过 insisted 把领土控制的说法明确归于发言人，不能据此推定主张已获得承认。比较 claim、maintain 和 insist：insist 更突出在分歧中仍坚持原立场。"
     },
     {
       "id": "2026-11-13-ukraine-ruled",
@@ -1150,12 +1150,12 @@
       "expression": "ruled",
       "meaning_zh": "排除",
       "example": "Moscow also ruled out foreign peacekeepers in those areas.",
-      "analysis_zh": "rule out + 名词表示排除某种可能或选项。Moscow 是机构转喻，意为俄罗斯当局；过去式 ruled 对应新闻叙述时间。",
+      "analysis_zh": "rule out + 名词表示排除某种可能或选项。Moscow 是机构转喻，意为俄罗斯当局；过去式 ruled 对应新闻叙述时间。 rule out a possibility、rule out negotiations 和 rule out an option 都是排除选项的固定搭配；不能写成 rule off。与 reject 相比，rule out 更强调某方案不再进入考虑范围。Moscow 是新闻写作中以首都代指政府的转喻，阅读时须注意究竟是哪一方作出决定。",
       "cloze": "Moscow also ______ out foreign peacekeepers in those areas.",
       "answer": "ruled",
       "accepted": [],
       "hint_zh": "排除",
-      "why_zh": "rule out + 名词表示排除某种可能或选项。Moscow 是机构转喻，意为俄罗斯当局；过去式 ruled 对应新闻叙述时间。"
+      "why_zh": "rule out + 名词表示排除某种可能或选项。Moscow 是机构转喻，意为俄罗斯当局；过去式 ruled 对应新闻叙述时间。 rule out a possibility、rule out negotiations 和 rule out an option 都是排除选项的固定搭配；不能写成 rule off。与 reject 相比，rule out 更强调某方案不再进入考虑范围。Moscow 是新闻写作中以首都代指政府的转喻，阅读时须注意究竟是哪一方作出决定。"
     },
     {
       "id": "2026-11-13-cyber-accused",
@@ -1164,12 +1164,12 @@
       "expression": "accused",
       "meaning_zh": "指控",
       "example": "The FBI accused state-backed North Korean hackers of stealing cryptocurrency through fake video calls.",
-      "analysis_zh": "accuse somebody of doing something 是固定句型，表示指控某人做某事。of 后接 stealing 这一动名词；accused 属于过去式。",
+      "analysis_zh": "accuse somebody of doing something 是固定句型，表示指控某人做某事。of 后接 stealing 这一动名词；accused 属于过去式。 accuse somebody of doing something 为固定结构，介词 of 后接名词或动名词，不能接动词原形。与 charge somebody with a crime 相比，accuse 只说明存在指控，未必意味着司法机关已正式起诉。句中的 state-backed 属复合形容词，表示被指具有国家支持背景，应保留指控性质。",
       "cloze": "The FBI ______ state-backed North Korean hackers of stealing cryptocurrency through fake video calls.",
       "answer": "accused",
       "accepted": [],
       "hint_zh": "指控",
-      "why_zh": "accuse somebody of doing something 是固定句型，表示指控某人做某事。of 后接 stealing 这一动名词；accused 属于过去式。"
+      "why_zh": "accuse somebody of doing something 是固定句型，表示指控某人做某事。of 后接 stealing 这一动名词；accused 属于过去式。 accuse somebody of doing something 为固定结构，介词 of 后接名词或动名词，不能接动词原形。与 charge somebody with a crime 相比，accuse 只说明存在指控，未必意味着司法机关已正式起诉。句中的 state-backed 属复合形容词，表示被指具有国家支持背景，应保留指控性质。"
     },
     {
       "id": "2026-11-13-cyber-duped",
@@ -1178,12 +1178,12 @@
       "expression": "duped",
       "meaning_zh": "受骗",
       "example": "Investigators said hundreds of victims had been duped by the scheme.",
-      "analysis_zh": "be duped by + 人/骗局表示被欺骗，语气比 be misled 更强调上当受骗。had been duped 是过去完成时被动语态。",
+      "analysis_zh": "be duped by + 人/骗局表示被欺骗，语气比 be misled 更强调上当受骗。had been duped 是过去完成时被动语态。 dupe somebody into doing something 表示诱骗某人做某事；be duped by a scheme 是其被动结构。had been duped 由 had + been + 过去分词组成，表示相对于另一个过去参照点更早发生的受骗事件。与 mislead 相比，dupe 往往更强调受害者受骗上当，可迁移为 Customers were duped into revealing credentials。",
       "cloze": "Investigators said hundreds of victims had been ______ by the scheme.",
       "answer": "duped",
       "accepted": [],
       "hint_zh": "受骗",
-      "why_zh": "be duped by + 人/骗局表示被欺骗，语气比 be misled 更强调上当受骗。had been duped 是过去完成时被动语态。"
+      "why_zh": "be duped by + 人/骗局表示被欺骗，语气比 be misled 更强调上当受骗。had been duped 是过去完成时被动语态。 dupe somebody into doing something 表示诱骗某人做某事；be duped by a scheme 是其被动结构。had been duped 由 had + been + 过去分词组成，表示相对于另一个过去参照点更早发生的受骗事件。与 mislead 相比，dupe 往往更强调受害者受骗上当，可迁移为 Customers were duped into revealing credentials。"
     },
     {
       "id": "2026-11-13-cyber-proceeds",
@@ -1192,12 +1192,12 @@
       "expression": "proceeds",
       "meaning_zh": "收益或赃款",
       "example": "Officials alleged that stolen proceeds were helping to finance an illicit weapons programme.",
-      "analysis_zh": "proceeds 在这里作复数形式的名词，指活动或交易产生的收入，犯罪语境中可指非法所得。注意与动词 proceed（继续进行）区分。",
+      "analysis_zh": "proceeds 在这里作复数形式的名词，指活动或交易产生的收入，犯罪语境中可指非法所得。注意与动词 proceed（继续进行）区分。 proceeds from sales 或 proceeds of a transaction 指交易所得，crime proceeds / illicit proceeds 则指非法收益。作该义时 proceeds 通常用复数形式，即使所指资金作为整体来看也是如此；不要与动词 proceed with a project 混淆。alleged that 明确表明资金用途是官员提出的指称，尚需证据支持。",
       "cloze": "Officials alleged that stolen ______ were helping to finance an illicit weapons programme.",
       "answer": "proceeds",
       "accepted": [],
       "hint_zh": "收益或赃款",
-      "why_zh": "proceeds 在这里作复数形式的名词，指活动或交易产生的收入，犯罪语境中可指非法所得。注意与动词 proceed（继续进行）区分。"
+      "why_zh": "proceeds 在这里作复数形式的名词，指活动或交易产生的收入，犯罪语境中可指非法所得。注意与动词 proceed（继续进行）区分。 proceeds from sales 或 proceeds of a transaction 指交易所得，crime proceeds / illicit proceeds 则指非法收益。作该义时 proceeds 通常用复数形式，即使所指资金作为整体来看也是如此；不要与动词 proceed with a project 混淆。alleged that 明确表明资金用途是官员提出的指称，尚需证据支持。"
     },
     {
       "id": "2026-11-13-fires-engulfed",
@@ -1206,12 +1206,12 @@
       "expression": "engulfed",
       "meaning_zh": "笼罩",
       "example": "Forest fires in Indonesia engulfed parts of South-East Asia in toxic smoke.",
-      "analysis_zh": "engulf ... in smoke 表示烟雾吞没或笼罩某地，engulf 强调范围大、程度强。句中 fires 是主语，engulfed 为过去式。",
+      "analysis_zh": "engulf ... in smoke 表示烟雾吞没或笼罩某地，engulf 强调范围大、程度强。句中 fires 是主语，engulfed 为过去式。 engulf an area in smoke 表示大量烟雾吞没或笼罩一个区域，比 cover 更强烈，常用于火灾、洪水和危机报道。结构是 engulf + 地点 + in + 烟雾等介质，句中的 fires 作主语，强调火灾带来的影响范围。应与 fires engulfed buildings（大火吞噬建筑物）的直接宾语结构区分。",
       "cloze": "Forest fires in Indonesia ______ parts of South-East Asia in toxic smoke.",
       "answer": "engulfed",
       "accepted": [],
       "hint_zh": "笼罩",
-      "why_zh": "engulf ... in smoke 表示烟雾吞没或笼罩某地，engulf 强调范围大、程度强。句中 fires 是主语，engulfed 为过去式。"
+      "why_zh": "engulf ... in smoke 表示烟雾吞没或笼罩某地，engulf 强调范围大、程度强。句中 fires 是主语，engulfed 为过去式。 engulf an area in smoke 表示大量烟雾吞没或笼罩一个区域，比 cover 更强烈，常用于火灾、洪水和危机报道。结构是 engulf + 地点 + in + 烟雾等介质，句中的 fires 作主语，强调火灾带来的影响范围。应与 fires engulfed buildings（大火吞噬建筑物）的直接宾语结构区分。"
     },
     {
       "id": "2026-11-13-fires-estimated",
@@ -1220,12 +1220,12 @@
       "expression": "estimated",
       "meaning_zh": "估计",
       "example": "Climate scientists estimated that temperatures during the peak fire season were substantially higher because of human-caused warming.",
-      "analysis_zh": "estimate that + 从句用于呈现研究人员的估算结论，保留不确定性。estimated 与叙述中的过去时一致；区别于证明性的 demonstrate。",
+      "analysis_zh": "estimate that + 从句用于呈现研究人员的估算结论，保留不确定性。estimated 与叙述中的过去时一致；区别于证明性的 demonstrate。 estimate that ... 表示依据数据或模型作出估算，常与 estimated costs、estimated losses 搭配；estimate 与 calculate、measure 的证据方式不同。that 引导完整宾语从句，because of 后接名词短语 human-caused warming。报告中应保留推算性质，不能将 estimated 改写成 proved。",
       "cloze": "Climate scientists ______ that temperatures during the peak fire season were substantially higher because of human-caused warming.",
       "answer": "estimated",
       "accepted": [],
       "hint_zh": "估计",
-      "why_zh": "estimate that + 从句用于呈现研究人员的估算结论，保留不确定性。estimated 与叙述中的过去时一致；区别于证明性的 demonstrate。"
+      "why_zh": "estimate that + 从句用于呈现研究人员的估算结论，保留不确定性。estimated 与叙述中的过去时一致；区别于证明性的 demonstrate。 estimate that ... 表示依据数据或模型作出估算，常与 estimated costs、estimated losses 搭配；estimate 与 calculate、measure 的证据方式不同。that 引导完整宾语从句，because of 后接名词短语 human-caused warming。报告中应保留推算性质，不能将 estimated 改写成 proved。"
     },
     {
       "id": "2026-11-13-fires-worse",
@@ -1234,12 +1234,12 @@
       "expression": "worse",
       "meaning_zh": "更糟",
       "example": "Conditions were made worse by El Niño.",
-      "analysis_zh": "make something worse 表示使情况恶化，worse 是 bad 的比较级。were made worse 是被动结构，后接 by El Niño 说明加剧因素。",
+      "analysis_zh": "make something worse 表示使情况恶化，worse 是 bad 的比较级。were made worse 是被动结构，后接 by El Niño 说明加剧因素。 make conditions worse 是使状况恶化的结果结构，形容词 worse 作宾语补足语。被动语态 were made worse by ... 将恶化的状况置于句首，by 引出加剧因素。worsen 也可作动词，如 Conditions worsened，表达更简洁；原句强调 El Niño 对既有不利状况的进一步加剧。",
       "cloze": "Conditions were made ______ by El Niño.",
       "answer": "worse",
       "accepted": [],
       "hint_zh": "更糟",
-      "why_zh": "make something worse 表示使情况恶化，worse 是 bad 的比较级。were made worse 是被动结构，后接 by El Niño 说明加剧因素。"
+      "why_zh": "make something worse 表示使情况恶化，worse 是 bad 的比较级。were made worse 是被动结构，后接 by El Niño 说明加剧因素。 make conditions worse 是使状况恶化的结果结构，形容词 worse 作宾语补足语。被动语态 were made worse by ... 将恶化的状况置于句首，by 引出加剧因素。worsen 也可作动词，如 Conditions worsened，表达更简洁；原句强调 El Niño 对既有不利状况的进一步加剧。"
     },
     {
       "id": "2026-11-13-banking-benefited",
@@ -1248,12 +1248,12 @@
       "expression": "benefited",
       "meaning_zh": "受益",
       "example": "Japanese banks have benefited from the end of negative interest rates, which improved their lending margins.",
-      "analysis_zh": "benefit from + 事件/政策表示从某项变化中受益。have benefited 是现在完成时，强调过去的利率政策变化对当前利润率仍有影响。",
+      "analysis_zh": "benefit from + 事件/政策表示从某项变化中受益。have benefited 是现在完成时，强调过去的利率政策变化对当前利润率仍有影响。 benefit from + 政策变化或外部条件 表示受益，benefit somebody 则是及物用法，例如 The policy benefits banks。have benefited from 采用现在完成时，强调利率变化产生的影响延续至当前。lending margins 是贷款业务利润空间，通常需关注融资成本与贷款收益率之间的差额；不能仅据此断定所有银行净利润都增加。",
       "cloze": "Japanese banks have ______ from the end of negative interest rates, which improved their lending margins.",
       "answer": "benefited",
       "accepted": [],
       "hint_zh": "受益",
-      "why_zh": "benefit from + 事件/政策表示从某项变化中受益。have benefited 是现在完成时，强调过去的利率政策变化对当前利润率仍有影响。"
+      "why_zh": "benefit from + 事件/政策表示从某项变化中受益。have benefited 是现在完成时，强调过去的利率政策变化对当前利润率仍有影响。 benefit from + 政策变化或外部条件 表示受益，benefit somebody 则是及物用法，例如 The policy benefits banks。have benefited from 采用现在完成时，强调利率变化产生的影响延续至当前。lending margins 是贷款业务利润空间，通常需关注融资成本与贷款收益率之间的差额；不能仅据此断定所有银行净利润都增加。"
     },
     {
       "id": "2026-11-13-banking-eroded",
@@ -1262,12 +1262,12 @@
       "expression": "eroded",
       "meaning_zh": "侵蚀",
       "example": "Inflation has eroded the value of deposits, prompting savers to seek higher returns elsewhere.",
-      "analysis_zh": "erode the value of ... 表示逐渐侵蚀价值，常用于通胀削弱购买力。has eroded 是现在完成时，强调累积影响。",
+      "analysis_zh": "erode the value of ... 表示逐渐侵蚀价值，常用于通胀削弱购买力。has eroded 是现在完成时，强调累积影响。 erode purchasing power、erode savings 和 erode the value of deposits 都强调价值随时间逐渐减弱，与突然暴跌的 plunge 不同。has eroded 是现在完成时，强调通胀的累积影响。prompting savers to seek ... 为现在分词短语，交代由前述变化引出的结果；prompt somebody to do something 是可迁移的因果表达。",
       "cloze": "Inflation has ______ the value of deposits, prompting savers to seek higher returns elsewhere.",
       "answer": "eroded",
       "accepted": [],
       "hint_zh": "侵蚀",
-      "why_zh": "erode the value of ... 表示逐渐侵蚀价值，常用于通胀削弱购买力。has eroded 是现在完成时，强调累积影响。"
+      "why_zh": "erode the value of ... 表示逐渐侵蚀价值，常用于通胀削弱购买力。has eroded 是现在完成时，强调累积影响。 erode purchasing power、erode savings 和 erode the value of deposits 都强调价值随时间逐渐减弱，与突然暴跌的 plunge 不同。has eroded 是现在完成时，强调通胀的累积影响。prompting savers to seek ... 为现在分词短语，交代由前述变化引出的结果；prompt somebody to do something 是可迁移的因果表达。"
     },
     {
       "id": "2026-11-13-banking-expanding",
@@ -1276,12 +1276,12 @@
       "expression": "expanding",
       "meaning_zh": "拓展",
       "example": "Banks are expanding into brokerage and wealth-management services to retain customers.",
-      "analysis_zh": "expand into + 业务领域表示进入或拓展至新领域。are expanding 是现在进行时，描述银行正在推进的业务转型。",
+      "analysis_zh": "expand into + 业务领域表示进入或拓展至新领域。are expanding 是现在进行时，描述银行正在推进的业务转型。 expand into + 新市场或业务领域，常见于 expand into wealth management / overseas markets；expand capacity 则直接带宾语，表示扩大产能。are expanding 表示扩张行动正在进行，to retain customers 是目的状语，说明银行希望留住客户。项目汇报可写 The company is expanding into a new market to diversify revenue。",
       "cloze": "Banks are ______ into brokerage and wealth-management services to retain customers.",
       "answer": "expanding",
       "accepted": [],
       "hint_zh": "拓展",
-      "why_zh": "expand into + 业务领域表示进入或拓展至新领域。are expanding 是现在进行时，描述银行正在推进的业务转型。"
+      "why_zh": "expand into + 业务领域表示进入或拓展至新领域。are expanding 是现在进行时，描述银行正在推进的业务转型。 expand into + 新市场或业务领域，常见于 expand into wealth management / overseas markets；expand capacity 则直接带宾语，表示扩大产能。are expanding 表示扩张行动正在进行，to retain customers 是目的状语，说明银行希望留住客户。项目汇报可写 The company is expanding into a new market to diversify revenue。"
     },
     {
       "id": "2026-11-14-aviation-grounded",
