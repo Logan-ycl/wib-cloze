@@ -9,6 +9,7 @@ const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;'
 const norm=value=>String(value||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 const addDays=(str,n)=>{const date=new Date(str+'T12:00:00Z');date.setUTCDate(date.getUTCDate()+n);return date.toISOString().slice(0,10);};
+let visibleHintClicks={};
 let edition=null,items=[],passages=[],progress={records:{},read:{}},session=[],idx=0,feedback=null,hints={},answers={},tab='quiz';
 let work={day:today(),session:[],idx:0,entries:{}};
 if(!GUEST){
@@ -36,6 +37,7 @@ const saveWork=()=>{
  try{localStorage.setItem(WORK_KEY,JSON.stringify(work));window.dispatchEvent(new Event('brieflab:local-write'))}catch{notice('本次练习进度无法保存，请检查浏览器存储权限。');}
 };
 function activatePassage(id){
+ visibleHintClicks={};
  const k=work.day+'|'+id;
  const current=work.entries[k]||{};
  const entry={answers:current.answers||{},hints:current.hints||{},feedback:current.feedback||{},updatedAt:current.updatedAt||''};
@@ -106,8 +108,8 @@ function renderPassage(p){
     const cls=result.correct?'is-correct':'is-wrong';
     return '<span class="completed-answer '+cls+'"><sup>'+n+'</sup> '+E(item.answer)+'</span>';
    }
-   const revealed=Math.min(hints[id]||0,item.answer.length);
-   const hintText=revealed?'提示：'+item.answer.slice(0,revealed):'';
+   // Never auto-reveal saved hints before the user explicitly requests one.
+   const hintText='';
    return '<span class="answer-group" data-group="'+E(id)+'"><sup class="blank-tag">'+n+'</sup>'
     +'<input class="single-word-slot" data-item="'+E(id)+'" value="'+E(answers[id]||'')+'" type="text" aria-label="第'+n+'空，只填写一个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">'
     +'<button type="button" class="gap-action gap-hint" data-item="'+E(id)+'">提示</button>'
@@ -132,10 +134,14 @@ function giveHint(id){
  if(feedback?.[id])return;
  const item=itemById(id);
  if(!item)return;
- hints[id]=Math.min(item.answer.length,(hints[id]||0)+1);
+ // Persist historical hint usage for scoring while keeping display state local.
+ hints[id]=(hints[id]||0)+1;
+ visibleHintClicks[id]=(visibleHintClicks[id]||0)+1;
  saveWork();
  const el=$('quiz').querySelector('[data-hint="'+id+'"]');
- if(el)el.textContent='提示：'+item.answer.slice(0,hints[id])+(hints[id]<item.answer.length?'…':'');
+ const maxVisible=Math.max(0,item.answer.length-1);
+ const revealed=Math.min(visibleHintClicks[id],maxVisible);
+ if(el)el.textContent=revealed?'提示：'+item.answer.slice(0,revealed)+'…':'此单词无法提供字母提示';
 }
 function showAnswers(p){
  const ids=idsInPassage(p),checked=ids.filter(id=>feedback?.[id]);
