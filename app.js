@@ -104,6 +104,10 @@ function renderPassage(p){
    if(!item)return '<strong>（题目数据缺失）</strong>';
    n++;
    const result=feedback?.[id];
+   // Keep the full news passage as context, but only quiz expressions due today.
+   if(!GUEST&&record(id).attempts&&!isDue(item)&&!result){
+    return '<span class="reviewed-context">'+E(item.answer)+'</span>';
+   }
    if(result){
     const cls=result.correct?'is-correct':'is-wrong';
     return '<span class="completed-answer '+cls+'"><sup>'+n+'</sup> '+E(item.answer)+'</span>';
@@ -222,7 +226,8 @@ function renderQuiz(){
  if(!p){idx++;renderQuiz();return;}
  activatePassage(p.id);
  const blanks=idsInPassage(p);
- el.innerHTML='<div class="box"><div class="row"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+blanks.length+' 处单词挖空</span></div>'
+ const dueBlanks=GUEST?blanks:blanks.filter(id=>!record(id).attempts||isDue(itemById(id)));
+ el.innerHTML='<div class="box"><div class="row"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+dueBlanks.length+' / '+blanks.length+' 处到期填空</span></div>'
   +'<h3 class="snippet-title">'+E(p.title)+'</h3>'
   +'<div class="passage-wrap">'+renderPassage(p)+'</div>'
   +'<p class="word-count">每空填写一个单词，点击下方统一检查。未填写的空不会公布答案，也不会计错。</p>'
@@ -431,7 +436,17 @@ window.addEventListener('brieflab:cloud-updated',()=>{
   const p=JSON.parse(localStorage.getItem(KEY)||'{}');
   const w=JSON.parse(localStorage.getItem(WORK_KEY)||'{}');
   progress={records:p.records||{},read:p.read||{}};
-  if(w.entries&&Array.isArray(w.session)){work=w;session=work.session.filter(id=>passageById(id));idx=Math.max(0,Math.min(Number(work.idx)||0,session.length));}
+  if(w.entries&&Array.isArray(w.session)){
+   work=w;
+   if(work.day!==today()){
+    work.day=today();
+    work.session=dueGroups();
+    work.idx=0;
+    saveWork();
+   }
+   session=work.session.filter(id=>passageById(id));
+   idx=Math.max(0,Math.min(Number(work.idx)||0,session.length));
+  }
   prepareNotes();renderPersonalNotes();labelDue();nav(tab);
  }catch(error){notice('云端数据已保存，但本页刷新学习记录失败：'+error.message);}
 });
