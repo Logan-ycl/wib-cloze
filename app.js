@@ -123,6 +123,7 @@ function renderPassage(p){
     +'<input class="single-word-slot" data-item="'+E(id)+'" value="'+E(answers[id]||'')+'" type="text" aria-label="第'+n+'空，只填写一个单词" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">'
     +'<button type="button" class="gap-action gap-hint" data-item="'+E(id)+'">提示</button>'
     +'<small class="letter-reveal" data-hint="'+E(id)+'" aria-live="polite">'+E(hintText)+'</small>'
+    +'<small class="hint-limit-message" data-hint-limit="'+E(id)+'" role="status" aria-live="polite"></small>'
     +'<small class="gap-message" data-error="'+E(id)+'" role="status"></small></span>';
   }).join('');
   return '<p class="passage-text">'+content+'</p>';
@@ -149,11 +150,22 @@ function giveHint(id){
  const before=Math.min(visibleHintClicks[id]||0,maxVisible);
  const revealed=Math.min(before+1,maxVisible);
  const el=$('quiz').querySelector('[data-hint="'+id+'"]');
+ const button=$('quiz').querySelector('.gap-hint[data-item="'+id+'"]');
+ const limitMessage=$('quiz').querySelector('[data-hint-limit="'+id+'"]');
  if(revealed>before){
   visibleHintClicks[id]=revealed;
   // Retain prior usage for historical answers; never count an unproductive click.
   hints[id]=Math.max(Math.min(Number(hints[id])||0,maxVisible),revealed);
   saveWork();
+  if(limitMessage)limitMessage.textContent='';
+ }else{
+  // A small, repeatable shake acknowledges the cap without affecting scoring.
+  if(button){
+   button.classList.remove('hint-at-limit');
+   void button.offsetWidth;
+   button.classList.add('hint-at-limit');
+  }
+  if(limitMessage)limitMessage.textContent='已达提示上限';
  }
  if(el)el.textContent=revealed?'提示：'+item.answer.slice(0,revealed)+'…':'此单词无法提供字母提示';
 }
