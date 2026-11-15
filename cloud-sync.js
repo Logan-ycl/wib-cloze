@@ -60,7 +60,10 @@ function merge(a,b){
   const x=wa.notes?.[id],y=wb.notes?.[id];
   notes[id]=clone(!x?y:!y?x:String(x.updatedAt||'')>=String(y.updatedAt||'')?x:y);
  }
- const preferred=wa.day&&wa.session?.length?wa:wb;
+ // Newer learning day wins, even when its fresh session has zero items.
+ const preferred=String(wa.day||'')>String(wb.day||'')?wa:
+  String(wb.day||'')>String(wa.day||'')?wb:
+  wa.session?.length?wa:wb;
  return {v:1,progress:{records,read:{...(pb.read||{}),...(pa.read||{})}},
   work:{day:preferred.day||wa.day||wb.day||'',session:preferred.session||[],
    idx:Number(preferred.idx)||0,entries,drafts,notes}};
