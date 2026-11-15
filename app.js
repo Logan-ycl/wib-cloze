@@ -11,7 +11,7 @@ const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:
 const addDays=(str,n)=>{const date=new Date(str+'T12:00:00Z');date.setUTCDate(date.getUTCDate()+n);return date.toISOString().slice(0,10);};
 let visibleHintClicks={};
 let edition=null,items=[],passages=[],progress={records:{},read:{}},session=[],idx=0,feedback=null,hints={},answers={},tab='quiz';
-let work={day:today(),session:[],idx:0,entries:{}};
+let work={day:today(),session:[],idx:0,entries:{},drafts:{},notes:{}};
 if(!GUEST){
  try{
   const saved=JSON.parse(localStorage.getItem(WORK_KEY)||'null');
@@ -303,6 +303,69 @@ function startForGroups(groupIds){
  for(const id of session)delete work.entries[today()+'|'+id];
  work.session=[...session];work.idx=0;saveWork();nav('quiz');
 }
+
+/* Personal learning notes. Dates use Singapore calendar; old drafts remain archived. */
+function prepareNotes(){
+ work.drafts=work.drafts&&typeof work.drafts==='object'?work.drafts:{};
+ work.notes=work.notes&&typeof work.notes==='object'?work.notes:{};
+}
+function noteElements(){
+ return {draft:$('daily-draft'),saved:$('draft-save-status'),list:$('expression-list'),entry:$('expression-new')};
+}
+function renderPersonalNotes(){
+ if(GUEST)return;
+ prepareNotes();
+ const el=noteElements(),day=today();
+ const current=work.drafts[day]||{text:''};
+ if(el.draft&&document.activeElement!==el.draft)el.draft.value=current.text||'';
+ const active=Object.entries(work.notes).filter(([,note])=>note&&!note.deleted)
+  .sort((a,b)=>String(b[1].createdAt||b[1].updatedAt||'').localeCompare(String(a[1].createdAt||a[1].updatedAt||'')));
+ if(el.list){
+  el.list.innerHTML=active.length?active.map(([id,note])=>
+   '<div class="expression-entry" data-note="'+E(id)+'"><textarea class="expression-edit" data-note-edit="'+E(id)+'" aria-label="编辑积累的表达" rows="2">'+E(note.text||'')+'</textarea>'+
+   '<button type="button" class="reset-one" data-note-delete="'+E(id)+'">删除</button></div>').join('')
+   :'<p class="muted">暂无长期笔记。写下值得反复使用的表达，之后每天都能看到。</p>';
+  el.list.querySelectorAll('[data-note-edit]').forEach(field=>field.addEventListener('input',()=>{
+   const id=field.dataset.noteEdit,existing=work.notes[id];
+   if(!existing||existing.deleted)return;
+   work.notes[id]={...existing,text:field.value,updatedAt:new Date().toISOString()};
+   saveWork();
+  }));
+  el.list.querySelectorAll('[data-note-delete]').forEach(button=>button.onclick=()=>{
+   const id=button.dataset.noteDelete,n=work.notes[id];
+   if(!n||!confirm('确定删除这条长期笔记吗？'))return;
+   work.notes[id]={...n,deleted:true,updatedAt:new Date().toISOString()};
+   saveWork();renderPersonalNotes();
+  });
+ }
+}
+function initPersonalNotes(){
+ if(GUEST)return;
+ prepareNotes();
+ const el=noteElements();
+ const heading=$('draft-day');
+ if(heading)heading.textContent='新加坡时间 '+today()+' · 每天自动启用新草稿';
+ if(el.draft){
+  el.draft.addEventListener('input',()=>{
+   const day=today();
+   work.drafts[day]={text:el.draft.value,updatedAt:new Date().toISOString()};
+   saveWork();
+   if(el.saved)el.saved.textContent='已自动保存';
+  });
+ }
+ const add=$('expression-add');
+ if(add)add.onclick=()=>{
+  const text=el.entry?.value.trim();
+  if(!text)return;
+  const id=crypto.randomUUID(),stamp=new Date().toISOString();
+  work.notes[id]={text,createdAt:stamp,updatedAt:stamp};
+  saveWork();
+  el.entry.value='';
+  renderPersonalNotes();
+ };
+ renderPersonalNotes();
+}
+
 function renderMistakes(){
  if(GUEST){$('mistakes').innerHTML='<div class="box">访客模式不保留错题。</div>';return;}
  const usable=new Set(passages.flatMap(idsInPassage));
@@ -364,7 +427,7 @@ window.addEventListener('brieflab:cloud-updated',()=>{
   const w=JSON.parse(localStorage.getItem(WORK_KEY)||'{}');
   progress={records:p.records||{},read:p.read||{}};
   if(w.entries&&Array.isArray(w.session)){work=w;session=work.session.filter(id=>passageById(id));idx=Math.max(0,Math.min(Number(work.idx)||0,session.length));}
-  labelDue();nav(tab);
+  prepareNotes();renderPersonalNotes();labelDue();nav(tab);
  }catch(error){notice('云端数据已保存，但本页刷新学习记录失败：'+error.message);}
 });
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>nav(b.dataset.tab));
@@ -416,8 +479,9 @@ $('import').onchange=async e=>{
   if(obj.app!=='BriefLab'||!obj.progress?.records)throw Error('文件格式不正确');
   if(!confirm('导入将覆盖此浏览器现有的学习记录，继续吗？'))return;
   progress={records:obj.progress.records,read:obj.progress.read||{}};
-  save();work={day:today(),session:[],idx:0,entries:{}};session=dueGroups();idx=0;work.session=[...session];saveWork();labelDue();nav('stats');
+  save();work={...work,day:today(),session:[],idx:0,entries:{}};session=dueGroups();idx=0;work.session=[...session];saveWork();labelDue();nav('stats');
  }catch(err){notice('导入失败：'+err.message);}
 };
+initPersonalNotes();
 load();
 })();
