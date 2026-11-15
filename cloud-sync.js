@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const GUEST=new URLSearchParams(location.search).get('guest')==='1'||location.hash==='#guest';
+const GUEST=new URLSearchParams(location.search).get('guest')==='1'||location.hash!=='#mine';
 const STORAGE='brieflab-progress-v1', WORK='brieflab-working-v1', TOKEN='brieflab-cloud-key-v1';
 const API=String(window.BRIEFLAB_CLOUD_API||'').replace(/\/$/,'');
 const panel=document.getElementById('cloud-backup');
