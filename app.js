@@ -345,6 +345,18 @@ const NOTEBOOK_ID='brieflab-continuous-notebook';
 function noteElements(){
  return {draft:$('daily-draft'),saved:$('draft-save-status'),list:$('expression-list'),entry:$('expression-new'),notebookStatus:$('expression-save-status')};
 }
+function expandNotebook(field){
+ if(!field||!field.getClientRects().length)return;
+ const scrollY=window.scrollY;
+ field.style.height='auto';
+ field.style.height=(field.scrollHeight+2)+'px';
+ if(window.scrollY!==scrollY)window.scrollTo(window.scrollX,scrollY);
+}
+function resizeNotebooks(){
+ document.querySelectorAll('#expression-new,.expression-edit').forEach(expandNotebook);
+}
+window.addEventListener('resize',resizeNotebooks);
+if(document.fonts)document.fonts.ready.then(resizeNotebooks);
 function renderPersonalNotes(){
  if(GUEST)return;
  prepareNotes();
@@ -360,6 +372,7 @@ function renderPersonalNotes(){
    '<div class="expression-entry" data-note="'+E(id)+'"><textarea class="expression-edit" data-note-edit="'+E(id)+'" aria-label="编辑积累的表达" rows="2">'+E(note.text||'')+'</textarea>'+
    '<button type="button" class="reset-one" data-note-delete="'+E(id)+'">删除</button></div>').join('');
   el.list.querySelectorAll('[data-note-edit]').forEach(field=>field.addEventListener('input',()=>{
+   expandNotebook(field);
    const id=field.dataset.noteEdit,existing=work.notes[id];
    if(!existing||existing.deleted)return;
    work.notes[id]={...existing,text:field.value,updatedAt:new Date().toISOString()};
@@ -372,6 +385,7 @@ function renderPersonalNotes(){
    saveWork();renderPersonalNotes();
   });
  }
+ resizeNotebooks();
 }
 function initPersonalNotes(){
  if(GUEST)return;
@@ -389,6 +403,7 @@ function initPersonalNotes(){
  }
  if(el.entry){
   el.entry.addEventListener('input',()=>{
+   expandNotebook(el.entry);
    const existing=work.notes[NOTEBOOK_ID]||{};
    const now=new Date().toISOString();
    work.notes[NOTEBOOK_ID]={...existing,text:el.entry.value,deleted:false,createdAt:existing.createdAt||now,updatedAt:now};
