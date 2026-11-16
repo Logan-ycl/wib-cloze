@@ -243,6 +243,33 @@ header{background:#142c40;border-bottom:1px solid #294052;color:#fff}
 @media(max-width:1020px){.content-layout{grid-template-columns:minmax(0,1fr)}.notes-sidebar{position:static;max-height:none;overflow:visible;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.notes-sidebar .study-notes{margin:0}}
 @media(max-width:650px){.wrap{width:calc(100% - 30px)}.top{height:62px}.brand{font-size:19px}.brand-mark{width:34px;height:34px}header .nav{background:rgba(20,44,64,.98);border-top-color:#294052}.nav button{color:#e1e6e9}.nav button.active{background:#f1e3c8;color:#142c40}.hero{padding:22px 0 19px}.hero h1{font-size:33px}.content-layout{display:block;padding-top:18px}.head{display:block}.head h2{margin-bottom:4px}.panel{padding:0 0 18px}.box{padding:20px 16px;margin:0 0 14px}.passage-text{font-size:19px;line-height:1.95}.notes-sidebar{display:block;padding:0 0 calc(90px + env(safe-area-inset-bottom))}.notes-sidebar .study-notes{margin:0 0 14px;padding:18px 16px}.snippet-title{font-size:23px}}
 
+
+/* Compact, independently expandable review results */
+.content-layout{align-items:start}
+.primary-content{min-width:0}
+#panel-quiz .box{height:auto;min-height:0}
+.review-panel{padding:12px 14px;background:#fcfaf6;border:1px solid #e6dccc;border-radius:11px;margin-top:18px}
+.review-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.review-panel .review-heading h3{margin:0;font-size:14px;color:#142c40}
+.review-toggle{border:1px solid #d9cbb9;background:#fffefa;color:#142c40;border-radius:7px;padding:7px 11px;font-size:12px;font-weight:650}
+.review-panel details.answer-feedback{display:block;padding:0;margin:7px 0 0;border:1px solid #e9e0d5;border-radius:9px;background:#fffefa;overflow:hidden}
+.review-panel details.answer-feedback.correct{border-color:#d6e7d8;background:#f8fcf7}
+.review-panel details.answer-feedback.wrong{border-color:#ead5cb;background:#fffaf7}
+.review-panel details.answer-feedback.assisted{background:#fbf9f2}
+.review-panel details.answer-feedback summary{list-style:none;display:flex;align-items:center;gap:12px;padding:11px 13px;cursor:pointer;font-size:13px}
+.review-panel details.answer-feedback summary::-webkit-details-marker{display:none}
+.review-index{display:inline-grid;place-items:center;width:23px;height:23px;flex:none;border-radius:50%;background:#e9e2d7;color:#243a49;font-size:12px;font-weight:700}
+.review-word{font:700 16px Georgia,"Times New Roman",serif;color:#142c40}
+.review-status{margin-left:auto;font-size:12px;color:#587361}
+.wrong .review-status{color:#a4543d}
+.review-chevron{font-size:20px;line-height:1;color:#8a8176;transition:transform .15s}
+details[open] .review-chevron{transform:rotate(180deg)}
+.review-detail{border-top:1px solid #e9e0d5;padding:12px 14px 15px;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+.review-comparison{display:flex;flex-wrap:wrap;gap:6px 22px}
+.review-detail p{margin:9px 0 0;color:#48515a}
+.review-detail p strong{color:#142c40}
+@media(max-width:650px){.review-panel{padding:10px}.review-panel details.answer-feedback summary{padding:11px 9px;gap:8px}.review-word{font-size:15px}.review-heading{align-items:flex-start}.review-detail{padding:11px}}
+
 </style>
 </head>
 <body>
@@ -322,7 +349,7 @@ header{background:#142c40;border-bottom:1px solid #294052;color:#fff}
  </div>
 </main>
 
-<script src="./app.js?v=20261115-hint-shake"></script>
+<script src="./app.js?v=20261116-review-collapse"></script>
 <script src="./cloud-config.js?v=1"></script>
 <script src="./cloud-sync.js?v=20261115-due-filter"></script>
 </body>
