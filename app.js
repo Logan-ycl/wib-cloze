@@ -81,6 +81,16 @@ function dueGroups(){
  if(GUEST)return passages.filter(p=>p.date===edition?.date).map(p=>p.id);
  return orderedGroups(items.filter(isDue).map(x=>x.id));
 }
+function refreshPracticeQueue(keepChecked=false){
+ const old=[...work.session],position=Math.max(0,Number(work.idx)||0);
+ const due=dueGroups(),dueSet=new Set(due);
+ const retained=old.filter(id=>dueSet.has(id)||(keepChecked&&passageById(id)&&
+  Object.keys(work.entries[today()+'|'+id]?.feedback||{}).length>0));
+ session=[...new Set([...retained,...due])];
+ const next=old.slice(position).find(id=>session.includes(id));
+ idx=next?session.indexOf(next):0;
+ work.session=[...session];work.idx=idx;
+}
 function labelDue(){
  const count=dueGroups().length;
  $('due-count').textContent=count?'('+count+'组)':'';
@@ -250,6 +260,11 @@ function renderQuiz(){
  }
  const p=passageById(session[idx]);
  if(!p){idx++;renderQuiz();return;}
+ if(!GUEST&&!idsInPassage(p).some(id=>isDue(itemById(id)))&&
+    !Object.keys(work.entries[today()+'|'+p.id]?.feedback||{}).length){
+  session.splice(idx,1);work.session=[...session];work.idx=idx;saveWork();
+  renderQuiz();return;
+ }
  activatePassage(p.id);
  const blanks=idsInPassage(p);
  const dueBlanks=GUEST?blanks:blanks.filter(id=>!record(id).attempts||isDue(itemById(id)));
@@ -452,10 +467,7 @@ async function load(){
   const ready=passages.filter(p=>{ const ids=idsInPassage(p); return ids.length>=3&&new Set(ids).size===ids.length&&ids.every(id=>{const item=itemById(id);return item&&/^[A-Za-z]+$/.test(item.answer);});});
   if(ready.length!==passages.length||!ready.length)throw Error('题库规则错误：每篇至少3个不同的单词空');
   passages=ready;
-  const retained=work.session.filter(id=>passageById(id));
-  session=retained.length?retained:dueGroups();
-  idx=retained.length?Math.max(0,Math.min(Number(work.idx)||0,session.length)):0;
-  work.session=[...session];work.idx=idx;saveWork();
+  refreshPracticeQueue();saveWork();
   $('notice').hidden=true;labelDue();nav(tab);offerScreenshotRecovery();
  }catch(err){notice('课程加载失败：'+err.message+'。请刷新页面后重试。');}
 }
@@ -486,8 +498,7 @@ window.addEventListener('brieflab:cloud-updated',()=>{
     work.idx=0;
     saveWork();
    }
-   session=work.session.filter(id=>passageById(id));
-   idx=Math.max(0,Math.min(Number(work.idx)||0,session.length));
+   refreshPracticeQueue(true);
   }
   prepareNotes();renderPersonalNotes();labelDue();nav(tab);
  }catch(error){notice('云端数据已保存，但本页刷新学习记录失败：'+error.message);}
