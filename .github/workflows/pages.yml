@@ -10,6 +10,7 @@ on:
       - scripts/validate_cloze.py
       - content/catalog.json
       - manifest.webmanifest
+      - manifest.mine.webmanifest
       - favicon.svg
       - icons/**
       - .github/workflows/pages.yml
@@ -34,13 +35,15 @@ jobs:
       - name: Prepare static website
         run: |
           mkdir -p _site/content _site/icons
-          cp index.html app.js cloud-sync.js cloud-config.js manifest.webmanifest favicon.svg _site/
+          cp index.html app.js cloud-sync.js cloud-config.js manifest.webmanifest manifest.mine.webmanifest favicon.svg _site/
           cp icons/icon-192.png icons/icon-512.png _site/icons/
           cp -R content/. _site/content/
           touch _site/.nojekyll
       - name: Verify installable app assets in publish bundle
         run: |
           python3 -m json.tool _site/manifest.webmanifest >/dev/null
+          python3 -m json.tool _site/manifest.mine.webmanifest >/dev/null
+          grep -q '\"start_url\": \"./#mine\"' _site/manifest.mine.webmanifest
           test -s _site/favicon.svg
           test -s _site/icons/icon-192.png
           test -s _site/icons/icon-512.png
@@ -58,7 +61,8 @@ jobs:
         run: |
           SITE="${{ steps.deployment.outputs.page_url }}"
           echo "Checking deployed site: $SITE"
-          for path in manifest.webmanifest favicon.svg icons/icon-192.png icons/icon-512.png; do
+          for path in manifest.webmanifest manifest.mine.webmanifest favicon.svg icons/icon-192.png icons/icon-512.png; do
             curl --fail --silent --show-error --location --retry 8 --retry-all-errors --retry-delay 5 "${SITE%/}/$path" --output /dev/null
             echo "OK: $path"
           done
+          curl --fail --silent --show-error --location "$SITE" | grep -q 'manifest.mine.webmanifest'
