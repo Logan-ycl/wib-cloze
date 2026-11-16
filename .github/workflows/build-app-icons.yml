@@ -33,5 +33,6 @@ jobs:
           git add icons/icon-192.png icons/icon-512.png
           if ! git diff --cached --quiet; then
             git commit -m "Generate installable PNG lighthouse icons"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
