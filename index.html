@@ -9,7 +9,16 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>BriefLab · 每日英文填空</title>
-<link rel="manifest" href="./manifest.webmanifest?v=20261116-3">
+<link rel="manifest" id="brieflab-manifest" href="./manifest.webmanifest?v=20261116-3">
+<script>
+(function(){
+  // Select the personal PWA only when the explicitly private #mine entry is used.
+  // Public visitors continue to install the stateless guest app.
+  if (window.location.hash === '#mine' && new URLSearchParams(window.location.search).get('guest') !== '1') {
+    document.getElementById('brieflab-manifest').href = './manifest.mine.webmanifest?v=20261116-personal';
+  }
+})();
+</script>
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=20261116-3">
 <link rel="shortcut icon" type="image/png" href="./icons/icon-192.png?v=20261116-3">
 <link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192.png?v=20261116-3">
