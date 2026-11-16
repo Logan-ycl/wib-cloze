@@ -8,14 +8,14 @@
 <meta name="apple-mobile-web-app-title" content="BriefLab">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<title>BriefLab · 每日英文填空</title>
-<link rel="manifest" id="brieflab-manifest" href="./manifest.webmanifest?v=20261116-3">
+<title>BriefLab</title>
+<link rel="manifest" id="brieflab-manifest" href="./manifest.webmanifest?v=20261116-clean-title">
 <script>
 (function(){
   // Select the personal PWA only when the explicitly private #mine entry is used.
   // Public visitors continue to install the stateless guest app.
   if (window.location.hash === '#mine' && new URLSearchParams(window.location.search).get('guest') !== '1') {
-    document.getElementById('brieflab-manifest').href = './manifest.mine.webmanifest?v=20261116-personal';
+    document.getElementById('brieflab-manifest').href = './manifest.mine.webmanifest?v=20261116-clean-title';
   }
 })();
 </script>
@@ -283,21 +283,34 @@ header{background:#142c40;border-bottom:1px solid #294052;color:#fff}
 .review-detail p strong{color:#142c40}
 @media(max-width:650px){.review-panel{padding:10px}.review-panel .answer-feedback .review-summary{padding:11px 9px;gap:8px}.review-word{font-size:15px}.review-heading{align-items:flex-start}.review-detail{padding:11px}}
 
+
+/* Navigation shares the headline area; notebook grows with its contents. */
+.hero{padding-right:320px;min-height:150px}
+.hero>.nav{position:absolute;right:0;top:29px}
+.hero>.nav button{color:var(--ink)}
+.hero>.nav button:hover{background:#eee5d7;color:var(--ink)}
+.hero>.nav button.active{background:#f1e3c8}
+.notes-sidebar{position:static;max-height:none;overflow:visible}
+#expression-new{min-height:560px;max-height:none;overflow-y:hidden;resize:none}
+.expression-edit{overflow-y:hidden;resize:none}
+@media(max-width:1020px){.notes-sidebar{display:block}.notes-sidebar .study-notes{margin-bottom:14px}}
+@media(max-width:650px){
+ .hero{padding-right:0;min-height:0}
+ .hero>.nav{position:static;justify-content:flex-start;margin:0 0 20px;gap:8px}
+ .hero>.nav button{padding:10px 16px}
+ .notes-sidebar{padding-bottom:24px}
+ #expression-new{min-height:440px}
+}
 </style>
 </head>
 <body>
-<header>
- <div class="wrap top">
-  <div class="brand"><img class="brand-mark" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2225%22%20fill%3D%22%23102638%22%2F%3E%3Cpath%20d%3D%22M16%20116h96l-16-12H32z%22%20fill%3D%22%23f4dfb2%22%2F%3E%3Cpath%20d%3D%22M46%20105%2052%2048h24l6%2057z%22%20fill%3D%22%23f4dfb2%22%2F%3E%3Cpath%20d%3D%22M58%2082h12v23H58zM61%2060h6v11h-6z%22%20fill%3D%22%23102638%22%2F%3E%3Cpath%20d%3D%22M46%2047h36v6H46zM51%2040h26l-5-8H56zM59%2031V19h10v12zM56%2018h16l-8-9z%22%20fill%3D%22%23f4dfb2%22%2F%3E%3Cpath%20d%3D%22M82%2033%20121%2018v32L82%2043z%22%20fill%3D%22%23f5dca7%22%2F%3E%3Cpath%20d%3D%22M48%2039h32v5H48z%22%20fill%3D%22%23f4dfb2%22%2F%3E%3C%2Fsvg%3E" alt="BriefLab 灯塔标识" width="36" height="36"> <span>BRIEF<b>LAB.</b></span></div>
+<main class="wrap">
+ <section class="hero">
   <nav class="nav" aria-label="主要导航">
    <button class="active" data-tab="quiz">填空 <span id="due-count"></span></button>
    <button data-tab="mistakes">错题</button>
    <button data-tab="stats">记录</button>
   </nav>
- </div>
-</header>
-<main class="wrap">
- <section class="hero">
   <h1>The World in Brief.</h1>
   <p class="sub">读新闻，练表达，记住真正会写的英语。</p>
   <div class="meta" id="today"></div>
@@ -351,9 +364,9 @@ header{background:#142c40;border-bottom:1px solid #294052;color:#fff}
   </section>
   <section class="box study-notes" id="expression-notebook" aria-label="长期表达笔记">
    <h3>表达积累</h3>
-   <p class="muted notes-help">输入即自动保存。每天显示全部内容，可随时编辑。</p>
+   <p class="muted notes-help">输入即自动保存。内容随输入自动展开，可持续追加和编辑。</p>
    <div class="note-compose">
-    <textarea id="expression-new" rows="7" placeholder="在此持续积累表达，每行记录一条。例如：&#10;deliver on a promise = 兑现承诺"></textarea>
+    <textarea id="expression-new" rows="22" placeholder="在此持续积累表达，每行记录一条。例如：&#10;deliver on a promise = 兑现承诺"></textarea>
     <p id="expression-save-status" class="muted" role="status">自动保存</p>
    </div>
    <div id="expression-list"></div>
@@ -362,7 +375,7 @@ header{background:#142c40;border-bottom:1px solid #294052;color:#fff}
  </div>
 </main>
 
-<script src="./app.js?v=20261116-review-collapse"></script>
+<script src="./app.js?v=20261116-growing-notebook"></script>
 <script src="./cloud-config.js?v=1"></script>
 <script src="./cloud-sync.js?v=20261115-due-filter"></script>
 </body>
