@@ -175,41 +175,19 @@ function showAnswers(p){
  const independentlyCorrect=checked.filter(id=>feedback[id].correct&&feedback[id].hintCount<=2).length;
  return '<section class="feedback review-panel" aria-label="答题结果">'
   +'<div class="review-heading"><h3>已检查 '+checked.length+' / '+ids.length+' 空 · 计入正确 '+independentlyCorrect+' 处</h3>'
-  +'<button type="button" class="review-toggle" id="toggle-reviews">展开全部解析</button></div>'
+  +'</div>'
   +checked.map(id=>{
    const x=itemById(id),v=feedback[id],i=ids.indexOf(id)+1;
    const heading=!v.correct?'需要复习':v.hintCount<=2?'正确':'提示后答对，明天复习';
    const status=!v.correct?'wrong':v.hintCount<=2?'correct':'assisted';
-   const expanded=expandedReviews.has(id)?' open':'';
-   return '<details class="answer-feedback '+status+'" data-review-id="'+E(id)+'"'+expanded+'>'
-    +'<summary><span class="review-index">'+i+'</span><span class="review-word">'+E(x.answer)+'</span><span class="review-status">'+heading+'</span><span class="review-chevron" aria-hidden="true">⌄</span></summary>'
+   return '<div class="answer-feedback '+status+'" data-review-id="'+E(id)+'">'
+    +'<div class="review-summary"><span class="review-index">'+i+'</span><span class="review-word">'+E(x.answer)+'</span><span class="review-status">'+heading+'</span></div>'
     +'<div class="review-detail"><div class="review-comparison"><span>你的填写：<b>'+E(v.answer)+'</b></span><span>目标答案：<strong>'+E(x.answer)+'</strong></span></div>'
     +(v.hintCount>=3?'<div class="muted">使用了 '+v.hintCount+' 次字母提示，明天再练</div>':'')
-    +'<p><strong>精读解析</strong> '+E(x.analysis_zh||x.why_zh||x.meaning_zh||'暂无解析')+'</p></div></details>';
+    +'<p><strong>精读解析</strong> '+E(x.analysis_zh||x.why_zh||x.meaning_zh||'暂无解析')+'</p></div></div>';
   }).join('')+'</section>';
 }
-const expandedReviews=new Set();
-function attachReviewControls(){
- const root=$('review-results');
- if(!root)return;
- root.querySelectorAll('details[data-review-id]').forEach(el=>{
-  el.addEventListener('toggle',()=>{const id=el.dataset.reviewId;if(el.open)expandedReviews.add(id);else expandedReviews.delete(id);updateReviewToggle();});
- });
- const btn=root.querySelector('#toggle-reviews');
- if(btn)btn.onclick=()=>{
-  const rows=[...root.querySelectorAll('details[data-review-id]')];
-  const expand=rows.some(el=>!el.open);
-  rows.forEach(el=>{el.open=expand;if(expand)expandedReviews.add(el.dataset.reviewId);else expandedReviews.delete(el.dataset.reviewId);});
-  updateReviewToggle();
- };
- updateReviewToggle();
-}
-function updateReviewToggle(){
- const root=$('review-results'),btn=root?.querySelector('#toggle-reviews');
- if(!btn)return;
- const rows=[...root.querySelectorAll('details[data-review-id]')];
- btn.textContent=rows.length&&rows.every(el=>el.open)?'收起全部解析':'展开全部解析';
-}
+function attachReviewControls(){}
 function updateResults(){
  const p=passageById(session[idx]),el=$('review-results');
  if(p&&el){el.innerHTML=showAnswers(p);attachReviewControls();}
