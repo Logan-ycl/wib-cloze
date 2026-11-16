@@ -179,6 +179,15 @@ function giveHint(id){
  }
  if(el)el.textContent=revealed?'提示：'+item.answer.slice(0,revealed)+'…':'此单词无法提供字母提示';
 }
+function renderImitation(item){
+ const example=item.imitation;
+ if(!example||!example.background_zh||!example.sentence_en||!example.translation_zh)return '';
+ return '<section class="imitation-example" aria-label="仿照造句">'
+  +'<p class="imitation-title"><strong>仿照造句</strong></p>'
+  +'<p class="imitation-context">背景：'+E(example.background_zh)+'</p>'
+  +'<p class="imitation-en" lang="en">'+E(example.sentence_en)+'</p>'
+  +'<p class="imitation-zh" lang="zh-CN">'+E(example.translation_zh)+'</p></section>';
+}
 function showAnswers(p){
  const ids=idsInPassage(p),checked=ids.filter(id=>feedback?.[id]);
  if(!checked.length)return '';
@@ -194,7 +203,7 @@ function showAnswers(p){
     +'<div class="review-summary"><span class="review-index">'+i+'</span><span class="review-word">'+E(x.answer)+'</span><span class="review-status">'+heading+'</span></div>'
     +'<div class="review-detail"><div class="review-comparison"><span>你的填写：<b>'+E(v.answer)+'</b></span><span>目标答案：<strong>'+E(x.answer)+'</strong></span></div>'
     +(v.hintCount>=3?'<div class="muted">使用了 '+v.hintCount+' 次字母提示，明天再练</div>':'')
-    +'<p><strong>精读解析</strong> '+E(x.analysis_zh||x.why_zh||x.meaning_zh||'暂无解析')+'</p></div></div>';
+    +'<p><strong>精读解析</strong> '+E(x.analysis_zh||x.why_zh||x.meaning_zh||'暂无解析')+'</p>'+renderImitation(x)+'</div></div>';
   }).join('')+'</section>';
 }
 function attachReviewControls(){}

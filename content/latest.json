@@ -18,12 +18,17 @@
       "expression": "urged",
       "meaning_zh": "敦促",
       "example": "The treasury secretary urged Nvidia to consider an outsider as its next chief executive.",
-      "analysis_zh": "urge someone to do something 是正式建议和施压结构，后面接宾语 Nvidia 再接不定式 to consider。财长提出的是意见，不能当成公司已经决定聘请外部人士。与 order 相比，urge 没有直接命令的法律含义。可迁移 We urged the supplier to revise its delivery plan。",
+      "analysis_zh": "urge someone to do something 是正式建议和施压结构，后面接宾语 Nvidia 再接不定式 to consider。财长提出的是意见，不能当成公司已经决定聘请外部人士。与 order 相比，urge 没有直接命令的法律含义。",
       "cloze": "The treasury secretary ______ Nvidia to consider an outsider as its next chief executive.",
       "answer": "urged",
       "accepted": [],
       "hint_zh": "敦促",
-      "why_zh": "urge someone to do something 是正式建议和施压结构，后面接宾语 Nvidia 再接不定式 to consider。"
+      "why_zh": "urge someone to do something 是正式建议和施压结构，后面接宾语 Nvidia 再接不定式 to consider。",
+      "imitation": {
+        "background_zh": "交付协调：要求供应商重新评估计划。",
+        "sentence_en": "We urged the supplier to revise its delivery plan.",
+        "translation_zh": "我们敦促供应商修订交付计划。"
+      }
     },
     {
       "id": "2026-11-16-nvidia-gathered",
@@ -32,12 +37,17 @@
       "expression": "gathered",
       "meaning_zh": "积聚",
       "example": "A campaign for Jensen Huang's return has gathered momentum among prominent technology executives.",
-      "analysis_zh": "gather momentum 是固定搭配，表示行动获得更多支持并逐渐增强声势。has gathered 用现在完成时，将之前开始的活动与现在的影响联系起来。与 accelerate 相比，它侧重支持的累积，并不必然意味着可测量的速度变化。可迁移 The proposal has gathered momentum across departments。",
+      "analysis_zh": "gather momentum 是固定搭配，表示行动获得更多支持并逐渐增强声势。has gathered 用现在完成时，将之前开始的活动与现在的影响联系起来。与 accelerate 相比，它侧重支持的累积，并不必然意味着可测量的速度变化。",
       "cloze": "A campaign for Jensen Huang's return has ______ momentum among prominent technology executives.",
       "answer": "gathered",
       "accepted": [],
       "hint_zh": "积聚",
-      "why_zh": "gather momentum 是固定搭配，表示行动获得更多支持并逐渐增强声势。"
+      "why_zh": "gather momentum 是固定搭配，表示行动获得更多支持并逐渐增强声势。",
+      "imitation": {
+        "background_zh": "生活安排：朋友们逐渐支持一次摄影旅行。",
+        "sentence_en": "The idea of a weekend photography trip has gathered momentum among our friends.",
+        "translation_zh": "周末摄影旅行的想法在朋友中获得了越来越多的支持。"
+      }
     },
     {
       "id": "2026-11-16-nvidia-unconfirmed",
@@ -46,12 +56,17 @@
       "expression": "unconfirmed",
       "meaning_zh": "未经确认",
       "example": "Reports of discussions with confidants remain unconfirmed by Nvidia, ahead of its earnings release.",
-      "analysis_zh": "remain unconfirmed 是 remain 加形容词化过去分词的结构，强调报道尚缺公司正式确认。与 false 不同，unconfirmed 不意味着消息已经证伪；ahead of 指财报发布之前。可迁移 The proposed delivery date remains unconfirmed pending management approval。",
+      "analysis_zh": "remain unconfirmed 是 remain 加形容词化过去分词的结构，强调报道尚缺公司正式确认。与 false 不同，unconfirmed 不意味着消息已经证伪；ahead of 指财报发布之前。",
       "cloze": "Reports of discussions with confidants remain ______ by Nvidia, ahead of its earnings release.",
       "answer": "unconfirmed",
       "accepted": [],
       "hint_zh": "未经确认",
-      "why_zh": "remain unconfirmed 是 remain 加形容词化过去分词的结构，强调报道尚缺公司正式确认。"
+      "why_zh": "remain unconfirmed 是 remain 加形容词化过去分词的结构，强调报道尚缺公司正式确认。",
+      "imitation": {
+        "background_zh": "出差筹备：酒店预订仍待确认。",
+        "sentence_en": "Our hotel reservation remains unconfirmed pending payment.",
+        "translation_zh": "我们的酒店预订仍未确认，尚待付款。"
+      }
     },
     {
       "id": "2026-11-16-aviation-disrupted",
@@ -60,12 +75,17 @@
       "expression": "disrupted",
       "meaning_zh": "扰乱",
       "example": "An equipment upgrade caused a failure that disrupted air travel across the United States.",
-      "analysis_zh": "disrupt air travel 是常见新闻搭配，及物动词 disrupt 后直接接被干扰的正常运营活动。与 suspend flights 不同，disrupt 说明意外干扰，并不必然表示监管机构主动暂停所有航班。可迁移 A system failure disrupted the production schedule。",
+      "analysis_zh": "disrupt air travel 是常见新闻搭配，及物动词 disrupt 后直接接被干扰的正常运营活动。与 suspend flights 不同，disrupt 说明意外干扰，并不必然表示监管机构主动暂停所有航班。",
       "cloze": "An equipment upgrade caused a failure that ______ air travel across the United States.",
       "answer": "disrupted",
       "accepted": [],
       "hint_zh": "扰乱",
-      "why_zh": "disrupt air travel 是常见新闻搭配，及物动词 disrupt 后直接接被干扰的正常运营活动。"
+      "why_zh": "disrupt air travel 是常见新闻搭配，及物动词 disrupt 后直接接被干扰的正常运营活动。",
+      "imitation": {
+        "background_zh": "生产计划：系统故障影响排产。",
+        "sentence_en": "A system failure disrupted the production schedule.",
+        "translation_zh": "一次系统故障打乱了生产计划。"
+      }
     },
     {
       "id": "2026-11-16-aviation-cautioned",
@@ -74,12 +94,17 @@
       "expression": "cautioned",
       "meaning_zh": "谨慎警告",
       "example": "The transport secretary cautioned that flights might not return to normal until Monday.",
-      "analysis_zh": "caution that 后接完整从句，表示发言者对恢复时间给出谨慎判断；might not 明确保留不确定性。与 promise 相比，caution 不构成恢复服务的保证。商务邮件可迁移 The supplier cautioned that lead times might increase。",
+      "analysis_zh": "caution that 后接完整从句，表示发言者对恢复时间给出谨慎判断；might not 明确保留不确定性。与 promise 相比，caution 不构成恢复服务的保证。",
       "cloze": "The transport secretary ______ that flights might not return to normal until Monday.",
       "answer": "cautioned",
       "accepted": [],
       "hint_zh": "谨慎警告",
-      "why_zh": "caution that 后接完整从句，表示发言者对恢复时间给出谨慎判断；might not 明确保留不确定性。"
+      "why_zh": "caution that 后接完整从句，表示发言者对恢复时间给出谨慎判断；might not 明确保留不确定性。",
+      "imitation": {
+        "background_zh": "采购沟通：供应商提示交期可能延长。",
+        "sentence_en": "The supplier cautioned that lead times might increase.",
+        "translation_zh": "供应商提醒说，交货周期可能延长。"
+      }
     },
     {
       "id": "2026-11-16-aviation-backlog",
@@ -88,12 +113,17 @@
       "expression": "backlog",
       "meaning_zh": "积压",
       "example": "Airlines faced a backlog of cancelled and delayed journeys after the communications system was repaired.",
-      "analysis_zh": "a backlog of 加复数名词表示尚待处理的积压事项，常见于订单、维修工单及航班恢复场景。与 a delay 相比，backlog 强调累计存量；技术故障排除后，积压未必立即消失。可迁移 We are clearing the backlog of purchase orders。",
+      "analysis_zh": "a backlog of 加复数名词表示尚待处理的积压事项，常见于订单、维修工单及航班恢复场景。与 a delay 相比，backlog 强调累计存量；技术故障排除后，积压未必立即消失。",
       "cloze": "Airlines faced a ______ of cancelled and delayed journeys after the communications system was repaired.",
       "answer": "backlog",
       "accepted": [],
       "hint_zh": "积压",
-      "why_zh": "a backlog of 加复数名词表示尚待处理的积压事项，常见于订单、维修工单及航班恢复场景。"
+      "why_zh": "a backlog of 加复数名词表示尚待处理的积压事项，常见于订单、维修工单及航班恢复场景。",
+      "imitation": {
+        "background_zh": "订单管理：介绍当前正在处理的积压。",
+        "sentence_en": "We are clearing the backlog of purchase orders.",
+        "translation_zh": "我们正在清理积压的采购订单。"
+      }
     },
     {
       "id": "2026-11-16-iran-retaliation",
@@ -102,12 +132,17 @@
       "expression": "retaliation",
       "meaning_zh": "报复",
       "example": "Iran described its drone attack on a US base in Bahrain as retaliation for earlier American strikes.",
-      "analysis_zh": "retaliation for 是固定名词搭配，for 引出被声称作为报复对象的先前行动。described ... as 将这一因果解释归于伊朗方面，避免把单方说法直接当成独立核实的事实。与 revenge 相比，retaliation 更常用于国家间军事和贸易回应。可迁移 The tariffs were described as retaliation for new restrictions。",
+      "analysis_zh": "retaliation for 是固定名词搭配，for 引出被声称作为报复对象的先前行动。described ... as 将这一因果解释归于伊朗方面，避免把单方说法直接当成独立核实的事实。与 revenge 相比，retaliation 更常用于国家间军事和贸易回应。",
       "cloze": "Iran described its drone attack on a US base in Bahrain as ______ for earlier American strikes.",
       "answer": "retaliation",
       "accepted": [],
       "hint_zh": "报复",
-      "why_zh": "retaliation for 是固定名词搭配，for 引出被声称作为报复对象的先前行动。"
+      "why_zh": "retaliation for 是固定名词搭配，for 引出被声称作为报复对象的先前行动。",
+      "imitation": {
+        "background_zh": "财经写作练习：转述一方对关税措施的解释。",
+        "sentence_en": "The government described the tariffs as retaliation for new trade restrictions.",
+        "translation_zh": "政府将这些关税描述为对新贸易限制的报复。"
+      }
     },
     {
       "id": "2026-11-16-iran-rekindle",
@@ -116,12 +151,17 @@
       "expression": "rekindle",
       "meaning_zh": "重新点燃",
       "example": "The latest attack could rekindle a conflict that Washington says it does not want to reopen.",
-      "analysis_zh": "rekindle a conflict 是隐喻性动宾搭配，表示此前已有的冲突再次升温；could 明确标记风险尚未实现。与 trigger a conflict 相比，rekindle 更强调旧冲突的再次爆发。可迁移 A pricing dispute could rekindle tensions between the partners。",
+      "analysis_zh": "rekindle a conflict 是隐喻性动宾搭配，表示此前已有的冲突再次升温；could 明确标记风险尚未实现。与 trigger a conflict 相比，rekindle 更强调旧冲突的再次爆发。",
       "cloze": "The latest attack could ______ a conflict that Washington says it does not want to reopen.",
       "answer": "rekindle",
       "accepted": [],
       "hint_zh": "重新点燃",
-      "why_zh": "rekindle a conflict 是隐喻性动宾搭配，表示此前已有的冲突再次升温；could 明确标记风险尚未实现。"
+      "why_zh": "rekindle a conflict 是隐喻性动宾搭配，表示此前已有的冲突再次升温；could 明确标记风险尚未实现。",
+      "imitation": {
+        "background_zh": "个人爱好：观看比赛后重新燃起篮球热情。",
+        "sentence_en": "Watching the playoffs could rekindle my enthusiasm for basketball.",
+        "translation_zh": "观看季后赛可能重新点燃我对篮球的热情。"
+      }
     },
     {
       "id": "2026-11-16-iran-intensify",
@@ -130,12 +170,17 @@
       "expression": "intensify",
       "meaning_zh": "加剧",
       "example": "Houthi gains near a strategic strait may intensify pressure on international shipping.",
-      "analysis_zh": "intensify pressure on something 是正式新闻表达，pressure on 引出承受压力的对象；may 表示潜在影响。与 create pressure 相比，intensify 通常暗示已有压力进一步增大。可迁移 Port congestion may intensify pressure on delivery schedules。",
+      "analysis_zh": "intensify pressure on something 是正式新闻表达，pressure on 引出承受压力的对象；may 表示潜在影响。与 create pressure 相比，intensify 通常暗示已有压力进一步增大。",
       "cloze": "Houthi gains near a strategic strait may ______ pressure on international shipping.",
       "answer": "intensify",
       "accepted": [],
       "hint_zh": "加剧",
-      "why_zh": "intensify pressure on something 是正式新闻表达，pressure on 引出承受压力的对象；may 表示潜在影响。"
+      "why_zh": "intensify pressure on something 是正式新闻表达，pressure on 引出承受压力的对象；may 表示潜在影响。",
+      "imitation": {
+        "background_zh": "国际物流：港口拥堵增加交付压力。",
+        "sentence_en": "Port congestion may intensify pressure on delivery schedules.",
+        "translation_zh": "港口拥堵可能加大交付计划面临的压力。"
+      }
     },
     {
       "id": "2026-11-16-estonia-close",
@@ -144,12 +189,17 @@
       "expression": "close",
       "meaning_zh": "关闭",
       "example": "Estonia announced that it would close its border with Russia from December 1st.",
-      "analysis_zh": "close its border with Russia 是及物动词加宾语的搭配；would close 属于过去报道语境中的将来过去时，说明措施已经宣布、预定将来实施。与 has closed 不同，不能据此断言边境已经关闭。可迁移 The factory announced that it would close a production line in December。",
+      "analysis_zh": "close its border with Russia 是及物动词加宾语的搭配；would close 属于过去报道语境中的将来过去时，说明措施已经宣布、预定将来实施。与 has closed 不同，不能据此断言边境已经关闭。",
       "cloze": "Estonia announced that it would ______ its border with Russia from December 1st.",
       "answer": "close",
       "accepted": [],
       "hint_zh": "关闭",
-      "why_zh": "close its border with Russia 是及物动词加宾语的搭配；would close 属于过去报道语境中的将来过去时，说明措施已经宣布、预定将来实施。"
+      "why_zh": "close its border with Russia 是及物动词加宾语的搭配；would close 属于过去报道语境中的将来过去时，说明措施已经宣布、预定将来实施。",
+      "imitation": {
+        "background_zh": "生产规划练习：转述工厂未来关闭产线的计划。",
+        "sentence_en": "The factory announced that it would close a production line in December.",
+        "translation_zh": "工厂宣布将在十二月关闭一条产线。"
+      }
     },
     {
       "id": "2026-11-16-estonia-accused",
@@ -158,12 +208,17 @@
       "expression": "accused",
       "meaning_zh": "指控",
       "example": "The government accused Moscow of involvement in an attempted arson attack near Tallinn.",
-      "analysis_zh": "accuse someone of something 是固定结构，of 后接名词或动名词。句子仅陈述爱沙尼亚政府的指控，并未独立证明莫斯科参与袭击。与 establish responsibility 相比，accuse 明确保留证据和归因的边界。可迁移 The customer accused the contractor of breaching the agreement。",
+      "analysis_zh": "accuse someone of something 是固定结构，of 后接名词或动名词。句子仅陈述爱沙尼亚政府的指控，并未独立证明莫斯科参与袭击。与 establish responsibility 相比，accuse 明确保留证据和归因的边界。",
       "cloze": "The government ______ Moscow of involvement in an attempted arson attack near Tallinn.",
       "answer": "accused",
       "accepted": [],
       "hint_zh": "指控",
-      "why_zh": "accuse someone of something 是固定结构，of 后接名词或动名词。"
+      "why_zh": "accuse someone of something 是固定结构，of 后接名词或动名词。",
+      "imitation": {
+        "background_zh": "合同纠纷练习：转述客户提出的指控。",
+        "sentence_en": "The customer accused the contractor of breaching the agreement.",
+        "translation_zh": "客户指责承包商违反协议。"
+      }
     },
     {
       "id": "2026-11-16-estonia-steadfast",
@@ -172,12 +227,17 @@
       "expression": "steadfast",
       "meaning_zh": "坚定的",
       "example": "The prime minister said support for Ukraine would remain steadfast despite the alleged intimidation.",
-      "analysis_zh": "remain steadfast 是系动词加形容词，强调在外部压力下仍坚持原有立场；despite 后面接名词短语。与 stubborn 相比，steadfast 常带有坚守承诺的积极语义。可迁移 Our commitment to product quality remains steadfast despite cost pressure。",
+      "analysis_zh": "remain steadfast 是系动词加形容词，强调在外部压力下仍坚持原有立场；despite 后面接名词短语。与 stubborn 相比，steadfast 常带有坚守承诺的积极语义。",
       "cloze": "The prime minister said support for Ukraine would remain ______ despite the alleged intimidation.",
       "answer": "steadfast",
       "accepted": [],
       "hint_zh": "坚定的",
-      "why_zh": "remain steadfast 是系动词加形容词，强调在外部压力下仍坚持原有立场；despite 后面接名词短语。"
+      "why_zh": "remain steadfast 是系动词加形容词，强调在外部压力下仍坚持原有立场；despite 后面接名词短语。",
+      "imitation": {
+        "background_zh": "品质管理：成本压力下维持质量承诺。",
+        "sentence_en": "Our commitment to product quality remains steadfast despite cost pressure.",
+        "translation_zh": "尽管面临成本压力，我们对产品质量的承诺仍然坚定不移。"
+      }
     },
     {
       "id": "2026-11-16-property-plunged",
@@ -186,12 +246,17 @@
       "expression": "plunged",
       "meaning_zh": "暴跌",
       "example": "Shares in New World Development plunged after it announced a large rights issue.",
-      "analysis_zh": "shares plunged 是财经新闻中的不及物动词用法，表示价格短时间大幅下跌。报道所述跌幅接近一半，plunged 比 edged down 或 slipped 更符合量级。after 引出公告与市场反应的先后关系。可迁移 The stock plunged following a profit warning。",
+      "analysis_zh": "shares plunged 是财经新闻中的不及物动词用法，表示价格短时间大幅下跌。报道所述跌幅接近一半，plunged 比 edged down 或 slipped 更符合量级。after 引出公告与市场反应的先后关系。",
       "cloze": "Shares in New World Development ______ after it announced a large rights issue.",
       "answer": "plunged",
       "accepted": [],
       "hint_zh": "暴跌",
-      "why_zh": "shares plunged 是财经新闻中的不及物动词用法，表示价格短时间大幅下跌。"
+      "why_zh": "shares plunged 是财经新闻中的不及物动词用法，表示价格短时间大幅下跌。",
+      "imitation": {
+        "background_zh": "财经写作练习：描述盈利预警后的股价表现。",
+        "sentence_en": "The stock plunged following a profit warning.",
+        "translation_zh": "发布盈利预警后，该股大幅下跌。"
+      }
     },
     {
       "id": "2026-11-16-property-discount",
@@ -200,12 +265,17 @@
       "expression": "discount",
       "meaning_zh": "折价",
       "example": "The proposed shares would be offered at a steep discount to the previous closing price.",
-      "analysis_zh": "at a discount to the closing price 是股票发行定价的常见结构，to 引出比较基准。与 rebate 不同，discount 表示发行价低于参考市价，未必涉及事后返还。would be offered 说明这是拟议发行安排。可迁移 The securities were offered at a discount to market value。",
+      "analysis_zh": "at a discount to the closing price 是股票发行定价的常见结构，to 引出比较基准。与 rebate 不同，discount 表示发行价低于参考市价，未必涉及事后返还。would be offered 说明这是拟议发行安排。",
       "cloze": "The proposed shares would be offered at a steep ______ to the previous closing price.",
       "answer": "discount",
       "accepted": [],
       "hint_zh": "折价",
-      "why_zh": "at a discount to the closing price 是股票发行定价的常见结构，to 引出比较基准。"
+      "why_zh": "at a discount to the closing price 是股票发行定价的常见结构，to 引出比较基准。",
+      "imitation": {
+        "background_zh": "投资学习：讨论折价发行的定价方式。",
+        "sentence_en": "The shares were offered at a discount to the previous closing price.",
+        "translation_zh": "这些股份以低于前一交易日收盘价的价格发行。"
+      }
     },
     {
       "id": "2026-11-16-property-fuelled",
@@ -214,12 +284,17 @@
       "expression": "fuelled",
       "meaning_zh": "加剧",
       "example": "The announcement fuelled concerns about the indebted developer's financial position.",
-      "analysis_zh": "fuel concerns about 是新闻英语中表示助长担忧的动宾搭配，concerns about 后接具体风险对象。与 cause concerns 相比，fuel 通常暗示担忧此前已经存在、如今进一步升温。可迁移 Repeated delays fuelled concerns about supplier reliability。",
+      "analysis_zh": "fuel concerns about 是新闻英语中表示助长担忧的动宾搭配，concerns about 后接具体风险对象。与 cause concerns 相比，fuel 通常暗示担忧此前已经存在、如今进一步升温。",
       "cloze": "The announcement ______ concerns about the indebted developer's financial position.",
       "answer": "fuelled",
       "accepted": [],
       "hint_zh": "加剧",
-      "why_zh": "fuel concerns about 是新闻英语中表示助长担忧的动宾搭配，concerns about 后接具体风险对象。"
+      "why_zh": "fuel concerns about 是新闻英语中表示助长担忧的动宾搭配，concerns about 后接具体风险对象。",
+      "imitation": {
+        "background_zh": "供应商评估：延期使可靠性受到更多质疑。",
+        "sentence_en": "Repeated delays fuelled concerns about supplier reliability.",
+        "translation_zh": "多次延期加剧了人们对供应商可靠性的担忧。"
+      }
     },
     {
       "id": "2026-11-16-anthropic-float",
@@ -228,12 +303,17 @@
       "expression": "float",
       "meaning_zh": "上市发行",
       "example": "Anthropic is expected to float shares in an initial public offering this week.",
-      "analysis_zh": "float shares 是英式财经英语，表示向公众发行股份并上市；is expected to 表明仍属预期。与 trade shares 不同，float 聚焦首次发行，不能据此认为股票已经开始交易。可迁移 The company plans to float a minority stake next year。",
+      "analysis_zh": "float shares 是英式财经英语，表示向公众发行股份并上市；is expected to 表明仍属预期。与 trade shares 不同，float 聚焦首次发行，不能据此认为股票已经开始交易。",
       "cloze": "Anthropic is expected to ______ shares in an initial public offering this week.",
       "answer": "float",
       "accepted": [],
       "hint_zh": "上市发行",
-      "why_zh": "float shares 是英式财经英语，表示向公众发行股份并上市；is expected to 表明仍属预期。"
+      "why_zh": "float shares 是英式财经英语，表示向公众发行股份并上市；is expected to 表明仍属预期。",
+      "imitation": {
+        "background_zh": "投资研究练习：讨论一家拟上市公司的融资计划。",
+        "sentence_en": "The company plans to float a minority stake next year.",
+        "translation_zh": "该公司计划明年将少数股权公开发行上市。"
+      }
     },
     {
       "id": "2026-11-16-anthropic-targeting",
@@ -242,12 +322,17 @@
       "expression": "targeting",
       "meaning_zh": "以……为目标",
       "example": "The AI company is targeting a valuation of roughly $1.5 trillion.",
-      "analysis_zh": "target a valuation of 加金额是投融资中的目标估值表达；is targeting 表示发行方目前的计划。与 achieve a valuation 相比，targeting 不意味着投资者已经接受这个价格。可迁移 The project is targeting a gross margin of 30%。",
+      "analysis_zh": "target a valuation of 加金额是投融资中的目标估值表达；is targeting 表示发行方目前的计划。与 achieve a valuation 相比，targeting 不意味着投资者已经接受这个价格。",
       "cloze": "The AI company is ______ a valuation of roughly $1.5 trillion.",
       "answer": "targeting",
       "accepted": [],
       "hint_zh": "以……为目标",
-      "why_zh": "target a valuation of 加金额是投融资中的目标估值表达；is targeting 表示发行方目前的计划。"
+      "why_zh": "target a valuation of 加金额是投融资中的目标估值表达；is targeting 表示发行方目前的计划。",
+      "imitation": {
+        "background_zh": "海外项目练习：在评审会上介绍盈利目标。",
+        "sentence_en": "The localisation project is targeting a gross margin of 30%.",
+        "translation_zh": "这个本地化项目的目标毛利率为30%。"
+      }
     },
     {
       "id": "2026-11-16-anthropic-scrutinise",
@@ -256,12 +341,17 @@
       "expression": "scrutinise",
       "meaning_zh": "仔细审查",
       "example": "Investors will scrutinise its growth prospects as competition in AI coding tools intensifies.",
-      "analysis_zh": "scrutinise growth prospects 是正式财经动宾搭配，强调对收入增长假设和商业模式作严格检视。as 引出竞争加剧的背景；与 glance at 相比，scrutinise 表示细致且带批判性的分析。可迁移 We need to scrutinise the supplier's capacity assumptions。",
+      "analysis_zh": "scrutinise growth prospects 是正式财经动宾搭配，强调对收入增长假设和商业模式作严格检视。as 引出竞争加剧的背景；与 glance at 相比，scrutinise 表示细致且带批判性的分析。",
       "cloze": "Investors will ______ its growth prospects as competition in AI coding tools intensifies.",
       "answer": "scrutinise",
       "accepted": [],
       "hint_zh": "仔细审查",
-      "why_zh": "scrutinise growth prospects 是正式财经动宾搭配，强调对收入增长假设和商业模式作严格检视。"
+      "why_zh": "scrutinise growth prospects 是正式财经动宾搭配，强调对收入增长假设和商业模式作严格检视。",
+      "imitation": {
+        "background_zh": "产能评估：承诺交期前审核供应商的测算依据。",
+        "sentence_en": "We need to scrutinise the supplier's capacity assumptions before confirming the delivery schedule.",
+        "translation_zh": "我们需要仔细审查供应商的产能假设，再确认交付计划。"
+      }
     }
   ],
   "passages": [

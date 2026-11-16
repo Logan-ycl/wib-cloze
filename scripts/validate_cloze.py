@@ -16,6 +16,14 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
     for item in doc["items"]:
         assert item["id"] not in item_map, f"{name}: repeated target ID {item['id']}"
         item_map[item["id"]] = item
+        imitation = item.get("imitation", {})
+        for field in ("background_zh", "sentence_en", "translation_zh"):
+            assert isinstance(imitation.get(field), str) and imitation[field].strip(), (
+                f"{name}: {item['id']}: missing imitation.{field}"
+            )
+        assert "可迁移" not in item.get("analysis_zh", ""), (
+            f"{name}: {item['id']}: obsolete inline example label"
+        )
 
     passage_ids = set()
     for passage in doc["passages"]:
