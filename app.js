@@ -188,10 +188,8 @@ function renderImitation(item){
  const example=item.imitation;
  if(!example||!example.background_zh||!example.sentence_en||!example.translation_zh)return '';
  return '<section class="imitation-example" aria-label="仿照造句">'
-  +'<p class="imitation-title"><strong>仿照造句</strong></p>'
-  +'<p class="imitation-context">背景：'+E(example.background_zh)+'</p>'
-  +'<p class="imitation-en" lang="en">'+E(example.sentence_en)+'</p>'
-  +'<p class="imitation-zh" lang="zh-CN">'+E(example.translation_zh)+'</p></section>';
+  +'<p class="imitation-title"><strong>仿照造句</strong> <span class="imitation-context">背景：'+E(example.background_zh)+'</span></p>'
+  +'<p class="imitation-sentence"><span class="imitation-en" lang="en">'+E(example.sentence_en)+'</span> <span class="imitation-zh" lang="zh-CN">'+E(example.translation_zh)+'</span></p></section>';
 }
 function showAnswers(p){
  const ids=idsInPassage(p),checked=ids.filter(id=>feedback?.[id]);
