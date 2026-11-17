@@ -81,14 +81,19 @@ function dueGroups(){
  if(GUEST)return passages.filter(p=>p.date===edition?.date).map(p=>p.id);
  return orderedGroups(items.filter(isDue).map(x=>x.id));
 }
-function refreshPracticeQueue(keepChecked=false){
+function refreshPracticeQueue(keepChecked=true){
  const old=[...work.session],position=Math.max(0,Number(work.idx)||0);
  const due=dueGroups(),dueSet=new Set(due);
- const retained=old.filter(id=>dueSet.has(id)||(keepChecked&&passageById(id)&&
-  Object.keys(work.entries[today()+'|'+id]?.feedback||{}).length>0));
- session=[...new Set([...retained,...due])];
+ const checkedToday=keepChecked?passages.filter(p=>
+  Object.keys(work.entries[today()+'|'+p.id]?.feedback||{}).length>0).map(p=>p.id):[];
+ const checkedSet=new Set(checkedToday);
+ const retained=old.filter(id=>dueSet.has(id)||checkedSet.has(id));
+ // Keep today's completed passages available after reload. Also recover passages
+ // removed by older clients without touching answers or spaced-review dates.
+ session=[...new Set([...retained,...checkedToday,...due])];
  const next=old.slice(position).find(id=>session.includes(id));
- idx=next?session.indexOf(next):0;
+ const wasFinished=old.length>0&&position>=old.length;
+ idx=next?session.indexOf(next):wasFinished?retained.length:0;
  work.session=[...session];work.idx=idx;
 }
 function labelDue(){
