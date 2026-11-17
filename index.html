@@ -308,6 +308,20 @@ header{background:#142c40;border-bottom:1px solid #294052;color:#fff}
 .review-detail .imitation-context{color:var(--muted);font-size:12px}
 .review-detail .imitation-en{font-size:14px;line-height:1.8}
 .review-detail .imitation-zh{line-height:1.8}
+/* Stable navigation position for consecutive passage changes. */
+html{overflow-y:scroll;scrollbar-gutter:stable}
+.snippet-header{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px}
+.snippet-meta{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0}
+.snippet-meta .eyebrow,.snippet-meta .muted{white-space:nowrap}
+.snippet-controls{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}
+.snippet-controls .btn{width:96px;min-width:96px;max-width:96px;height:44px;white-space:nowrap;padding:8px 10px}
+.accepted-answers{overflow-wrap:anywhere}
+@media(max-width:650px){
+ .snippet-header{flex-wrap:wrap;gap:10px}
+ .snippet-meta{flex-basis:100%}
+ .snippet-controls{width:100%;justify-content:flex-end;gap:6px}
+ .snippet-controls .btn{width:calc((100% - 12px)/3);min-width:0;max-width:110px}
+}
 </style>
 </head>
 <body>
@@ -381,7 +395,7 @@ header{background:#142c40;border-bottom:1px solid #294052;color:#fff}
  </div>
 </main>
 
-<script src="./app.js?v=20261117-stable-session"></script>
+<script src="./app.js?v=20261117-alternatives-toolbar"></script>
 <script src="./cloud-config.js?v=1"></script>
 <script src="./cloud-sync.js?v=20261115-due-filter"></script>
 </body>

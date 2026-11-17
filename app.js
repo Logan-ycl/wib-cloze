@@ -153,7 +153,7 @@ function attachNavigation(){
    if(event.key==='Enter'){event.preventDefault();checkAll();}
   });
  });
- if(window.matchMedia('(min-width:651px)').matches) root.querySelector('.single-word-slot')?.focus();
+ if(window.matchMedia('(min-width:651px)').matches) root.querySelector('.single-word-slot')?.focus({preventScroll:true});
 }
 function giveHint(id){
  if(feedback?.[id])return;
@@ -206,7 +206,7 @@ function showAnswers(p){
    const status=!v.correct?'wrong':v.hintCount<=2?'correct':'assisted';
    return '<div class="answer-feedback '+status+'" data-review-id="'+E(id)+'">'
     +'<div class="review-summary"><span class="review-index">'+i+'</span><span class="review-word">'+E(x.answer)+'</span><span class="review-status">'+heading+'</span></div>'
-    +'<div class="review-detail"><div class="review-comparison"><span>你的填写：<b>'+E(v.answer)+'</b></span><span>目标答案：<strong>'+E(x.answer)+'</strong></span></div>'
+    +'<div class="review-detail"><div class="review-comparison"><span>你的填写：<b>'+E(v.answer)+'</b></span><span>原文答案：<strong>'+E(x.answer)+'</strong></span><span class="accepted-answers">可选答案：'+(x.accepted?.length?E(x.accepted.join(' / ')):'暂无合适的单词替换')+'</span></div>'
     +(v.hintCount>=3?'<div class="muted">使用了 '+v.hintCount+' 次字母提示，明天再练</div>':'')
     +'<p><strong>精读解析</strong> '+E(x.analysis_zh||x.why_zh||x.meaning_zh||'暂无解析')+'</p>'+renderImitation(x)+'</div></div>';
   }).join('')+'</section>';
@@ -282,11 +282,11 @@ function renderQuiz(){
  activatePassage(p.id);
  const blanks=idsInPassage(p);
  const dueBlanks=GUEST?blanks:blanks.filter(id=>!record(id).attempts||isDue(itemById(id)));
- el.innerHTML='<div class="box"><div class="row"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+dueBlanks.length+' / '+blanks.length+' 处到期填空</span></div>'
+ el.innerHTML='<div class="box"><div class="snippet-header"><div class="snippet-meta"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+dueBlanks.length+' / '+blanks.length+' 处到期填空</span></div>'
+  +'<div class="snippet-controls" role="group" aria-label="检查与翻篇"><button type="button" class="btn" id="check-all">检查对错</button><button type="button" class="btn secondary" id="previous" '+(idx===0?'disabled':'')+'>上一篇</button><button type="button" class="btn secondary" id="next">'+(idx===session.length-1?'完成本轮':'下一篇')+'</button></div></div>'
   +'<h3 class="snippet-title">'+E(p.title)+'</h3>'
   +'<div class="passage-wrap">'+renderPassage(p)+'</div>'
-  +'<p class="word-count">每空填写一个单词，点击下方统一检查。未填写的空不会公布答案，也不会计错。</p>'
-  +'<div class="quiz-toolbar"><button type="button" class="btn" id="check-all">检查对错</button><div class="quiz-pager"><button type="button" class="btn secondary" id="previous" '+(idx===0?'disabled':'')+'>上一篇</button><button type="button" class="btn secondary" id="next">'+(idx===session.length-1?'完成本轮':'下一篇')+'</button></div></div>'
+  +'<p class="word-count">每空填写一个单词，点击右上方“检查对错”。未填写的空不会公布答案，也不会计错。</p>'
   +'<p id="check-summary" class="muted" role="status" aria-live="polite"></p>'
   +'<div id="review-results">'+showAnswers(p)+'</div>'
   +'</div>';

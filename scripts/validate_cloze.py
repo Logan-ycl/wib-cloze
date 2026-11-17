@@ -16,6 +16,13 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
     for item in doc["items"]:
         assert item["id"] not in item_map, f"{name}: repeated target ID {item['id']}"
         item_map[item["id"]] = item
+        alternatives = item.get("accepted")
+        assert isinstance(alternatives, list), f"{name}: {item['id']}: missing accepted list"
+        assert all(isinstance(alt, str) and re.fullmatch(r"[A-Za-z]+", alt)
+                   for alt in alternatives), f"{name}: {item['id']}: invalid alternative"
+        normalised = [alt.lower() for alt in alternatives]
+        assert len(set(normalised)) == len(normalised), f"{name}: {item['id']}: duplicate alternative"
+        assert item["answer"].lower() not in normalised, f"{name}: {item['id']}: original repeated"
         imitation = item.get("imitation", {})
         for field in ("background_zh", "sentence_en", "translation_zh"):
             assert isinstance(imitation.get(field), str) and imitation[field].strip(), (

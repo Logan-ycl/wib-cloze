@@ -21,7 +21,12 @@
       "analysis_zh": "urge someone to do something 是正式建议和施压结构，后面接宾语 Nvidia 再接不定式 to consider。财长提出的是意见，不能当成公司已经决定聘请外部人士。与 order 相比，urge 没有直接命令的法律含义。",
       "cloze": "The treasury secretary ______ Nvidia to consider an outsider as its next chief executive.",
       "answer": "urged",
-      "accepted": [],
+      "accepted": [
+        "encouraged",
+        "pressed",
+        "asked",
+        "advised"
+      ],
       "hint_zh": "敦促",
       "why_zh": "urge someone to do something 是正式建议和施压结构，后面接宾语 Nvidia 再接不定式 to consider。",
       "imitation": {
@@ -40,7 +45,10 @@
       "analysis_zh": "gather momentum 是固定搭配，表示行动获得更多支持并逐渐增强声势。has gathered 用现在完成时，将之前开始的活动与现在的影响联系起来。与 accelerate 相比，它侧重支持的累积，并不必然意味着可测量的速度变化。",
       "cloze": "A campaign for Jensen Huang's return has ______ momentum among prominent technology executives.",
       "answer": "gathered",
-      "accepted": [],
+      "accepted": [
+        "gained",
+        "built"
+      ],
       "hint_zh": "积聚",
       "why_zh": "gather momentum 是固定搭配，表示行动获得更多支持并逐渐增强声势。",
       "imitation": {
@@ -59,7 +67,10 @@
       "analysis_zh": "remain unconfirmed 是 remain 加形容词化过去分词的结构，强调报道尚缺公司正式确认。与 false 不同，unconfirmed 不意味着消息已经证伪；ahead of 指财报发布之前。",
       "cloze": "Reports of discussions with confidants remain ______ by Nvidia, ahead of its earnings release.",
       "answer": "unconfirmed",
-      "accepted": [],
+      "accepted": [
+        "unverified",
+        "unsubstantiated"
+      ],
       "hint_zh": "未经确认",
       "why_zh": "remain unconfirmed 是 remain 加形容词化过去分词的结构，强调报道尚缺公司正式确认。",
       "imitation": {
@@ -78,7 +89,12 @@
       "analysis_zh": "disrupt air travel 是常见新闻搭配，及物动词 disrupt 后直接接被干扰的正常运营活动。与 suspend flights 不同，disrupt 说明意外干扰，并不必然表示监管机构主动暂停所有航班。",
       "cloze": "An equipment upgrade caused a failure that ______ air travel across the United States.",
       "answer": "disrupted",
-      "accepted": [],
+      "accepted": [
+        "hampered",
+        "hindered",
+        "impeded",
+        "interrupted"
+      ],
       "hint_zh": "扰乱",
       "why_zh": "disrupt air travel 是常见新闻搭配，及物动词 disrupt 后直接接被干扰的正常运营活动。",
       "imitation": {
@@ -97,7 +113,9 @@
       "analysis_zh": "caution that 后接完整从句，表示发言者对恢复时间给出谨慎判断；might not 明确保留不确定性。与 promise 相比，caution 不构成恢复服务的保证。",
       "cloze": "The transport secretary ______ that flights might not return to normal until Monday.",
       "answer": "cautioned",
-      "accepted": [],
+      "accepted": [
+        "warned"
+      ],
       "hint_zh": "谨慎警告",
       "why_zh": "caution that 后接完整从句，表示发言者对恢复时间给出谨慎判断；might not 明确保留不确定性。",
       "imitation": {
@@ -116,7 +134,9 @@
       "analysis_zh": "a backlog of 加复数名词表示尚待处理的积压事项，常见于订单、维修工单及航班恢复场景。与 a delay 相比，backlog 强调累计存量；技术故障排除后，积压未必立即消失。",
       "cloze": "Airlines faced a ______ of cancelled and delayed journeys after the communications system was repaired.",
       "answer": "backlog",
-      "accepted": [],
+      "accepted": [
+        "accumulation"
+      ],
       "hint_zh": "积压",
       "why_zh": "a backlog of 加复数名词表示尚待处理的积压事项，常见于订单、维修工单及航班恢复场景。",
       "imitation": {
@@ -135,7 +155,10 @@
       "analysis_zh": "retaliation for 是固定名词搭配，for 引出被声称作为报复对象的先前行动。described ... as 将这一因果解释归于伊朗方面，避免把单方说法直接当成独立核实的事实。与 revenge 相比，retaliation 更常用于国家间军事和贸易回应。",
       "cloze": "Iran described its drone attack on a US base in Bahrain as ______ for earlier American strikes.",
       "answer": "retaliation",
-      "accepted": [],
+      "accepted": [
+        "reprisal",
+        "retribution"
+      ],
       "hint_zh": "报复",
       "why_zh": "retaliation for 是固定名词搭配，for 引出被声称作为报复对象的先前行动。",
       "imitation": {
@@ -154,7 +177,13 @@
       "analysis_zh": "rekindle a conflict 是隐喻性动宾搭配，表示此前已有的冲突再次升温；could 明确标记风险尚未实现。与 trigger a conflict 相比，rekindle 更强调旧冲突的再次爆发。",
       "cloze": "The latest attack could ______ a conflict that Washington says it does not want to reopen.",
       "answer": "rekindle",
-      "accepted": [],
+      "accepted": [
+        "reignite",
+        "renew",
+        "revive",
+        "restart",
+        "reopen"
+      ],
       "hint_zh": "重新点燃",
       "why_zh": "rekindle a conflict 是隐喻性动宾搭配，表示此前已有的冲突再次升温；could 明确标记风险尚未实现。",
       "imitation": {
@@ -173,7 +202,14 @@
       "analysis_zh": "intensify pressure on something 是正式新闻表达，pressure on 引出承受压力的对象；may 表示潜在影响。与 create pressure 相比，intensify 通常暗示已有压力进一步增大。",
       "cloze": "Houthi gains near a strategic strait may ______ pressure on international shipping.",
       "answer": "intensify",
-      "accepted": [],
+      "accepted": [
+        "increase",
+        "heighten",
+        "amplify",
+        "exacerbate",
+        "escalate",
+        "compound"
+      ],
       "hint_zh": "加剧",
       "why_zh": "intensify pressure on something 是正式新闻表达，pressure on 引出承受压力的对象；may 表示潜在影响。",
       "imitation": {
@@ -192,7 +228,10 @@
       "analysis_zh": "close its border with Russia 是及物动词加宾语的搭配；would close 属于过去报道语境中的将来过去时，说明措施已经宣布、预定将来实施。与 has closed 不同，不能据此断言边境已经关闭。",
       "cloze": "Estonia announced that it would ______ its border with Russia from December 1st.",
       "answer": "close",
-      "accepted": [],
+      "accepted": [
+        "shut",
+        "seal"
+      ],
       "hint_zh": "关闭",
       "why_zh": "close its border with Russia 是及物动词加宾语的搭配；would close 属于过去报道语境中的将来过去时，说明措施已经宣布、预定将来实施。",
       "imitation": {
@@ -230,7 +269,15 @@
       "analysis_zh": "remain steadfast 是系动词加形容词，强调在外部压力下仍坚持原有立场；despite 后面接名词短语。与 stubborn 相比，steadfast 常带有坚守承诺的积极语义。",
       "cloze": "The prime minister said support for Ukraine would remain ______ despite the alleged intimidation.",
       "answer": "steadfast",
-      "accepted": [],
+      "accepted": [
+        "unwavering",
+        "firm",
+        "resolute",
+        "unshakeable",
+        "unshakable",
+        "unfaltering",
+        "staunch"
+      ],
       "hint_zh": "坚定的",
       "why_zh": "remain steadfast 是系动词加形容词，强调在外部压力下仍坚持原有立场；despite 后面接名词短语。",
       "imitation": {
@@ -249,7 +296,14 @@
       "analysis_zh": "shares plunged 是财经新闻中的不及物动词用法，表示价格短时间大幅下跌。报道所述跌幅接近一半，plunged 比 edged down 或 slipped 更符合量级。after 引出公告与市场反应的先后关系。",
       "cloze": "Shares in New World Development ______ after it announced a large rights issue.",
       "answer": "plunged",
-      "accepted": [],
+      "accepted": [
+        "plummeted",
+        "tumbled",
+        "slumped",
+        "sank",
+        "fell",
+        "dropped"
+      ],
       "hint_zh": "暴跌",
       "why_zh": "shares plunged 是财经新闻中的不及物动词用法，表示价格短时间大幅下跌。",
       "imitation": {
@@ -287,7 +341,16 @@
       "analysis_zh": "fuel concerns about 是新闻英语中表示助长担忧的动宾搭配，concerns about 后接具体风险对象。与 cause concerns 相比，fuel 通常暗示担忧此前已经存在、如今进一步升温。",
       "cloze": "The announcement ______ concerns about the indebted developer's financial position.",
       "answer": "fuelled",
-      "accepted": [],
+      "accepted": [
+        "fueled",
+        "heightened",
+        "intensified",
+        "amplified",
+        "increased",
+        "deepened",
+        "exacerbated",
+        "stoked"
+      ],
       "hint_zh": "加剧",
       "why_zh": "fuel concerns about 是新闻英语中表示助长担忧的动宾搭配，concerns about 后接具体风险对象。",
       "imitation": {
@@ -306,7 +369,12 @@
       "analysis_zh": "float shares 是英式财经英语，表示向公众发行股份并上市；is expected to 表明仍属预期。与 trade shares 不同，float 聚焦首次发行，不能据此认为股票已经开始交易。",
       "cloze": "Anthropic is expected to ______ shares in an initial public offering this week.",
       "answer": "float",
-      "accepted": [],
+      "accepted": [
+        "issue",
+        "offer",
+        "sell",
+        "list"
+      ],
       "hint_zh": "上市发行",
       "why_zh": "float shares 是英式财经英语，表示向公众发行股份并上市；is expected to 表明仍属预期。",
       "imitation": {
@@ -325,7 +393,11 @@
       "analysis_zh": "target a valuation of 加金额是投融资中的目标估值表达；is targeting 表示发行方目前的计划。与 achieve a valuation 相比，targeting 不意味着投资者已经接受这个价格。",
       "cloze": "The AI company is ______ a valuation of roughly $1.5 trillion.",
       "answer": "targeting",
-      "accepted": [],
+      "accepted": [
+        "seeking",
+        "pursuing",
+        "eyeing"
+      ],
       "hint_zh": "以……为目标",
       "why_zh": "target a valuation of 加金额是投融资中的目标估值表达；is targeting 表示发行方目前的计划。",
       "imitation": {
@@ -344,7 +416,15 @@
       "analysis_zh": "scrutinise growth prospects 是正式财经动宾搭配，强调对收入增长假设和商业模式作严格检视。as 引出竞争加剧的背景；与 glance at 相比，scrutinise 表示细致且带批判性的分析。",
       "cloze": "Investors will ______ its growth prospects as competition in AI coding tools intensifies.",
       "answer": "scrutinise",
-      "accepted": [],
+      "accepted": [
+        "scrutinize",
+        "examine",
+        "assess",
+        "evaluate",
+        "analyse",
+        "analyze",
+        "review"
+      ],
       "hint_zh": "仔细审查",
       "why_zh": "scrutinise growth prospects 是正式财经动宾搭配，强调对收入增长假设和商业模式作严格检视。",
       "imitation": {
