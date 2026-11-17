@@ -4,6 +4,24 @@ import json
 import re
 from pathlib import Path
 
+# Preserve exactly these pre-rule published items so existing answer records and
+# spaced-repetition IDs remain stable. All newly published items must be one word.
+LEGACY_MULTITOKEN_ANSWERS = {
+    "2026-11-11-among-other-things": "among other things",
+    "2026-11-11-as-much-as": "as much as",
+    "2026-11-11-quarter-point": "a quarter-point",
+}
+
+def valid_target(item, name):
+    answer = item["answer"]
+    expression = item["expression"]
+    single_word = re.fullmatch(r"[A-Za-z]+", answer) and re.fullmatch(r"[A-Za-z]+", expression)
+    if single_word:
+        return True
+    return (name == "catalog"
+            and item.get("date") == "2026-11-11"
+            and LEGACY_MULTITOKEN_ANSWERS.get(item["id"]) == answer == expression)
+
 root = Path(__file__).resolve().parents[1]
 catalog = json.loads((root / "content/catalog.json").read_text(encoding="utf-8"))
 latest = json.loads((root / "content/latest.json").read_text(encoding="utf-8"))
@@ -16,6 +34,13 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
     for item in doc["items"]:
         assert item["id"] not in item_map, f"{name}: repeated target ID {item['id']}"
         item_map[item["id"]] = item
+        assert valid_target(item, name), (
+            f"{name}: {item['id']}: new questions require one English word"
+        )
+        assert item["cloze"].count("______") == 1, f"{name}: {item['id']}: invalid cloze"
+        assert item["cloze"].replace("______", item["answer"]) == item["example"], (
+            f"{name}: {item['id']}: cloze/example mismatch"
+        )
         alternatives = item.get("accepted")
         assert isinstance(alternatives, list), f"{name}: {item['id']}: missing accepted list"
         assert all(isinstance(alt, str) and re.fullmatch(r"[A-Za-z]+", alt)
@@ -44,8 +69,8 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
         for target_id in ids:
             assert target_id in item_map, f"{name}: {pid}: missing {target_id}"
             item = item_map[target_id]
-            assert re.fullmatch(r"[A-Za-z]+", item["answer"]), (
-                f"{name}: {pid}: expected exactly one English word, got {item['answer']!r}"
+            assert valid_target(item, name), (
+                f"{name}: {pid}: new items require one English word, got {item['answer']!r}"
             )
             assert all(re.fullmatch(r"[A-Za-z]+", alt) for alt in item.get("accepted", [])), (
                 f"{name}: {pid}: non-single-word alternative"
