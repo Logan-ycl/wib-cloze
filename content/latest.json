@@ -3,12 +3,12 @@
   "edition": {
     "date": "2026-11-17",
     "title": "The World in Brief · Contextual Cloze · 17 November 2026",
-    "summary_zh": "依据11月17日期号订阅邮件改写的6篇原创新闻，包含18个英文单词填空、独立精读解析、合理备选答案与仿照造句。",
+    "summary_zh": "依据11月17日期号订阅邮件原创改写的9篇新闻，包含27道单词填空、独立精读解析、备选答案与仿照造句。",
     "source_url": "https://www.economist.com/the-world-in-brief",
     "source_label": "The Economist · 订阅邮件学习版",
     "source_mode": "gmail",
     "is_demo": false,
-    "generated_at": "2026-11-18T00:07:58.564Z"
+    "generated_at": "2026-11-18T01:17:15.829Z"
   },
   "items": [
     {
@@ -426,6 +426,203 @@
         "sentence_en": "Repeated milestone changes could undermine our partner's confidence in the plan.",
         "translation_zh": "反复修改里程碑可能削弱合作伙伴对计划的信心。"
       }
+    },
+    {
+      "id": "2026-11-17-diplomacy-sidelines",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "sidelines",
+      "meaning_zh": "（会议或活动的）场边、期间",
+      "example": "The Quad's leaders were due to meet on the sidelines of an ASEAN summit in Manila, their first gathering in two years.",
+      "analysis_zh": "on the sidelines of an ASEAN summit 指利用东盟峰会举行期间进行其他会晤，通常是正式议程之外的配套外交活动。on the margins of 也成立，但不能写 at the sidelines of。句中 were due to meet 表示预定会晤，仍有时间上的不确定性；their first gathering in two years 限定的是 Quad 领导人会议的间隔。商务场景可说 discuss a proposal on the sidelines of a conference。",
+      "cloze": "The Quad's leaders were due to meet on the ______ of an ASEAN summit in Manila, their first gathering in two years.",
+      "answer": "sidelines",
+      "accepted": [
+        "margins"
+      ],
+      "hint_zh": "常见外交搭配 on the sidelines of a summit",
+      "why_zh": "on the sidelines of 是报道峰会期间双边或小多边会晤的固定表达；margins 也是合适的单词替换。",
+      "imitation": {
+        "background_zh": "假设商务场景，参加行业展会时顺便讨论供应商合作。",
+        "sentence_en": "We discussed the supply agreement on the sidelines of the industry conference.",
+        "translation_zh": "我们在行业会议期间利用会外时间讨论了供应协议。"
+      }
+    },
+    {
+      "id": "2026-11-17-diplomacy-counterweight",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "counterweight",
+      "meaning_zh": "制衡力量",
+      "example": "The four-country grouping is intended as a strategic counterweight to China's growing influence in the Pacific.",
+      "analysis_zh": "a strategic counterweight to China's growing influence 中，counterweight 本义是平衡重量的配重，外交语境延伸为能够制衡另一方影响力的力量。固定结构是 a counterweight to + 名词，不能直接换成 check，因为通常说 a check on。is intended as 明确这是该机制被赋予的战略目的，并未证明其已达到制衡效果。项目管理中可用 counterweight to excessive centralisation 描述对过度集权的平衡机制。",
+      "cloze": "The four-country grouping is intended as a strategic ______ to China's growing influence in the Pacific.",
+      "answer": "counterweight",
+      "accepted": [],
+      "hint_zh": "a strategic counterweight to",
+      "why_zh": "counterweight 与介词 to 形成准确的政策分析搭配，强调制衡功能而不暗示结果已实现。",
+      "imitation": {
+        "background_zh": "假设项目治理情境，为避免决策权过度集中而设置独立评审。",
+        "sentence_en": "An independent review board can act as a counterweight to excessive centralisation.",
+        "translation_zh": "独立评审委员会可以对过度集中的决策权形成制衡。"
+      }
+    },
+    {
+      "id": "2026-11-17-diplomacy-address",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "address",
+      "meaning_zh": "讨论，处理（议题）",
+      "example": "The White House said later talks with the leaders of China and Russia would address nuclear weapons.",
+      "analysis_zh": "would address nuclear weapons 中，address 作及物动词表示在正式会谈中讨论或处理某个议题，可直接接 issue、concern、risk 或 nuclear weapons，无需额外介词。discuss 更偏交换意见，address 往往暗示把议题列入处理范围；solve 则暗示问题已解决，语义过强。The White House said 将谈判议题归于白宫声明，would 表示当时计划中的未来安排，不能写成会谈已经完成。",
+      "cloze": "The White House said later talks with the leaders of China and Russia would ______ nuclear weapons.",
+      "answer": "address",
+      "accepted": [
+        "discuss",
+        "cover"
+      ],
+      "hint_zh": "address nuclear weapons as a topic of talks",
+      "why_zh": "address 可直接接 nuclear weapons，表达正式外交议程将涉及这一议题，同时保留计划性质。",
+      "imitation": {
+        "background_zh": "假设跨部门项目会议，需要集中处理海外工厂的交期风险。",
+        "sentence_en": "The steering committee will address delivery risks at its next meeting.",
+        "translation_zh": "项目指导委员会将在下次会议上讨论交付风险。"
+      }
+    },
+    {
+      "id": "2026-11-17-bond-named",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "named",
+      "meaning_zh": "被宣布为，被选定为",
+      "example": "Robert Pattinson was named as the next James Bond, adding another famous character to his screen career.",
+      "analysis_zh": "was named as the next James Bond 中，name 是及物动词的被动形式，表示正式公布某人担任某个角色或职位；be named as + 身份 是新闻标题中的常见结构。cast as 更强调选角，chosen as 强调选择过程，announced as 强调公开宣布，均可填入原句。adding another famous character 是现在分词短语，补充说明这一角色对演员履历的意义，不意味着影片已经上映。",
+      "cloze": "Robert Pattinson was ______ as the next James Bond, adding another famous character to his screen career.",
+      "answer": "named",
+      "accepted": [
+        "cast",
+        "chosen",
+        "selected",
+        "announced"
+      ],
+      "hint_zh": "was named as the next ...",
+      "why_zh": "被动结构 was named as 能准确表达演员人选已公布，并与后面的角色名称自然搭配。",
+      "imitation": {
+        "background_zh": "假设篮球新闻，一名球员获选为球队新任队长。",
+        "sentence_en": "The veteran guard was named as the team's new captain.",
+        "translation_zh": "这名经验丰富的后卫被任命为球队新队长。"
+      }
+    },
+    {
+      "id": "2026-11-17-bond-helm",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "helm",
+      "meaning_zh": "执导，掌舵",
+      "example": "Denis Villeneuve is set to helm the 26th instalment of the film series.",
+      "analysis_zh": "helm the 26th instalment 中，helm 作动词表示执导电影或领导项目，源自船舵的意象。direct 是影视制作中更直接的同义词；manage 通常指日常管理，不一定意味着担任导演。is set to + 动词原形表示已安排或预计将发生，不能据此断言电影已经拍完。instalment 在英式英语中可指系列电影的一部，美式拼写 installment 也常见。商务表达可以用 helm a transformation programme。",
+      "cloze": "Denis Villeneuve is set to ______ the 26th instalment of the film series.",
+      "answer": "helm",
+      "accepted": [
+        "direct"
+      ],
+      "hint_zh": "helm a film or a major project",
+      "why_zh": "to 后需要动词原形，helm 能准确指导演掌舵一部系列电影，与 direct 可互换。",
+      "imitation": {
+        "background_zh": "假设工作场景，一位项目经理负责领导跨国系统切换。",
+        "sentence_en": "An experienced project manager will helm the regional system migration.",
+        "translation_zh": "一位经验丰富的项目经理将主导区域系统迁移。"
+      }
+    },
+    {
+      "id": "2026-11-17-bond-grossed",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "grossed",
+      "meaning_zh": "（影片）取得票房总收入",
+      "example": "By the time of the announcement, the previous 25 Bond films had grossed an inflation-adjusted $23bn.",
+      "analysis_zh": "the previous 25 Bond films had grossed an inflation-adjusted $23bn 中，gross 是电影票房报道的专门动词，强调总收入，不能直接理解为扣除成本后的利润。had grossed 为过去完成时，表示截至该次宣布之前的累计结果。earned 和 generated 可表达产生收入，但 grossed 在票房语境更精确。inflation-adjusted 表示已进行通胀调整，金额不能与未经调整的名义票房直接比较。",
+      "cloze": "By the time of the announcement, the previous 25 Bond films had ______ an inflation-adjusted $23bn.",
+      "answer": "grossed",
+      "accepted": [
+        "earned",
+        "generated"
+      ],
+      "hint_zh": "gross an amount at the box office",
+      "why_zh": "电影作主语且后接累计票房金额，grossed 是最精确的行业用词，过去分词形式与 had 配合。",
+      "imitation": {
+        "background_zh": "假设财经新闻，一部纪录片上映后公布全球票房。",
+        "sentence_en": "The documentary grossed $12m worldwide during its first month.",
+        "translation_zh": "这部纪录片上映首月在全球取得了1200万美元票房。"
+      }
+    },
+    {
+      "id": "2026-11-17-memoir-defend",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "defend",
+      "meaning_zh": "为决定辩护，维护其合理性",
+      "example": "In a new memoir, former president Joe Biden sought to defend his decisions during his time in office.",
+      "analysis_zh": "sought to defend his decisions 中，seek to + 动词原形表示试图达到某种目的，defend one's decisions 指为过去的决定辩护。justify 更强调证明决定有充分理由，explain 仅需说明背景，vindicate 语气更强，侧重证明过去的判断正确。sought to 仅描述作者的写作意图，不能推出读者已被说服。新闻分析也常说 defend a policy decision against criticism。",
+      "cloze": "In a new memoir, former president Joe Biden sought to ______ his decisions during his time in office.",
+      "answer": "defend",
+      "accepted": [
+        "justify",
+        "explain",
+        "vindicate"
+      ],
+      "hint_zh": "defend one's decisions or record",
+      "why_zh": "sought to 后用动词原形，defend 与 his decisions 构成自然搭配，符合回忆录为执政记录辩护的语境。",
+      "imitation": {
+        "background_zh": "假设合同谈判复盘，项目负责人向管理层说明采购策略。",
+        "sentence_en": "The project lead sought to defend the revised sourcing strategy.",
+        "translation_zh": "项目负责人试图为修订后的采购策略进行辩护。"
+      }
+    },
+    {
+      "id": "2026-11-17-memoir-faulted",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "faulted",
+      "meaning_zh": "批评，指责其存在不足",
+      "example": "The Economist's reviewer faulted the book for offering too little reflection on his unsuccessful re-election effort.",
+      "analysis_zh": "faulted the book for offering too little reflection 属于 fault + 宾语 + for + V-ing，指出某个作品或行为的具体不足。criticised 或 criticized 也成立，但 fault 尤其强调可以明确指出的缺点。too little reflection 表示评论者认为反思不足，这是 The Economist 评论者的评价，并非独立核实的客观事实。与 accuse somebody of 相比，fault something for 适用于对作品质量和论证方式的批评。",
+      "cloze": "The Economist's reviewer ______ the book for offering too little reflection on his unsuccessful re-election effort.",
+      "answer": "faulted",
+      "accepted": [
+        "criticised",
+        "criticized"
+      ],
+      "hint_zh": "fault somebody or something for doing something",
+      "why_zh": "faulted ... for offering 与 for 后的动名词构成固定句法，并准确保留评论者的批评立场。",
+      "imitation": {
+        "background_zh": "假设供应链评审，团队指出预测报告缺少风险分析。",
+        "sentence_en": "The review panel faulted the forecast for overlooking supplier risks.",
+        "translation_zh": "评审小组批评这份预测报告忽视了供应商风险。"
+      }
+    },
+    {
+      "id": "2026-11-17-memoir-curtailed",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "curtailed",
+      "meaning_zh": "缩短，削减，限制",
+      "example": "His promotional tour was curtailed because of illness, according to the review.",
+      "analysis_zh": "His promotional tour was curtailed because of illness 使用被动语态，curtail 表示计划中的活动被迫缩减规模或时长，常搭配 tour、spending、operations、freedom。shorten 更强调时间变短，limit 强调施加限制，curtail 则通常包含原计划受到约束的含义。according to the review 说明消息依据是该篇评论，不能推断全部宣传活动都已取消。财经报道也可说 curtail capital expenditure。",
+      "cloze": "His promotional tour was ______ because of illness, according to the review.",
+      "answer": "curtailed",
+      "accepted": [
+        "shortened",
+        "limited",
+        "reduced"
+      ],
+      "hint_zh": "curtail a tour, activity or spending",
+      "why_zh": "was 后需要过去分词，curtailed 准确描述原定宣传行程被缩减，同时没有夸大为彻底取消。",
+      "imitation": {
+        "background_zh": "假设旅行安排，恶劣天气导致原定摄影行程缩短。",
+        "sentence_en": "Heavy rain curtailed our photography trip along the coast.",
+        "translation_zh": "大雨迫使我们缩短了沿海摄影行程。"
+      }
     }
   ],
   "passages": [
@@ -464,6 +661,24 @@
       "date": "2026-11-17",
       "title": "Indian court weighs complaints over voter-register changes",
       "body": "Critics {{2026-11-17-voters-india-alleged}} that a rushed review of India's voter rolls had removed eligible citizens. Petitioners want access to commission records to {{2026-11-17-voters-india-establish}} how removal decisions were made. The dispute could {{2026-11-17-voters-india-undermine}} public confidence in the body responsible for election oversight. Election officials said the review aimed to remove duplicate registrations and the names of deceased voters."
+    },
+    {
+      "id": "2026-11-17-diplomacy",
+      "date": "2026-11-17",
+      "title": "Trump's Asia tour puts the Quad and China talks in focus",
+      "body": "The American president began his Asian diplomatic trip in Manila before a planned visit to China. The Quad's leaders were due to meet on the {{2026-11-17-diplomacy-sidelines}} of an ASEAN summit in Manila, their first gathering in two years. The four-country grouping is intended as a strategic {{2026-11-17-diplomacy-counterweight}} to China's growing influence in the Pacific. The White House said later talks with the leaders of China and Russia would {{2026-11-17-diplomacy-address}} nuclear weapons. Strained relations between Washington and New Delhi had complicated cooperation within the Quad."
+    },
+    {
+      "id": "2026-11-17-bond",
+      "date": "2026-11-17",
+      "title": "A new James Bond is announced as the franchise looks ahead",
+      "body": "Robert Pattinson was {{2026-11-17-bond-named}} as the next James Bond, adding another famous character to his screen career. Denis Villeneuve is set to {{2026-11-17-bond-helm}} the 26th instalment of the film series. By the time of the announcement, the previous 25 Bond films had {{2026-11-17-bond-grossed}} an inflation-adjusted $23bn. Pattinson had already played a vampire and a superhero, giving him experience with globally recognised characters."
+    },
+    {
+      "id": "2026-11-17-memoir",
+      "date": "2026-11-17",
+      "title": "Biden's memoir prompts a debate over political self-reflection",
+      "body": "In a new memoir, former president Joe Biden sought to {{2026-11-17-memoir-defend}} his decisions during his time in office. The Economist's reviewer {{2026-11-17-memoir-faulted}} the book for offering too little reflection on his unsuccessful re-election effort. His promotional tour was {{2026-11-17-memoir-curtailed}} because of illness, according to the review. The book also revisits Biden's claim that he could have prevailed over Democratic rivals in a nomination contest."
     }
   ]
 }
