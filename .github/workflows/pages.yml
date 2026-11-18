@@ -8,6 +8,7 @@ on:
       - cloud-sync.js
       - cloud-config.js
       - scripts/validate_cloze.py
+      - scripts/test_spaced_review.cjs
       - scripts/verify_live_release.py
       - content/catalog.json
       - manifest.webmanifest
@@ -33,6 +34,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate single-word cloze rules
         run: python3 scripts/validate_cloze.py
+      - name: Verify spaced repetition and saved-answer invariants
+        run: node scripts/test_spaced_review.cjs
       - name: Prepare static website
         run: |
           mkdir -p _site/content _site/icons
