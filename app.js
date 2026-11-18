@@ -4,7 +4,7 @@ const KEY='brieflab-progress-v1';
 const WORK_KEY='brieflab-working-v1';
 // Public links are stateless by default. Only an explicit #mine link enables personal progress.
 // The legacy ?guest=1 and #guest links continue to work as stateless public views.
-const GUEST=new URLSearchParams(window.location.search).get('guest')==='1'||window.location.hash!=='#mine';
+const GUEST=new URLSearchParams(window.location.search).get('guest')==='1';
 const E=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const norm=value=>String(value||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
@@ -40,7 +40,18 @@ function activatePassage(id){
  visibleHintClicks={};
  const k=work.day+'|'+id;
  const current=work.entries[k]||{};
- const entry={answers:current.answers||{},hints:current.hints||{},feedback:current.feedback||{},updatedAt:current.updatedAt||''};
+ const entry={answers:{...(current.answers||{})},hints:{...(current.hints||{})},feedback:{...(current.feedback||{})},updatedAt:current.updatedAt||''};
+ // A checked answer is also stored in the durable spaced-review history.
+ // Recover it if another device or an older cloud session lost today's UI entry.
+ const passage=passageById(id);
+ if(!GUEST&&passage)for(const targetId of idsInPassage(passage)){
+  if(entry.feedback[targetId])continue;
+  const reviewed=(record(targetId).history||[]).filter(x=>x.date===today()).at(-1);
+  if(!reviewed||typeof reviewed.answer!=='string')continue;
+  entry.answers[targetId]=reviewed.answer;
+  entry.hints[targetId]=Math.max(0,Number(reviewed.hintCount)||0);
+  entry.feedback[targetId]={answer:reviewed.answer,correct:reviewed.correct===true,hintCount:entry.hints[targetId]};
+ }
  work.entries[k]=entry;
  answers=entry.answers;hints=entry.hints;feedback=entry.feedback;
 }
@@ -63,7 +74,13 @@ const notice=msg=>{$('notice').hidden=false;$('notice').textContent=msg;};
 function isDue(item){
  if(item.date>=today())return false;
  const r=record(item.id);
- return !r.attempts||(r.nextDue&&r.nextDue<=today());
+ if(!r.attempts)return true;
+ // Independently correct answers are mastered; they never become fresh blanks.
+ // Review history remains available as context when other words in a passage recur.
+ const last=(r.history||[]).at(-1);
+ if(last&&last.correct===true&&(Number(last.hintCount)||0)<=2)return false;
+ if(r.lastReviewed===today())return false;
+ return Boolean(r.nextDue&&r.nextDue<=today());
 }
 function orderedGroups(ids){
  const selected=new Set(ids);
@@ -257,13 +274,13 @@ function checkBlank(id){
  if(/\s/.test(answer)){error.textContent='每空只填写一个单词';input.focus();return;}
  const correct=[item.answer,...(item.accepted||[])].some(v=>norm(v)===norm(answer));
  const hintCount=Math.min(Math.max(0,Number(hints[id])||0),Math.max(0,item.answer.length-1)),independent=correct&&hintCount<=2,old=record(id);
- const streak=independent?old.streak+1:0,days=independent?([0,3,7,14,30,60][Math.min(streak,5)]||60):1;
+ const streak=independent?old.streak+1:0;
  answers[id]=answer;
  feedback[id]={answer,correct,hintCount};
  saveWork();
  if(!GUEST)progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(independent?1:0),
   wrongCount:old.wrongCount+(correct?0:1),hintAssisted:(old.hintAssisted||0)+(correct&&hintCount?1:0),
-  streak,nextDue:addDays(today(),days),lastReviewed:today(),lastReviewedAt:new Date().toISOString(),
+  streak,nextDue:independent?null:addDays(today(),1),lastReviewed:today(),lastReviewedAt:new Date().toISOString(),
   history:[...(old.history||[]).slice(-49),{date:today(),answer,correct,hintCount,attemptId:crypto.randomUUID(),at:new Date().toISOString()}]};
  save();
  const n=idsInPassage(passageById(session[idx])).indexOf(id)+1;
@@ -373,8 +390,8 @@ function offerScreenshotRecovery(){
  };
 }
 function startForGroups(groupIds){
+ // Revisiting a group must never erase checked answers or unsubmitted drafts.
  session=[...new Set(groupIds)];idx=0;
- for(const id of session)delete work.entries[today()+'|'+id];
  work.session=[...session];work.idx=0;saveWork();nav('quiz');
 }
 
