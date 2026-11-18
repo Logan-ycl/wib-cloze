@@ -74,7 +74,7 @@ function orderedGroups(ids){
    if(rr.some(x=>x.r.wrongCount&&x.r.nextDue<=today()))return 1;
    return 2;
   }
-  return rank(a)-rank(b)||b.date.localeCompare(a.date)||a.id.localeCompare(b.id);
+  return b.date.localeCompare(a.date)||rank(a)-rank(b)||a.id.localeCompare(b.id);
  }).map(p=>p.id);
 }
 function dueGroups(){
@@ -90,10 +90,19 @@ function refreshPracticeQueue(keepChecked=true){
  const retained=old.filter(id=>dueSet.has(id)||checkedSet.has(id));
  // Keep today's completed passages available after reload. Also recover passages
  // removed by older clients without touching answers or spaced-review dates.
- session=[...new Set([...retained,...checkedToday,...due])];
+ // Always show the newest calendar edition first, including when an older
+ // saved session exists. Preserve checked answers and hint/record state.
+ const order=new Map(passages.map((p,i)=>[p.id,i]));
+ session=[...new Set([...due,...checkedToday,...retained])].sort((a,b)=>{
+  const dateA=passageById(a)?.date||'',dateB=passageById(b)?.date||'';
+  return dateB.localeCompare(dateA)||(order.get(a)??0)-(order.get(b)??0);
+ });
  const next=old.slice(position).find(id=>session.includes(id));
+ const oldFront=passageById(old[0])?.date||'';
+ const newFront=passageById(session[0])?.date||'';
+ const newerEditionArrived=Boolean(old.length&&session.length&&newFront>oldFront);
  const wasFinished=old.length>0&&position>=old.length;
- idx=next?session.indexOf(next):wasFinished?retained.length:0;
+ idx=newerEditionArrived?0:next?session.indexOf(next):wasFinished?session.length:0;
  work.session=[...session];work.idx=idx;
 }
 function labelDue(){
