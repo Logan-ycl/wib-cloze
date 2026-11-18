@@ -101,7 +101,7 @@ function isDue(item){
 }
 function orderedGroups(ids){
  const selected=new Set(ids);
- return passages.filter(p=>idsInPassage(p).some(id=>selected.has(id))).sort((a,b)=>{
+ return passages.filter(p=>idsInPassage(p).some(id=>selected.has(id))&&(!p.archive_only||idsInPassage(p).some(id=>record(id).attempts>0))).sort((a,b)=>{
   function rank(p){
    const rr=idsInPassage(p).map(id=>({id,r:record(id)}));
    if(rr.some(x=>!x.r.attempts&&p.date===addDays(today(),-1)))return 0;
@@ -112,7 +112,7 @@ function orderedGroups(ids){
  }).map(p=>p.id);
 }
 function dueGroups(){
- if(GUEST)return passages.filter(p=>p.date===edition?.date).map(p=>p.id);
+ if(GUEST)return passages.filter(p=>p.date===edition?.date&&!p.archive_only).map(p=>p.id);
  return orderedGroups(items.filter(isDue).map(x=>x.id));
 }
 function refreshPracticeQueue(keepChecked=true){
@@ -529,7 +529,10 @@ async function load(){
   passages=[...new Map([...(all.passages||[]),...(latest.passages||[])].map(x=>[x.id,x])).values()];
   const ready=passages.filter(p=>{ const ids=idsInPassage(p); return ids.length>=3&&new Set(ids).size===ids.length&&ids.every(id=>{const item=itemById(id);return item&&/^[A-Za-z]+$/.test(item.answer);});});
   if(ready.length!==passages.length||!ready.length)throw Error('题库规则错误：每篇至少3个不同的单词空');
-  passages=ready;
+  // Show recent dates first, and show the seven current top stories in email order.
+  const latestOrder=new Map((latest.passages||[]).map((p,i)=>[p.id,i]));
+  passages=ready.sort((a,b)=>b.date.localeCompare(a.date)
+    ||(latestOrder.get(a.id)??1000)-(latestOrder.get(b.id)??1000));
   refreshPracticeQueue();saveWork();
   $('notice').hidden=true;labelDue();nav(tab);offerScreenshotRecovery();
  }catch(err){notice('课程加载失败：'+err.message+'。请刷新页面后重试。');}
