@@ -8,6 +8,7 @@ on:
       - cloud-sync.js
       - cloud-config.js
       - scripts/validate_cloze.py
+      - scripts/verify_live_release.py
       - content/catalog.json
       - manifest.webmanifest
       - manifest.mine.webmanifest
@@ -67,3 +68,5 @@ jobs:
           done
           curl --fail --silent --show-error --location "$SITE" --output /tmp/brieflab-home.html
           grep -q 'manifest.mine.webmanifest' /tmp/brieflab-home.html
+      - name: Verify deployed learning edition and catalog match GitHub
+        run: python3 scripts/verify_live_release.py "${{ steps.deployment.outputs.page_url }}"
