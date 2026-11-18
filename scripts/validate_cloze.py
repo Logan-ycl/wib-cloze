@@ -116,7 +116,7 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
 used_latest_ids = {
     target_id
     for p in latest["passages"]
-        for target_id in re.findall(r"\{\{([^{}]+)\}\}", p["body"])
+    for target_id in re.findall(r"\{\{([^{}]+)\}\}", p["body"])
 }
 assert used_latest_ids == {i["id"] for i in latest["items"]}, (
     "latest: orphan or missing item references"
