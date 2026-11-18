@@ -3,7 +3,7 @@
   "edition": {
     "date": "2026-11-17",
     "title": "The World in Brief · Contextual Cloze · 17 November 2026",
-    "summary_zh": "依据11月17日期号订阅邮件原创改写的9篇新闻，包含27道单词填空、独立精读解析、备选答案与仿照造句。",
+    "summary_zh": "依据11月17日邮件 Today’s top stories 的7则短讯原创改写，含21道单词填空、精读解析、可选答案及仿照造句。",
     "source_url": "https://www.economist.com/the-world-in-brief",
     "source_label": "The Economist · 订阅邮件学习版",
     "source_mode": "gmail",
@@ -83,6 +83,68 @@
         "background_zh": "假设情境，供应链：原料交期突然变化引起项目组担忧。",
         "sentence_en": "The unexpected lead-time change unsettled the project team.",
         "translation_zh": "交期的意外变化让项目团队感到不安。"
+      }
+    },
+    {
+      "id": "2026-11-17-diplomacy-sidelines",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "sidelines",
+      "meaning_zh": "（会议或活动的）场边、期间",
+      "example": "The Quad's leaders were due to meet on the sidelines of an ASEAN summit in Manila, their first gathering in two years.",
+      "analysis_zh": "on the sidelines of an ASEAN summit 指利用东盟峰会举行期间进行其他会晤，通常是正式议程之外的配套外交活动。on the margins of 也成立，但不能写 at the sidelines of。句中 were due to meet 表示预定会晤，仍有时间上的不确定性；their first gathering in two years 限定的是 Quad 领导人会议的间隔。商务场景可说 discuss a proposal on the sidelines of a conference。",
+      "cloze": "The Quad's leaders were due to meet on the ______ of an ASEAN summit in Manila, their first gathering in two years.",
+      "answer": "sidelines",
+      "accepted": [
+        "margins"
+      ],
+      "hint_zh": "常见外交搭配 on the sidelines of a summit",
+      "why_zh": "on the sidelines of 是报道峰会期间双边或小多边会晤的固定表达；margins 也是合适的单词替换。",
+      "imitation": {
+        "background_zh": "假设商务场景，参加行业展会时顺便讨论供应商合作。",
+        "sentence_en": "We discussed the supply agreement on the sidelines of the industry conference.",
+        "translation_zh": "我们在行业会议期间利用会外时间讨论了供应协议。"
+      }
+    },
+    {
+      "id": "2026-11-17-diplomacy-counterweight",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "counterweight",
+      "meaning_zh": "制衡力量",
+      "example": "The four-country grouping is intended as a strategic counterweight to China's growing influence in the Pacific.",
+      "analysis_zh": "a strategic counterweight to China's growing influence 中，counterweight 本义是平衡重量的配重，外交语境延伸为能够制衡另一方影响力的力量。固定结构是 a counterweight to + 名词，不能直接换成 check，因为通常说 a check on。is intended as 明确这是该机制被赋予的战略目的，并未证明其已达到制衡效果。项目管理中可用 counterweight to excessive centralisation 描述对过度集权的平衡机制。",
+      "cloze": "The four-country grouping is intended as a strategic ______ to China's growing influence in the Pacific.",
+      "answer": "counterweight",
+      "accepted": [],
+      "hint_zh": "a strategic counterweight to",
+      "why_zh": "counterweight 与介词 to 形成准确的政策分析搭配，强调制衡功能而不暗示结果已实现。",
+      "imitation": {
+        "background_zh": "假设项目治理情境，为避免决策权过度集中而设置独立评审。",
+        "sentence_en": "An independent review board can act as a counterweight to excessive centralisation.",
+        "translation_zh": "独立评审委员会可以对过度集中的决策权形成制衡。"
+      }
+    },
+    {
+      "id": "2026-11-17-diplomacy-address",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "address",
+      "meaning_zh": "讨论，处理（议题）",
+      "example": "The White House said later talks with the leaders of China and Russia would address nuclear weapons.",
+      "analysis_zh": "would address nuclear weapons 中，address 作及物动词表示在正式会谈中讨论或处理某个议题，可直接接 issue、concern、risk 或 nuclear weapons，无需额外介词。discuss 更偏交换意见，address 往往暗示把议题列入处理范围；solve 则暗示问题已解决，语义过强。The White House said 将谈判议题归于白宫声明，would 表示当时计划中的未来安排，不能写成会谈已经完成。",
+      "cloze": "The White House said later talks with the leaders of China and Russia would ______ nuclear weapons.",
+      "answer": "address",
+      "accepted": [
+        "discuss",
+        "cover"
+      ],
+      "hint_zh": "address nuclear weapons as a topic of talks",
+      "why_zh": "address 可直接接 nuclear weapons，表达正式外交议程将涉及这一议题，同时保留计划性质。",
+      "imitation": {
+        "background_zh": "假设跨部门项目会议，需要集中处理海外工厂的交期风险。",
+        "sentence_en": "The steering committee will address delivery risks at its next meeting.",
+        "translation_zh": "项目指导委员会将在下次会议上讨论交付风险。"
       }
     },
     {
@@ -356,140 +418,6 @@
       }
     },
     {
-      "id": "2026-11-17-voters-india-alleged",
-      "date": "2026-11-17",
-      "type": "word",
-      "expression": "alleged",
-      "meaning_zh": "指称，声称",
-      "example": "Critics alleged that a rushed review of India's voter rolls had removed eligible citizens.",
-      "analysis_zh": "Critics alleged that ... 是带明确来源的新闻归因，表示批评者提出了有待核实的指控。allege 后直接接 that 从句；confirm 表示得到确认，不能替代。a rushed review 反映批评者认为程序仓促，并未说明法院已经认定相关删名行为违法。had removed 是相对于批评者声明的更早动作。",
-      "cloze": "Critics ______ that a rushed review of India's voter rolls had removed eligible citizens.",
-      "answer": "alleged",
-      "accepted": [
-        "claimed",
-        "argued",
-        "contended",
-        "asserted"
-      ],
-      "hint_zh": "有争议的说法须明确归于批评者。",
-      "why_zh": "争议尚在司法审查中，alleged 能准确保留批评者的主张属性。",
-      "imitation": {
-        "background_zh": "假设情境，采购合规：供应商指称招标程序存在不公。",
-        "sentence_en": "The supplier alleged that the bidding process had been unfair.",
-        "translation_zh": "该供应商指称招标程序存在不公平情况。"
-      }
-    },
-    {
-      "id": "2026-11-17-voters-india-establish",
-      "date": "2026-11-17",
-      "type": "word",
-      "expression": "establish",
-      "meaning_zh": "查明，确定",
-      "example": "Petitioners want access to commission records to establish how removal decisions were made.",
-      "analysis_zh": "establish how decisions were made 意为根据档案或证据查明决定形成的方式，establish 后可直接接 how 从句，无需 about。assume 表示猜测，establish 更强调证据支持；determine 强调查明，verify 更侧重核实已有说法。want access 表示申请查阅，不能说他们已经取得全部资料。",
-      "cloze": "Petitioners want access to commission records to ______ how removal decisions were made.",
-      "answer": "establish",
-      "accepted": [
-        "determine",
-        "verify",
-        "clarify",
-        "examine"
-      ],
-      "hint_zh": "通过档案厘清具体决策过程。",
-      "why_zh": "to 后须动词原形，establish how 自然表达使用记录核查决策过程。",
-      "imitation": {
-        "background_zh": "假设情境，生产计划：审查 ERP 记录查明交期变更流程。",
-        "sentence_en": "We reviewed the records to establish how the delivery date was changed.",
-        "translation_zh": "我们审查记录，以查明交货日期是如何被修改的。"
-      }
-    },
-    {
-      "id": "2026-11-17-voters-india-undermine",
-      "date": "2026-11-17",
-      "type": "word",
-      "expression": "undermine",
-      "meaning_zh": "削弱，动摇",
-      "example": "The dispute could undermine public confidence in the body responsible for election oversight.",
-      "analysis_zh": "could undermine public confidence in ... 表示争议可能侵蚀公众对机构的信心，could 后必须用动词原形，confidence in 后面接信任对象。undermine 指削弱信任基础，destroy 往往过于绝对。句中只谈潜在影响，不能据此判断机构信誉已经全面崩溃；也可用于 undermine investor confidence。",
-      "cloze": "The dispute could ______ public confidence in the body responsible for election oversight.",
-      "answer": "undermine",
-      "accepted": [
-        "erode",
-        "weaken",
-        "damage",
-        "shake"
-      ],
-      "hint_zh": "could 后接原形，表达潜在信任损害。",
-      "why_zh": "could 后需要动词原形，undermine 与 confidence in 构成自然财经和公共事务搭配。",
-      "imitation": {
-        "background_zh": "假设情境，项目合作：里程碑反复修改可能影响合作方信心。",
-        "sentence_en": "Repeated milestone changes could undermine our partner's confidence in the plan.",
-        "translation_zh": "反复修改里程碑可能削弱合作伙伴对计划的信心。"
-      }
-    },
-    {
-      "id": "2026-11-17-diplomacy-sidelines",
-      "date": "2026-11-17",
-      "type": "word",
-      "expression": "sidelines",
-      "meaning_zh": "（会议或活动的）场边、期间",
-      "example": "The Quad's leaders were due to meet on the sidelines of an ASEAN summit in Manila, their first gathering in two years.",
-      "analysis_zh": "on the sidelines of an ASEAN summit 指利用东盟峰会举行期间进行其他会晤，通常是正式议程之外的配套外交活动。on the margins of 也成立，但不能写 at the sidelines of。句中 were due to meet 表示预定会晤，仍有时间上的不确定性；their first gathering in two years 限定的是 Quad 领导人会议的间隔。商务场景可说 discuss a proposal on the sidelines of a conference。",
-      "cloze": "The Quad's leaders were due to meet on the ______ of an ASEAN summit in Manila, their first gathering in two years.",
-      "answer": "sidelines",
-      "accepted": [
-        "margins"
-      ],
-      "hint_zh": "常见外交搭配 on the sidelines of a summit",
-      "why_zh": "on the sidelines of 是报道峰会期间双边或小多边会晤的固定表达；margins 也是合适的单词替换。",
-      "imitation": {
-        "background_zh": "假设商务场景，参加行业展会时顺便讨论供应商合作。",
-        "sentence_en": "We discussed the supply agreement on the sidelines of the industry conference.",
-        "translation_zh": "我们在行业会议期间利用会外时间讨论了供应协议。"
-      }
-    },
-    {
-      "id": "2026-11-17-diplomacy-counterweight",
-      "date": "2026-11-17",
-      "type": "word",
-      "expression": "counterweight",
-      "meaning_zh": "制衡力量",
-      "example": "The four-country grouping is intended as a strategic counterweight to China's growing influence in the Pacific.",
-      "analysis_zh": "a strategic counterweight to China's growing influence 中，counterweight 本义是平衡重量的配重，外交语境延伸为能够制衡另一方影响力的力量。固定结构是 a counterweight to + 名词，不能直接换成 check，因为通常说 a check on。is intended as 明确这是该机制被赋予的战略目的，并未证明其已达到制衡效果。项目管理中可用 counterweight to excessive centralisation 描述对过度集权的平衡机制。",
-      "cloze": "The four-country grouping is intended as a strategic ______ to China's growing influence in the Pacific.",
-      "answer": "counterweight",
-      "accepted": [],
-      "hint_zh": "a strategic counterweight to",
-      "why_zh": "counterweight 与介词 to 形成准确的政策分析搭配，强调制衡功能而不暗示结果已实现。",
-      "imitation": {
-        "background_zh": "假设项目治理情境，为避免决策权过度集中而设置独立评审。",
-        "sentence_en": "An independent review board can act as a counterweight to excessive centralisation.",
-        "translation_zh": "独立评审委员会可以对过度集中的决策权形成制衡。"
-      }
-    },
-    {
-      "id": "2026-11-17-diplomacy-address",
-      "date": "2026-11-17",
-      "type": "word",
-      "expression": "address",
-      "meaning_zh": "讨论，处理（议题）",
-      "example": "The White House said later talks with the leaders of China and Russia would address nuclear weapons.",
-      "analysis_zh": "would address nuclear weapons 中，address 作及物动词表示在正式会谈中讨论或处理某个议题，可直接接 issue、concern、risk 或 nuclear weapons，无需额外介词。discuss 更偏交换意见，address 往往暗示把议题列入处理范围；solve 则暗示问题已解决，语义过强。The White House said 将谈判议题归于白宫声明，would 表示当时计划中的未来安排，不能写成会谈已经完成。",
-      "cloze": "The White House said later talks with the leaders of China and Russia would ______ nuclear weapons.",
-      "answer": "address",
-      "accepted": [
-        "discuss",
-        "cover"
-      ],
-      "hint_zh": "address nuclear weapons as a topic of talks",
-      "why_zh": "address 可直接接 nuclear weapons，表达正式外交议程将涉及这一议题，同时保留计划性质。",
-      "imitation": {
-        "background_zh": "假设跨部门项目会议，需要集中处理海外工厂的交期风险。",
-        "sentence_en": "The steering committee will address delivery risks at its next meeting.",
-        "translation_zh": "项目指导委员会将在下次会议上讨论交付风险。"
-      }
-    },
-    {
       "id": "2026-11-17-bond-named",
       "date": "2026-11-17",
       "type": "word",
@@ -555,74 +483,6 @@
         "sentence_en": "The documentary grossed $12m worldwide during its first month.",
         "translation_zh": "这部纪录片上映首月在全球取得了1200万美元票房。"
       }
-    },
-    {
-      "id": "2026-11-17-memoir-defend",
-      "date": "2026-11-17",
-      "type": "word",
-      "expression": "defend",
-      "meaning_zh": "为决定辩护，维护其合理性",
-      "example": "In a new memoir, former president Joe Biden sought to defend his decisions during his time in office.",
-      "analysis_zh": "sought to defend his decisions 中，seek to + 动词原形表示试图达到某种目的，defend one's decisions 指为过去的决定辩护。justify 更强调证明决定有充分理由，explain 仅需说明背景，vindicate 语气更强，侧重证明过去的判断正确。sought to 仅描述作者的写作意图，不能推出读者已被说服。新闻分析也常说 defend a policy decision against criticism。",
-      "cloze": "In a new memoir, former president Joe Biden sought to ______ his decisions during his time in office.",
-      "answer": "defend",
-      "accepted": [
-        "justify",
-        "explain",
-        "vindicate"
-      ],
-      "hint_zh": "defend one's decisions or record",
-      "why_zh": "sought to 后用动词原形，defend 与 his decisions 构成自然搭配，符合回忆录为执政记录辩护的语境。",
-      "imitation": {
-        "background_zh": "假设合同谈判复盘，项目负责人向管理层说明采购策略。",
-        "sentence_en": "The project lead sought to defend the revised sourcing strategy.",
-        "translation_zh": "项目负责人试图为修订后的采购策略进行辩护。"
-      }
-    },
-    {
-      "id": "2026-11-17-memoir-faulted",
-      "date": "2026-11-17",
-      "type": "word",
-      "expression": "faulted",
-      "meaning_zh": "批评，指责其存在不足",
-      "example": "The Economist's reviewer faulted the book for offering too little reflection on his unsuccessful re-election effort.",
-      "analysis_zh": "faulted the book for offering too little reflection 属于 fault + 宾语 + for + V-ing，指出某个作品或行为的具体不足。criticised 或 criticized 也成立，但 fault 尤其强调可以明确指出的缺点。too little reflection 表示评论者认为反思不足，这是 The Economist 评论者的评价，并非独立核实的客观事实。与 accuse somebody of 相比，fault something for 适用于对作品质量和论证方式的批评。",
-      "cloze": "The Economist's reviewer ______ the book for offering too little reflection on his unsuccessful re-election effort.",
-      "answer": "faulted",
-      "accepted": [
-        "criticised",
-        "criticized"
-      ],
-      "hint_zh": "fault somebody or something for doing something",
-      "why_zh": "faulted ... for offering 与 for 后的动名词构成固定句法，并准确保留评论者的批评立场。",
-      "imitation": {
-        "background_zh": "假设供应链评审，团队指出预测报告缺少风险分析。",
-        "sentence_en": "The review panel faulted the forecast for overlooking supplier risks.",
-        "translation_zh": "评审小组批评这份预测报告忽视了供应商风险。"
-      }
-    },
-    {
-      "id": "2026-11-17-memoir-curtailed",
-      "date": "2026-11-17",
-      "type": "word",
-      "expression": "curtailed",
-      "meaning_zh": "缩短，削减，限制",
-      "example": "His promotional tour was curtailed because of illness, according to the review.",
-      "analysis_zh": "His promotional tour was curtailed because of illness 使用被动语态，curtail 表示计划中的活动被迫缩减规模或时长，常搭配 tour、spending、operations、freedom。shorten 更强调时间变短，limit 强调施加限制，curtail 则通常包含原计划受到约束的含义。according to the review 说明消息依据是该篇评论，不能推断全部宣传活动都已取消。财经报道也可说 curtail capital expenditure。",
-      "cloze": "His promotional tour was ______ because of illness, according to the review.",
-      "answer": "curtailed",
-      "accepted": [
-        "shortened",
-        "limited",
-        "reduced"
-      ],
-      "hint_zh": "curtail a tour, activity or spending",
-      "why_zh": "was 后需要过去分词，curtailed 准确描述原定宣传行程被缩减，同时没有夸大为彻底取消。",
-      "imitation": {
-        "background_zh": "假设旅行安排，恶劣天气导致原定摄影行程缩短。",
-        "sentence_en": "Heavy rain curtailed our photography trip along the coast.",
-        "translation_zh": "大雨迫使我们缩短了沿海摄影行程。"
-      }
     }
   ],
   "passages": [
@@ -631,6 +491,12 @@
       "date": "2026-11-17",
       "title": "AI valuations come under pressure",
       "body": "The Nasdaq index {{2026-11-17-tech-nasdaq-retreated}} by 2.7% as investors questioned whether the artificial-intelligence boom could sustain its pace. Shares in Nvidia {{2026-11-17-tech-nvidia-sank}} more than 4% as markets absorbed the departure of its founder from the top job. The sell-off also {{2026-11-17-tech-asia-unsettled}} chipmakers in Asia, suggesting that anxiety had spread beyond American markets. Anthropic's expected listing faces a more cautious market."
+    },
+    {
+      "id": "2026-11-17-diplomacy",
+      "date": "2026-11-17",
+      "title": "Trump's Asia tour puts the Quad and China talks in focus",
+      "body": "The American president began his Asian diplomatic trip in Manila before a planned visit to China. The Quad's leaders were due to meet on the {{2026-11-17-diplomacy-sidelines}} of an ASEAN summit in Manila, their first gathering in two years. The four-country grouping is intended as a strategic {{2026-11-17-diplomacy-counterweight}} to China's growing influence in the Pacific. The White House said later talks with the leaders of China and Russia would {{2026-11-17-diplomacy-address}} nuclear weapons. Strained relations between Washington and New Delhi had complicated cooperation within the Quad."
     },
     {
       "id": "2026-11-17-chips",
@@ -657,28 +523,10 @@
       "body": "Russian missile strikes {{2026-11-17-bridges-kyiv-forced}} the closure of two bridges across Kyiv's Dnieper river. The bridge connecting Russia with Crimea remains a {{2026-11-17-bridges-crimea-crucial}} supply route for Russian troops. The strikes {{2026-11-17-bridges-bridges-illustrated}} how transport links can become strategic targets during a prolonged war. Ukraine also reported a large drone attack including a strike on the bridge linking Russia with Crimea."
     },
     {
-      "id": "2026-11-17-voters",
-      "date": "2026-11-17",
-      "title": "Indian court weighs complaints over voter-register changes",
-      "body": "Critics {{2026-11-17-voters-india-alleged}} that a rushed review of India's voter rolls had removed eligible citizens. Petitioners want access to commission records to {{2026-11-17-voters-india-establish}} how removal decisions were made. The dispute could {{2026-11-17-voters-india-undermine}} public confidence in the body responsible for election oversight. Election officials said the review aimed to remove duplicate registrations and the names of deceased voters."
-    },
-    {
-      "id": "2026-11-17-diplomacy",
-      "date": "2026-11-17",
-      "title": "Trump's Asia tour puts the Quad and China talks in focus",
-      "body": "The American president began his Asian diplomatic trip in Manila before a planned visit to China. The Quad's leaders were due to meet on the {{2026-11-17-diplomacy-sidelines}} of an ASEAN summit in Manila, their first gathering in two years. The four-country grouping is intended as a strategic {{2026-11-17-diplomacy-counterweight}} to China's growing influence in the Pacific. The White House said later talks with the leaders of China and Russia would {{2026-11-17-diplomacy-address}} nuclear weapons. Strained relations between Washington and New Delhi had complicated cooperation within the Quad."
-    },
-    {
       "id": "2026-11-17-bond",
       "date": "2026-11-17",
       "title": "A new James Bond is announced as the franchise looks ahead",
       "body": "Robert Pattinson was {{2026-11-17-bond-named}} as the next James Bond, adding another famous character to his screen career. Denis Villeneuve is set to {{2026-11-17-bond-helm}} the 26th instalment of the film series. By the time of the announcement, the previous 25 Bond films had {{2026-11-17-bond-grossed}} an inflation-adjusted $23bn. Pattinson had already played a vampire and a superhero, giving him experience with globally recognised characters."
-    },
-    {
-      "id": "2026-11-17-memoir",
-      "date": "2026-11-17",
-      "title": "Biden's memoir prompts a debate over political self-reflection",
-      "body": "In a new memoir, former president Joe Biden sought to {{2026-11-17-memoir-defend}} his decisions during his time in office. The Economist's reviewer {{2026-11-17-memoir-faulted}} the book for offering too little reflection on his unsuccessful re-election effort. His promotional tour was {{2026-11-17-memoir-curtailed}} because of illness, according to the review. The book also revisits Biden's claim that he could have prevailed over Democratic rivals in a nomination contest."
     }
   ]
 }
