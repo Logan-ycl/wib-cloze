@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const GUEST=new URLSearchParams(location.search).get('guest')==='1'||location.hash!=='#mine';
+const GUEST=new URLSearchParams(location.search).get('guest')==='1';
 const STORAGE='brieflab-progress-v1', WORK='brieflab-working-v1', TOKEN='brieflab-cloud-key-v1';
 const API=String(window.BRIEFLAB_CLOUD_API||'').replace(/\/$/,'');
 const panel=document.getElementById('cloud-backup');
@@ -22,7 +22,7 @@ function mergeRecord(a,b){
  const history=[...h.values()].sort((x,y)=>String(x.at||x.date).localeCompare(String(y.at||y.date))).slice(-50);
  const recent=String(a.lastReviewedAt||a.lastReviewed||'')>=String(b.lastReviewedAt||b.lastReviewed||'')?a:b;
  const earlier=recent===a?b:a;
- const due=recent.nextDue||earlier.nextDue||null;
+ const due=Object.prototype.hasOwnProperty.call(recent,'nextDue')?recent.nextDue:(earlier.nextDue||null);
  const correctFromHistory=history.filter(x=>x.correct&&(x.hintCount||0)<=2).length;
  return {...earlier,...recent,history,
   attempts:Math.max(a.attempts||0,b.attempts||0,history.length),
@@ -66,7 +66,9 @@ function merge(a,b){
   wa.session?.length?wa:wb;
  return {v:1,progress:{records,read:{...(pb.read||{}),...(pa.read||{})}},
   work:{day:preferred.day||wa.day||wb.day||'',session:preferred.session||[],
-   idx:Number(preferred.idx)||0,entries,drafts,notes}};
+   idx:Number(preferred.idx)||0,entries,drafts,notes,
+   orderVersion:preferred.orderVersion||wa.orderVersion||wb.orderVersion||'',
+   sessionEdition:preferred.sessionEdition||wa.sessionEdition||wb.sessionEdition||''}};
 }
 function localData(){return {v:1,progress:readJson(STORAGE,{records:{},read:{}}),
  work:readJson(WORK,{day:'',session:[],idx:0,entries:{}})};}
