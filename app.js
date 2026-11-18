@@ -71,16 +71,33 @@ const passageById=id=>passages.find(x=>x.id===id);
 const idsInPassage=p=>[...p.body.matchAll(/\{\{([^}]+)\}\}/g)].map(m=>m[1]);
 const record=id=>progress.records[id]||{attempts:0,correct:0,wrongCount:0,streak:0,nextDue:null,history:[]};
 const notice=msg=>{$('notice').hidden=false;$('notice').textContent=msg;};
+// Spaced repetition: independent correct answers return after 3, 7, 14,
+// 30, then 60 days; incorrect or heavily hinted attempts return tomorrow.
+// Existing progress and answer histories are never reset by a new edition.
+const REVIEW_INTERVALS=[3,7,14,30,60];
+function nextReviewDate(r){
+ if(r.nextDue)return r.nextDue;
+ // Recover a due date for records accidentally written without nextDue.
+ const last=(r.history||[]).at(-1);
+ if(!last)return null;
+ const date=r.lastReviewed||last.date;
+ if(!date)return null;
+ const independent=last.correct===true&&(Number(last.hintCount)||0)<=2;
+ const days=independent?REVIEW_INTERVALS[Math.min(Math.max(1,Number(r.streak)||1)-1,REVIEW_INTERVALS.length-1)]:1;
+ return addDays(date,days);
+}
+function reviewedToday(id){
+ const r=record(id);
+ return r.lastReviewed===today()||(r.history||[]).some(x=>x.date===today());
+}
 function isDue(item){
  if(item.date>=today())return false;
  const r=record(item.id);
  if(!r.attempts)return true;
- // Independently correct answers are mastered; they never become fresh blanks.
- // Review history remains available as context when other words in a passage recur.
- const last=(r.history||[]).at(-1);
- if(last&&last.correct===true&&(Number(last.hintCount)||0)<=2)return false;
- if(r.lastReviewed===today())return false;
- return Boolean(r.nextDue&&r.nextDue<=today());
+ // A checked answer never becomes a second blank on the same calendar day.
+ if(reviewedToday(item.id))return false;
+ const due=nextReviewDate(r);
+ return Boolean(due&&due<=today());
 }
 function orderedGroups(ids){
  const selected=new Set(ids);
@@ -102,7 +119,8 @@ function refreshPracticeQueue(keepChecked=true){
  const old=[...work.session],position=Math.max(0,Number(work.idx)||0);
  const due=dueGroups(),dueSet=new Set(due);
  const checkedToday=keepChecked?passages.filter(p=>
-  Object.keys(work.entries[today()+'|'+p.id]?.feedback||{}).length>0).map(p=>p.id):[];
+  Object.keys(work.entries[today()+'|'+p.id]?.feedback||{}).length>0
+  ||idsInPassage(p).some(reviewedToday)).map(p=>p.id):[];
  const checkedSet=new Set(checkedToday);
  const retained=old.filter(id=>dueSet.has(id)||checkedSet.has(id));
  // Keep today's completed passages available after reload. Also recover passages
@@ -275,12 +293,13 @@ function checkBlank(id){
  const correct=[item.answer,...(item.accepted||[])].some(v=>norm(v)===norm(answer));
  const hintCount=Math.min(Math.max(0,Number(hints[id])||0),Math.max(0,item.answer.length-1)),independent=correct&&hintCount<=2,old=record(id);
  const streak=independent?old.streak+1:0;
+ const days=independent?REVIEW_INTERVALS[Math.min(streak-1,REVIEW_INTERVALS.length-1)]:1;
  answers[id]=answer;
  feedback[id]={answer,correct,hintCount};
  saveWork();
  if(!GUEST)progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(independent?1:0),
   wrongCount:old.wrongCount+(correct?0:1),hintAssisted:(old.hintAssisted||0)+(correct&&hintCount?1:0),
-  streak,nextDue:independent?null:addDays(today(),1),lastReviewed:today(),lastReviewedAt:new Date().toISOString(),
+  streak,nextDue:addDays(today(),days),lastReviewed:today(),lastReviewedAt:new Date().toISOString(),
   history:[...(old.history||[]).slice(-49),{date:today(),answer,correct,hintCount,attemptId:crypto.randomUUID(),at:new Date().toISOString()}]};
  save();
  const n=idsInPassage(passageById(session[idx])).indexOf(id)+1;
@@ -304,7 +323,7 @@ function renderQuiz(){
  }
  const p=passageById(session[idx]);
  if(!p){idx++;renderQuiz();return;}
- if(!GUEST&&!idsInPassage(p).some(id=>isDue(itemById(id)))&&
+ if(!GUEST&&!idsInPassage(p).some(id=>isDue(itemById(id))||reviewedToday(id))&&
     !Object.keys(work.entries[today()+'|'+p.id]?.feedback||{}).length){
   session.splice(idx,1);work.session=[...session];work.idx=idx;saveWork();
   renderQuiz();return;
