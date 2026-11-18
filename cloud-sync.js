@@ -31,6 +31,49 @@ function mergeRecord(a,b){
   hintAssisted:Math.max(a.hintAssisted||0,b.hintAssisted||0,history.filter(x=>x.correct&&x.hintCount>0).length),
   nextDue:due};
 }
+// A passage may be opened on both devices. Merge each blank independently:
+// a later navigation event must never overwrite an answer typed elsewhere.
+function mergeStudyEntry(x,y){
+ const left=x||{},right=y||{};
+ const answers={},hints={},feedback={},fieldUpdatedAt={};
+ const ids=new Set([
+  ...Object.keys(left.answers||{}),...Object.keys(right.answers||{}),
+  ...Object.keys(left.feedback||{}),...Object.keys(right.feedback||{}),
+  ...Object.keys(left.hints||{}),...Object.keys(right.hints||{}),
+  ...Object.keys(left.fieldUpdatedAt||{}),...Object.keys(right.fieldUpdatedAt||{})
+ ]);
+ const owns=(obj,key)=>Object.prototype.hasOwnProperty.call(obj||{},key);
+ const stamp=(obj,id)=>String(obj.fieldUpdatedAt?.[id]||obj.updatedAt||'');
+ for(const id of ids){
+  const hasLeft=owns(left.answers,id)||owns(left.feedback,id);
+  const hasRight=owns(right.answers,id)||owns(right.feedback,id);
+  const checkedLeft=owns(left.feedback,id),checkedRight=owns(right.feedback,id);
+  let chosen;
+  if(checkedLeft!==checkedRight)chosen=checkedLeft?left:right;
+  else if(!hasLeft)chosen=right;
+  else if(!hasRight)chosen=left;
+  else {
+   const t1=stamp(left,id),t2=stamp(right,id);
+   if(t1!==t2)chosen=t1>t2?left:right;
+   else {
+    // Deterministic tie-breaker so both devices converge.
+    const p1=stable([left.feedback?.[id]||null,left.answers?.[id]??null]);
+    const p2=stable([right.feedback?.[id]||null,right.answers?.[id]??null]);
+    chosen=p1>=p2?left:right;
+   }
+  }
+  if(owns(chosen.answers,id))answers[id]=chosen.answers[id];
+  else if(owns(chosen.feedback,id))answers[id]=chosen.feedback[id].answer;
+  if(checkedLeft||checkedRight)feedback[id]=clone(chosen.feedback[id]);
+  if(owns(left.hints,id)||owns(right.hints,id)){
+   hints[id]=Math.max(0,Number(left.hints?.[id])||0,Number(right.hints?.[id])||0);
+  }
+  const ts=[stamp(left,id),stamp(right,id)].filter(Boolean).sort();
+  if(ts.length)fieldUpdatedAt[id]=ts[ts.length-1];
+ }
+ const updatedAt=[left.updatedAt||'',right.updatedAt||''].sort().at(-1)||'';
+ return {answers,hints,feedback,fieldUpdatedAt,updatedAt};
+}
 function merge(a,b){
  const aa=a&&typeof a==='object'?a:{},bb=b&&typeof b==='object'?b:{};
  const pa=aa.progress||{},pb=bb.progress||{};
@@ -42,13 +85,7 @@ function merge(a,b){
   const x=(wa.entries||{})[id],y=(wb.entries||{})[id];
   if(!x)entries[id]=clone(y);
   else if(!y)entries[id]=clone(x);
-  else {
-   const newer=String(x.updatedAt||'')>=String(y.updatedAt||'')?x:y,older=newer===x?y:x;
-   entries[id]={answers:{...(older.answers||{}),...(newer.answers||{})},
-    hints:{...(older.hints||{}),...(newer.hints||{})},
-    feedback:{...(older.feedback||{}),...(newer.feedback||{})},
-    updatedAt:newer.updatedAt||older.updatedAt||''};
-  }
+  else entries[id]=mergeStudyEntry(x,y);
  }
  const drafts={};
  for(const date of new Set([...Object.keys(wa.drafts||{}),...Object.keys(wb.drafts||{})])){
