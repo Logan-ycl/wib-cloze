@@ -1,475 +1,469 @@
 {
   "schema_version": 3,
   "edition": {
-    "date": "2026-11-16",
-    "title": "The World in Brief · Contextual Cloze · 16 November 2026",
-    "summary_zh": "6篇原创新闻语境，18个单词填空。",
+    "date": "2026-11-17",
+    "title": "The World in Brief · Contextual Cloze · 17 November 2026",
+    "summary_zh": "依据11月17日期号订阅邮件改写的6篇原创新闻，包含18个英文单词填空、独立精读解析、合理备选答案与仿照造句。",
     "source_url": "https://www.economist.com/the-world-in-brief",
     "source_label": "The Economist · 订阅邮件学习版",
     "source_mode": "gmail",
     "is_demo": false,
-    "generated_at": "2026-11-16T22:35:51+08:00"
+    "generated_at": "2026-11-18T00:07:58.564Z"
   },
   "items": [
     {
-      "id": "2026-11-16-nvidia-urged",
-      "date": "2026-11-16",
+      "id": "2026-11-17-tech-nasdaq-retreated",
+      "date": "2026-11-17",
       "type": "word",
-      "expression": "urged",
-      "meaning_zh": "敦促",
-      "example": "The treasury secretary urged Nvidia to consider an outsider as its next chief executive.",
-      "analysis_zh": "urge someone to do something 是正式建议和施压结构，后面接宾语 Nvidia 再接不定式 to consider。财长提出的是意见，不能当成公司已经决定聘请外部人士。与 order 相比，urge 没有直接命令的法律含义。",
-      "cloze": "The treasury secretary ______ Nvidia to consider an outsider as its next chief executive.",
-      "answer": "urged",
+      "expression": "retreated",
+      "meaning_zh": "回落，下跌",
+      "example": "The Nasdaq index retreated by 2.7% as investors questioned whether the artificial-intelligence boom could sustain its pace.",
+      "analysis_zh": "retreated by 2.7% 表示指数回落了2.7%，财经报道常用 retreat 指股价或指数退回较低水平。retreat by 后面接变化幅度；retreat to 后面通常接具体点位。句中 as investors questioned 交代市场担忧的背景，不能据此断言只有这一项原因推动跌势。plummet 表达更剧烈的暴跌，语气较强。",
+      "cloze": "The Nasdaq index ______ by 2.7% as investors questioned whether the artificial-intelligence boom could sustain its pace.",
+      "answer": "retreated",
       "accepted": [
-        "encouraged",
-        "pressed",
-        "asked",
-        "advised"
-      ],
-      "hint_zh": "敦促",
-      "why_zh": "urge someone to do something 是正式建议和施压结构，后面接宾语 Nvidia 再接不定式 to consider。",
-      "imitation": {
-        "background_zh": "交付协调：要求供应商重新评估计划。",
-        "sentence_en": "We urged the supplier to revise its delivery plan.",
-        "translation_zh": "我们敦促供应商修订交付计划。"
-      }
-    },
-    {
-      "id": "2026-11-16-nvidia-gathered",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "gathered",
-      "meaning_zh": "积聚",
-      "example": "A campaign for Jensen Huang's return has gathered momentum among prominent technology executives.",
-      "analysis_zh": "gather momentum 是固定搭配，表示行动获得更多支持并逐渐增强声势。has gathered 用现在完成时，将之前开始的活动与现在的影响联系起来。与 accelerate 相比，它侧重支持的累积，并不必然意味着可测量的速度变化。",
-      "cloze": "A campaign for Jensen Huang's return has ______ momentum among prominent technology executives.",
-      "answer": "gathered",
-      "accepted": [
-        "gained",
-        "built"
-      ],
-      "hint_zh": "积聚",
-      "why_zh": "gather momentum 是固定搭配，表示行动获得更多支持并逐渐增强声势。",
-      "imitation": {
-        "background_zh": "生活安排：朋友们逐渐支持一次摄影旅行。",
-        "sentence_en": "The idea of a weekend photography trip has gathered momentum among our friends.",
-        "translation_zh": "周末摄影旅行的想法在朋友中获得了越来越多的支持。"
-      }
-    },
-    {
-      "id": "2026-11-16-nvidia-unconfirmed",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "unconfirmed",
-      "meaning_zh": "未经确认",
-      "example": "Reports of discussions with confidants remain unconfirmed by Nvidia, ahead of its earnings release.",
-      "analysis_zh": "remain unconfirmed 是 remain 加形容词化过去分词的结构，强调报道尚缺公司正式确认。与 false 不同，unconfirmed 不意味着消息已经证伪；ahead of 指财报发布之前。",
-      "cloze": "Reports of discussions with confidants remain ______ by Nvidia, ahead of its earnings release.",
-      "answer": "unconfirmed",
-      "accepted": [
-        "unverified",
-        "unsubstantiated"
-      ],
-      "hint_zh": "未经确认",
-      "why_zh": "remain unconfirmed 是 remain 加形容词化过去分词的结构，强调报道尚缺公司正式确认。",
-      "imitation": {
-        "background_zh": "出差筹备：酒店预订仍待确认。",
-        "sentence_en": "Our hotel reservation remains unconfirmed pending payment.",
-        "translation_zh": "我们的酒店预订仍未确认，尚待付款。"
-      }
-    },
-    {
-      "id": "2026-11-16-aviation-disrupted",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "disrupted",
-      "meaning_zh": "扰乱",
-      "example": "An equipment upgrade caused a failure that disrupted air travel across the United States.",
-      "analysis_zh": "disrupt air travel 是常见新闻搭配，及物动词 disrupt 后直接接被干扰的正常运营活动。与 suspend flights 不同，disrupt 说明意外干扰，并不必然表示监管机构主动暂停所有航班。",
-      "cloze": "An equipment upgrade caused a failure that ______ air travel across the United States.",
-      "answer": "disrupted",
-      "accepted": [
-        "hampered",
-        "hindered",
-        "impeded",
-        "interrupted"
-      ],
-      "hint_zh": "扰乱",
-      "why_zh": "disrupt air travel 是常见新闻搭配，及物动词 disrupt 后直接接被干扰的正常运营活动。",
-      "imitation": {
-        "background_zh": "生产计划：系统故障影响排产。",
-        "sentence_en": "A system failure disrupted the production schedule.",
-        "translation_zh": "一次系统故障打乱了生产计划。"
-      }
-    },
-    {
-      "id": "2026-11-16-aviation-cautioned",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "cautioned",
-      "meaning_zh": "谨慎警告",
-      "example": "The transport secretary cautioned that flights might not return to normal until Monday.",
-      "analysis_zh": "caution that 后接完整从句，表示发言者对恢复时间给出谨慎判断；might not 明确保留不确定性。与 promise 相比，caution 不构成恢复服务的保证。",
-      "cloze": "The transport secretary ______ that flights might not return to normal until Monday.",
-      "answer": "cautioned",
-      "accepted": [
-        "warned"
-      ],
-      "hint_zh": "谨慎警告",
-      "why_zh": "caution that 后接完整从句，表示发言者对恢复时间给出谨慎判断；might not 明确保留不确定性。",
-      "imitation": {
-        "background_zh": "采购沟通：供应商提示交期可能延长。",
-        "sentence_en": "The supplier cautioned that lead times might increase.",
-        "translation_zh": "供应商提醒说，交货周期可能延长。"
-      }
-    },
-    {
-      "id": "2026-11-16-aviation-backlog",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "backlog",
-      "meaning_zh": "积压",
-      "example": "Airlines faced a backlog of cancelled and delayed journeys after the communications system was repaired.",
-      "analysis_zh": "a backlog of 加复数名词表示尚待处理的积压事项，常见于订单、维修工单及航班恢复场景。与 a delay 相比，backlog 强调累计存量；技术故障排除后，积压未必立即消失。",
-      "cloze": "Airlines faced a ______ of cancelled and delayed journeys after the communications system was repaired.",
-      "answer": "backlog",
-      "accepted": [
-        "accumulation"
-      ],
-      "hint_zh": "积压",
-      "why_zh": "a backlog of 加复数名词表示尚待处理的积压事项，常见于订单、维修工单及航班恢复场景。",
-      "imitation": {
-        "background_zh": "订单管理：介绍当前正在处理的积压。",
-        "sentence_en": "We are clearing the backlog of purchase orders.",
-        "translation_zh": "我们正在清理积压的采购订单。"
-      }
-    },
-    {
-      "id": "2026-11-16-iran-retaliation",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "retaliation",
-      "meaning_zh": "报复",
-      "example": "Iran described its drone attack on a US base in Bahrain as retaliation for earlier American strikes.",
-      "analysis_zh": "retaliation for 是固定名词搭配，for 引出被声称作为报复对象的先前行动。described ... as 将这一因果解释归于伊朗方面，避免把单方说法直接当成独立核实的事实。与 revenge 相比，retaliation 更常用于国家间军事和贸易回应。",
-      "cloze": "Iran described its drone attack on a US base in Bahrain as ______ for earlier American strikes.",
-      "answer": "retaliation",
-      "accepted": [
-        "reprisal",
-        "retribution"
-      ],
-      "hint_zh": "报复",
-      "why_zh": "retaliation for 是固定名词搭配，for 引出被声称作为报复对象的先前行动。",
-      "imitation": {
-        "background_zh": "财经写作练习：转述一方对关税措施的解释。",
-        "sentence_en": "The government described the tariffs as retaliation for new trade restrictions.",
-        "translation_zh": "政府将这些关税描述为对新贸易限制的报复。"
-      }
-    },
-    {
-      "id": "2026-11-16-iran-rekindle",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "rekindle",
-      "meaning_zh": "重新点燃",
-      "example": "The latest attack could rekindle a conflict that Washington says it does not want to reopen.",
-      "analysis_zh": "rekindle a conflict 是隐喻性动宾搭配，表示此前已有的冲突再次升温；could 明确标记风险尚未实现。与 trigger a conflict 相比，rekindle 更强调旧冲突的再次爆发。",
-      "cloze": "The latest attack could ______ a conflict that Washington says it does not want to reopen.",
-      "answer": "rekindle",
-      "accepted": [
-        "reignite",
-        "renew",
-        "revive",
-        "restart",
-        "reopen"
-      ],
-      "hint_zh": "重新点燃",
-      "why_zh": "rekindle a conflict 是隐喻性动宾搭配，表示此前已有的冲突再次升温；could 明确标记风险尚未实现。",
-      "imitation": {
-        "background_zh": "个人爱好：观看比赛后重新燃起篮球热情。",
-        "sentence_en": "Watching the playoffs could rekindle my enthusiasm for basketball.",
-        "translation_zh": "观看季后赛可能重新点燃我对篮球的热情。"
-      }
-    },
-    {
-      "id": "2026-11-16-iran-intensify",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "intensify",
-      "meaning_zh": "加剧",
-      "example": "Houthi gains near a strategic strait may intensify pressure on international shipping.",
-      "analysis_zh": "intensify pressure on something 是正式新闻表达，pressure on 引出承受压力的对象；may 表示潜在影响。与 create pressure 相比，intensify 通常暗示已有压力进一步增大。",
-      "cloze": "Houthi gains near a strategic strait may ______ pressure on international shipping.",
-      "answer": "intensify",
-      "accepted": [
-        "increase",
-        "heighten",
-        "amplify",
-        "exacerbate",
-        "escalate",
-        "compound"
-      ],
-      "hint_zh": "加剧",
-      "why_zh": "intensify pressure on something 是正式新闻表达，pressure on 引出承受压力的对象；may 表示潜在影响。",
-      "imitation": {
-        "background_zh": "国际物流：港口拥堵增加交付压力。",
-        "sentence_en": "Port congestion may intensify pressure on delivery schedules.",
-        "translation_zh": "港口拥堵可能加大交付计划面临的压力。"
-      }
-    },
-    {
-      "id": "2026-11-16-estonia-close",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "close",
-      "meaning_zh": "关闭",
-      "example": "Estonia announced that it would close its border with Russia from December 1st.",
-      "analysis_zh": "close its border with Russia 是及物动词加宾语的搭配；would close 属于过去报道语境中的将来过去时，说明措施已经宣布、预定将来实施。与 has closed 不同，不能据此断言边境已经关闭。",
-      "cloze": "Estonia announced that it would ______ its border with Russia from December 1st.",
-      "answer": "close",
-      "accepted": [
-        "shut",
-        "seal"
-      ],
-      "hint_zh": "关闭",
-      "why_zh": "close its border with Russia 是及物动词加宾语的搭配；would close 属于过去报道语境中的将来过去时，说明措施已经宣布、预定将来实施。",
-      "imitation": {
-        "background_zh": "生产规划练习：转述工厂未来关闭产线的计划。",
-        "sentence_en": "The factory announced that it would close a production line in December.",
-        "translation_zh": "工厂宣布将在十二月关闭一条产线。"
-      }
-    },
-    {
-      "id": "2026-11-16-estonia-accused",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "accused",
-      "meaning_zh": "指控",
-      "example": "The government accused Moscow of involvement in an attempted arson attack near Tallinn.",
-      "analysis_zh": "accuse someone of something 是固定结构，of 后接名词或动名词。句子仅陈述爱沙尼亚政府的指控，并未独立证明莫斯科参与袭击。与 establish responsibility 相比，accuse 明确保留证据和归因的边界。",
-      "cloze": "The government ______ Moscow of involvement in an attempted arson attack near Tallinn.",
-      "answer": "accused",
-      "accepted": [],
-      "hint_zh": "指控",
-      "why_zh": "accuse someone of something 是固定结构，of 后接名词或动名词。",
-      "imitation": {
-        "background_zh": "合同纠纷练习：转述客户提出的指控。",
-        "sentence_en": "The customer accused the contractor of breaching the agreement.",
-        "translation_zh": "客户指责承包商违反协议。"
-      }
-    },
-    {
-      "id": "2026-11-16-estonia-steadfast",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "steadfast",
-      "meaning_zh": "坚定的",
-      "example": "The prime minister said support for Ukraine would remain steadfast despite the alleged intimidation.",
-      "analysis_zh": "remain steadfast 是系动词加形容词，强调在外部压力下仍坚持原有立场；despite 后面接名词短语。与 stubborn 相比，steadfast 常带有坚守承诺的积极语义。",
-      "cloze": "The prime minister said support for Ukraine would remain ______ despite the alleged intimidation.",
-      "answer": "steadfast",
-      "accepted": [
-        "unwavering",
-        "firm",
-        "resolute",
-        "unshakeable",
-        "unshakable",
-        "unfaltering",
-        "staunch"
-      ],
-      "hint_zh": "坚定的",
-      "why_zh": "remain steadfast 是系动词加形容词，强调在外部压力下仍坚持原有立场；despite 后面接名词短语。",
-      "imitation": {
-        "background_zh": "品质管理：成本压力下维持质量承诺。",
-        "sentence_en": "Our commitment to product quality remains steadfast despite cost pressure.",
-        "translation_zh": "尽管面临成本压力，我们对产品质量的承诺仍然坚定不移。"
-      }
-    },
-    {
-      "id": "2026-11-16-property-plunged",
-      "date": "2026-11-16",
-      "type": "word",
-      "expression": "plunged",
-      "meaning_zh": "暴跌",
-      "example": "Shares in New World Development plunged after it announced a large rights issue.",
-      "analysis_zh": "shares plunged 是财经新闻中的不及物动词用法，表示价格短时间大幅下跌。报道所述跌幅接近一半，plunged 比 edged down 或 slipped 更符合量级。after 引出公告与市场反应的先后关系。",
-      "cloze": "Shares in New World Development ______ after it announced a large rights issue.",
-      "answer": "plunged",
-      "accepted": [
-        "plummeted",
-        "tumbled",
-        "slumped",
-        "sank",
         "fell",
-        "dropped"
+        "dropped",
+        "declined",
+        "slipped",
+        "tumbled"
       ],
-      "hint_zh": "暴跌",
-      "why_zh": "shares plunged 是财经新闻中的不及物动词用法，表示价格短时间大幅下跌。",
+      "hint_zh": "描述股指的百分比回落。",
+      "why_zh": "指数后接 by + 百分比幅度，retreated 能自然表达回落，不夸大走势。",
       "imitation": {
-        "background_zh": "财经写作练习：描述盈利预警后的股价表现。",
-        "sentence_en": "The stock plunged following a profit warning.",
-        "translation_zh": "发布盈利预警后，该股大幅下跌。"
+        "background_zh": "假设情境，个人投资：复盘科技板块调整并记录跌幅。",
+        "sentence_en": "The technology index retreated by 3% after a weak earnings report.",
+        "translation_zh": "疲弱的财报发布后，科技指数回落了3%。"
       }
     },
     {
-      "id": "2026-11-16-property-discount",
-      "date": "2026-11-16",
+      "id": "2026-11-17-tech-nvidia-sank",
+      "date": "2026-11-17",
       "type": "word",
-      "expression": "discount",
-      "meaning_zh": "折价",
-      "example": "The proposed shares would be offered at a steep discount to the previous closing price.",
-      "analysis_zh": "at a discount to the closing price 是股票发行定价的常见结构，to 引出比较基准。与 rebate 不同，discount 表示发行价低于参考市价，未必涉及事后返还。would be offered 说明这是拟议发行安排。",
-      "cloze": "The proposed shares would be offered at a steep ______ to the previous closing price.",
-      "answer": "discount",
+      "expression": "sank",
+      "meaning_zh": "明显下挫",
+      "example": "Shares in Nvidia sank more than 4% as markets absorbed the departure of its founder from the top job.",
+      "analysis_zh": "shares in Nvidia sank more than 4% 中，sink 的过去式 sank 是股市报道描述大幅下跌的生动动词，后面可直接接 more than + 百分数。它比 slipped 更强调跌势，比 crashed 通常温和。as markets absorbed 说明投资者正在消化管理层消息，不能将变动机械归因于单一事件。",
+      "cloze": "Shares in Nvidia ______ more than 4% as markets absorbed the departure of its founder from the top job.",
+      "answer": "sank",
+      "accepted": [
+        "fell",
+        "dropped",
+        "declined",
+        "slipped",
+        "tumbled"
+      ],
+      "hint_zh": "描述明显的股价下跌。",
+      "why_zh": "shares 为复数主语，sank 是正确过去式，并可直接跟跌幅 more than 4%。",
+      "imitation": {
+        "background_zh": "假设情境，篮球：核心球员临时缺阵后门票转售价下跌。",
+        "sentence_en": "Resale ticket prices sank after the team's star player was ruled out.",
+        "translation_zh": "球队明星球员确定缺阵后，转售门票价格大幅下跌。"
+      }
+    },
+    {
+      "id": "2026-11-17-tech-asia-unsettled",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "unsettled",
+      "meaning_zh": "使不安，使承压",
+      "example": "The sell-off also unsettled chipmakers in Asia, suggesting that anxiety had spread beyond American markets.",
+      "analysis_zh": "the sell-off unsettled chipmakers 是及物动词搭配，表示抛售扰动了亚洲芯片企业的预期或市场信心。rattle 更突出突发冲击，disrupt 可能让人误以为工厂生产实际中断。suggesting that 引出媒体依据跨市场表现作出的审慎判断，不能据此认定所有亚洲企业受影响程度相同。",
+      "cloze": "The sell-off also ______ chipmakers in Asia, suggesting that anxiety had spread beyond American markets.",
+      "answer": "unsettled",
+      "accepted": [
+        "rattled",
+        "affected",
+        "hit",
+        "hurt"
+      ],
+      "hint_zh": "抛售波及亚洲芯片行业。",
+      "why_zh": "后接 chipmakers 作宾语，unsettled 表达市场信心受扰，同时避免暗示生产停摆。",
+      "imitation": {
+        "background_zh": "假设情境，供应链：原料交期突然变化引起项目组担忧。",
+        "sentence_en": "The unexpected lead-time change unsettled the project team.",
+        "translation_zh": "交期的意外变化让项目团队感到不安。"
+      }
+    },
+    {
+      "id": "2026-11-17-chips-rule-issued",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "issued",
+      "meaning_zh": "发布，颁布",
+      "example": "After Jensen Huang's resignation, America's Commerce Department issued an interim rule on remote access to advanced AI chips.",
+      "analysis_zh": "issued an interim rule 表示主管部门发布临时性规则，issue 与 guidance、notice、regulation 都是常见正式搭配。interim 强调过渡性质，不能据此说限制永久有效。与 propose 相比，issue 表示已经发布；announce 更侧重向公众宣告，未必等于所有执行细则均已落实。",
+      "cloze": "After Jensen Huang's resignation, America's Commerce Department ______ an interim rule on remote access to advanced AI chips.",
+      "answer": "issued",
+      "accepted": [
+        "published",
+        "announced",
+        "introduced"
+      ],
+      "hint_zh": "政府部门发布临时规则。",
+      "why_zh": "Commerce Department 与 rule 构成政府行为搭配，issued 最准确表达已正式发布的动作。",
+      "imitation": {
+        "background_zh": "假设情境，工厂：质量部门就受影响批次发布临时操作指引。",
+        "sentence_en": "The quality team issued interim guidance for the affected batches.",
+        "translation_zh": "质量团队针对受影响批次发布了临时指引。"
+      }
+    },
+    {
+      "id": "2026-11-17-chips-controls-circumventing",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "circumventing",
+      "meaning_zh": "规避，绕开",
+      "example": "The measure aims to prevent firms from circumventing American export controls by renting computing capacity overseas.",
+      "analysis_zh": "prevent firms from circumventing export controls 属于 prevent + 宾语 + from + V-ing 结构。circumvent 表示通过迂回方式绕过规则；此处具体指借境外数据中心获取算力的潜在监管漏洞。evade 也有规避限制的含义，avoid 可能只是合法避开风险，语义偏弱。规则旨在预防行为，不能把所有相关企业都认定为违法。",
+      "cloze": "The measure aims to prevent firms from ______ American export controls by renting computing capacity overseas.",
+      "answer": "circumventing",
+      "accepted": [
+        "evading",
+        "bypassing",
+        "sidestepping"
+      ],
+      "hint_zh": "prevent firms from 后使用动名词。",
+      "why_zh": "固定搭配 prevent ... from 后面必须使用 -ing，且语义针对绕过出口管制。",
+      "imitation": {
+        "background_zh": "假设情境，合同管理：明确禁止绕开双方约定的审批流程。",
+        "sentence_en": "The contract bars either party from circumventing the approval process.",
+        "translation_zh": "合同禁止任何一方规避审批流程。"
+      }
+    },
+    {
+      "id": "2026-11-17-chips-board-reinstating",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "reinstating",
+      "meaning_zh": "恢复原职，重新任命",
+      "example": "Despite calls for Huang's return, Nvidia's board was reportedly not considering reinstating him as chief executive.",
+      "analysis_zh": "considering reinstating him as chief executive 中，后一个 -ing 是 consider 后作宾语的动名词。reinstate someone as + 职务表示使某人恢复原有职位；appoint 一般只强调任命，未突出曾任职。reportedly 说明董事会意向来自媒体报道，不能说是公司的正式声明。",
+      "cloze": "Despite calls for Huang's return, Nvidia's board was reportedly not considering ______ him as chief executive.",
+      "answer": "reinstating",
+      "accepted": [
+        "restoring",
+        "reappointing"
+      ],
+      "hint_zh": "consider 后接动名词。",
+      "why_zh": "consider + V-ing 是固定句法，而 reinstating 适用于已离任高管恢复原职的情形。",
+      "imitation": {
+        "background_zh": "假设情境，篮球：俱乐部讨论让前任队长重新担任队长。",
+        "sentence_en": "The club is considering reinstating its former captain next season.",
+        "translation_zh": "俱乐部正在考虑下赛季恢复前队长的队长职务。"
+      }
+    },
+    {
+      "id": "2026-11-17-software-bank-bug",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "bug",
+      "meaning_zh": "软件缺陷",
+      "example": "JPMorgan Chase said a software bug had disrupted some customer transactions.",
+      "analysis_zh": "a software bug 指软件代码中的错误，bug 是可数名词，与冠词 a 搭配。报道限定 some customer transactions，不能推断银行全部业务停止。glitch 常指暂时性异常，bug 更偏向程序缺陷；cyberattack 表示网络攻击，银行没有将此次中断认定为攻击事件。",
+      "cloze": "JPMorgan Chase said a software ______ had disrupted some customer transactions.",
+      "answer": "bug",
+      "accepted": [
+        "glitch",
+        "fault",
+        "defect"
+      ],
+      "hint_zh": "software 后的可数单数名词。",
+      "why_zh": "a software 后需要可数单数名词，bug 符合银行描述的软件故障原因。",
+      "imitation": {
+        "background_zh": "假设情境，英语学习网站：部分笔记未成功保存，需要排查程序。",
+        "sentence_en": "A software bug prevented some study notes from saving.",
+        "translation_zh": "一个软件缺陷导致部分学习笔记未能保存。"
+      }
+    },
+    {
+      "id": "2026-11-17-software-bank-evidence",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "evidence",
+      "meaning_zh": "证据，迹象",
+      "example": "The bank said it had found no evidence that the disruption was related to a cyberattack.",
+      "analysis_zh": "found no evidence that ... 是新闻中常见的否定证据结构，evidence 在此通常不可数，不能写 an evidence。银行表示核查尚无相关证据，不等于最终排除所有安全事件。proof 通常强调更高证明程度，indication 强调迹象；had found 用过去完成时衔接声明前的调查。",
+      "cloze": "The bank said it had found no ______ that the disruption was related to a cyberattack.",
+      "answer": "evidence",
+      "accepted": [
+        "proof",
+        "indication"
+      ],
+      "hint_zh": "未发现网络攻击证据的审慎表述。",
+      "why_zh": "found no evidence that 准确保留银行声明中的不确定性，避免把未发现证据说成定论。",
+      "imitation": {
+        "background_zh": "假设情境，质量调查：核查运输是否造成包装漏液。",
+        "sentence_en": "The review found no evidence that transport damage caused the leakage.",
+        "translation_zh": "调查未发现证据表明运输损伤造成了漏液。"
+      }
+    },
+    {
+      "id": "2026-11-17-software-airline-widespread",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "widespread",
+      "meaning_zh": "大范围的",
+      "example": "United Airlines separately said it had resolved a widespread system outage affecting its operations.",
+      "analysis_zh": "a widespread system outage 表示覆盖面较广的系统中断，widespread 是形容词，置于 system outage 前。widespread 描述影响范围；severe 更多描述严重程度，两者侧重点不同。had resolved 是航空公司对修复状态的表述，不能据此推断每架航班已立刻正常运行。",
+      "cloze": "United Airlines separately said it had resolved a ______ system outage affecting its operations.",
+      "answer": "widespread",
+      "accepted": [
+        "major",
+        "significant",
+        "serious"
+      ],
+      "hint_zh": "修饰 system outage 的范围形容词。",
+      "why_zh": "该空修饰 outage，widespread 能体现系统故障影响广泛的范围。",
+      "imitation": {
+        "background_zh": "假设情境，旅行：城市地铁发生大范围信号故障。",
+        "sentence_en": "A widespread signalling outage delayed trains across the city.",
+        "translation_zh": "大范围信号故障造成全市列车延误。"
+      }
+    },
+    {
+      "id": "2026-11-17-migration-rwanda-agreed",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "agreed",
+      "meaning_zh": "达成一致",
+      "example": "Five EU governments agreed on a plan to establish a deportation centre in Rwanda next year.",
+      "analysis_zh": "agreed on a plan 表示参与各方就计划取得一致，agree on 后面常接共同讨论的议题或方案，agree to 则更常接具体条款或行动。next year 指计划执行时间，达成共识并不意味着中心已经建成。settled on 侧重权衡后作出选择，agreed on 更突出多方共识。",
+      "cloze": "Five EU governments ______ on a plan to establish a deportation centre in Rwanda next year.",
+      "answer": "agreed",
+      "accepted": [
+        "settled"
+      ],
+      "hint_zh": "与 on a plan 搭配。",
+      "why_zh": "五国作为复数主语，与 on a plan 自然构成 agreed on 的搭配。",
+      "imitation": {
+        "background_zh": "假设情境，海外本地化：三个区域团队一致确认试生产计划。",
+        "sentence_en": "The three regional teams agreed on a revised trial-production schedule.",
+        "translation_zh": "三个区域团队就修订后的试生产计划达成一致。"
+      }
+    },
+    {
+      "id": "2026-11-17-migration-rwanda-exhausted",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "exhausted",
+      "meaning_zh": "用尽，耗尽",
+      "example": "The proposal concerns migrants who have exhausted their legal options to remain in the EU.",
+      "analysis_zh": "have exhausted their legal options 是现在完成时，强调截至相关时点法律途径已经用尽。exhaust + options / remedies / appeals 是法律政策写作中的常见搭配，不能加 of。仅用 used 而不加 up，难以准确表达完全耗尽。它是拟议政策的适用条件，不代表每个潜在对象的实际情况都已确认。",
+      "cloze": "The proposal concerns migrants who have ______ their legal options to remain in the EU.",
+      "answer": "exhausted",
       "accepted": [],
-      "hint_zh": "折价",
-      "why_zh": "at a discount to the closing price 是股票发行定价的常见结构，to 引出比较基准。",
+      "hint_zh": "已经用尽合法居留途径。",
+      "why_zh": "have 后需过去分词，exhausted legal options 能准确表示用尽合法途径。",
       "imitation": {
-        "background_zh": "投资学习：讨论折价发行的定价方式。",
-        "sentence_en": "The shares were offered at a discount to the previous closing price.",
-        "translation_zh": "这些股份以低于前一交易日收盘价的价格发行。"
+        "background_zh": "假设情境，合同争议：内部协商渠道全部尝试后申请调解。",
+        "sentence_en": "The team exhausted its internal options before requesting formal mediation.",
+        "translation_zh": "团队在申请正式调解前用尽了内部解决途径。"
       }
     },
     {
-      "id": "2026-11-16-property-fuelled",
-      "date": "2026-11-16",
+      "id": "2026-11-17-migration-rwanda-challenges",
+      "date": "2026-11-17",
       "type": "word",
-      "expression": "fuelled",
-      "meaning_zh": "加剧",
-      "example": "The announcement fuelled concerns about the indebted developer's financial position.",
-      "analysis_zh": "fuel concerns about 是新闻英语中表示助长担忧的动宾搭配，concerns about 后接具体风险对象。与 cause concerns 相比，fuel 通常暗示担忧此前已经存在、如今进一步升温。",
-      "cloze": "The announcement ______ concerns about the indebted developer's financial position.",
-      "answer": "fuelled",
+      "expression": "challenges",
+      "meaning_zh": "法律挑战，司法异议",
+      "example": "Legal challenges to the scheme are expected even if the governments proceed.",
+      "analysis_zh": "legal challenges to the scheme 指针对该政策提出的司法挑战，challenge to + 政策或决定是常见介词搭配。challenges 用复数表示可能有不止一项法律争议。are expected 表示预计会发生，不能把尚未出现的诉讼写成已经立案；objections 也可指法律异议，但范围未必完全相同。",
+      "cloze": "Legal ______ to the scheme are expected even if the governments proceed.",
+      "answer": "challenges",
       "accepted": [
-        "fueled",
-        "heightened",
-        "intensified",
-        "amplified",
-        "increased",
-        "deepened",
-        "exacerbated",
-        "stoked"
+        "objections"
       ],
-      "hint_zh": "加剧",
-      "why_zh": "fuel concerns about 是新闻英语中表示助长担忧的动宾搭配，concerns about 后接具体风险对象。",
+      "hint_zh": "对拟议政策提出诉讼或法律质疑。",
+      "why_zh": "Legal 后需复数可数名词，challenges to 准确表达可能针对该方案提出的法律质疑。",
       "imitation": {
-        "background_zh": "供应商评估：延期使可靠性受到更多质疑。",
-        "sentence_en": "Repeated delays fuelled concerns about supplier reliability.",
-        "translation_zh": "多次延期加剧了人们对供应商可靠性的担忧。"
+        "background_zh": "假设情境，合同管理：新条款可能面临外部法律质疑。",
+        "sentence_en": "The proposed contract clause could face legal challenges.",
+        "translation_zh": "拟议中的合同条款可能面临法律挑战。"
       }
     },
     {
-      "id": "2026-11-16-anthropic-float",
-      "date": "2026-11-16",
+      "id": "2026-11-17-bridges-kyiv-forced",
+      "date": "2026-11-17",
       "type": "word",
-      "expression": "float",
-      "meaning_zh": "上市发行",
-      "example": "Anthropic is expected to float shares in an initial public offering this week.",
-      "analysis_zh": "float shares 是英式财经英语，表示向公众发行股份并上市；is expected to 表明仍属预期。与 trade shares 不同，float 聚焦首次发行，不能据此认为股票已经开始交易。",
-      "cloze": "Anthropic is expected to ______ shares in an initial public offering this week.",
-      "answer": "float",
+      "expression": "forced",
+      "meaning_zh": "迫使，导致",
+      "example": "Russian missile strikes forced the closure of two bridges across Kyiv's Dnieper river.",
+      "analysis_zh": "forced the closure of two bridges 是 force + 名词性结果 的表达，强调外力使关闭成为必要。prompted 更偏触发决定，triggered 更偏引发事件，force 体现实际压力。句中说的是两座桥被迫关闭，不能延伸为全城交通瘫痪。与 force somebody to do something 相比，这里直接接名词 closure。",
+      "cloze": "Russian missile strikes ______ the closure of two bridges across Kyiv's Dnieper river.",
+      "answer": "forced",
       "accepted": [
-        "issue",
-        "offer",
-        "sell",
-        "list"
+        "caused",
+        "prompted",
+        "triggered",
+        "necessitated"
       ],
-      "hint_zh": "上市发行",
-      "why_zh": "float shares 是英式财经英语，表示向公众发行股份并上市；is expected to 表明仍属预期。",
+      "hint_zh": "袭击令桥梁不得不关闭。",
+      "why_zh": "strikes 后接名词 the closure，forced 能表达打击迫使桥梁关闭的强因果关系。",
       "imitation": {
-        "background_zh": "投资研究练习：讨论一家拟上市公司的融资计划。",
-        "sentence_en": "The company plans to float a minority stake next year.",
-        "translation_zh": "该公司计划明年将少数股权公开发行上市。"
+        "background_zh": "假设情境，供应链：港口关闭使原定发货延期。",
+        "sentence_en": "The port closure forced a delay in the planned shipment.",
+        "translation_zh": "港口关闭迫使原定发货计划延期。"
       }
     },
     {
-      "id": "2026-11-16-anthropic-targeting",
-      "date": "2026-11-16",
+      "id": "2026-11-17-bridges-crimea-crucial",
+      "date": "2026-11-17",
       "type": "word",
-      "expression": "targeting",
-      "meaning_zh": "以……为目标",
-      "example": "The AI company is targeting a valuation of roughly $1.5 trillion.",
-      "analysis_zh": "target a valuation of 加金额是投融资中的目标估值表达；is targeting 表示发行方目前的计划。与 achieve a valuation 相比，targeting 不意味着投资者已经接受这个价格。",
-      "cloze": "The AI company is ______ a valuation of roughly $1.5 trillion.",
-      "answer": "targeting",
+      "expression": "crucial",
+      "meaning_zh": "至关重要的",
+      "example": "The bridge connecting Russia with Crimea remains a crucial supply route for Russian troops.",
+      "analysis_zh": "a crucial supply route for Russian troops 中，crucial 修饰 supply route，for 引出使用该补给通道的部队。critical 与 vital 接近，important 程度稍弱。remains 表示这一战略重要性仍然存在，但没有断言所有军需物资必须经由该桥。财经或项目管理中也常见 crucial to the success of。",
+      "cloze": "The bridge connecting Russia with Crimea remains a ______ supply route for Russian troops.",
+      "answer": "crucial",
       "accepted": [
-        "seeking",
-        "pursuing",
-        "eyeing"
+        "vital",
+        "critical",
+        "key",
+        "important",
+        "essential"
       ],
-      "hint_zh": "以……为目标",
-      "why_zh": "target a valuation of 加金额是投融资中的目标估值表达；is targeting 表示发行方目前的计划。",
+      "hint_zh": "修饰 supply route 的重要性形容词。",
+      "why_zh": "空格需要重要程度形容词，crucial 与军事补给线的战略价值相符。",
       "imitation": {
-        "background_zh": "海外项目练习：在评审会上介绍盈利目标。",
-        "sentence_en": "The localisation project is targeting a gross margin of 30%.",
-        "translation_zh": "这个本地化项目的目标毛利率为30%。"
+        "background_zh": "假设情境，海外工厂：区域港口是物料运输的关键通道。",
+        "sentence_en": "The regional port remains a crucial supply route for the new factory.",
+        "translation_zh": "该区域港口仍是新工厂至关重要的补给通道。"
       }
     },
     {
-      "id": "2026-11-16-anthropic-scrutinise",
-      "date": "2026-11-16",
+      "id": "2026-11-17-bridges-bridges-illustrated",
+      "date": "2026-11-17",
       "type": "word",
-      "expression": "scrutinise",
-      "meaning_zh": "仔细审查",
-      "example": "Investors will scrutinise its growth prospects as competition in AI coding tools intensifies.",
-      "analysis_zh": "scrutinise growth prospects 是正式财经动宾搭配，强调对收入增长假设和商业模式作严格检视。as 引出竞争加剧的背景；与 glance at 相比，scrutinise 表示细致且带批判性的分析。",
-      "cloze": "Investors will ______ its growth prospects as competition in AI coding tools intensifies.",
-      "answer": "scrutinise",
+      "expression": "illustrated",
+      "meaning_zh": "说明，表明",
+      "example": "The strikes illustrated how transport links can become strategic targets during a prolonged war.",
+      "analysis_zh": "illustrated how + 从句利用具体事件解释更一般的机制，illustrate 也可直接接名词，如 illustrate the importance of。proved 意味着已严格证明，新闻写作中过于绝对；illustrated 只表达事件具有说明作用。prolonged war 指持续时间较长的战争，不含对结束日期的预测。",
+      "cloze": "The strikes ______ how transport links can become strategic targets during a prolonged war.",
+      "answer": "illustrated",
       "accepted": [
-        "scrutinize",
-        "examine",
-        "assess",
-        "evaluate",
-        "analyse",
-        "analyze",
-        "review"
+        "showed",
+        "demonstrated",
+        "highlighted",
+        "underscored"
       ],
-      "hint_zh": "仔细审查",
-      "why_zh": "scrutinise growth prospects 是正式财经动宾搭配，强调对收入增长假设和商业模式作严格检视。",
+      "hint_zh": "具体事件用于说明普遍机制。",
+      "why_zh": "strikes 与 how 从句之间需要过去式动词，illustrated 语气审慎且搭配自然。",
       "imitation": {
-        "background_zh": "产能评估：承诺交期前审核供应商的测算依据。",
-        "sentence_en": "We need to scrutinise the supplier's capacity assumptions before confirming the delivery schedule.",
-        "translation_zh": "我们需要仔细审查供应商的产能假设，再确认交付计划。"
+        "background_zh": "假设情境，摄影旅行：山路封闭说明行程预案的重要性。",
+        "sentence_en": "The road closure illustrated how fragile a tightly planned itinerary can be.",
+        "translation_zh": "道路封闭说明过于紧凑的行程可能多么脆弱。"
+      }
+    },
+    {
+      "id": "2026-11-17-voters-india-alleged",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "alleged",
+      "meaning_zh": "指称，声称",
+      "example": "Critics alleged that a rushed review of India's voter rolls had removed eligible citizens.",
+      "analysis_zh": "Critics alleged that ... 是带明确来源的新闻归因，表示批评者提出了有待核实的指控。allege 后直接接 that 从句；confirm 表示得到确认，不能替代。a rushed review 反映批评者认为程序仓促，并未说明法院已经认定相关删名行为违法。had removed 是相对于批评者声明的更早动作。",
+      "cloze": "Critics ______ that a rushed review of India's voter rolls had removed eligible citizens.",
+      "answer": "alleged",
+      "accepted": [
+        "claimed",
+        "argued",
+        "contended",
+        "asserted"
+      ],
+      "hint_zh": "有争议的说法须明确归于批评者。",
+      "why_zh": "争议尚在司法审查中，alleged 能准确保留批评者的主张属性。",
+      "imitation": {
+        "background_zh": "假设情境，采购合规：供应商指称招标程序存在不公。",
+        "sentence_en": "The supplier alleged that the bidding process had been unfair.",
+        "translation_zh": "该供应商指称招标程序存在不公平情况。"
+      }
+    },
+    {
+      "id": "2026-11-17-voters-india-establish",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "establish",
+      "meaning_zh": "查明，确定",
+      "example": "Petitioners want access to commission records to establish how removal decisions were made.",
+      "analysis_zh": "establish how decisions were made 意为根据档案或证据查明决定形成的方式，establish 后可直接接 how 从句，无需 about。assume 表示猜测，establish 更强调证据支持；determine 强调查明，verify 更侧重核实已有说法。want access 表示申请查阅，不能说他们已经取得全部资料。",
+      "cloze": "Petitioners want access to commission records to ______ how removal decisions were made.",
+      "answer": "establish",
+      "accepted": [
+        "determine",
+        "verify",
+        "clarify",
+        "examine"
+      ],
+      "hint_zh": "通过档案厘清具体决策过程。",
+      "why_zh": "to 后须动词原形，establish how 自然表达使用记录核查决策过程。",
+      "imitation": {
+        "background_zh": "假设情境，生产计划：审查 ERP 记录查明交期变更流程。",
+        "sentence_en": "We reviewed the records to establish how the delivery date was changed.",
+        "translation_zh": "我们审查记录，以查明交货日期是如何被修改的。"
+      }
+    },
+    {
+      "id": "2026-11-17-voters-india-undermine",
+      "date": "2026-11-17",
+      "type": "word",
+      "expression": "undermine",
+      "meaning_zh": "削弱，动摇",
+      "example": "The dispute could undermine public confidence in the body responsible for election oversight.",
+      "analysis_zh": "could undermine public confidence in ... 表示争议可能侵蚀公众对机构的信心，could 后必须用动词原形，confidence in 后面接信任对象。undermine 指削弱信任基础，destroy 往往过于绝对。句中只谈潜在影响，不能据此判断机构信誉已经全面崩溃；也可用于 undermine investor confidence。",
+      "cloze": "The dispute could ______ public confidence in the body responsible for election oversight.",
+      "answer": "undermine",
+      "accepted": [
+        "erode",
+        "weaken",
+        "damage",
+        "shake"
+      ],
+      "hint_zh": "could 后接原形，表达潜在信任损害。",
+      "why_zh": "could 后需要动词原形，undermine 与 confidence in 构成自然财经和公共事务搭配。",
+      "imitation": {
+        "background_zh": "假设情境，项目合作：里程碑反复修改可能影响合作方信心。",
+        "sentence_en": "Repeated milestone changes could undermine our partner's confidence in the plan.",
+        "translation_zh": "反复修改里程碑可能削弱合作伙伴对计划的信心。"
       }
     }
   ],
   "passages": [
     {
-      "id": "2026-11-16-nvidia",
-      "date": "2026-11-16",
-      "title": "Nvidia's leadership dispute",
-      "body": "The treasury secretary {{2026-11-16-nvidia-urged}} Nvidia to consider an outsider as its next chief executive. A campaign for Jensen Huang's return has {{2026-11-16-nvidia-gathered}} momentum among prominent technology executives. Reports of discussions with confidants remain {{2026-11-16-nvidia-unconfirmed}} by Nvidia, ahead of its earnings release."
+      "id": "2026-11-17-tech",
+      "date": "2026-11-17",
+      "title": "AI valuations come under pressure",
+      "body": "The Nasdaq index {{2026-11-17-tech-nasdaq-retreated}} by 2.7% as investors questioned whether the artificial-intelligence boom could sustain its pace. Shares in Nvidia {{2026-11-17-tech-nvidia-sank}} more than 4% as markets absorbed the departure of its founder from the top job. The sell-off also {{2026-11-17-tech-asia-unsettled}} chipmakers in Asia, suggesting that anxiety had spread beyond American markets. Anthropic's expected listing faces a more cautious market."
     },
     {
-      "id": "2026-11-16-aviation",
-      "date": "2026-11-16",
-      "title": "US aviation recovers from a communications failure",
-      "body": "An equipment upgrade caused a failure that {{2026-11-16-aviation-disrupted}} air travel across the United States. The transport secretary {{2026-11-16-aviation-cautioned}} that flights might not return to normal until Monday. Airlines faced a {{2026-11-16-aviation-backlog}} of cancelled and delayed journeys after the communications system was repaired."
+      "id": "2026-11-17-chips",
+      "date": "2026-11-17",
+      "title": "Washington seeks to close a chip-control loophole",
+      "body": "After Jensen Huang's resignation, America's Commerce Department {{2026-11-17-chips-rule-issued}} an interim rule on remote access to advanced AI chips. The measure aims to prevent firms from {{2026-11-17-chips-controls-circumventing}} American export controls by renting computing capacity overseas. Despite calls for Huang's return, Nvidia's board was reportedly not considering {{2026-11-17-chips-board-reinstating}} him as chief executive. The company's board was reported to be resisting calls to bring its founder back."
     },
     {
-      "id": "2026-11-16-iran",
-      "date": "2026-11-16",
-      "title": "Strikes raise the risk of regional escalation",
-      "body": "Iran described its drone attack on a US base in Bahrain as {{2026-11-16-iran-retaliation}} for earlier American strikes. The latest attack could {{2026-11-16-iran-rekindle}} a conflict that Washington says it does not want to reopen. Houthi gains near a strategic strait may {{2026-11-16-iran-intensify}} pressure on international shipping."
+      "id": "2026-11-17-software",
+      "date": "2026-11-17",
+      "title": "Banking and airline systems suffer separate disruptions",
+      "body": "JPMorgan Chase said a software {{2026-11-17-software-bank-bug}} had disrupted some customer transactions. The bank said it had found no {{2026-11-17-software-bank-evidence}} that the disruption was related to a cyberattack. United Airlines separately said it had resolved a {{2026-11-17-software-airline-widespread}} system outage affecting its operations. The incidents highlighted the reliance of major services on reliable technology."
     },
     {
-      "id": "2026-11-16-estonia",
-      "date": "2026-11-16",
-      "title": "Estonia plans to shut its Russian border",
-      "body": "Estonia announced that it would {{2026-11-16-estonia-close}} its border with Russia from December 1st. The government {{2026-11-16-estonia-accused}} Moscow of involvement in an attempted arson attack near Tallinn. The prime minister said support for Ukraine would remain {{2026-11-16-estonia-steadfast}} despite the alleged intimidation."
+      "id": "2026-11-17-migration",
+      "date": "2026-11-17",
+      "title": "European governments advance a Rwanda migration proposal",
+      "body": "Five EU governments {{2026-11-17-migration-rwanda-agreed}} on a plan to establish a deportation centre in Rwanda next year. The proposal concerns migrants who have {{2026-11-17-migration-rwanda-exhausted}} their legal options to remain in the EU. Legal {{2026-11-17-migration-rwanda-challenges}} to the scheme are expected even if the governments proceed. Under the proposed scheme, transferred people could choose to stay in Rwanda or return to their countries of origin."
     },
     {
-      "id": "2026-11-16-property",
-      "date": "2026-11-16",
-      "title": "Hong Kong developer proposes a discounted share sale",
-      "body": "Shares in New World Development {{2026-11-16-property-plunged}} after it announced a large rights issue. The proposed shares would be offered at a steep {{2026-11-16-property-discount}} to the previous closing price. The announcement {{2026-11-16-property-fuelled}} concerns about the indebted developer's financial position."
+      "id": "2026-11-17-bridges",
+      "date": "2026-11-17",
+      "title": "Key bridges become targets in the Ukraine war",
+      "body": "Russian missile strikes {{2026-11-17-bridges-kyiv-forced}} the closure of two bridges across Kyiv's Dnieper river. The bridge connecting Russia with Crimea remains a {{2026-11-17-bridges-crimea-crucial}} supply route for Russian troops. The strikes {{2026-11-17-bridges-bridges-illustrated}} how transport links can become strategic targets during a prolonged war. Ukraine also reported a large drone attack including a strike on the bridge linking Russia with Crimea."
     },
     {
-      "id": "2026-11-16-anthropic",
-      "date": "2026-11-16",
-      "title": "Anthropic prepares for a major stock-market debut",
-      "body": "Anthropic is expected to {{2026-11-16-anthropic-float}} shares in an initial public offering this week. The AI company is {{2026-11-16-anthropic-targeting}} a valuation of roughly $1.5 trillion. Investors will {{2026-11-16-anthropic-scrutinise}} its growth prospects as competition in AI coding tools intensifies."
+      "id": "2026-11-17-voters",
+      "date": "2026-11-17",
+      "title": "Indian court weighs complaints over voter-register changes",
+      "body": "Critics {{2026-11-17-voters-india-alleged}} that a rushed review of India's voter rolls had removed eligible citizens. Petitioners want access to commission records to {{2026-11-17-voters-india-establish}} how removal decisions were made. The dispute could {{2026-11-17-voters-india-undermine}} public confidence in the body responsible for election oversight. Election officials said the review aimed to remove duplicate registrations and the names of deceased voters."
     }
   ]
 }
