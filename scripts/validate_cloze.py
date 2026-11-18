@@ -30,10 +30,38 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
     assert isinstance(doc.get("items"), list), f"{name}: missing items"
     assert isinstance(doc.get("passages"), list) and doc["passages"], f"{name}: missing snippets"
 
+    if name == "latest":
+        edition = doc.get("edition", {})
+        for key in ("date", "title", "summary_zh", "source_url", "source_label", "generated_at"):
+            assert isinstance(edition.get(key), str) and edition[key].strip(), (
+                f"latest: edition.{key} is missing"
+            )
+        assert edition.get("source_mode") == "gmail" and edition.get("is_demo") is False, (
+            "latest: non-Gmail or demo edition cannot be published"
+        )
+        assert 6 <= len(doc["passages"]) <= 10, "latest: expected 6-10 passages"
+        assert all(p.get("date") == edition["date"] for p in doc["passages"]), (
+            "latest: passages must belong to edition"
+        )
+
     item_map = {}
     for item in doc["items"]:
         assert item["id"] not in item_map, f"{name}: repeated target ID {item['id']}"
         item_map[item["id"]] = item
+        if name == "latest":
+            assert item.get("date") == doc["edition"]["date"], (
+                f"latest: {item['id']}: mismatched edition date"
+            )
+            assert len(item.get("analysis_zh", "").strip()) >= 60, (
+                f"latest: {item['id']}: analysis has insufficient detail"
+            )
+            assert isinstance(item.get("why_zh"), str) and item["why_zh"].strip(), (
+                f"latest: {item['id']}: missing selection rationale"
+            )
+            for key in ("type", "meaning_zh", "hint_zh"):
+                assert isinstance(item.get(key), str) and item[key].strip(), (
+                    f"latest: {item['id']}: missing {key}"
+                )
         assert valid_target(item, name), (
             f"{name}: {item['id']}: new questions require one English word"
         )
@@ -63,6 +91,13 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
         assert pid not in passage_ids, f"{name}: repeated snippet ID {pid}"
         passage_ids.add(pid)
         ids = re.findall(r"\{\{([^{}]+)\}\}", passage["body"])
+        if name == "latest":
+            assert passage.get("date") == doc["edition"]["date"], (
+                f"latest: {pid}: wrong date"
+            )
+            assert isinstance(passage.get("title"), str) and passage["title"].strip(), (
+                f"latest: {pid}: missing title"
+            )
         assert len(ids) >= 3, f"{name}: {pid}: expected at least 3 blanks; got {len(ids)}"
         assert len(set(ids)) == len(ids), f"{name}: {pid}: repeated target"
         assert len(re.findall(r"[.!?](?:\s|$)", passage["body"])) >= 3, f"{name}: {pid}: missing news context"
@@ -76,6 +111,16 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
                 f"{name}: {pid}: non-single-word alternative"
             )
             assert item["date"] == passage["date"], f"{name}: {pid}: mixed issue dates"
+
+# Newly published items must be represented in a passage from that edition.
+used_latest_ids = {
+    target_id
+    for p in latest["passages"]
+    for target_id in re.findall(r"\\{\\{([^{}]+)\\}\\}", p["body"])
+}
+assert used_latest_ids == {i["id"] for i in latest["items"]}, (
+    "latest: orphan or missing item references"
+)
 
 catalog_passages = {p["id"]: p for p in catalog["passages"]}
 catalog_items = {i["id"]: i for i in catalog["items"]}
