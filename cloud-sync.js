@@ -51,7 +51,7 @@ function mergeStudyEntry(x,y){
   ...Object.keys(left.fieldUpdatedAt||{}),...Object.keys(right.fieldUpdatedAt||{})
  ]);
  const owns=(obj,key)=>Object.prototype.hasOwnProperty.call(obj||{},key);
- const stamp=(obj,id)=>String(obj.fieldUpdatedAt?.[id]||obj.updatedAt||'');
+ const stamp=(obj,id)=>String(obj.fieldUpdatedAt?.[id]||(owns(obj.answers,id)||owns(obj.feedback,id)||owns(obj.hints,id)?obj.updatedAt||'':''));
  for(const id of ids){
   const hasLeft=owns(left.answers,id)||owns(left.feedback,id);
   const hasRight=owns(right.answers,id)||owns(right.feedback,id);
