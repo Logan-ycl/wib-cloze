@@ -6,9 +6,17 @@ const panel=document.getElementById('cloud-backup');
 if(!panel||GUEST){if(panel)panel.hidden=true;return;}
 const status=document.getElementById('cloud-status');
 const controls=document.getElementById('cloud-controls');
-const setStatus=(s)=>{status.textContent=s;};
+const quickStatus=document.getElementById('cloud-quick-status');
+const setStatus=(s)=>{
+ status.textContent=s;
+ if(quickStatus)quickStatus.textContent=s.startsWith('云端已同步')?'云端已同步 ✓':
+  s.startsWith('正在')||s.includes('准备同步')?'云端同步中…':
+  s.includes('同步暂不可用')?'云同步失败，已保存在本机':
+  s.includes('未关联')||s.includes('首次使用')?'仅本机保存':
+  s.startsWith('本机已保存')?'本机已保存，等待上传':s;
+};
 let token=localStorage.getItem(TOKEN)||'';
-let busy=false, queued=false, timer=null;
+let busy=false, queued=false, timer=null, lastMistakeSignature='';
 const readJson=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||'null')||fallback;}catch{return fallback;}};
 const clone=(v)=>JSON.parse(JSON.stringify(v));
 function stable(v){if(Array.isArray(v))return '['+v.map(stable).join(',')+']';if(v&&typeof v==='object')return '{'+Object.keys(v).sort().map(k=>JSON.stringify(k)+':'+stable(v[k])).join(',')+'}';return JSON.stringify(v);}
@@ -172,7 +180,8 @@ function collectMistakes(){
 }
 async function sendMistakes(){
  if(!token||!API)return;
- const key=await mistakeReaderKey(),all=collectMistakes();
+ const key=await mistakeReaderKey(),all=collectMistakes(),signature=stable(all);
+ if(signature===lastMistakeSignature)return;
  // Include an empty batch so the read-only link works even when no errors exist yet.
  for(let i=0;i<Math.max(1,Math.ceil(all.length/100));i++){
   const events=all.slice(i*100,i*100+100);
@@ -181,6 +190,7 @@ async function sendMistakes(){
   },body:JSON.stringify({read_key:key,events}),cache:'no-store'});
   if(!response.ok)throw Error('错题上传失败（HTTP '+response.status+'）');
  }
+ lastMistakeSignature=signature;
 }
 async function syncOnce(){
  for(let retry=0;retry<4;retry++){
@@ -202,21 +212,32 @@ async function sync(){
  if(!token||!API)return;
  if(busy){queued=true;return;}
  busy=true;
+ let success=false;
  do{
   queued=false;
   try{
    setStatus('正在加密并同步学习记录…');
+   // Save the full encrypted progress first. Mistake-summary uploads must not
+   // block the next device from receiving normal answers and drafts.
    await syncOnce();
-   await sendMistakes();
+   success=true;
    setStatus('云端已同步 · '+new Date().toLocaleString('zh-CN'));
   }catch(error){
    setStatus('云端同步暂不可用：'+error.message+'；本机记录仍会保存');
+   success=false;
    break;
   }
  }while(queued);
  busy=false;
+ if(success)try{await sendMistakes();}
+ catch(error){setStatus('云端已同步 · 错题汇总暂未更新：'+error.message);}
 }
-function schedule(){if(!token||!API)return;clearTimeout(timer);timer=setTimeout(sync,1300);}
+function schedule(){
+ if(!token||!API)return;
+ clearTimeout(timer);
+ setStatus('本机已保存 · 准备同步');
+ timer=setTimeout(sync,350);
+}
 function updateUI(){
  const connected=!!token;
  document.getElementById('cloud-create').hidden=connected;
@@ -274,7 +295,20 @@ document.getElementById('cloud-switch').onclick=async()=>{
  }catch(error){token=previous;setStatus('恢复失败：'+error.message+'；原设备记录与密钥保持不变。');}
 };
 window.addEventListener('brieflab:local-write',schedule);
+window.addEventListener('storage',e=>{
+ if(e.key===STORAGE||e.key===WORK||e.key===TOKEN)schedule();
+});
 window.addEventListener('online',schedule);
-window.addEventListener('visibilitychange',()=>{if(!document.hidden)schedule();});
+window.addEventListener('focus',schedule);
+window.addEventListener('pageshow',schedule);
+document.addEventListener('visibilitychange',()=>{
+ if(document.hidden){
+  // Start the pending upload as soon as the phone moves to another app.
+  // Browser termination can still interrupt any in-flight request.
+  clearTimeout(timer);sync();
+ }else schedule();
+});
+window.addEventListener('pagehide',()=>{clearTimeout(timer);sync();});
+setInterval(()=>{if(!document.hidden&&token&&API)schedule();},20000);
 updateUI();
 })();
