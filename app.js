@@ -102,7 +102,13 @@ function refreshPracticeQueue(keepChecked=true){
  const newFront=passageById(session[0])?.date||'';
  const newerEditionArrived=Boolean(old.length&&session.length&&newFront>oldFront);
  const wasFinished=old.length>0&&position>=old.length;
- idx=newerEditionArrived?0:next?session.indexOf(next):wasFinished?session.length:0;
+ // New editions and this one-time order upgrade open at the newest passage.
+ // Saved answers, hints, and spaced-repetition records are unchanged.
+ const orderingChanged=work.orderVersion!=='newest-first-20261118';
+ const editionChanged=Boolean(edition?.date&&work.sessionEdition!==edition.date);
+ idx=(orderingChanged||editionChanged||newerEditionArrived)?0:next?session.indexOf(next):wasFinished?session.length:0;
+ work.orderVersion='newest-first-20261118';
+ work.sessionEdition=edition?.date||'';
  work.session=[...session];work.idx=idx;
 }
 function labelDue(){
