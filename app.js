@@ -30,17 +30,24 @@ if(!GUEST){
   }
  }catch{}
 }
-const saveWork=()=>{
+const saveWork=(changedItemId=null)=>{
  if(GUEST)return;
  const active=session[idx],k=active?work.day+'|'+active:null;
- if(k&&work.entries[k])work.entries[k].updatedAt=new Date().toISOString();
+ if(changedItemId&&k&&work.entries[k]){
+  const entry=work.entries[k],stamp=new Date().toISOString();
+  entry.updatedAt=stamp;
+  entry.fieldUpdatedAt=entry.fieldUpdatedAt||{};
+  entry.fieldUpdatedAt[changedItemId]=stamp;
+ }
+ // Navigation, page refresh and note edits must never pretend an old answer
+ // was edited, otherwise another device's newer answer can be overwritten.
  try{localStorage.setItem(WORK_KEY,JSON.stringify(work));window.dispatchEvent(new Event('brieflab:local-write'))}catch{notice('本次练习进度无法保存，请检查浏览器存储权限。');}
 };
 function activatePassage(id){
  visibleHintClicks={};
  const k=work.day+'|'+id;
  const current=work.entries[k]||{};
- const entry={answers:{...(current.answers||{})},hints:{...(current.hints||{})},feedback:{...(current.feedback||{})},updatedAt:current.updatedAt||''};
+ const entry={answers:{...(current.answers||{})},hints:{...(current.hints||{})},feedback:{...(current.feedback||{})},fieldUpdatedAt:{...(current.fieldUpdatedAt||{})},updatedAt:current.updatedAt||''};
  // A checked answer is also stored in the durable spaced-review history.
  // Recover it if another device or an older cloud session lost today's UI entry.
  const passage=passageById(id);
@@ -198,7 +205,7 @@ function attachNavigation(){
  const root=$('quiz');
  root.querySelectorAll('.gap-hint').forEach(btn=>btn.onclick=()=>giveHint(btn.dataset.item));
  root.querySelectorAll('.single-word-slot').forEach(field=>{
-  field.addEventListener('input',()=>{answers[field.dataset.item]=field.value;saveWork();});
+  field.addEventListener('input',()=>{answers[field.dataset.item]=field.value;saveWork(field.dataset.item);});
   field.addEventListener('keydown',event=>{
    if(event.key==='Enter'){event.preventDefault();checkAll();}
   });
@@ -221,7 +228,7 @@ function giveHint(id){
   visibleHintClicks[id]=revealed;
   // Retain prior usage for historical answers; never count an unproductive click.
   hints[id]=Math.max(Math.min(Number(hints[id])||0,maxVisible),revealed);
-  saveWork();
+  saveWork(id);
   if(limitMessage)limitMessage.textContent='';
  }else{
   // A small, repeatable shake acknowledges the cap without affecting scoring.
@@ -296,7 +303,7 @@ function checkBlank(id){
  const days=independent?REVIEW_INTERVALS[Math.min(streak-1,REVIEW_INTERVALS.length-1)]:1;
  answers[id]=answer;
  feedback[id]={answer,correct,hintCount};
- saveWork();
+ saveWork(id);
  if(!GUEST)progress.records[id]={...old,attempts:old.attempts+1,correct:old.correct+(independent?1:0),
   wrongCount:old.wrongCount+(correct?0:1),hintAssisted:(old.hintAssisted||0)+(correct&&hintCount?1:0),
   streak,nextDue:addDays(today(),days),lastReviewed:today(),lastReviewedAt:new Date().toISOString(),
