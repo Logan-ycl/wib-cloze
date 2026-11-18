@@ -9,6 +9,7 @@ on:
       - cloud-config.js
       - scripts/validate_cloze.py
       - scripts/test_spaced_review.cjs
+      - scripts/test_cloud_sync.cjs
       - scripts/verify_live_release.py
       - content/catalog.json
       - manifest.webmanifest
@@ -36,6 +37,8 @@ jobs:
         run: python3 scripts/validate_cloze.py
       - name: Verify spaced repetition and saved-answer invariants
         run: node scripts/test_spaced_review.cjs
+      - name: Verify phone and desktop cloud merge
+        run: node scripts/test_cloud_sync.cjs
       - name: Prepare static website
         run: |
           mkdir -p _site/content _site/icons
