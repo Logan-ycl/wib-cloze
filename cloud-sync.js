@@ -7,13 +7,17 @@ if(!panel||GUEST){if(panel)panel.hidden=true;return;}
 const status=document.getElementById('cloud-status');
 const controls=document.getElementById('cloud-controls');
 const quickStatus=document.getElementById('cloud-quick-status');
+let accountTag='';
 const setStatus=(s)=>{
  status.textContent=s;
- if(quickStatus)quickStatus.textContent=s.startsWith('云端已同步')?'云端已同步 ✓':
-  s.startsWith('正在')||s.includes('准备同步')?'云端同步中…':
-  s.includes('同步暂不可用')?'云同步失败，已保存在本机':
-  s.includes('未关联')||s.includes('首次使用')?'仅本机保存':
-  s.startsWith('本机已保存')?'本机已保存，等待上传':s;
+ if(quickStatus){
+  const short=s.startsWith('云端已同步')?'云端已同步 ✓':
+   s.startsWith('正在')||s.includes('准备同步')?'云端同步中…':
+   s.includes('同步暂不可用')?'云同步失败，已保存在本机':
+   s.includes('未关联')||s.includes('首次使用')?'仅本机保存':
+   s.startsWith('本机已保存')?'本机已保存，等待上传':s;
+  quickStatus.textContent=short+(accountTag?' · 同步账户 '+accountTag:'');
+ }
 };
 let token=localStorage.getItem(TOKEN)||'';
 let busy=false, queued=false, timer=null, lastMistakeSignature='';
@@ -238,8 +242,20 @@ function schedule(){
  setStatus('本机已保存 · 准备同步');
  timer=setTimeout(sync,350);
 }
+async function refreshAccountTag(){
+ const current=token;
+ if(!current){accountTag='';setStatus(status.textContent);return;}
+ try{
+  const bytes=new Uint8Array(await crypto.subtle.digest('SHA-256',utf.encode('brieflab-account-label-v1:'+current)));
+  if(current!==token)return;
+  accountTag=Array.from(bytes.slice(0,3),x=>x.toString(16).padStart(2,'0')).join('').toUpperCase();
+  setStatus(status.textContent);
+ }catch{accountTag='';}
+}
 function updateUI(){
  const connected=!!token;
+ accountTag='';
+ void refreshAccountTag();
  document.getElementById('cloud-create').hidden=connected;
  document.getElementById('cloud-copy').hidden=!connected;
  document.getElementById('cloud-now').hidden=!connected;
@@ -292,7 +308,10 @@ document.getElementById('cloud-switch').onclick=async()=>{
   if(!remote.blob)throw Error('该密钥尚无云端备份。请检查是否正确，或先在原设备完成同步。');
   await decrypt(remote.blob,t);
   localStorage.setItem(TOKEN,t);updateUI();sync();
- }catch(error){token=previous;setStatus('恢复失败：'+error.message+'；原设备记录与密钥保持不变。');}
+ }catch(error){
+  token=previous;updateUI();
+  setStatus('恢复失败：'+error.message+'；原设备记录与密钥保持不变。');
+ }
 };
 window.addEventListener('brieflab:local-write',schedule);
 window.addEventListener('storage',e=>{
