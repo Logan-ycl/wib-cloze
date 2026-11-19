@@ -3889,6 +3889,444 @@
         "sentence_en": "The manager was asked to assemble a viable project team.",
         "translation_zh": "经理被要求组建一支能够运作的项目团队。"
       }
+    },
+    {
+      "id": "2026-11-19-summit-unprecedented",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "unprecedented",
+      "meaning_zh": "史无前例的",
+      "example": "The three leaders held unprecedented trilateral talks in Shenzhen.",
+      "cloze": "The three leaders held ______ trilateral talks in Shenzhen.",
+      "answer": "unprecedented",
+      "accepted": [
+        "historic"
+      ],
+      "analysis_zh": "unprecedented trilateral talks 由形容词修饰三边会谈，强调这种会谈此前没有先例。它描述会议形式，未对外交成果作出评价；historic 往往暗含重大历史意义，语气更强。",
+      "hint_zh": "史无前例的",
+      "why_zh": "突出首次三边会谈这一事实。",
+      "imitation": {
+        "background_zh": "假设三家合作商首次开会",
+        "sentence_en": "The partners held an unprecedented joint meeting.",
+        "translation_zh": "合作伙伴举行了一场史无前例的联合会议。"
+      }
+    },
+    {
+      "id": "2026-11-19-summit-groundbreaking",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "groundbreaking",
+      "meaning_zh": "开创性的",
+      "example": "Xi characterised the discussion as groundbreaking, but no detailed agreement was disclosed.",
+      "cloze": "Xi characterised the discussion as ______, but no detailed agreement was disclosed.",
+      "answer": "groundbreaking",
+      "accepted": [
+        "historic"
+      ],
+      "analysis_zh": "characterised the discussion as groundbreaking 使用 characterise A as B 结构，groundbreaking 是讲话者对讨论的评价。but 后面说明协议细节尚未披露，不能将这一评价当作已证实的谈判成果。",
+      "hint_zh": "开创性的",
+      "why_zh": "保留评价归因及协议尚未披露的限制。",
+      "imitation": {
+        "background_zh": "假设项目负责人评价新流程",
+        "sentence_en": "The manager described the new process as groundbreaking.",
+        "translation_zh": "经理称新流程具有开创性。"
+      }
+    },
+    {
+      "id": "2026-11-19-summit-subsequently",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "subsequently",
+      "meaning_zh": "随后",
+      "example": "Trump subsequently said Washington and Beijing wanted the war in Ukraine to end.",
+      "cloze": "Trump ______ said Washington and Beijing wanted the war in Ukraine to end.",
+      "answer": "subsequently",
+      "accepted": [
+        "later"
+      ],
+      "analysis_zh": "subsequently said 中副词修饰过去时动词 said，说明外交会晤后的发言顺序。subsequently 只表示时间先后；therefore 表示因果，两者不可混淆，避免暗示会谈直接促成这一表态。",
+      "hint_zh": "随后",
+      "why_zh": "准确表示会谈之后的时间顺序。",
+      "imitation": {
+        "background_zh": "假设合同谈判",
+        "sentence_en": "The teams negotiated prices and subsequently agreed on delivery terms.",
+        "translation_zh": "双方谈妥价格，随后就交货条款达成一致。"
+      }
+    },
+    {
+      "id": "2026-11-19-anthropic-eclipsed",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "eclipsed",
+      "meaning_zh": "超越",
+      "example": "Anthropic's public offering eclipsed previous listing records by raising $81bn.",
+      "cloze": "Anthropic's public offering ______ previous listing records by raising $81bn.",
+      "answer": "eclipsed",
+      "accepted": [
+        "surpassed",
+        "exceeded"
+      ],
+      "analysis_zh": "eclipsed previous listing records 使用 eclipse + 宾语表示新纪录盖过旧纪录，过去时说明融资已经完成。surpassed 和 exceeded 也表示超过；eclipsed 更强调旧纪录因此显得逊色。",
+      "hint_zh": "超越",
+      "why_zh": "突出了融资规模刷新上市纪录。",
+      "imitation": {
+        "background_zh": "假设新品销量破纪录",
+        "sentence_en": "The new product eclipsed the previous sales record.",
+        "translation_zh": "新产品打破并超越了此前的销售纪录。"
+      }
+    },
+    {
+      "id": "2026-11-19-anthropic-implied",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "implied",
+      "meaning_zh": "意味着",
+      "example": "The offer price implied a valuation of roughly $1.5trn.",
+      "cloze": "The offer price ______ a valuation of roughly $1.5trn.",
+      "answer": "implied",
+      "accepted": [
+        "suggested"
+      ],
+      "analysis_zh": "implied a valuation of roughly $1.5trn 表示发行价对应的推算估值；roughly 保留估算性质。implied valuation 是金融分析术语，不能将估值与企业实际收到的融资金额混为一谈。",
+      "hint_zh": "意味着",
+      "why_zh": "准确区分发行价格对应的估值和融资额。",
+      "imitation": {
+        "background_zh": "假设企业收购报价",
+        "sentence_en": "The revised bid implied a higher company valuation.",
+        "translation_zh": "修订后的报价意味着更高的企业估值。"
+      }
+    },
+    {
+      "id": "2026-11-19-anthropic-relief",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "relief",
+      "meaning_zh": "缓解",
+      "example": "The successful flotation offered some relief after a sell-off in technology shares.",
+      "cloze": "The successful flotation offered some ______ after a sell-off in technology shares.",
+      "answer": "relief",
+      "accepted": [],
+      "analysis_zh": "offered some relief 中 relief 为不可数名词，some 限定改善程度。sell-off 指集中抛售；relief 只表示压力有所缓解，不能等同于 recovery 所暗示的市场全面恢复。",
+      "hint_zh": "缓解",
+      "why_zh": "审慎描述科技股下跌后的短暂情绪改善。",
+      "imitation": {
+        "background_zh": "假设物料短缺",
+        "sentence_en": "The delivery brought some relief to the production team.",
+        "translation_zh": "这次交货让生产团队稍感宽慰。"
+      }
+    },
+    {
+      "id": "2026-11-19-venezuela-restore",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "restore",
+      "meaning_zh": "恢复",
+      "example": "Washington and Caracas agreed to restore military ties.",
+      "cloze": "Washington and Caracas agreed to ______ military ties.",
+      "answer": "restore",
+      "accepted": [
+        "renew",
+        "revive"
+      ],
+      "analysis_zh": "restore military ties 是 restore + 名词宾语，强调双方恢复原先存在的军事联系。与 establish military ties 表示首次建立关系不同，restore 包含关系曾经中断或削弱的背景。",
+      "hint_zh": "恢复",
+      "why_zh": "明确双方恢复已有联系的事实。",
+      "imitation": {
+        "background_zh": "假设合作商恢复例会",
+        "sentence_en": "The partners agreed to restore their monthly meetings.",
+        "translation_zh": "合作伙伴同意恢复每月例会。"
+      }
+    },
+    {
+      "id": "2026-11-19-venezuela-envisages",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "envisages",
+      "meaning_zh": "设想并规划",
+      "example": "The agreement envisages joint exercises and intelligence sharing.",
+      "cloze": "The agreement ______ joint exercises and intelligence sharing.",
+      "answer": "envisages",
+      "accepted": [
+        "includes"
+      ],
+      "analysis_zh": "agreement envisages joint exercises 是 envisage + 名词短语，说明协议拟安排的合作内容。envisage 不保证相关活动已经开展；completed 或 conducted 才可描述已经执行的行动。",
+      "hint_zh": "设想并规划",
+      "why_zh": "准确区分协议计划与已经执行的活动。",
+      "imitation": {
+        "background_zh": "假设扩产计划",
+        "sentence_en": "The expansion plan envisages a second production line.",
+        "translation_zh": "扩产方案设想增加第二条生产线。"
+      }
+    },
+    {
+      "id": "2026-11-19-venezuela-realignment",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "realignment",
+      "meaning_zh": "重新调整",
+      "example": "The defence chief's visit occurred amid a wider political realignment.",
+      "cloze": "The defence chief's visit occurred amid a wider political ______.",
+      "answer": "realignment",
+      "accepted": [
+        "reconfiguration"
+      ],
+      "analysis_zh": "political realignment 是名词短语，指政治力量及关系格局的调整；amid 引出访问发生时的背景。realignment 与 reconciliation 有区别，后者强调和解，报道未能证明各方已经全面和解。",
+      "hint_zh": "重新调整",
+      "why_zh": "概括政治关系变化并避免推断全面和解。",
+      "imitation": {
+        "background_zh": "假设组织重组",
+        "sentence_en": "The restructuring prompted a realignment of responsibilities.",
+        "translation_zh": "重组促使职责重新调整。"
+      }
+    },
+    {
+      "id": "2026-11-19-energy-reliance",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "reliance",
+      "meaning_zh": "依赖",
+      "example": "The agency said reducing reliance on the Strait of Hormuz would require major spending.",
+      "cloze": "The agency said reducing ______ on the Strait of Hormuz would require major spending.",
+      "answer": "reliance",
+      "accepted": [
+        "dependence"
+      ],
+      "analysis_zh": "reducing reliance on 使用 reliance on 的固定介词搭配，指对霍尔木兹海峡运输通道的依赖。would require 是条件性预测，说明降低依赖需要投入，不能写成投资已实际完成。",
+      "hint_zh": "依赖",
+      "why_zh": "强调降低对运输通道依赖的条件。",
+      "imitation": {
+        "background_zh": "假设采购多元化",
+        "sentence_en": "The factory aims to reduce reliance on one supplier.",
+        "translation_zh": "工厂希望减少对单一供应商的依赖。"
+      }
+    },
+    {
+      "id": "2026-11-19-energy-outlook",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "outlook",
+      "meaning_zh": "展望报告",
+      "example": "Its outlook estimated $40bn for pipelines and $200bn for oil fields.",
+      "cloze": "Its ______ estimated $40bn for pipelines and $200bn for oil fields.",
+      "answer": "outlook",
+      "accepted": [
+        "report"
+      ],
+      "analysis_zh": "Its outlook 指国际能源署的能源展望报告，名词作主语。outlook 在此是预测性出版物，不能理解为市场乐观情绪；estimated 后的金额属于机构估算，并非已发生的投资。",
+      "hint_zh": "展望报告",
+      "why_zh": "准确标注金额来自机构展望报告的估算。",
+      "imitation": {
+        "background_zh": "假设市场研究",
+        "sentence_en": "The annual outlook predicts slower demand growth.",
+        "translation_zh": "年度展望报告预测需求增长放缓。"
+      }
+    },
+    {
+      "id": "2026-11-19-energy-accelerate",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "accelerate",
+      "meaning_zh": "加速",
+      "example": "Conflict in Iran could accelerate efforts to develop domestic energy.",
+      "cloze": "Conflict in Iran could ______ efforts to develop domestic energy.",
+      "answer": "accelerate",
+      "accepted": [
+        "intensify"
+      ],
+      "analysis_zh": "could accelerate efforts to develop 使用 could + 动词原形表达可能性；accelerate efforts to do sth 表示加快推进某项工作。与 trigger 表示触发行动不同，accelerate 强调速度提高。",
+      "hint_zh": "加速",
+      "why_zh": "保留可能性并准确描述政策反应。",
+      "imitation": {
+        "background_zh": "假设本地采购",
+        "sentence_en": "A shortage could accelerate efforts to source materials locally.",
+        "translation_zh": "短缺可能加快本地采购材料的工作。"
+      }
+    },
+    {
+      "id": "2026-11-19-gaza-boundary",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "boundary",
+      "meaning_zh": "边界线",
+      "example": "Israeli tanks crossed the ceasefire boundary known as the yellow line.",
+      "cloze": "Israeli tanks crossed the ceasefire ______ known as the yellow line.",
+      "answer": "boundary",
+      "accepted": [
+        "line"
+      ],
+      "analysis_zh": "crossed the ceasefire boundary 中 cross 直接接宾语，无需再加 over。boundary 指停火安排划定的分界线；border 通常用于国家边境，因此 boundary 更贴合此处协议控制线。",
+      "hint_zh": "边界线",
+      "why_zh": "描述坦克越过停火分界线的行动。",
+      "imitation": {
+        "background_zh": "假设厂区安全",
+        "sentence_en": "Vehicles must not cross the marked safety boundary.",
+        "translation_zh": "车辆不得越过标记的安全界线。"
+      }
+    },
+    {
+      "id": "2026-11-19-gaza-incursion",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "incursion",
+      "meaning_zh": "越界进入的军事行动",
+      "example": "The military described its incursion as limited and aimed at removing threats.",
+      "cloze": "The military described its ______ as limited and aimed at removing threats.",
+      "answer": "incursion",
+      "accepted": [
+        "operation"
+      ],
+      "analysis_zh": "described its incursion as limited 使用 describe A as B，明确 limited 是以军对行动规模的自我描述。incursion 指进入他方控制区域的行动，通常比 invasion 范围小；规模仍需独立核实。",
+      "hint_zh": "越界进入的军事行动",
+      "why_zh": "保留行动性质及其有限规模的消息归因。",
+      "imitation": {
+        "background_zh": "假设网络安全演练",
+        "sentence_en": "The exercise simulated an incursion into a secure network.",
+        "translation_zh": "演练模拟了对安全网络的侵入。"
+      }
+    },
+    {
+      "id": "2026-11-19-gaza-reported",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "reported",
+      "meaning_zh": "报告称",
+      "example": "Israel separately reported air strikes that it said killed two commanders.",
+      "cloze": "Israel separately ______ air strikes that it said killed two commanders.",
+      "answer": "reported",
+      "accepted": [
+        "announced"
+      ],
+      "analysis_zh": "Israel reported air strikes that it said killed 使用 reported 和 it said 双重归因，限定袭击和伤亡信息来自以方。涉及冲突中的死亡数字，不能省略来源限定改写为独立核实的事实。",
+      "hint_zh": "报告称",
+      "why_zh": "冲突伤亡信息需要明确来源。",
+      "imitation": {
+        "background_zh": "假设质量整改",
+        "sentence_en": "The supplier reported that it had completed corrective actions.",
+        "translation_zh": "供应商报告称已完成纠正措施。"
+      }
+    },
+    {
+      "id": "2026-11-19-gta-debut",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "debut",
+      "meaning_zh": "首次亮相",
+      "example": "Grand Theft Auto VI made its long-awaited debut to enthusiastic reviews.",
+      "cloze": "Grand Theft Auto VI made its long-awaited ______ to enthusiastic reviews.",
+      "answer": "debut",
+      "accepted": [],
+      "analysis_zh": "made its long-awaited debut 是 make one's debut 固定搭配，debut 为名词，表示作品正式推出。launch 可作名词或动词，但不能直接替换这里的 debut 而保持 make its 结构自然。",
+      "hint_zh": "首次亮相",
+      "why_zh": "使用固定搭配描述作品正式上市。",
+      "imitation": {
+        "background_zh": "假设新品展会",
+        "sentence_en": "The new analyser made its debut at the exhibition.",
+        "translation_zh": "新分析仪在展会上首次亮相。"
+      }
+    },
+    {
+      "id": "2026-11-19-gta-reception",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "reception",
+      "meaning_zh": "公众反响",
+      "example": "The publisher's shares rose as investors welcomed the game's reception.",
+      "cloze": "The publisher's shares rose as investors welcomed the game's ______.",
+      "answer": "reception",
+      "accepted": [
+        "response"
+      ],
+      "analysis_zh": "the game's reception 指作品获得的评价和受众反响，区别于 sales 的实际销售额。as 说明股价上涨时伴随的市场反应，不能据此断言好评是唯一涨价原因。",
+      "hint_zh": "公众反响",
+      "why_zh": "区分评论反响和实际销量。",
+      "imitation": {
+        "background_zh": "假设英语演讲",
+        "sentence_en": "The positive reception encouraged the speaker.",
+        "translation_zh": "积极的反响鼓舞了演讲者。"
+      }
+    },
+    {
+      "id": "2026-11-19-gta-projected",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "projected",
+      "meaning_zh": "预测",
+      "example": "Analysts projected first-week revenue above $3bn, although the number remained a forecast.",
+      "cloze": "Analysts ______ first-week revenue above $3bn, although the number remained a forecast.",
+      "answer": "projected",
+      "accepted": [
+        "forecast",
+        "estimated"
+      ],
+      "analysis_zh": "analysts projected first-week revenue 使用分析师作主语的过去时预测表达。although 后明确该数字仍属预测；projected revenue 与 reported revenue 不同，后者指已披露的实际收入。",
+      "hint_zh": "预测",
+      "why_zh": "避免将分析师预测误写成已实现收入。",
+      "imitation": {
+        "background_zh": "假设季度预测",
+        "sentence_en": "Analysts projected stronger sales next quarter.",
+        "translation_zh": "分析师预测下季度销售额更高。"
+      }
+    },
+    {
+      "id": "2026-11-19-vangogh-fetched",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "fetched",
+      "meaning_zh": "拍得",
+      "example": "A Van Gogh painting fetched more than $190m at Sotheby's.",
+      "cloze": "A Van Gogh painting ______ more than $190m at Sotheby's.",
+      "answer": "fetched",
+      "accepted": [
+        "commanded"
+      ],
+      "analysis_zh": "fetched more than $190m 是艺术品拍卖报道常用结构，fetch + 金额表示实际成交价格。与 was valued at 指估值不同，fetched 描述已经发生的交易，过去时对应拍卖完成。",
+      "hint_zh": "拍得",
+      "why_zh": "突出实际成交价而非估价。",
+      "imitation": {
+        "background_zh": "假设摄影作品拍卖",
+        "sentence_en": "The photograph fetched a record price at auction.",
+        "translation_zh": "这张照片在拍卖会上拍出创纪录的价格。"
+      }
+    },
+    {
+      "id": "2026-11-19-vangogh-bidding",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "bidding",
+      "meaning_zh": "竞价",
+      "example": "A short bidding contest drove the price beyond the artist's previous record.",
+      "cloze": "A short ______ contest drove the price beyond the artist's previous record.",
+      "answer": "bidding",
+      "accepted": [],
+      "analysis_zh": "bidding contest 中 bidding 作名词定语，指拍卖中的买家竞价。drove the price beyond 描述竞争推动成交价突破纪录；这里的 bidding 与采购招投标 tender bidding 所指场景不同。",
+      "hint_zh": "竞价",
+      "why_zh": "准确描述竞价推动价格突破纪录。",
+      "imitation": {
+        "background_zh": "假设慈善拍卖",
+        "sentence_en": "Competitive bidding drove up the price of the jersey.",
+        "translation_zh": "激烈竞价推高了球衣的价格。"
+      }
+    },
+    {
+      "id": "2026-11-19-vangogh-settlement",
+      "date": "2026-11-19",
+      "type": "word",
+      "expression": "settlement",
+      "meaning_zh": "和解协议",
+      "example": "The auction house had earlier reached a settlement with the seller's heirs.",
+      "cloze": "The auction house had earlier reached a ______ with the seller's heirs.",
+      "answer": "settlement",
+      "accepted": [
+        "agreement"
+      ],
+      "analysis_zh": "reached a settlement with sb 是法律语境固定搭配，指与某方达成和解。had earlier reached 用过去完成时说明和解先于拍卖；settlement 不代表法院已经认定此前出售存在违法行为。",
+      "hint_zh": "和解协议",
+      "why_zh": "区分此前和解与本次成交，避免推断法律责任。",
+      "imitation": {
+        "background_zh": "假设商业争议",
+        "sentence_en": "The companies reached a settlement after negotiations.",
+        "translation_zh": "两家公司谈判后达成和解。"
+      }
     }
   ],
   "passages": [
@@ -4205,6 +4643,48 @@
       "date": "2026-11-18",
       "title": "Opposition gains influence in Israel's parliament",
       "body": "Lawmakers {{2026-11-18-israel-elected}} Matan Kahana as the new speaker of parliament. The result {{2026-11-18-israel-strengthened}} the opposition's influence over the legislative agenda. Gadi Eisenkot received the first chance to {{2026-11-18-israel-assemble}} a viable government. The development drew attention because it could affect decisions beyond the immediate announcement."
+    },
+    {
+      "id": "2026-11-19-summit",
+      "date": "2026-11-19",
+      "title": "Three leaders hold unprecedented talks",
+      "body": "The three leaders held {{2026-11-19-summit-unprecedented}} trilateral talks in Shenzhen. Xi characterised the discussion as {{2026-11-19-summit-groundbreaking}}, but no detailed agreement was disclosed. Trump {{2026-11-19-summit-subsequently}} said Washington and Beijing wanted the war in Ukraine to end. Trump had also met the other leaders separately before the three-way discussion."
+    },
+    {
+      "id": "2026-11-19-anthropic",
+      "date": "2026-11-19",
+      "title": "Anthropic's enormous stock-market debut",
+      "body": "Anthropic's public offering {{2026-11-19-anthropic-eclipsed}} previous listing records by raising $81bn. The offer price {{2026-11-19-anthropic-implied}} a valuation of roughly $1.5trn. The successful flotation offered some {{2026-11-19-anthropic-relief}} after a sell-off in technology shares. The strong demand for the shares contrasted with the sector's recent weakness."
+    },
+    {
+      "id": "2026-11-19-venezuela",
+      "date": "2026-11-19",
+      "title": "America and Venezuela renew military ties",
+      "body": "Washington and Caracas agreed to {{2026-11-19-venezuela-restore}} military ties. The agreement {{2026-11-19-venezuela-envisages}} joint exercises and intelligence sharing. The defence chief's visit occurred amid a wider political {{2026-11-19-venezuela-realignment}}. The American official met Venezuela's acting president during the visit."
+    },
+    {
+      "id": "2026-11-19-energy",
+      "date": "2026-11-19",
+      "title": "IEA calculates the cost of energy security",
+      "body": "The agency said reducing {{2026-11-19-energy-reliance}} on the Strait of Hormuz would require major spending. Its {{2026-11-19-energy-outlook}} estimated $40bn for pipelines and $200bn for oil fields. Conflict in Iran could {{2026-11-19-energy-accelerate}} efforts to develop domestic energy. The figures reflect the agency's estimates rather than completed investments."
+    },
+    {
+      "id": "2026-11-19-gaza",
+      "date": "2026-11-19",
+      "title": "Israeli tanks cross a Gaza ceasefire line",
+      "body": "Israeli tanks crossed the ceasefire {{2026-11-19-gaza-boundary}} known as the yellow line. The military described its {{2026-11-19-gaza-incursion}} as limited and aimed at removing threats. Israel separately {{2026-11-19-gaza-reported}} air strikes that it said killed two commanders. The developments renewed concerns about the durability of the ceasefire."
+    },
+    {
+      "id": "2026-11-19-gta",
+      "date": "2026-11-19",
+      "title": "Grand Theft Auto VI arrives to acclaim",
+      "body": "Grand Theft Auto VI made its long-awaited {{2026-11-19-gta-debut}} to enthusiastic reviews. The publisher's shares rose as investors welcomed the game's {{2026-11-19-gta-reception}}. Analysts {{2026-11-19-gta-projected}} first-week revenue above $3bn, although the number remained a forecast. The launch also lifted shares in the company behind the game by around 6%."
+    },
+    {
+      "id": "2026-11-19-vangogh",
+      "date": "2026-11-19",
+      "title": "Van Gogh painting achieves record auction price",
+      "body": "A Van Gogh painting {{2026-11-19-vangogh-fetched}} more than $190m at Sotheby's. A short {{2026-11-19-vangogh-bidding}} contest drove the price beyond the artist's previous record. The auction house had earlier reached a {{2026-11-19-vangogh-settlement}} with the seller's heirs. The heirs argued that the painting had been sold under financial pressure in 1936."
     }
   ]
 }
