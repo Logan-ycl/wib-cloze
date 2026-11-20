@@ -314,6 +314,11 @@ function checkBlank(id){
  updateResults();
  return true;
 }
+function quizHeading(title, items){
+ const words=new Set((title||'').toLowerCase().match(/[a-z]+/g)||[]);
+ const revealsAnswer=items.some(item=>[item.answer,...(item.accepted||[])].some(word=>words.has(word.toLowerCase().trim())));
+ return title&&!revealsAnswer?'<h3 class="snippet-title">'+E(title)+'</h3>':'';
+}
 function renderQuiz(){
  const el=$('quiz');
  if(edition&&$('edition-label'))$('edition-label').textContent='邮件日期：'+edition.date+' · 统一检查已填写的空，提示逐字增加';
@@ -340,7 +345,7 @@ function renderQuiz(){
  const dueBlanks=GUEST?blanks:blanks.filter(id=>!record(id).attempts||isDue(itemById(id)));
  el.innerHTML='<div class="box"><div class="snippet-header"><div class="snippet-meta"><span class="eyebrow">SNIPPET '+(idx+1)+' / '+session.length+'</span><span class="muted">'+E(p.date)+' · '+dueBlanks.length+' / '+blanks.length+' 处到期填空</span></div>'
   +'<div class="snippet-controls" role="group" aria-label="检查与翻篇"><button type="button" class="btn" id="check-all">检查对错</button><button type="button" class="btn secondary" id="previous" '+(idx===0?'disabled':'')+'>上一篇</button><button type="button" class="btn secondary" id="next">'+(idx===session.length-1?'完成本轮':'下一篇')+'</button></div></div>'
-  +'<h3 class="snippet-title">'+E(p.title)+'</h3>'
+  +quizHeading(p.title,blanks.map(itemById))
   +'<div class="passage-wrap">'+renderPassage(p)+'</div>'
   +'<p class="word-count">每空填写一个单词，点击右上方“检查对错”。未填写的空不会公布答案，也不会计错。</p>'
   +'<p id="check-summary" class="muted" role="status" aria-live="polite"></p>'
