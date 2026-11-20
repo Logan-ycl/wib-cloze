@@ -5111,6 +5111,533 @@
         "en": "reached a settlement with the seller's heirs",
         "zh": "与卖方继承人达成和解"
       }
+    },
+    {
+      "id": "2026-11-20-ipo-uneasy",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "uneasy",
+      "meaning_zh": "对人工智能前景感到不安",
+      "example": "Global technology investors remained uneasy about artificial intelligence even after Anthropic's enormous stock-market debut.",
+      "analysis_zh": "uneasy about 指对某事感到忧虑，about 引出忧虑对象。这里描写投资者对人工智能估值的谨慎态度，不能据此断言他们反对技术本身。与 nervous about 相比，uneasy 更强调持续的不踏实；remain 后接形容词构成系表结构。",
+      "cloze": "Global technology investors remained ______ about artificial intelligence even after Anthropic's enormous stock-market debut.",
+      "answer": "uneasy",
+      "accepted": [
+        "nervous"
+      ],
+      "hint_zh": "对人工智能前景感到不安",
+      "why_zh": "remained uneasy about artificial intelligence 在本句中表示“对人工智能仍感到不安”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设新项目成本波动引发担忧",
+        "sentence_en": "The planning team remained uneasy about volatile material costs.",
+        "translation_zh": "计划团队仍对原材料成本波动感到担忧。"
+      },
+      "context": {
+        "en": "remained uneasy about artificial intelligence",
+        "zh": "对人工智能仍感到不安"
+      }
+    },
+    {
+      "id": "2026-11-20-ipo-slipped",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "slipped",
+      "meaning_zh": "下跌",
+      "example": "Shares across major Asian and European markets slipped as concerns about valuations spread.",
+      "analysis_zh": "slip 在市场报道中表示价格温和下滑，常用 shares slipped 或 prices slipped。这里同时交代市场走势和投资者对估值的担忧，但 as 只能提示时间或可能的因果关联。与 plunge 相比，slip 不暗示暴跌；过去式 slipped 表示已发生的行情。",
+      "cloze": "Shares across major Asian and European markets ______ as concerns about valuations spread.",
+      "answer": "slipped",
+      "accepted": [
+        "fell",
+        "declined"
+      ],
+      "hint_zh": "下跌",
+      "why_zh": "markets slipped as concerns 在本句中表示“随着担忧蔓延，市场下跌”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设供应商报价小幅下调",
+        "sentence_en": "The quoted price slipped after another round of negotiations.",
+        "translation_zh": "又一轮谈判后，报价小幅下降。"
+      },
+      "context": {
+        "en": "markets slipped as concerns",
+        "zh": "随着担忧蔓延，市场下跌"
+      }
+    },
+    {
+      "id": "2026-11-20-ipo-valued",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "valued",
+      "meaning_zh": "估值达到",
+      "example": "Despite the broader sell-off, Anthropic's first-day closing price valued the company at nearly $1.3trn.",
+      "analysis_zh": "value something at an amount 是金融报道中表示按某价格给资产估值的结构，at 后接具体金额。这里依据上市首日收盘股价计算公司市值，未表明其基本面价值已经得到证实。与 worth 不同，valued 是及物动词，可直接带估值对象。",
+      "cloze": "Despite the broader sell-off, Anthropic's first-day closing price ______ the company at nearly $1.3trn.",
+      "answer": "valued",
+      "accepted": [
+        "priced"
+      ],
+      "hint_zh": "估值达到",
+      "why_zh": "valued the company at nearly $1.3trn 在本句中表示“使该公司的估值接近1.3万亿美元”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设分析一项收购",
+        "sentence_en": "Analysts valued the target company at $400m.",
+        "translation_zh": "分析师将目标公司的估值定为4亿美元。"
+      },
+      "context": {
+        "en": "valued the company at nearly $1.3trn",
+        "zh": "使该公司的估值接近1.3万亿美元"
+      }
+    },
+    {
+      "id": "2026-11-20-ukraine-signalled",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "signalled",
+      "meaning_zh": "释放信号",
+      "example": "European leaders signalled a willingness to discuss a possible end to the war in Ukraine after an invitation from Vladimir Putin.",
+      "analysis_zh": "signal a willingness to do something 表示通过言行释放意愿信号，to 后接动词原形。这里仅反映欧洲领导人的谈判姿态，尚无协议或谈判结果。与 promise 相比，signal 不构成正式承诺，适合外交报道谨慎描述立场。",
+      "cloze": "European leaders ______ a willingness to discuss a possible end to the war in Ukraine after an invitation from Vladimir Putin.",
+      "answer": "signalled",
+      "accepted": [
+        "indicated"
+      ],
+      "hint_zh": "释放信号",
+      "why_zh": "leaders signalled a willingness 在本句中表示“领导人释放了愿意参与的信号”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设合作商表达合作兴趣",
+        "sentence_en": "The distributor signalled a willingness to review the contract.",
+        "translation_zh": "经销商表示愿意重新审阅合同。"
+      },
+      "context": {
+        "en": "leaders signalled a willingness",
+        "zh": "领导人释放了愿意参与的信号"
+      }
+    },
+    {
+      "id": "2026-11-20-ukraine-invited",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "invited",
+      "meaning_zh": "邀请",
+      "example": "Putin had invited the leaders to Moscow to clarify their positions on a settlement.",
+      "analysis_zh": "invite somebody to a place 表示邀请某人前往某地，后面的 to clarify 说明目的。这里是俄方提出邀请，不能据此推断欧洲领导人已经接受。had invited 使用过去完成时，标示邀请发生在随后表态之前。",
+      "cloze": "Putin had ______ the leaders to Moscow to clarify their positions on a settlement.",
+      "answer": "invited",
+      "accepted": [
+        "asked"
+      ],
+      "hint_zh": "邀请",
+      "why_zh": "invited the leaders to Moscow 在本句中表示“邀请这些领导人前往莫斯科”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设邀请合作方参加评审",
+        "sentence_en": "The project manager invited suppliers to Shenzhen for a technical review.",
+        "translation_zh": "项目经理邀请供应商到深圳参加技术评审。"
+      },
+      "context": {
+        "en": "invited the leaders to Moscow",
+        "zh": "邀请这些领导人前往莫斯科"
+      }
+    },
+    {
+      "id": "2026-11-20-ukraine-criticised",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "criticised",
+      "meaning_zh": "批评",
+      "example": "Poland's prime minister criticised the friendly tone of the earlier meeting involving Putin, Xi Jinping and Donald Trump.",
+      "analysis_zh": "criticise something 表示明确提出批评，宾语是会谈展现的友好氛围，而非对所有与会者作全面定性。这里是波兰总理的公开立场，应与客观会谈事实区分。英式拼写 criticised 与美式 criticized 等价；criticise for 则用于指出具体过错。",
+      "cloze": "Poland's prime minister ______ the friendly tone of the earlier meeting involving Putin, Xi Jinping and Donald Trump.",
+      "answer": "criticised",
+      "accepted": [
+        "criticized",
+        "questioned"
+      ],
+      "hint_zh": "批评",
+      "why_zh": "criticised the friendly tone 在本句中表示“批评了友好的语气”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设评审会上质疑计划",
+        "sentence_en": "The auditor criticised the optimistic delivery assumptions.",
+        "translation_zh": "审核员批评了过于乐观的交付假设。"
+      },
+      "context": {
+        "en": "criticised the friendly tone",
+        "zh": "批评了友好的语气"
+      }
+    },
+    {
+      "id": "2026-11-20-chips-approved",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "approved",
+      "meaning_zh": "批准",
+      "example": "A congressional committee said the administration had approved exports of advanced chips to firms linked by the Pentagon to China's military.",
+      "analysis_zh": "approve exports of something 表示正式批准某类货物出口，of 后引出商品。had approved 使用过去完成时突出审批早于国会披露。报道中的军事关联属于五角大楼的认定，不能自动等同于已由法院确认的违法交易；authorise 是语义接近的英式替代。",
+      "cloze": "A congressional committee said the administration had ______ exports of advanced chips to firms linked by the Pentagon to China's military.",
+      "answer": "approved",
+      "accepted": [
+        "authorized",
+        "authorised"
+      ],
+      "hint_zh": "批准",
+      "why_zh": "had approved exports of advanced chips 在本句中表示“此前批准了先进芯片出口”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设设备出口需要许可",
+        "sentence_en": "The regulator approved exports of the laboratory equipment.",
+        "translation_zh": "监管机构批准了实验室设备出口。"
+      },
+      "context": {
+        "en": "had approved exports of advanced chips",
+        "zh": "此前批准了先进芯片出口"
+      }
+    },
+    {
+      "id": "2026-11-20-chips-alleged",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "alleged",
+      "meaning_zh": "声称",
+      "example": "A short-seller separately alleged that restricted Chinese organisations could still obtain AMD technology.",
+      "analysis_zh": "allege that 引出尚待证实的指控，尤其适用于法律和调查语境。这里明确指控来自做空机构，不能当作已核实事实；与 prove that 有明显证据强度差异。过去式 alleged 只表述指控行为已发生，不表示指控成立。",
+      "cloze": "A short-seller separately ______ that restricted Chinese organisations could still obtain AMD technology.",
+      "answer": "alleged",
+      "accepted": [
+        "claimed"
+      ],
+      "hint_zh": "声称",
+      "why_zh": "separately alleged that restricted Chinese organisations 在本句中表示“另行指称受限制的中国机构”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设有人指控供应商违反条款",
+        "sentence_en": "A competitor alleged that the supplier had breached the agreement.",
+        "translation_zh": "一家竞争对手声称该供应商违反了协议。"
+      },
+      "context": {
+        "en": "separately alleged that restricted Chinese organisations",
+        "zh": "另行指称受限制的中国机构"
+      }
+    },
+    {
+      "id": "2026-11-20-chips-denied",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "denied",
+      "meaning_zh": "否认",
+      "example": "AMD denied wrongdoing as its shares fell following the allegations.",
+      "analysis_zh": "deny wrongdoing 是报道公司回应指控的固定搭配，deny 后直接接名词或动名词，不能写成 deny to do。这里仅记录公司的否认立场，不据此判断指控真伪。与 dispute an allegation 相比，deny wrongdoing 更明确否认存在违规行为。",
+      "cloze": "AMD ______ wrongdoing as its shares fell following the allegations.",
+      "answer": "denied",
+      "accepted": [
+        "disputed"
+      ],
+      "hint_zh": "否认",
+      "why_zh": "denied wrongdoing 在本句中表示“否认存在不当行为”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设合作方回应合规质疑",
+        "sentence_en": "The manufacturer denied wrongdoing during the compliance review.",
+        "translation_zh": "制造商在合规审查期间否认存在不当行为。"
+      },
+      "context": {
+        "en": "denied wrongdoing",
+        "zh": "否认存在不当行为"
+      }
+    },
+    {
+      "id": "2026-11-20-iran-rejected",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "rejected",
+      "meaning_zh": "否决",
+      "example": "The US Senate rejected a proposal intended to restrict the president's conduct of the war in Iran.",
+      "analysis_zh": "reject a proposal 是议会和商业决策报道中的常见搭配，表示正式否决提议。这里反映投票结果，不能延伸为参议院批准所有后续军事行动。与 postpone 不同，reject 意味着本次提案未获通过；过去式 rejected 指向已完成的表决。",
+      "cloze": "The US Senate ______ a proposal intended to restrict the president's conduct of the war in Iran.",
+      "answer": "rejected",
+      "accepted": [
+        "defeated"
+      ],
+      "hint_zh": "否决",
+      "why_zh": "Senate rejected a proposal 在本句中表示“参议院否决了一项提案”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设项目委员会否决预算方案",
+        "sentence_en": "The steering committee rejected the revised budget proposal.",
+        "translation_zh": "指导委员会否决了修订后的预算方案。"
+      },
+      "context": {
+        "en": "Senate rejected a proposal",
+        "zh": "参议院否决了一项提案"
+      }
+    },
+    {
+      "id": "2026-11-20-iran-require",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "require",
+      "meaning_zh": "要求",
+      "example": "The measure would require either an end to hostilities or explicit congressional approval for continuing them.",
+      "analysis_zh": "require something 表示规定或强制要求，would require 描述未通过法案原本拟产生的法律效果。either ... or ... 并列两个替代方案，必须保持语法平行。与 suggest 相比，require 带有约束力，但此处法案遭否决，因此该要求尚未生效。",
+      "cloze": "The measure would ______ either an end to hostilities or explicit congressional approval for continuing them.",
+      "answer": "require",
+      "accepted": [
+        "demand"
+      ],
+      "hint_zh": "要求",
+      "why_zh": "would require either an end to hostilities 在本句中表示“将要求结束敌对行动或采取另一选项”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设合同设置两种履约方式",
+        "sentence_en": "The agreement would require either advance payment or a bank guarantee.",
+        "translation_zh": "协议将要求预付款或银行保函二选一。"
+      },
+      "context": {
+        "en": "would require either an end to hostilities",
+        "zh": "将要求结束敌对行动或采取另一选项"
+      }
+    },
+    {
+      "id": "2026-11-20-iran-bypassed",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "bypassed",
+      "meaning_zh": "绕过",
+      "example": "Critics argued that the administration had largely bypassed lawmakers when pursuing the conflict.",
+      "analysis_zh": "bypass lawmakers 表示绕过立法机关的参与或审议，largely 限定程度，避免绝对化。这里是批评者的判断，应保留 Critics argued that 的归因。过去完成时 had bypassed 指向此前一段行动；与 consult lawmakers 相反，bypass 强调未按通常程序充分征询。",
+      "cloze": "Critics argued that the administration had largely ______ lawmakers when pursuing the conflict.",
+      "answer": "bypassed",
+      "accepted": [
+        "sidestepped"
+      ],
+      "hint_zh": "绕过",
+      "why_zh": "had largely bypassed lawmakers 在本句中表示“在很大程度上绕过了立法者”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设团队绕过审批流程",
+        "sentence_en": "The team bypassed the normal approval process to meet a deadline.",
+        "translation_zh": "团队为赶上截止日期绕过了正常审批流程。"
+      },
+      "context": {
+        "en": "had largely bypassed lawmakers",
+        "zh": "在很大程度上绕过了立法者"
+      }
+    },
+    {
+      "id": "2026-11-20-salvador-candidacy",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "candidacy",
+      "meaning_zh": "候选资格",
+      "example": "President Nayib Bukele announced his candidacy for a third term in El Salvador.",
+      "analysis_zh": "announce one's candidacy for a position 表示正式宣布参选某职位，for 后接目标职位或任期。这里仅是参选声明，不能写成已经连任。与 presidency 不同，candidacy 指候选人身份或竞选资格；第三任期的表述反映其政治目标。",
+      "cloze": "President Nayib Bukele announced his ______ for a third term in El Salvador.",
+      "answer": "candidacy",
+      "accepted": [
+        "bid"
+      ],
+      "hint_zh": "候选资格",
+      "why_zh": "announced his candidacy for a third term 在本句中表示“宣布竞选第三个任期”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设员工参加委员会选举",
+        "sentence_en": "She announced her candidacy for the employee council.",
+        "translation_zh": "她宣布竞选员工委员会席位。"
+      },
+      "context": {
+        "en": "announced his candidacy for a third term",
+        "zh": "宣布竞选第三个任期"
+      }
+    },
+    {
+      "id": "2026-11-20-salvador-removed",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "removed",
+      "meaning_zh": "取消",
+      "example": "Constitutional changes under his government removed the previous two-term presidential limit.",
+      "analysis_zh": "remove a limit 表示废除既有上限，宾语是具体制度约束。这里陈述宪法变动的效果，并不自动证明其程序获得所有政治派别认可。与 suspend 不同，remove 更强调规则被撤销；previous 限定所指的是旧制度。",
+      "cloze": "Constitutional changes under his government ______ the previous two-term presidential limit.",
+      "answer": "removed",
+      "accepted": [
+        "abolished",
+        "eliminated"
+      ],
+      "hint_zh": "取消",
+      "why_zh": "removed the previous two-term presidential limit 在本句中表示“取消了此前的总统两届任期限制”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设采购流程取消最低订货量",
+        "sentence_en": "The revised contract removed the minimum-order requirement.",
+        "translation_zh": "修订后的合同取消了最低订货量要求。"
+      },
+      "context": {
+        "en": "removed the previous two-term presidential limit",
+        "zh": "取消了此前的总统两届任期限制"
+      }
+    },
+    {
+      "id": "2026-11-20-salvador-admired",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "admired",
+      "meaning_zh": "赞赏",
+      "example": "Although critics describe his rule as authoritarian, some people across the Americas have admired his crackdown on crime.",
+      "analysis_zh": "admire somebody's crackdown on something 表示赞赏其强力打击行动，on 引出打击对象。although 构成让步结构，把对执政方式的批评与部分公众对治安政策的评价并置。现在完成时 have admired 说明这种评价持续至今，并不意味着普遍支持。",
+      "cloze": "Although critics describe his rule as authoritarian, some people across the Americas have ______ his crackdown on crime.",
+      "answer": "admired",
+      "accepted": [
+        "praised"
+      ],
+      "hint_zh": "赞赏",
+      "why_zh": "have admired his crackdown on crime 在本句中表示“一直赞赏他的打击犯罪行动”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设团队赞赏风险管控",
+        "sentence_en": "Several managers admired the team's firm response to recurring defects.",
+        "translation_zh": "几位经理赞赏团队对反复缺陷采取的坚定应对。"
+      },
+      "context": {
+        "en": "have admired his crackdown on crime",
+        "zh": "一直赞赏他的打击犯罪行动"
+      }
+    },
+    {
+      "id": "2026-11-20-myanmar-genocide",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "genocide",
+      "meaning_zh": "种族灭绝",
+      "example": "The International Court of Justice ruled that Myanmar committed genocide against the Rohingya minority in 2017.",
+      "analysis_zh": "commit genocide against a group 是国际法中描述针对特定群体实施种族灭绝的严肃结构，against 指明受害群体。这里依据国际法院裁决陈述法律认定，不应随意以一般暴力或迫害替换 genocide，因为法律构成要件更严格。",
+      "cloze": "The International Court of Justice ruled that Myanmar committed ______ against the Rohingya minority in 2017.",
+      "answer": "genocide",
+      "accepted": [],
+      "hint_zh": "种族灭绝",
+      "why_zh": "committed genocide against the Rohingya minority 在本句中表示“对罗兴亚少数族群实施了种族灭绝”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设讨论国际法案例",
+        "sentence_en": "The seminar examined how courts establish intent in cases of genocide.",
+        "translation_zh": "研讨会讨论法院如何在种族灭绝案件中认定意图。"
+      },
+      "context": {
+        "en": "committed genocide against the Rohingya minority",
+        "zh": "对罗兴亚少数族群实施了种族灭绝"
+      }
+    },
+    {
+      "id": "2026-11-20-myanmar-fled",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "fled",
+      "meaning_zh": "逃离",
+      "example": "Hundreds of thousands of Rohingya fled their homes and crossed into Bangladesh during the military campaign.",
+      "analysis_zh": "flee one's home 表示因危险被迫逃离住所，fled 是 flee 的过去式，后面可直接接地点而不加 from。这里描述2017年军事行动造成的难民流动，不能把逃亡理解为自愿迁居。与 migrate 相比，flee 强调紧迫威胁。",
+      "cloze": "Hundreds of thousands of Rohingya ______ their homes and crossed into Bangladesh during the military campaign.",
+      "answer": "fled",
+      "accepted": [
+        "escaped"
+      ],
+      "hint_zh": "逃离",
+      "why_zh": "fled their homes 在本句中表示“逃离了他们的家园”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设描述自然灾害疏散",
+        "sentence_en": "Families fled their homes as the wildfire approached.",
+        "translation_zh": "随着山火逼近，许多家庭逃离家园。"
+      },
+      "context": {
+        "en": "fled their homes",
+        "zh": "逃离了他们的家园"
+      }
+    },
+    {
+      "id": "2026-11-20-myanmar-symbolic",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "symbolic",
+      "meaning_zh": "象征性的",
+      "example": "The judgment could prove largely symbolic if enforcement remains out of reach.",
+      "analysis_zh": "prove symbolic 表示结果最终显现为象征意义，prove 在这里是系动词，后接形容词。could 和 if 同时限制结论，说明执行困难可能削弱实际效果，不能断言裁决完全无用。与 practical 相比，symbolic 强调法律或政治表态层面的影响。",
+      "cloze": "The judgment could prove largely ______ if enforcement remains out of reach.",
+      "answer": "symbolic",
+      "accepted": [
+        "ceremonial"
+      ],
+      "hint_zh": "象征性的",
+      "why_zh": "prove largely symbolic 在本句中表示“最终可能主要具有象征意义”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设项目签约缺乏执行措施",
+        "sentence_en": "Without a delivery plan, the agreement may prove largely symbolic.",
+        "translation_zh": "如果没有交付计划，这份协议可能最终流于象征。"
+      },
+      "context": {
+        "en": "prove largely symbolic",
+        "zh": "最终可能主要具有象征意义"
+      }
+    },
+    {
+      "id": "2026-11-20-hippo-swallowing",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "swallowing",
+      "meaning_zh": "吞下",
+      "example": "Fiona, a well-known hippopotamus at Cincinnati Zoo, died after swallowing a woolly hat that entered her enclosure.",
+      "analysis_zh": "after swallowing 是介词 after 加动名词，表示吞食行为先于死亡发生。这里据动物园所述交代事故经过，不能凭此推断投掷者有意伤害。与 chewing 不同，swallowing 明确表示物体进入消化道；woolly hat 指毛线帽。",
+      "cloze": "Fiona, a well-known hippopotamus at Cincinnati Zoo, died after ______ a woolly hat that entered her enclosure.",
+      "answer": "swallowing",
+      "accepted": [
+        "ingesting"
+      ],
+      "hint_zh": "吞下",
+      "why_zh": "died after swallowing a woolly hat 在本句中表示“吞下一顶毛线帽后死亡”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设提醒宠物主人",
+        "sentence_en": "The puppy needed veterinary care after swallowing a small toy.",
+        "translation_zh": "小狗吞下一个小玩具后需要兽医治疗。"
+      },
+      "context": {
+        "en": "died after swallowing a woolly hat",
+        "zh": "吞下一顶毛线帽后死亡"
+      }
+    },
+    {
+      "id": "2026-11-20-hippo-prematurely",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "prematurely",
+      "meaning_zh": "早产地",
+      "example": "Fiona became famous after being born prematurely in 2017 at an unusually low weight.",
+      "analysis_zh": "be born prematurely 表示在正常妊娠期结束前出生，prematurely 是修饰 born 的副词。这里结合出生体重解释河马受到关注的背景，并未表示早产必然导致其后来死亡。与 early 不同，prematurely 带有医学上早于足月的含义。",
+      "cloze": "Fiona became famous after being born ______ in 2017 at an unusually low weight.",
+      "answer": "prematurely",
+      "accepted": [
+        "early"
+      ],
+      "hint_zh": "早产地",
+      "why_zh": "being born prematurely in 2017 在本句中表示“于2017年早产出生”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设医院发布婴儿护理案例",
+        "sentence_en": "The baby was born prematurely and required specialist care.",
+        "translation_zh": "婴儿早产，需要专科护理。"
+      },
+      "context": {
+        "en": "being born prematurely in 2017",
+        "zh": "于2017年早产出生"
+      }
+    },
+    {
+      "id": "2026-11-20-hippo-attention",
+      "date": "2026-11-20",
+      "type": "word",
+      "expression": "attention",
+      "meaning_zh": "关注",
+      "example": "Her difficult start to life attracted widespread attention on social media.",
+      "analysis_zh": "attract attention 是固定动宾搭配，widespread 修饰 attention 表示关注范围广。这里描述社交媒体上的传播热度，不能推断所有公众都持续关注。与 draw attention 同义；attention 通常作不可数名词，不能写成 many attentions。",
+      "cloze": "Her difficult start to life attracted widespread ______ on social media.",
+      "answer": "attention",
+      "accepted": [
+        "interest"
+      ],
+      "hint_zh": "关注",
+      "why_zh": "attracted widespread attention 在本句中表示“吸引了广泛关注”，此处的词形及搭配与报道事实吻合。",
+      "imitation": {
+        "background_zh": "假设摄影作品在网上走红",
+        "sentence_en": "The wildlife photograph attracted widespread attention online.",
+        "translation_zh": "这张野生动物摄影作品在网上引起广泛关注。"
+      },
+      "context": {
+        "en": "attracted widespread attention",
+        "zh": "吸引了广泛关注"
+      }
     }
   ],
   "passages": [
@@ -5469,6 +5996,48 @@
       "date": "2026-11-19",
       "title": "Van Gogh painting achieves record auction price",
       "body": "A Van Gogh painting {{2026-11-19-vangogh-fetched}} more than $190m at Sotheby's. A short {{2026-11-19-vangogh-bidding}} contest drove the price beyond the artist's previous record. The auction house had earlier reached a {{2026-11-19-vangogh-settlement}} with the seller's heirs. The heirs argued that the painting had been sold under financial pressure in 1936."
+    },
+    {
+      "id": "2026-11-20-ipo",
+      "date": "2026-11-20",
+      "title": "Anthropic’s debut amid a technology sell-off",
+      "body": "Global technology investors remained {{2026-11-20-ipo-uneasy}} about artificial intelligence even after Anthropic's enormous stock-market debut. Shares across major Asian and European markets {{2026-11-20-ipo-slipped}} as concerns about valuations spread. Despite the broader sell-off, Anthropic's first-day closing price {{2026-11-20-ipo-valued}} the company at nearly $1.3trn."
+    },
+    {
+      "id": "2026-11-20-ukraine",
+      "date": "2026-11-20",
+      "title": "European response to Moscow’s invitation",
+      "body": "European leaders {{2026-11-20-ukraine-signalled}} a willingness to discuss a possible end to the war in Ukraine after an invitation from Vladimir Putin. Putin had {{2026-11-20-ukraine-invited}} the leaders to Moscow to clarify their positions on a settlement. Poland's prime minister {{2026-11-20-ukraine-criticised}} the friendly tone of the earlier meeting involving Putin, Xi Jinping and Donald Trump."
+    },
+    {
+      "id": "2026-11-20-chips",
+      "date": "2026-11-20",
+      "title": "US chip approvals face congressional scrutiny",
+      "body": "A congressional committee said the administration had {{2026-11-20-chips-approved}} exports of advanced chips to firms linked by the Pentagon to China's military. A short-seller separately {{2026-11-20-chips-alleged}} that restricted Chinese organisations could still obtain AMD technology. AMD {{2026-11-20-chips-denied}} wrongdoing as its shares fell following the allegations."
+    },
+    {
+      "id": "2026-11-20-iran",
+      "date": "2026-11-20",
+      "title": "Senate rejects a measure on the Iran conflict",
+      "body": "The US Senate {{2026-11-20-iran-rejected}} a proposal intended to restrict the president's conduct of the war in Iran. The measure would {{2026-11-20-iran-require}} either an end to hostilities or explicit congressional approval for continuing them. Critics argued that the administration had largely {{2026-11-20-iran-bypassed}} lawmakers when pursuing the conflict."
+    },
+    {
+      "id": "2026-11-20-salvador",
+      "date": "2026-11-20",
+      "title": "El Salvador’s president seeks another term",
+      "body": "President Nayib Bukele announced his {{2026-11-20-salvador-candidacy}} for a third term in El Salvador. Constitutional changes under his government {{2026-11-20-salvador-removed}} the previous two-term presidential limit. Although critics describe his rule as authoritarian, some people across the Americas have {{2026-11-20-salvador-admired}} his crackdown on crime."
+    },
+    {
+      "id": "2026-11-20-myanmar",
+      "date": "2026-11-20",
+      "title": "World court rules on the Rohingya atrocities",
+      "body": "The International Court of Justice ruled that Myanmar committed {{2026-11-20-myanmar-genocide}} against the Rohingya minority in 2017. Hundreds of thousands of Rohingya {{2026-11-20-myanmar-fled}} their homes and crossed into Bangladesh during the military campaign. The judgment could prove largely {{2026-11-20-myanmar-symbolic}} if enforcement remains out of reach."
+    },
+    {
+      "id": "2026-11-20-hippo",
+      "date": "2026-11-20",
+      "title": "Cincinnati Zoo mourns a familiar animal",
+      "body": "Fiona, a well-known hippopotamus at Cincinnati Zoo, died after {{2026-11-20-hippo-swallowing}} a woolly hat that entered her enclosure. Fiona became famous after being born {{2026-11-20-hippo-prematurely}} in 2017 at an unusually low weight. Her difficult start to life attracted widespread {{2026-11-20-hippo-attention}} on social media."
     }
   ]
 }
