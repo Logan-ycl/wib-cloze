@@ -11,13 +11,18 @@
 <title>BriefLab</title>
 <link rel="manifest" id="brieflab-manifest" href="./manifest.webmanifest?v=20261116-clean-title">
 <script>
-(function(){
-  // Select the personal PWA only when the explicitly private #mine entry is used.
-  // Public visitors continue to install the stateless guest app.
-  if (window.location.hash === '#mine' && new URLSearchParams(window.location.search).get('guest') !== '1') {
-    document.getElementById('brieflab-manifest').href = './manifest.mine.webmanifest?v=20261116-clean-title';
-  }
-})();
+function personalEntry() {
+  return location.hash === '#mine' && !new URLSearchParams(location.search).getAll('guest').includes('1');
+}
+const personalMode = personalEntry();
+if (personalMode) {
+  document.getElementById('brieflab-manifest').href = './manifest.mine.webmanifest?v=20261116-clean-title';
+} else {
+  document.documentElement.classList.add('expired');
+}
+window.addEventListener('hashchange', () => {
+  if (personalMode !== personalEntry()) location.reload();
+});
 </script>
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=20261116-3">
 <link rel="shortcut icon" type="image/png" href="./icons/icon-192.png?v=20261116-3">
@@ -325,6 +330,11 @@ html{overflow-y:scroll;scrollbar-gutter:stable}
 </style>
 </head>
 <body>
+<style>
+#expired-link,.expired .wrap{display:none}
+.expired #expired-link{display:block;margin:15vh auto;padding:24px;text-align:center}
+</style>
+<main id="expired-link"><h1>访客链接已失效</h1></main>
 <main class="wrap">
  <section class="hero">
   <nav class="nav" aria-label="主要导航">
@@ -396,8 +406,15 @@ html{overflow-y:scroll;scrollbar-gutter:stable}
  </div>
 </main>
 
-<script src="./app.js?v=45e51b2"></script>
-<script src="./cloud-config.js?v=1"></script>
-<script src="./cloud-sync.js?v=20261118-perblank-sync"></script>
+<script>
+if (personalMode) {
+  for (const src of ['./app.js?v=45e51b2','./cloud-config.js?v=1','./cloud-sync.js?v=20261118-perblank-sync']) {
+    const script = document.createElement('script');
+    script.async = false;
+    script.src = src;
+    document.body.appendChild(script);
+  }
+}
+</script>
 </body>
 </html>
