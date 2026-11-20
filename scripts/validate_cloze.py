@@ -101,9 +101,15 @@ for name, doc in (("catalog", catalog), ("latest", latest)):
         assert len(ids) >= 3, f"{name}: {pid}: expected at least 3 blanks; got {len(ids)}"
         assert len(set(ids)) == len(ids), f"{name}: {pid}: repeated target"
         assert len(re.findall(r"[.!?](?:\s|$)", passage["body"])) >= 3, f"{name}: {pid}: missing news context"
+        restored = re.sub(r"\{\{([^{}]+)\}\}", lambda m: item_map[m[1]]["answer"], passage["body"])
         for target_id in ids:
             assert target_id in item_map, f"{name}: {pid}: missing {target_id}"
             item = item_map[target_id]
+            context = item.get("context", {})
+            en, zh = context.get("en", ""), context.get("zh", "")
+            assert en in restored and len(en.split()) >= 2, f"{name}: {target_id}: missing passage excerpt"
+            assert re.search(r"\b" + re.escape(item["answer"]) + r"\b", en, re.I), f"{name}: {target_id}: excerpt misses target"
+            assert re.search(r"[\u4e00-\u9fff]", zh), f"{name}: {target_id}: missing Chinese translation"
             assert valid_target(item, name), (
                 f"{name}: {pid}: new items require one English word, got {item['answer']!r}"
             )

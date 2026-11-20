@@ -263,6 +263,7 @@ function showAnswers(p){
     +'<div class="review-summary"><span class="review-index">'+i+'</span><span class="review-word">'+E(x.answer)+'</span><span class="review-status">'+heading+'</span></div>'
     +'<div class="review-detail"><div class="review-comparison"><span>你的填写：<b>'+E(v.answer)+'</b></span><span>原文答案：<strong>'+E(x.answer)+'</strong></span><span class="accepted-answers">可选答案：'+(x.accepted?.length?E(x.accepted.join(' / ')):'暂无合适的单词替换')+'</span></div>'
     +(v.hintCount>=3?'<div class="muted">使用了 '+v.hintCount+' 次字母提示，明天再练</div>':'')
+    +(x.context?'<p><strong>题中表达</strong> <span lang="en">'+E(x.context.en)+'</span> · '+E(x.context.zh)+'</p>':'')
     +'<p><strong>精读解析</strong> '+E(x.analysis_zh||x.why_zh||x.meaning_zh||'暂无解析')+'</p>'+renderImitation(x)+'</div></div>';
   }).join('')+'</section>';
 }
@@ -315,9 +316,9 @@ function checkBlank(id){
  return true;
 }
 function quizHeading(title, items){
- const words=new Set((title||'').toLowerCase().match(/[a-z]+/g)||[]);
- const revealsAnswer=items.some(item=>[item.answer,...(item.accepted||[])].some(word=>words.has(word.toLowerCase().trim())));
- return title&&!revealsAnswer?'<h3 class="snippet-title">'+E(title)+'</h3>':'';
+ const answers=new Set(items.flatMap(item=>[item.answer,...(item.accepted||[])]).map(word=>word.toLowerCase()));
+ const heading=title.replace(/[a-z]+/gi,word=>answers.has(word.toLowerCase())?'____':word);
+ return '<h3 class="snippet-title">'+E(heading)+'</h3>';
 }
 function renderQuiz(){
  const el=$('quiz');

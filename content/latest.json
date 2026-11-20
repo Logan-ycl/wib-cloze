@@ -30,6 +30,10 @@
         "background_zh": "假设三家合作商首次开会",
         "sentence_en": "The partners held an unprecedented joint meeting.",
         "translation_zh": "合作伙伴举行了一场史无前例的联合会议。"
+      },
+      "context": {
+        "en": "held unprecedented trilateral talks",
+        "zh": "举行了史无前例的三方会谈"
       }
     },
     {
@@ -51,6 +55,10 @@
         "background_zh": "假设项目负责人评价新流程",
         "sentence_en": "The manager described the new process as groundbreaking.",
         "translation_zh": "经理称新流程具有开创性。"
+      },
+      "context": {
+        "en": "characterised the discussion as groundbreaking",
+        "zh": "称这次讨论具有开创性"
       }
     },
     {
@@ -72,6 +80,10 @@
         "background_zh": "假设合同谈判",
         "sentence_en": "The teams negotiated prices and subsequently agreed on delivery terms.",
         "translation_zh": "双方谈妥价格，随后就交货条款达成一致。"
+      },
+      "context": {
+        "en": "Trump subsequently said Washington and Beijing wanted the war in Ukraine to end",
+        "zh": "特朗普随后表示，美中两国政府都希望乌克兰战争结束"
       }
     },
     {
@@ -94,6 +106,10 @@
         "background_zh": "假设新品销量破纪录",
         "sentence_en": "The new product eclipsed the previous sales record.",
         "translation_zh": "新产品打破并超越了此前的销售纪录。"
+      },
+      "context": {
+        "en": "eclipsed previous listing records",
+        "zh": "打破了以往的上市纪录"
       }
     },
     {
@@ -115,6 +131,10 @@
         "background_zh": "假设企业收购报价",
         "sentence_en": "The revised bid implied a higher company valuation.",
         "translation_zh": "修订后的报价意味着更高的企业估值。"
+      },
+      "context": {
+        "en": "implied a valuation of roughly $1.5trn",
+        "zh": "对应的估值约为1.5万亿美元"
       }
     },
     {
@@ -134,6 +154,10 @@
         "background_zh": "假设物料短缺",
         "sentence_en": "The delivery brought some relief to the production team.",
         "translation_zh": "这次交货让生产团队稍感宽慰。"
+      },
+      "context": {
+        "en": "offered some relief after a sell-off in technology shares",
+        "zh": "在科技股遭到抛售之后，让市场稍稍松了一口气"
       }
     },
     {
@@ -156,6 +180,10 @@
         "background_zh": "假设合作商恢复例会",
         "sentence_en": "The partners agreed to restore their monthly meetings.",
         "translation_zh": "合作伙伴同意恢复每月例会。"
+      },
+      "context": {
+        "en": "restore military ties",
+        "zh": "恢复军事关系"
       }
     },
     {
@@ -177,6 +205,10 @@
         "background_zh": "假设扩产计划",
         "sentence_en": "The expansion plan envisages a second production line.",
         "translation_zh": "扩产方案设想增加第二条生产线。"
+      },
+      "context": {
+        "en": "envisages joint exercises and intelligence sharing",
+        "zh": "设想开展联合演习并共享情报"
       }
     },
     {
@@ -198,6 +230,10 @@
         "background_zh": "假设组织重组",
         "sentence_en": "The restructuring prompted a realignment of responsibilities.",
         "translation_zh": "重组促使职责重新调整。"
+      },
+      "context": {
+        "en": "a wider political realignment",
+        "zh": "范围更广的政治格局调整"
       }
     },
     {
@@ -219,6 +255,10 @@
         "background_zh": "假设采购多元化",
         "sentence_en": "The factory aims to reduce reliance on one supplier.",
         "translation_zh": "工厂希望减少对单一供应商的依赖。"
+      },
+      "context": {
+        "en": "reducing reliance on the Strait of Hormuz",
+        "zh": "降低对霍尔木兹海峡的依赖"
       }
     },
     {
@@ -240,6 +280,10 @@
         "background_zh": "假设市场研究",
         "sentence_en": "The annual outlook predicts slower demand growth.",
         "translation_zh": "年度展望报告预测需求增长放缓。"
+      },
+      "context": {
+        "en": "Its outlook estimated $40bn for pipelines and $200bn for oil fields",
+        "zh": "该机构在展望报告中估算，管道需要投入400亿美元，油田需要投入2000亿美元"
       }
     },
     {
@@ -261,6 +305,10 @@
         "background_zh": "假设本地采购",
         "sentence_en": "A shortage could accelerate efforts to source materials locally.",
         "translation_zh": "短缺可能加快本地采购材料的工作。"
+      },
+      "context": {
+        "en": "accelerate efforts to develop domestic energy",
+        "zh": "加快开发本国能源的步伐"
       }
     },
     {
@@ -282,6 +330,10 @@
         "background_zh": "假设厂区安全",
         "sentence_en": "Vehicles must not cross the marked safety boundary.",
         "translation_zh": "车辆不得越过标记的安全界线。"
+      },
+      "context": {
+        "en": "crossed the ceasefire boundary",
+        "zh": "越过停火分界线"
       }
     },
     {
@@ -303,6 +355,10 @@
         "background_zh": "假设网络安全演练",
         "sentence_en": "The exercise simulated an incursion into a secure network.",
         "translation_zh": "演练模拟了对安全网络的侵入。"
+      },
+      "context": {
+        "en": "described its incursion as limited",
+        "zh": "称此次越界军事行动规模有限"
       }
     },
     {
@@ -324,6 +380,10 @@
         "background_zh": "假设质量整改",
         "sentence_en": "The supplier reported that it had completed corrective actions.",
         "translation_zh": "供应商报告称已完成纠正措施。"
+      },
+      "context": {
+        "en": "reported air strikes",
+        "zh": "通报了空袭行动"
       }
     },
     {
@@ -343,6 +403,10 @@
         "background_zh": "假设新品展会",
         "sentence_en": "The new analyser made its debut at the exhibition.",
         "translation_zh": "新分析仪在展会上首次亮相。"
+      },
+      "context": {
+        "en": "made its long-awaited debut",
+        "zh": "在外界期盼已久后首次亮相"
       }
     },
     {
@@ -364,6 +428,10 @@
         "background_zh": "假设英语演讲",
         "sentence_en": "The positive reception encouraged the speaker.",
         "translation_zh": "积极的反响鼓舞了演讲者。"
+      },
+      "context": {
+        "en": "welcomed the game's reception",
+        "zh": "对游戏上市后获得的反响感到欣喜"
       }
     },
     {
@@ -386,6 +454,10 @@
         "background_zh": "假设季度预测",
         "sentence_en": "Analysts projected stronger sales next quarter.",
         "translation_zh": "分析师预测下季度销售额更高。"
+      },
+      "context": {
+        "en": "projected first-week revenue above $3bn",
+        "zh": "预测首周收入将超过30亿美元"
       }
     },
     {
@@ -407,6 +479,10 @@
         "background_zh": "假设摄影作品拍卖",
         "sentence_en": "The photograph fetched a record price at auction.",
         "translation_zh": "这张照片在拍卖会上拍出创纪录的价格。"
+      },
+      "context": {
+        "en": "fetched more than $190m at Sotheby's",
+        "zh": "在苏富比拍出了逾1.9亿美元的价格"
       }
     },
     {
@@ -426,6 +502,10 @@
         "background_zh": "假设慈善拍卖",
         "sentence_en": "Competitive bidding drove up the price of the jersey.",
         "translation_zh": "激烈竞价推高了球衣的价格。"
+      },
+      "context": {
+        "en": "A short bidding contest",
+        "zh": "一轮短暂的竞价"
       }
     },
     {
@@ -447,6 +527,10 @@
         "background_zh": "假设商业争议",
         "sentence_en": "The companies reached a settlement after negotiations.",
         "translation_zh": "两家公司谈判后达成和解。"
+      },
+      "context": {
+        "en": "reached a settlement with the seller's heirs",
+        "zh": "与卖方继承人达成和解"
       }
     }
   ],
@@ -454,7 +538,7 @@
     {
       "id": "2026-11-19-summit",
       "date": "2026-11-19",
-      "title": "Three leaders hold unprecedented talks",
+      "title": "Three leaders meet in Shenzhen",
       "body": "The three leaders held {{2026-11-19-summit-unprecedented}} trilateral talks in Shenzhen. Xi characterised the discussion as {{2026-11-19-summit-groundbreaking}}, but no detailed agreement was disclosed. Trump {{2026-11-19-summit-subsequently}} said Washington and Beijing wanted the war in Ukraine to end. Trump had also met the other leaders separately before the three-way discussion."
     },
     {
@@ -466,7 +550,7 @@
     {
       "id": "2026-11-19-venezuela",
       "date": "2026-11-19",
-      "title": "America and Venezuela renew military ties",
+      "title": "Washington and Caracas discuss defence cooperation",
       "body": "Washington and Caracas agreed to {{2026-11-19-venezuela-restore}} military ties. The agreement {{2026-11-19-venezuela-envisages}} joint exercises and intelligence sharing. The defence chief's visit occurred amid a wider political {{2026-11-19-venezuela-realignment}}. The American official met Venezuela's acting president during the visit."
     },
     {
@@ -478,7 +562,7 @@
     {
       "id": "2026-11-19-gaza",
       "date": "2026-11-19",
-      "title": "Israeli tanks cross a Gaza ceasefire line",
+      "title": "Israeli tanks enter Gaza’s ceasefire zone",
       "body": "Israeli tanks crossed the ceasefire {{2026-11-19-gaza-boundary}} known as the yellow line. The military described its {{2026-11-19-gaza-incursion}} as limited and aimed at removing threats. Israel separately {{2026-11-19-gaza-reported}} air strikes that it said killed two commanders. The developments renewed concerns about the durability of the ceasefire."
     },
     {
