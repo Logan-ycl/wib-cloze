@@ -1,4 +1,5 @@
 name: Publish BriefLab Website
+# Publish the complete site bundle after content updates; retain artifact for deploy.
 # Fresh publication run after GitHub Pages artifact API race on 2026-11-19.
 on:
   push:
