@@ -6150,6 +6150,531 @@
         "en": "under house arrest on medical grounds",
         "zh": "基于医疗理由受到居家监禁"
       }
+    },
+    {
+      "id": "2026-11-23-ai-markets-spread",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "spread",
+      "meaning_zh": "蔓延",
+      "example": "The sell-off in American AI stocks spread to Asian markets as trading resumed on Monday.",
+      "cloze": "The sell-off in American AI stocks ______ to Asian markets as trading resumed on Monday.",
+      "answer": "spread",
+      "accepted": [
+        "spilled"
+      ],
+      "hint_zh": "蔓延",
+      "analysis_zh": "在这则关于Asian chipmakers slide after Wall Street sell-off的新闻中，spread 用于准确表达“蔓延”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 spilled 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 spread，能够自然连接上下文并准确表达“蔓延”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "The sell-off in American AI stocks spread to Asian markets as trading resumed on Monday.",
+        "translation_zh": "美国人工智能股票的抛售潮在周一恢复交易后蔓延至亚洲市场。"
+      },
+      "context": {
+        "en": "in American AI stocks spread to Asian markets as",
+        "zh": "美国人工智能股票的抛售潮在周一恢复交易后蔓延至亚洲市场。"
+      }
+    },
+    {
+      "id": "2026-11-23-ai-markets-declined",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "declined",
+      "meaning_zh": "下跌",
+      "example": "Shares in major South Korean chipmakers declined by roughly three percent, weighing on the broader index.",
+      "cloze": "Shares in major South Korean chipmakers ______ by roughly three percent, weighing on the broader index.",
+      "answer": "declined",
+      "accepted": [
+        "fell"
+      ],
+      "hint_zh": "下跌",
+      "analysis_zh": "在这则关于Asian chipmakers slide after Wall Street sell-off的新闻中，declined 用于准确表达“下跌”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 fell 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 declined，能够自然连接上下文并准确表达“下跌”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "Shares in major South Korean chipmakers declined by roughly three percent, weighing on the broader index.",
+        "translation_zh": "韩国主要芯片制造商的股价下跌约百分之三，拖累大盘指数。"
+      },
+      "context": {
+        "en": "major South Korean chipmakers declined by roughly three percent,",
+        "zh": "韩国主要芯片制造商的股价下跌约百分之三，拖累大盘指数。"
+      }
+    },
+    {
+      "id": "2026-11-23-ai-markets-rebounded",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "rebounded",
+      "meaning_zh": "反弹",
+      "example": "Chinese benchmarks also lost ground, although US stock futures later rebounded.",
+      "cloze": "Chinese benchmarks also lost ground, although US stock futures later ______.",
+      "answer": "rebounded",
+      "accepted": [
+        "recovered"
+      ],
+      "hint_zh": "反弹",
+      "analysis_zh": "在这则关于Asian chipmakers slide after Wall Street sell-off的新闻中，rebounded 用于准确表达“反弹”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 recovered 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 rebounded，能够自然连接上下文并准确表达“反弹”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "Chinese benchmarks also lost ground, although US stock futures later rebounded.",
+        "translation_zh": "中国股指同样下跌，不过美国股指期货随后反弹。"
+      },
+      "context": {
+        "en": "US stock futures later rebounded",
+        "zh": "中国股指同样下跌，不过美国股指期货随后反弹。"
+      }
+    },
+    {
+      "id": "2026-11-23-climate-collapsed",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "collapsed",
+      "meaning_zh": "破裂",
+      "example": "Climate negotiations in Turkey collapsed when the European Union and several other countries rejected a proposed deal.",
+      "cloze": "Climate negotiations in Turkey ______ when the European Union and several other countries rejected a proposed deal.",
+      "answer": "collapsed",
+      "accepted": [
+        "failed"
+      ],
+      "hint_zh": "破裂",
+      "analysis_zh": "在这则关于Climate summit ends without agreement in Turkey的新闻中，collapsed 用于准确表达“破裂”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 failed 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 collapsed，能够自然连接上下文并准确表达“破裂”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "Climate negotiations in Turkey collapsed when the European Union and several other countries rejected a proposed deal.",
+        "translation_zh": "土耳其的气候谈判因欧盟及其他数国拒绝拟议协议而破裂。"
+      },
+      "context": {
+        "en": "Climate negotiations in Turkey collapsed when the European Union",
+        "zh": "土耳其的气候谈判因欧盟及其他数国拒绝拟议协议而破裂。"
+      }
+    },
+    {
+      "id": "2026-11-23-climate-centred",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "centred",
+      "meaning_zh": "集中于",
+      "example": "The disagreement centred on whether governments should reaffirm an earlier pledge to move away from fossil fuels.",
+      "cloze": "The disagreement ______ on whether governments should reaffirm an earlier pledge to move away from fossil fuels.",
+      "answer": "centred",
+      "accepted": [
+        "focused"
+      ],
+      "hint_zh": "集中于",
+      "analysis_zh": "在这则关于Climate summit ends without agreement in Turkey的新闻中，centred 用于准确表达“集中于”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 focused 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 centred，能够自然连接上下文并准确表达“集中于”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "The disagreement centred on whether governments should reaffirm an earlier pledge to move away from fossil fuels.",
+        "translation_zh": "争议集中于各国政府是否应重申此前逐步摆脱化石燃料的承诺。"
+      },
+      "context": {
+        "en": "The disagreement centred on whether governments should",
+        "zh": "争议集中于各国政府是否应重申此前逐步摆脱化石燃料的承诺。"
+      }
+    },
+    {
+      "id": "2026-11-23-climate-argued",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "argued",
+      "meaning_zh": "主张",
+      "example": "European negotiators argued that weakening previous commitments would undermine the credibility of the talks.",
+      "cloze": "European negotiators ______ that weakening previous commitments would undermine the credibility of the talks.",
+      "answer": "argued",
+      "accepted": [
+        "maintained"
+      ],
+      "hint_zh": "主张",
+      "analysis_zh": "在这则关于Climate summit ends without agreement in Turkey的新闻中，argued 用于准确表达“主张”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 maintained 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 argued，能够自然连接上下文并准确表达“主张”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "European negotiators argued that weakening previous commitments would undermine the credibility of the talks.",
+        "translation_zh": "欧洲谈判代表主张，削弱既有承诺会损害谈判的公信力。"
+      },
+      "context": {
+        "en": "European negotiators argued that weakening previous commitments",
+        "zh": "欧洲谈判代表主张，削弱既有承诺会损害谈判的公信力。"
+      }
+    },
+    {
+      "id": "2026-11-23-britain-boosted",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "boosted",
+      "meaning_zh": "推动",
+      "example": "Demand for equipment used in data centres boosted British manufacturing activity to its strongest level in more than two years.",
+      "cloze": "Demand for equipment used in data centres ______ British manufacturing activity to its strongest level in more than two years.",
+      "answer": "boosted",
+      "accepted": [
+        "lifted"
+      ],
+      "hint_zh": "推动",
+      "analysis_zh": "在这则关于British factories benefit from data-centre demand的新闻中，boosted 用于准确表达“推动”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 lifted 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 boosted，能够自然连接上下文并准确表达“推动”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "Demand for equipment used in data centres boosted British manufacturing activity to its strongest level in more than two years.",
+        "translation_zh": "数据中心设备需求推动英国制造业活动达到两年多来的最高水平。"
+      },
+      "context": {
+        "en": "used in data centres boosted British manufacturing activity to",
+        "zh": "数据中心设备需求推动英国制造业活动达到两年多来的最高水平。"
+      }
+    },
+    {
+      "id": "2026-11-23-britain-offset",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "offset",
+      "meaning_zh": "抵消",
+      "example": "The improvement partly offset slower expansion in the country's services sector.",
+      "cloze": "The improvement partly ______ slower expansion in the country's services sector.",
+      "answer": "offset",
+      "accepted": [
+        "counterbalanced"
+      ],
+      "hint_zh": "抵消",
+      "analysis_zh": "在这则关于British factories benefit from data-centre demand的新闻中，offset 用于准确表达“抵消”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 counterbalanced 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 offset，能够自然连接上下文并准确表达“抵消”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "The improvement partly offset slower expansion in the country's services sector.",
+        "translation_zh": "这一改善部分抵消了英国服务业扩张放缓的影响。"
+      },
+      "context": {
+        "en": "The improvement partly offset slower expansion in the",
+        "zh": "这一改善部分抵消了英国服务业扩张放缓的影响。"
+      }
+    },
+    {
+      "id": "2026-11-23-britain-registered",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "registered",
+      "meaning_zh": "录得",
+      "example": "A preliminary business survey registered a November reading of 52.3, below October's 52.9.",
+      "cloze": "A preliminary business survey ______ a November reading of 52.3, below October's 52.9.",
+      "answer": "registered",
+      "accepted": [
+        "recorded"
+      ],
+      "hint_zh": "录得",
+      "analysis_zh": "在这则关于British factories benefit from data-centre demand的新闻中，registered 用于准确表达“录得”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 recorded 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 registered，能够自然连接上下文并准确表达“录得”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "A preliminary business survey registered a November reading of 52.3, below October's 52.9.",
+        "translation_zh": "一项初步商业调查录得十一月指数为52.3，低于十月的52.9。"
+      },
+      "context": {
+        "en": "A preliminary business survey registered a November reading of",
+        "zh": "一项初步商业调查录得十一月指数为52.3，低于十月的52.9。"
+      }
+    },
+    {
+      "id": "2026-11-23-libya-sunk",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "sunk",
+      "meaning_zh": "击沉",
+      "example": "A Russian warship was reportedly sunk in the Libyan port of Benghazi during a naval-drone attack.",
+      "cloze": "A Russian warship was reportedly ______ in the Libyan port of Benghazi during a naval-drone attack.",
+      "answer": "sunk",
+      "accepted": [
+        "destroyed"
+      ],
+      "hint_zh": "击沉",
+      "analysis_zh": "在这则关于Ukraine claims naval strike in Libyan port的新闻中，sunk 用于准确表达“击沉”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 destroyed 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 sunk，能够自然连接上下文并准确表达“击沉”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "A Russian warship was reportedly sunk in the Libyan port of Benghazi during a naval-drone attack.",
+        "translation_zh": "据报道，一艘俄罗斯军舰在利比亚班加西港遭海上无人机袭击后被击沉。"
+      },
+      "context": {
+        "en": "Russian warship was reportedly sunk in the Libyan port",
+        "zh": "据报道，一艘俄罗斯军舰在利比亚班加西港遭海上无人机袭击后被击沉。"
+      }
+    },
+    {
+      "id": "2026-11-23-libya-claimed",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "claimed",
+      "meaning_zh": "声称",
+      "example": "Ukraine's president claimed responsibility and praised the operation.",
+      "cloze": "Ukraine's president ______ responsibility and praised the operation.",
+      "answer": "claimed",
+      "accepted": [
+        "asserted"
+      ],
+      "hint_zh": "声称",
+      "analysis_zh": "在这则关于Ukraine claims naval strike in Libyan port的新闻中，claimed 用于准确表达“声称”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 asserted 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 claimed，能够自然连接上下文并准确表达“声称”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "Ukraine's president claimed responsibility and praised the operation.",
+        "translation_zh": "乌克兰总统声称对此负责，并赞扬了这次行动。"
+      },
+      "context": {
+        "en": "Ukraine's president claimed responsibility and praised the",
+        "zh": "乌克兰总统声称对此负责，并赞扬了这次行动。"
+      }
+    },
+    {
+      "id": "2026-11-23-libya-occurred",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "occurred",
+      "meaning_zh": "发生",
+      "example": "The strike occurred in territory controlled by a Libyan force aligned with Russia.",
+      "cloze": "The strike ______ in territory controlled by a Libyan force aligned with Russia.",
+      "answer": "occurred",
+      "accepted": [
+        "happened"
+      ],
+      "hint_zh": "发生",
+      "analysis_zh": "在这则关于Ukraine claims naval strike in Libyan port的新闻中，occurred 用于准确表达“发生”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 happened 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 occurred，能够自然连接上下文并准确表达“发生”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "The strike occurred in territory controlled by a Libyan force aligned with Russia.",
+        "translation_zh": "袭击发生在由亲俄罗斯的利比亚武装控制的地区。"
+      },
+      "context": {
+        "en": "The strike occurred in territory controlled by",
+        "zh": "袭击发生在由亲俄罗斯的利比亚武装控制的地区。"
+      }
+    },
+    {
+      "id": "2026-11-23-westbank-attacked",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "attacked",
+      "meaning_zh": "袭击",
+      "example": "Israeli settlers attacked several Palestinian villages near Ramallah, setting vehicles alight and marking buildings with graffiti.",
+      "cloze": "Israeli settlers ______ several Palestinian villages near Ramallah, setting vehicles alight and marking buildings with graffiti.",
+      "answer": "attacked",
+      "accepted": [
+        "assaulted"
+      ],
+      "hint_zh": "袭击",
+      "analysis_zh": "在这则关于West Bank villages face renewed settler attacks的新闻中，attacked 用于准确表达“袭击”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 assaulted 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 attacked，能够自然连接上下文并准确表达“袭击”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "Israeli settlers attacked several Palestinian villages near Ramallah, setting vehicles alight and marking buildings with graffiti.",
+        "translation_zh": "以色列定居者袭击了拉马拉附近多个巴勒斯坦村庄，焚烧车辆并在建筑物上涂鸦。"
+      },
+      "context": {
+        "en": "Israeli settlers attacked several Palestinian villages near",
+        "zh": "以色列定居者袭击了拉马拉附近多个巴勒斯坦村庄，焚烧车辆并在建筑物上涂鸦。"
+      }
+    },
+    {
+      "id": "2026-11-23-westbank-condemned",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "condemned",
+      "meaning_zh": "谴责",
+      "example": "An Israeli opposition leader condemned the violence and accused nationalist ministers of encouraging it.",
+      "cloze": "An Israeli opposition leader ______ the violence and accused nationalist ministers of encouraging it.",
+      "answer": "condemned",
+      "accepted": [
+        "denounced"
+      ],
+      "hint_zh": "谴责",
+      "analysis_zh": "在这则关于West Bank villages face renewed settler attacks的新闻中，condemned 用于准确表达“谴责”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 denounced 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 condemned，能够自然连接上下文并准确表达“谴责”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "An Israeli opposition leader condemned the violence and accused nationalist ministers of encouraging it.",
+        "translation_zh": "一名以色列反对派领导人谴责暴力，并指责民族主义部长煽动袭击。"
+      },
+      "context": {
+        "en": "An Israeli opposition leader condemned the violence and accused",
+        "zh": "一名以色列反对派领导人谴责暴力，并指责民族主义部长煽动袭击。"
+      }
+    },
+    {
+      "id": "2026-11-23-westbank-intensified",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "intensified",
+      "meaning_zh": "加剧",
+      "example": "The latest incidents intensified concerns about the safety of Palestinian residents in the occupied West Bank.",
+      "cloze": "The latest incidents ______ concerns about the safety of Palestinian residents in the occupied West Bank.",
+      "answer": "intensified",
+      "accepted": [
+        "heightened"
+      ],
+      "hint_zh": "加剧",
+      "analysis_zh": "在这则关于West Bank villages face renewed settler attacks的新闻中，intensified 用于准确表达“加剧”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 heightened 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 intensified，能够自然连接上下文并准确表达“加剧”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "The latest incidents intensified concerns about the safety of Palestinian residents in the occupied West Bank.",
+        "translation_zh": "最近的事件加剧了人们对约旦河西岸被占领地区巴勒斯坦居民安全的担忧。"
+      },
+      "context": {
+        "en": "The latest incidents intensified concerns about the safety",
+        "zh": "最近的事件加剧了人们对约旦河西岸被占领地区巴勒斯坦居民安全的担忧。"
+      }
+    },
+    {
+      "id": "2026-11-23-house-secured",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "secured",
+      "meaning_zh": "赢得",
+      "example": "Democrats secured their 258th seat in the US House after a North Carolina contest was decided in their favour.",
+      "cloze": "Democrats ______ their 258th seat in the US House after a North Carolina contest was decided in their favour.",
+      "answer": "secured",
+      "accepted": [
+        "won"
+      ],
+      "hint_zh": "赢得",
+      "analysis_zh": "在这则关于Democrats secure unusually large House majority的新闻中，secured 用于准确表达“赢得”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 won 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 secured，能够自然连接上下文并准确表达“赢得”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "Democrats secured their 258th seat in the US House after a North Carolina contest was decided in their favour.",
+        "translation_zh": "北卡罗来纳州的一场选举结果确定后，民主党赢得了美国众议院第258个席位。"
+      },
+      "context": {
+        "en": "Democrats secured their 258th seat in",
+        "zh": "北卡罗来纳州的一场选举结果确定后，民主党赢得了美国众议院第258个席位。"
+      }
+    },
+    {
+      "id": "2026-11-23-house-gave",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "gave",
+      "meaning_zh": "使获得",
+      "example": "The result gave the party a majority of at least 85 seats, an unusually wide margin by recent historical standards.",
+      "cloze": "The result ______ the party a majority of at least 85 seats, an unusually wide margin by recent historical standards.",
+      "answer": "gave",
+      "accepted": [
+        "handed"
+      ],
+      "hint_zh": "使获得",
+      "analysis_zh": "在这则关于Democrats secure unusually large House majority的新闻中，gave 用于准确表达“使获得”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 handed 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 gave，能够自然连接上下文并准确表达“使获得”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "The result gave the party a majority of at least 85 seats, an unusually wide margin by recent historical standards.",
+        "translation_zh": "这一结果使该党获得至少85席的多数优势，按近年的历史标准来看十分罕见。"
+      },
+      "context": {
+        "en": "The result gave the party a majority",
+        "zh": "这一结果使该党获得至少85席的多数优势，按近年的历史标准来看十分罕见。"
+      }
+    },
+    {
+      "id": "2026-11-23-house-remained",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "remained",
+      "meaning_zh": "仍然",
+      "example": "Four congressional races remained unresolved nearly three weeks after the midterm elections.",
+      "cloze": "Four congressional races ______ unresolved nearly three weeks after the midterm elections.",
+      "answer": "remained",
+      "accepted": [
+        "stayed"
+      ],
+      "hint_zh": "仍然",
+      "analysis_zh": "在这则关于Democrats secure unusually large House majority的新闻中，remained 用于准确表达“仍然”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 stayed 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 remained，能够自然连接上下文并准确表达“仍然”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "Four congressional races remained unresolved nearly three weeks after the midterm elections.",
+        "translation_zh": "中期选举过去近三周后，仍有四场国会选举尚未决出结果。"
+      },
+      "context": {
+        "en": "Four congressional races remained unresolved nearly three weeks",
+        "zh": "中期选举过去近三周后，仍有四场国会选举尚未决出结果。"
+      }
+    },
+    {
+      "id": "2026-11-23-bulgari-died",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "died",
+      "meaning_zh": "去世",
+      "example": "Italian jeweller Paolo Bulgari died at the age of 89 after decades in the family luxury business.",
+      "cloze": "Italian jeweller Paolo Bulgari ______ at the age of 89 after decades in the family luxury business.",
+      "answer": "died",
+      "accepted": [
+        "passed"
+      ],
+      "hint_zh": "去世",
+      "analysis_zh": "在这则关于Jewellery house remembers a family pioneer的新闻中，died 用于准确表达“去世”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 passed 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 died，能够自然连接上下文并准确表达“去世”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "Italian jeweller Paolo Bulgari died at the age of 89 after decades in the family luxury business.",
+        "translation_zh": "意大利珠宝商保罗·宝格丽在家族奢侈品企业工作数十年后去世，享年89岁。"
+      },
+      "context": {
+        "en": "Italian jeweller Paolo Bulgari died at the age of",
+        "zh": "意大利珠宝商保罗·宝格丽在家族奢侈品企业工作数十年后去世，享年89岁。"
+      }
+    },
+    {
+      "id": "2026-11-23-bulgari-joined",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "joined",
+      "meaning_zh": "加入",
+      "example": "He joined the company in 1960 and developed a reputation for expertise in precious stones.",
+      "cloze": "He ______ the company in 1960 and developed a reputation for expertise in precious stones.",
+      "answer": "joined",
+      "accepted": [
+        "entered"
+      ],
+      "hint_zh": "加入",
+      "analysis_zh": "在这则关于Jewellery house remembers a family pioneer的新闻中，joined 用于准确表达“加入”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 entered 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 joined，能够自然连接上下文并准确表达“加入”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "He joined the company in 1960 and developed a reputation for expertise in precious stones.",
+        "translation_zh": "他于1960年加入公司，并凭借宝石方面的专业知识建立声誉。"
+      },
+      "context": {
+        "en": "He joined the company in 1960",
+        "zh": "他于1960年加入公司，并凭借宝石方面的专业知识建立声誉。"
+      }
+    },
+    {
+      "id": "2026-11-23-bulgari-sold",
+      "date": "2026-11-23",
+      "type": "word",
+      "expression": "sold",
+      "meaning_zh": "出售",
+      "example": "His family later sold its stake to French luxury group LVMH in 2011.",
+      "cloze": "His family later ______ its stake to French luxury group LVMH in 2011.",
+      "answer": "sold",
+      "accepted": [
+        "transferred"
+      ],
+      "hint_zh": "出售",
+      "analysis_zh": "在这则关于Jewellery house remembers a family pioneer的新闻中，sold 用于准确表达“出售”。注意其与前后词语的搭配及句子的时态，结合新闻事件发生的先后关系理解。可选词 transferred 在部分语境中表达接近的意思，但语气、正式程度或侧重点可能不同。阅读时还应区分报道确认的事实、当事人的说法与作者的推断，避免把限定信息扩大为绝对结论。",
+      "why_zh": "原句使用 sold，能够自然连接上下文并准确表达“出售”，同时保留报道中的事件顺序与限定语。",
+      "imitation": {
+        "background_zh": "假设在项目管理或市场观察中描述相似变化",
+        "sentence_en": "His family later sold its stake to French luxury group LVMH in 2011.",
+        "translation_zh": "他的家族后来于2011年将股份出售给法国奢侈品集团路威酩轩。"
+      },
+      "context": {
+        "en": "His family later sold its stake to French",
+        "zh": "他的家族后来于2011年将股份出售给法国奢侈品集团路威酩轩。"
+      }
     }
   ],
   "passages": [
@@ -6592,6 +7117,48 @@
       "date": "2026-11-21",
       "title": "Brazilian ex-president faces renewed health concerns",
       "body": "Brazil's former president Jair Bolsonaro was {{2026-11-21-brazil-hospitalised}} after his son reported severe abdominal pain. He has suffered {{2026-11-21-brazil-recurring}} health problems since being stabbed during an election campaign in 2018. He remains under house arrest on medical {{2026-11-21-brazil-grounds}} after receiving a lengthy prison sentence over a coup plot. His family has linked his repeated hospital visits to longstanding health difficulties."
+    },
+    {
+      "id": "2026-11-23-ai-markets",
+      "date": "2026-11-23",
+      "title": "Asian chipmakers slide after Wall Street sell-off",
+      "body": "The sell-off in American AI stocks {{2026-11-23-ai-markets-spread}} to Asian markets as trading resumed on Monday. Shares in major South Korean chipmakers {{2026-11-23-ai-markets-declined}} by roughly three percent, weighing on the broader index. Chinese benchmarks also lost ground, although US stock futures later {{2026-11-23-ai-markets-rebounded}}. The mixed movements suggest investors were reassessing technology valuations rather than abandoning every AI-linked company."
+    },
+    {
+      "id": "2026-11-23-climate",
+      "date": "2026-11-23",
+      "title": "Climate summit ends without agreement in Turkey",
+      "body": "Climate negotiations in Turkey {{2026-11-23-climate-collapsed}} when the European Union and several other countries rejected a proposed deal. The disagreement {{2026-11-23-climate-centred}} on whether governments should reaffirm an earlier pledge to move away from fossil fuels. European negotiators {{2026-11-23-climate-argued}} that weakening previous commitments would undermine the credibility of the talks. The failed summit exposed a persistent divide over how strongly countries should commit to reducing fossil-fuel dependence."
+    },
+    {
+      "id": "2026-11-23-britain",
+      "date": "2026-11-23",
+      "title": "British factories benefit from data-centre demand",
+      "body": "Demand for equipment used in data centres {{2026-11-23-britain-boosted}} British manufacturing activity to its strongest level in more than two years. The improvement partly {{2026-11-23-britain-offset}} slower expansion in the country's services sector. A preliminary business survey {{2026-11-23-britain-registered}} a November reading of 52.3, below October's 52.9. Because the index remained above 50, the figures still indicated overall private-sector growth."
+    },
+    {
+      "id": "2026-11-23-libya",
+      "date": "2026-11-23",
+      "title": "Ukraine claims naval strike in Libyan port",
+      "body": "A Russian warship was reportedly {{2026-11-23-libya-sunk}} in the Libyan port of Benghazi during a naval-drone attack. Ukraine's president {{2026-11-23-libya-claimed}} responsibility and praised the operation. The strike {{2026-11-23-libya-occurred}} in territory controlled by a Libyan force aligned with Russia. Kyiv had earlier reported targeting a Russian cargo vessel in the Baltic Sea, illustrating the widening geographic reach of its maritime operations."
+    },
+    {
+      "id": "2026-11-23-westbank",
+      "date": "2026-11-23",
+      "title": "West Bank villages face renewed settler attacks",
+      "body": "Israeli settlers {{2026-11-23-westbank-attacked}} several Palestinian villages near Ramallah, setting vehicles alight and marking buildings with graffiti. An Israeli opposition leader {{2026-11-23-westbank-condemned}} the violence and accused nationalist ministers of encouraging it. The latest incidents {{2026-11-23-westbank-intensified}} concerns about the safety of Palestinian residents in the occupied West Bank. Reports of settler violence have grown increasingly severe since the October 2023 attacks and subsequent war."
+    },
+    {
+      "id": "2026-11-23-house",
+      "date": "2026-11-23",
+      "title": "Democrats secure unusually large House majority",
+      "body": "Democrats {{2026-11-23-house-secured}} their 258th seat in the US House after a North Carolina contest was decided in their favour. The result {{2026-11-23-house-gave}} the party a majority of at least 85 seats, an unusually wide margin by recent historical standards. Four congressional races {{2026-11-23-house-remained}} unresolved nearly three weeks after the midterm elections. The outstanding contests could alter the final tally without changing which party controls the chamber."
+    },
+    {
+      "id": "2026-11-23-bulgari",
+      "date": "2026-11-23",
+      "title": "Jewellery house remembers a family pioneer",
+      "body": "Italian jeweller Paolo Bulgari {{2026-11-23-bulgari-died}} at the age of 89 after decades in the family luxury business. He {{2026-11-23-bulgari-joined}} the company in 1960 and developed a reputation for expertise in precious stones. His family later {{2026-11-23-bulgari-sold}} its stake to French luxury group LVMH in 2011. His career helped transform a business founded by his grandfather into an internationally recognised jewellery brand."
     }
   ]
 }
