@@ -2,6 +2,573 @@
   "schema_version": 3,
   "items": [
     {
+      "id": "2026-11-26-tariffs-mooted",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "mooted",
+      "meaning_zh": "提出供讨论",
+      "example": "The White House mooted tariff rates of 15% to 40%, putting them forward for discussion rather than announcing that importers already owed them.",
+      "cloze": "The White House ______ tariff rates of 15% to 40%, putting them forward for discussion rather than announcing that importers already owed them.",
+      "answer": "mooted",
+      "accepted": [
+        "floated",
+        "proposed",
+        "suggested"
+      ],
+      "hint_zh": "提出供讨论",
+      "analysis_zh": "moot a proposal 在这里是提出一个方案供讨论，并不表示立刻执行。后半句 putting them forward for discussion 给出线索。留意 moot 在 a moot point 中是形容词，语义不同；此处是过去式动词。",
+      "why_zh": "moot a proposal 在这里是提出一个方案供讨论，并不表示立刻执行。后半句 putting them forward for discussion 给出线索。",
+      "imitation": {
+        "background_zh": "讨论新补货节奏",
+        "sentence_en": "We mooted a fixed ordering cycle before asking the distributor to commit.",
+        "translation_zh": "我们先提出固定订货周期供讨论，再请经销商作出承诺。"
+      },
+      "context": {
+        "en": "The White House mooted tariff rates of 15% to 40%, putting them forward for discussion rather than announcing that importers already owed them.",
+        "zh": "白宫提出了15%至40%的关税税率供讨论，并未宣布进口商已经需要缴纳。"
+      }
+    },
+    {
+      "id": "2026-11-26-tariffs-scrutiny",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "scrutiny",
+      "meaning_zh": "审查",
+      "example": "Trade practices across 16 economies came under official scrutiny, with investigators examining issues such as subsidies and currency policy.",
+      "cloze": "Trade practices across 16 economies came under official ______, with investigators examining issues such as subsidies and currency policy.",
+      "answer": "scrutiny",
+      "accepted": [
+        "examination",
+        "review",
+        "investigation"
+      ],
+      "hint_zh": "审查",
+      "analysis_zh": "come under scrutiny 是进入被仔细检查的状态，不等于被处罚。investigators examining 是线索；under 后面要接名词，scrutiny 强调持续、细致地审视，不是一次简单的查看。",
+      "why_zh": "come under scrutiny 是进入被仔细检查的状态，不等于被处罚。investigators examining 是线索；under 后面要接名词，scrutiny 强调持续、细致地审视，不是一次简单的查看。",
+      "imitation": {
+        "background_zh": "复核海外供货价格",
+        "sentence_en": "The assumptions behind the freight estimate came under scrutiny during the review.",
+        "translation_zh": "评审时，运费估算背后的假设受到仔细审查。"
+      },
+      "context": {
+        "en": "Trade practices across 16 economies came under official scrutiny, with investigators examining issues such as subsidies and currency policy.",
+        "zh": "16个经济体的贸易做法受到官方审查，调查人员检查补贴和汇率政策等问题。"
+      }
+    },
+    {
+      "id": "2026-11-26-tariffs-factor",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "factor",
+      "meaning_zh": "将…纳入计算",
+      "example": "The trade office signalled that it would factor existing agreements and duties into the calculation, rather than treating them as irrelevant to the final rates.",
+      "cloze": "The trade office signalled that it would ______ existing agreements and duties into the calculation, rather than treating them as irrelevant to the final rates.",
+      "answer": "factor",
+      "accepted": [
+        "incorporate",
+        "build",
+        "integrate",
+        "include"
+      ],
+      "hint_zh": "将…纳入计算",
+      "analysis_zh": "factor A into B 是把 A 当成影响 B 的变量，而不是把 A 从 B 中剔除。句中 into the calculation 限定了结构，rather than 后面说明现有安排并非无关。也可说 incorporate A into B。",
+      "why_zh": "factor A into B 是把 A 当成影响 B 的变量，而不是把 A 从 B 中剔除。句中 into the calculation 限定了结构，rather than 后面说明现有安排并非无关。",
+      "imitation": {
+        "background_zh": "测算包装切换方案",
+        "sentence_en": "We need to factor inventory holding costs into the comparison.",
+        "translation_zh": "我们需要把库存持有成本纳入比较。"
+      },
+      "context": {
+        "en": "The trade office signalled that it would factor existing agreements and duties into the calculation, rather than treating them as irrelevant to the final rates.",
+        "zh": "贸易办公室表示会把现行协议和关税纳入计算，不会把它们视为与最终税率无关。"
+      }
+    },
+    {
+      "id": "2026-11-26-nvidia-downgrade",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "downgrade",
+      "meaning_zh": "下调评级",
+      "example": "After Jensen Huang returned as chief executive, S&P put Nvidia on watch for a possible downgrade, explicitly warning that it could lower rather than raise the company's AA credit rating.",
+      "cloze": "After Jensen Huang returned as chief executive, S&P put Nvidia on watch for a possible ______, explicitly warning that it could lower rather than raise the company's AA credit rating.",
+      "answer": "downgrade",
+      "accepted": [
+        "cut",
+        "reduction"
+      ],
+      "hint_zh": "下调评级",
+      "analysis_zh": "信用评级有上调和下调两种方向，后半句 lower rather than raise 把方向锁定。possible downgrade 是可能下调，watch 不是已下调，不能把信用观察写成评级已变。",
+      "why_zh": "信用评级有上调和下调两种方向，后半句 lower rather than raise 把方向锁定。possible downgrade 是可能下调，watch 不是已下调，不能把信用观察写成评级已变。",
+      "imitation": {
+        "background_zh": "解读供应商信用报告",
+        "sentence_en": "A possible downgrade does not change the supplier's current rating.",
+        "translation_zh": "可能下调评级不等于供应商目前的评级已变。"
+      },
+      "context": {
+        "en": "After Jensen Huang returned as chief executive, S&P put Nvidia on watch for a possible downgrade, explicitly warning that it could lower rather than raise the company's AA credit rating.",
+        "zh": "黄仁勋重新担任首席执行官后，标普把英伟达列入可能下调评级的观察名单，警告其 AA 评级可能降低而非提高。"
+      }
+    },
+    {
+      "id": "2026-11-26-nvidia-compromised",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "compromised",
+      "meaning_zh": "损害独立性",
+      "example": "The agency said long board tenures may have compromised directors' independence, raising doubts about how freely they could challenge management.",
+      "cloze": "The agency said long board tenures may have ______ directors' independence, raising doubts about how freely they could challenge management.",
+      "answer": "compromised",
+      "accepted": [
+        "undermined",
+        "weakened",
+        "impaired",
+        "eroded"
+      ],
+      "hint_zh": "损害独立性",
+      "analysis_zh": "compromise independence 指独立性被削弱，并非董事作出了折中。may have 加过去分词，把它限定为对既有情况的可能判断；raising doubts 给出负面方向，但不是认定。",
+      "why_zh": "compromise independence 指独立性被削弱，并非董事作出了折中。may have 加过去分词，把它限定为对既有情况的可能判断；raising doubts 给出负面方向，但不是认定。",
+      "imitation": {
+        "background_zh": "讨论质量复核",
+        "sentence_en": "Using the same reviewer for both stages could compromise the independence of the second check.",
+        "translation_zh": "两个阶段都让同一个人审核，可能影响第二次核查的独立性。"
+      },
+      "context": {
+        "en": "The agency said long board tenures may have compromised directors' independence, raising doubts about how freely they could challenge management.",
+        "zh": "评级机构称董事任职时间过长可能损害其独立性，使人质疑他们能否自由挑战管理层。"
+      }
+    },
+    {
+      "id": "2026-11-26-nvidia-intact",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "intact",
+      "meaning_zh": "维持不变",
+      "example": "The AA rating remained intact: the watch notice flagged a risk to the existing grade without changing it.",
+      "cloze": "The AA rating remained ______: the watch notice flagged a risk to the existing grade without changing it.",
+      "answer": "intact",
+      "accepted": [
+        "unchanged",
+        "unaffected",
+        "unaltered",
+        "stable"
+      ],
+      "hint_zh": "维持不变",
+      "analysis_zh": "remain intact 常见于说明某个成果或状态经历压力后仍完好。冒号后 without changing it 明确现状没有变化。intact 不意味着未来没有风险，这里要与 watch 同时理解。",
+      "why_zh": "remain intact 常见于说明某个成果或状态经历压力后仍完好。冒号后 without changing it 明确现状没有变化。",
+      "imitation": {
+        "background_zh": "同步系统更新",
+        "sentence_en": "The interface changed, but all saved records remained intact.",
+        "translation_zh": "界面变了，但所有已保存记录都完好无损。"
+      },
+      "context": {
+        "en": "The AA rating remained intact: the watch notice flagged a risk to the existing grade without changing it.",
+        "zh": "AA 评级维持不变：观察通知提示现有评级面临风险，并未改变评级。"
+      }
+    },
+    {
+      "id": "2026-11-26-spacex-cleared",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "cleared",
+      "meaning_zh": "批准某方推进",
+      "example": "The US communications regulator cleared SpaceX to pursue a satellite network for orbital computing, giving the company formal permission subject to conditions.",
+      "cloze": "The US communications regulator ______ SpaceX to pursue a satellite network for orbital computing, giving the company formal permission subject to conditions.",
+      "answer": "cleared",
+      "accepted": [
+        "authorised",
+        "authorized",
+        "allowed",
+        "permitted"
+      ],
+      "hint_zh": "批准某方推进",
+      "analysis_zh": "clear someone to do something 在监管文中指准许做某事，不是清理某物。giving formal permission 表明这是授权，不是一般鼓励。后面的条件约束授权，但不把动作改成拒绝。",
+      "why_zh": "clear someone to do something 在监管文中指准许做某事，不是清理某物。giving formal permission 表明这是授权，不是一般鼓励。",
+      "imitation": {
+        "background_zh": "产线试产审批",
+        "sentence_en": "Quality cleared the team to run the pilot after reviewing the test plan.",
+        "translation_zh": "质量部门审核测试计划后，批准团队开展试产。"
+      },
+      "context": {
+        "en": "The US communications regulator cleared SpaceX to pursue a satellite network for orbital computing, giving the company formal permission subject to conditions.",
+        "zh": "美国通信监管机构批准 SpaceX 推进用于轨道计算的卫星网络，正式许可附有条件。"
+      }
+    },
+    {
+      "id": "2026-11-26-spacex-tantamount",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "tantamount",
+      "meaning_zh": "等同于",
+      "example": "That decision was not tantamount to putting satellites in orbit: a regulatory green light is not the same as a launch.",
+      "cloze": "That decision was not ______ to putting satellites in orbit: a regulatory green light is not the same as a launch.",
+      "answer": "tantamount",
+      "accepted": [
+        "equivalent",
+        "equal",
+        "comparable"
+      ],
+      "hint_zh": "等同于",
+      "analysis_zh": "tantamount to 指结果或实质上相当于，后接名词或动名词。冒号后 not the same as 是释义，not 划出许可与实物发射的边界。这个词不用于单纯说明时间先后。",
+      "why_zh": "tantamount to 指结果或实质上相当于，后接名词或动名词。冒号后 not the same as 是释义，not 划出许可与实物发射的边界。",
+      "imitation": {
+        "background_zh": "解释合同里程碑",
+        "sentence_en": "Signing the framework is not tantamount to placing a purchase order.",
+        "translation_zh": "签署框架协议不等于正式下达采购订单。"
+      },
+      "context": {
+        "en": "That decision was not tantamount to putting satellites in orbit: a regulatory green light is not the same as a launch.",
+        "zh": "该决定并不等同于把卫星送入轨道：监管放行不等于真的完成发射。"
+      }
+    },
+    {
+      "id": "2026-11-26-spacex-entail",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "entail",
+      "meaning_zh": "必然涉及、带来",
+      "example": "Building computing capacity in orbit would entail substantial expense; getting permission does not eliminate the cost of building the system.",
+      "cloze": "Building computing capacity in orbit would ______ substantial expense; getting permission does not eliminate the cost of building the system.",
+      "answer": "entail",
+      "accepted": [
+        "involve",
+        "require",
+        "incur"
+      ],
+      "hint_zh": "必然涉及、带来",
+      "analysis_zh": "entail 强调某项决定或工程必然带来的成本、义务或后果。expense 与后句 cost 互相照应，would 表明是在估计尚未实施的项目，不是说成本已经发生。",
+      "why_zh": "entail 强调某项决定或工程必然带来的成本、义务或后果。expense 与后句 cost 互相照应，would 表明是在估计尚未实施的项目，不是说成本已经发生。",
+      "imitation": {
+        "background_zh": "评估工厂切换",
+        "sentence_en": "Changing the production site would entail new validation work.",
+        "translation_zh": "更换生产地址将意味着要做新的验证工作。"
+      },
+      "context": {
+        "en": "Building computing capacity in orbit would entail substantial expense; getting permission does not eliminate the cost of building the system.",
+        "zh": "在轨道上建设计算能力将涉及可观开支；拿到许可并不会消除建造系统的成本。"
+      }
+    },
+    {
+      "id": "2026-11-26-uk-provisional",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "provisional",
+      "meaning_zh": "暂定的、可修订的",
+      "example": "The Office for National Statistics put net migration at 77,000 in the year to June; the estimate is provisional and can be revised as better data arrive.",
+      "cloze": "The Office for National Statistics put net migration at 77,000 in the year to June; the estimate is ______ and can be revised as better data arrive.",
+      "answer": "provisional",
+      "accepted": [
+        "preliminary",
+        "tentative",
+        "indicative"
+      ],
+      "hint_zh": "暂定的、可修订的",
+      "analysis_zh": "provisional 不只是大概，而是尚未最终确定、可随资料更新而修订。线索是后面 can be revised。preliminary 可以表达初步，final 和句中明确的后续修订方向相反。",
+      "why_zh": "provisional 不只是大概，而是尚未最终确定、可随资料更新而修订。线索是后面 can be revised。",
+      "imitation": {
+        "background_zh": "月末库存盘点",
+        "sentence_en": "The month-end inventory figure is provisional until all sites report.",
+        "translation_zh": "各工厂还没报齐，月末库存数字暂未最终确定。"
+      },
+      "context": {
+        "en": "The Office for National Statistics put net migration at 77,000 in the year to June; the estimate is provisional and can be revised as better data arrive.",
+        "zh": "英国国家统计局估计截至6月的一年净移民为7.7万人，数字暂未最终确定，数据完善后可修订。"
+      }
+    },
+    {
+      "id": "2026-11-26-uk-stemmed",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "stemmed",
+      "meaning_zh": "源于",
+      "example": "Much of the decline stemmed from fewer arrivals from outside the European Union, which the data identify as a major driver of the overall change.",
+      "cloze": "Much of the decline ______ from fewer arrivals from outside the European Union, which the data identify as a major driver of the overall change.",
+      "answer": "stemmed",
+      "accepted": [
+        "resulted",
+        "arose",
+        "came",
+        "originated"
+      ],
+      "hint_zh": "源于",
+      "analysis_zh": "stem from 指某个结果的来源，不能把原因和结果的主语倒过来。句中主语是 decline，from 后是非欧盟抵达人数减少；后半句 major driver 强化这种因果关系。",
+      "why_zh": "stem from 指某个结果的来源，不能把原因和结果的主语倒过来。句中主语是 decline，from 后是非欧盟抵达人数减少；后半句 major driver 强化这种因果关系。",
+      "imitation": {
+        "background_zh": "分析交付波动",
+        "sentence_en": "The delay stemmed from a shortage of qualified packaging materials.",
+        "translation_zh": "延期源于合格包材短缺。"
+      },
+      "context": {
+        "en": "Much of the decline stemmed from fewer arrivals from outside the European Union, which the data identify as a major driver of the overall change.",
+        "zh": "整体降幅很大一部分源于来自欧盟以外的抵达人数减少，数据将这一变化列为主要原因。"
+      }
+    },
+    {
+      "id": "2026-11-26-uk-vindication",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "vindication",
+      "meaning_zh": "证明做法正确",
+      "example": "The home secretary presented the figure as a vindication of Labour's approach, treating it as evidence that the government's policy had been right.",
+      "cloze": "The home secretary presented the figure as a ______ of Labour's approach, treating it as evidence that the government's policy had been right.",
+      "answer": "vindication",
+      "accepted": [
+        "validation",
+        "confirmation",
+        "justification",
+        "endorsement"
+      ],
+      "hint_zh": "证明做法正确",
+      "analysis_zh": "vindication of 表示某个结果被当作证明先前判断或做法没有错；逗号后的 treating it as evidence 把这个含义说清了。presented as 表明这是官员给出的解读，不等于统计机构证明了政策因果。",
+      "why_zh": "vindication of 表示某个结果被当作证明先前判断或做法没有错；逗号后的 treating it as evidence 把这个含义说清了。presented as 表明这是官员给出的解读，不等于统计机构证明了政策因果。",
+      "imitation": {
+        "background_zh": "复盘备货规则",
+        "sentence_en": "The manager saw the fall in shortages as a vindication of the buffer-stock policy.",
+        "translation_zh": "经理认为缺货减少说明缓冲库存政策是对的。"
+      },
+      "context": {
+        "en": "The home secretary presented the figure as a vindication of Labour's approach, treating it as evidence that the government's policy had been right.",
+        "zh": "内政大臣把这一数字描述为工党做法正确的证明，把它当作政府政策有效的证据。"
+      }
+    },
+    {
+      "id": "2026-11-26-netanyahu-presiding",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "presiding",
+      "meaning_zh": "主持审理",
+      "example": "The three judges presiding over Binyamin Netanyahu's corruption trial are overseeing the proceedings, not acting as prosecutors.",
+      "cloze": "The three judges ______ over Binyamin Netanyahu's corruption trial are overseeing the proceedings, not acting as prosecutors.",
+      "answer": "presiding",
+      "accepted": [
+        "watching"
+      ],
+      "hint_zh": "主持审理",
+      "analysis_zh": "preside over 在司法语境中指主持审理，而非发起起诉。are overseeing 对角色给了直白线索。presiding over 短语修饰 judges；它把审理者与检方的职能分开。",
+      "why_zh": "preside over 在司法语境中指主持审理，而非发起起诉。are overseeing 对角色给了直白线索。",
+      "imitation": {
+        "background_zh": "描述项目委员会",
+        "sentence_en": "The director presiding over the review will not present the supplier's case.",
+        "translation_zh": "主持评审的总监不会代供应商陈述其情况。"
+      },
+      "context": {
+        "en": "The three judges presiding over Binyamin Netanyahu's corruption trial are overseeing the proceedings, not acting as prosecutors.",
+        "zh": "主持审理内塔尼亚胡腐败案的三名法官负责掌管审理程序，不是检察官。"
+      }
+    },
+    {
+      "id": "2026-11-26-netanyahu-withdraw",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "withdraw",
+      "meaning_zh": "撤回指控",
+      "example": "The panel urged prosecutors to withdraw some charges from the case because it doubted that a bribery conviction could be secured.",
+      "cloze": "The panel urged prosecutors to ______ some charges from the case because it doubted that a bribery conviction could be secured.",
+      "answer": "withdraw",
+      "accepted": [
+        "drop",
+        "remove"
+      ],
+      "hint_zh": "撤回指控",
+      "analysis_zh": "withdraw charges 指检方把已经提出的指控收回，不是法院撤销原判。from the case 以及法官怀疑定罪可能性提供线索。urge 后接人和不定式，本身也表明只是建议采取行动。",
+      "why_zh": "withdraw charges 指检方把已经提出的指控收回，不是法院撤销原判。from the case 以及法官怀疑定罪可能性提供线索。",
+      "imitation": {
+        "background_zh": "供应合同谈判",
+        "sentence_en": "We asked the supplier to withdraw the surcharge from the revised quotation.",
+        "translation_zh": "我们请供应商把附加费从修订报价中撤掉。"
+      },
+      "context": {
+        "en": "The panel urged prosecutors to withdraw some charges from the case because it doubted that a bribery conviction could be secured.",
+        "zh": "法官小组敦促检方撤回部分指控，因为他们怀疑贿赂罪能否被判成立。"
+      }
+    },
+    {
+      "id": "2026-11-26-netanyahu-acquittal",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "acquittal",
+      "meaning_zh": "无罪裁决",
+      "example": "The judges' assessment was not an acquittal; it did not formally clear Netanyahu of any charge.",
+      "cloze": "The judges' assessment was not an ______; it did not formally clear Netanyahu of any charge.",
+      "answer": "acquittal",
+      "accepted": [
+        "exoneration"
+      ],
+      "hint_zh": "无罪裁决",
+      "analysis_zh": "acquittal 是法庭作出的无罪判决，不能等同于法官对定罪难度的看法。后半句 did not formally clear 提示这里考的是正式法律结果而非非正式意见；也不是对已判罪的赦免。",
+      "why_zh": "acquittal 是法庭作出的无罪判决，不能等同于法官对定罪难度的看法。后半句 did not formally clear 提示这里考的是正式法律结果而非非正式意见；也不是对已判罪的赦免。",
+      "imitation": {
+        "background_zh": "理解新闻里的司法阶段",
+        "sentence_en": "The counsel stressed that an acquittal was a court ruling, not a withdrawal by prosecutors.",
+        "translation_zh": "律师强调，无罪判决是法院裁定，不是检方撤回指控。"
+      },
+      "context": {
+        "en": "The judges' assessment was not an acquittal; it did not formally clear Netanyahu of any charge.",
+        "zh": "法官的评估不是无罪裁决，并未正式判定内塔尼亚胡任何一项罪名不成立。"
+      }
+    },
+    {
+      "id": "2026-11-26-cairo-traced",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "traced",
+      "meaning_zh": "追溯至",
+      "example": "Initial accounts traced the fire to a petrol tanker that had tipped over in a tunnel on Cairo's ring road.",
+      "cloze": "Initial accounts ______ the fire to a petrol tanker that had tipped over in a tunnel on Cairo's ring road.",
+      "answer": "traced",
+      "accepted": [
+        "linked",
+        "attributed",
+        "connected"
+      ],
+      "hint_zh": "追溯至",
+      "analysis_zh": "trace A to B 表示顺着线索把事件追溯到某个来源，A 是火灾，B 是翻倒的油罐车。Initial accounts 保留这是初步说法，不是已有最终调查结论。attribute 常强调归因，trace 更突出追查来源。",
+      "why_zh": "trace A to B 表示顺着线索把事件追溯到某个来源，A 是火灾，B 是翻倒的油罐车。Initial accounts 保留这是初步说法，不是已有最终调查结论。",
+      "imitation": {
+        "background_zh": "排查批次波动",
+        "sentence_en": "The investigation traced the variation to a change in mixing time.",
+        "translation_zh": "调查将波动追溯到混合时间改变。"
+      },
+      "context": {
+        "en": "Initial accounts traced the fire to a petrol tanker that had tipped over in a tunnel on Cairo's ring road.",
+        "zh": "初步报道把火灾追溯到在开罗环路一处隧道翻倒的油罐车。"
+      }
+    },
+    {
+      "id": "2026-11-26-cairo-extinguished",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "extinguished",
+      "meaning_zh": "扑灭",
+      "example": "The blaze was later extinguished, with no flames left burning.",
+      "cloze": "The blaze was later ______, with no flames left burning.",
+      "answer": "extinguished",
+      "accepted": [
+        "doused",
+        "quelled",
+        "snuffed"
+      ],
+      "hint_zh": "扑灭",
+      "analysis_zh": "extinguish 用于把火完全扑灭，后面的 no flames left burning 明确说火已灭。contain a blaze 只是控制它不再蔓延，不能据此断定灭火结束。这里用被动，把焦点放在火势结果。",
+      "why_zh": "extinguish 用于把火完全扑灭，后面的 no flames left burning 明确说火已灭。contain a blaze 只是控制它不再蔓延，不能据此断定灭火结束。",
+      "imitation": {
+        "background_zh": "区分消防通报",
+        "sentence_en": "The crew contained the fire in ten minutes but did not extinguish it for another hour.",
+        "translation_zh": "消防人员十分钟内控制了火势，但又过了一小时才把火扑灭。"
+      },
+      "context": {
+        "en": "The blaze was later extinguished, with no flames left burning.",
+        "zh": "大火随后被扑灭，已没有火焰继续燃烧。"
+      }
+    },
+    {
+      "id": "2026-11-26-cairo-condolences",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "condolences",
+      "meaning_zh": "向逝者家属致哀",
+      "example": "President Abdel Fattah al-Sisi offered his condolences to those mourning the dead.",
+      "cloze": "President Abdel Fattah al-Sisi offered his ______ to those mourning the dead.",
+      "answer": "condolences",
+      "accepted": [
+        "sympathies",
+        "sympathy"
+      ],
+      "hint_zh": "向逝者家属致哀",
+      "analysis_zh": "offer one's condolences to 是对死者亲友致哀的固定搭配，condolences 通常用复数。mourning the dead 把语境限定为丧亲；sympathy 范围更广，也可用于生病或其他遭遇。",
+      "why_zh": "offer one's condolences to 是对死者亲友致哀的固定搭配，condolences 通常用复数。mourning the dead 把语境限定为丧亲；sympathy 范围更广，也可用于生病或其他遭遇。",
+      "imitation": {
+        "background_zh": "阅读正式吊唁声明",
+        "sentence_en": "The team offered its condolences to the families affected by the accident.",
+        "translation_zh": "团队向事故遇难者的家属表达了慰问。"
+      },
+      "context": {
+        "en": "President Abdel Fattah al-Sisi offered his condolences to those mourning the dead.",
+        "zh": "总统塞西向哀悼罹难者的人们表达慰问。"
+      }
+    },
+    {
+      "id": "2026-11-26-parade-disarray",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "disarray",
+      "meaning_zh": "打乱安排",
+      "example": "An approaching storm threw plans for the Macy's Thanksgiving parade into disarray, forcing New York to abandon the original date.",
+      "cloze": "An approaching storm threw plans for the Macy's Thanksgiving parade into ______, forcing New York to abandon the original date.",
+      "answer": "disarray",
+      "accepted": [
+        "chaos",
+        "confusion",
+        "turmoil"
+      ],
+      "hint_zh": "打乱安排",
+      "analysis_zh": "throw something into disarray 表示原本有序的安排突然被打乱。forcing 后面给出了实际后果：原定日期无法使用。与仅仅 create uncertainty 不同，原有计划已经无法照常执行。",
+      "why_zh": "throw something into disarray 表示原本有序的安排突然被打乱。forcing 后面给出了实际后果：原定日期无法使用。",
+      "imitation": {
+        "background_zh": "供应中断后的排程",
+        "sentence_en": "The port closure threw our delivery schedule into disarray.",
+        "translation_zh": "港口关闭打乱了原定交货计划。"
+      },
+      "context": {
+        "en": "An approaching storm threw plans for the Macy's Thanksgiving parade into disarray, forcing New York to abandon the original date.",
+        "zh": "一场将至的风暴打乱了梅西感恩节游行的计划，纽约不得不放弃原定日期。"
+      }
+    },
+    {
+      "id": "2026-11-26-parade-deferred",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "deferred",
+      "meaning_zh": "推迟到某时",
+      "example": "Organisers deferred the event until Saturday rather than cancelling it outright.",
+      "cloze": "Organisers ______ the event until Saturday rather than cancelling it outright.",
+      "answer": "deferred",
+      "accepted": [
+        "postponed",
+        "delayed",
+        "rescheduled",
+        "moved"
+      ],
+      "hint_zh": "推迟到某时",
+      "analysis_zh": "defer A until B 表示把 A 推到 B 时执行。until Saturday 清楚给了替代日期，后面的 rather than cancelling 明确排除取消；defer 比 put off 更正式。",
+      "why_zh": "defer A until B 表示把 A 推到 B 时执行。until Saturday 清楚给了替代日期，后面的 rather than cancelling 明确排除取消；defer 比 put off 更正式。",
+      "imitation": {
+        "background_zh": "协调现场审核",
+        "sentence_en": "We deferred the factory audit until the new line was ready.",
+        "translation_zh": "我们把工厂审核推迟到新产线准备就绪之后。"
+      },
+      "context": {
+        "en": "Organisers deferred the event until Saturday rather than cancelling it outright.",
+        "zh": "主办方把活动推迟到周六，没有直接取消。"
+      }
+    },
+    {
+      "id": "2026-11-26-parade-conserve",
+      "date": "2026-11-26",
+      "type": "word",
+      "expression": "conserve",
+      "meaning_zh": "节约、留出材料",
+      "example": "During the Second World War, organisers stopped holding the parade to conserve materials that were needed elsewhere.",
+      "cloze": "During the Second World War, organisers stopped holding the parade to ______ materials that were needed elsewhere.",
+      "answer": "conserve",
+      "accepted": [
+        "save",
+        "preserve",
+        "husband"
+      ],
+      "hint_zh": "节约、留出材料",
+      "analysis_zh": "conserve materials 表示在资源紧张时减少消耗、把物资留给别处。needed elsewhere 是线索。preserve 有保护物品不受损的意思，在这句也可以理解为保存材料供他用。",
+      "why_zh": "conserve materials 表示在资源紧张时减少消耗、把物资留给别处。needed elsewhere 是线索。",
+      "imitation": {
+        "background_zh": "分配紧缺包材",
+        "sentence_en": "We combined test runs to conserve the remaining packaging stock.",
+        "translation_zh": "我们合并安排了试验批，以节约剩余包材。"
+      },
+      "context": {
+        "en": "During the Second World War, organisers stopped holding the parade to conserve materials that were needed elsewhere.",
+        "zh": "二战期间，主办方停办游行，把材料省下来供别处使用。"
+      }
+    },
+    {
       "id": "2026-11-11-a-farce",
       "date": "2026-11-11",
       "type": "word",
@@ -7743,6 +8310,48 @@
     }
   ],
   "passages": [
+    {
+      "id": "2026-11-26-tariffs",
+      "date": "2026-11-26",
+      "title": "Washington outlines new import duties",
+      "body": "The White House {{2026-11-26-tariffs-mooted}} tariff rates of 15% to 40%, putting them forward for discussion rather than announcing that importers already owed them. Trade practices across 16 economies came under official {{2026-11-26-tariffs-scrutiny}}, with investigators examining issues such as subsidies and currency policy. The trade office signalled that it would {{2026-11-26-tariffs-factor}} existing agreements and duties into the calculation, rather than treating them as irrelevant to the final rates."
+    },
+    {
+      "id": "2026-11-26-nvidia",
+      "date": "2026-11-26",
+      "title": "A chipmaker faces closer oversight",
+      "body": "After Jensen Huang returned as chief executive, S&P put Nvidia on watch for a possible {{2026-11-26-nvidia-downgrade}}, explicitly warning that it could lower rather than raise the company's AA credit rating. The agency said long board tenures may have {{2026-11-26-nvidia-compromised}} directors' independence, raising doubts about how freely they could challenge management. The AA rating remained {{2026-11-26-nvidia-intact}}: the watch notice flagged a risk to the existing grade without changing it."
+    },
+    {
+      "id": "2026-11-26-spacex",
+      "date": "2026-11-26",
+      "title": "US regulators take a step on orbital computing",
+      "body": "The US communications regulator {{2026-11-26-spacex-cleared}} SpaceX to pursue a satellite network for orbital computing, giving the company formal permission subject to conditions. That decision was not {{2026-11-26-spacex-tantamount}} to putting satellites in orbit: a regulatory green light is not the same as a launch. Building computing capacity in orbit would {{2026-11-26-spacex-entail}} substantial expense; getting permission does not eliminate the cost of building the system."
+    },
+    {
+      "id": "2026-11-26-uk",
+      "date": "2026-11-26",
+      "title": "Britain records fewer net arrivals",
+      "body": "The Office for National Statistics put net migration at 77,000 in the year to June; the estimate is {{2026-11-26-uk-provisional}} and can be revised as better data arrive. Much of the decline {{2026-11-26-uk-stemmed}} from fewer arrivals from outside the European Union, which the data identify as a major driver of the overall change. The home secretary presented the figure as a {{2026-11-26-uk-vindication}} of Labour's approach, treating it as evidence that the government's policy had been right."
+    },
+    {
+      "id": "2026-11-26-netanyahu",
+      "date": "2026-11-26",
+      "title": "Israeli judges question the strength of a case",
+      "body": "The three judges {{2026-11-26-netanyahu-presiding}} over Binyamin Netanyahu's corruption trial are overseeing the proceedings, not acting as prosecutors. The panel urged prosecutors to {{2026-11-26-netanyahu-withdraw}} some charges from the case because it doubted that a bribery conviction could be secured. The judges' assessment was not an {{2026-11-26-netanyahu-acquittal}}; it did not formally clear Netanyahu of any charge."
+    },
+    {
+      "id": "2026-11-26-cairo",
+      "date": "2026-11-26",
+      "title": "A tanker accident turns deadly near Cairo",
+      "body": "Initial accounts {{2026-11-26-cairo-traced}} the fire to a petrol tanker that had tipped over in a tunnel on Cairo's ring road. The blaze was later {{2026-11-26-cairo-extinguished}}, with no flames left burning. President Abdel Fattah al-Sisi offered his {{2026-11-26-cairo-condolences}} to those mourning the dead. Egypt's health ministry reported that the fire had killed and injured dozens of people."
+    },
+    {
+      "id": "2026-11-26-parade",
+      "date": "2026-11-26",
+      "title": "New York changes its Thanksgiving weekend plans",
+      "body": "An approaching storm threw plans for the Macy's Thanksgiving parade into {{2026-11-26-parade-disarray}}, forcing New York to abandon the original date. Organisers {{2026-11-26-parade-deferred}} the event until Saturday rather than cancelling it outright. During the Second World War, organisers stopped holding the parade to {{2026-11-26-parade-conserve}} materials that were needed elsewhere."
+    },
     {
       "id": "2026-11-11-passage-ukraine",
       "date": "2026-11-11",
