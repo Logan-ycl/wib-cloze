@@ -7202,6 +7202,544 @@
         "en": "The dispute followed the Senegalese players' decision to walk off the pitch after a controversial penalty was awarded.",
         "zh": "争议源于塞内加尔球员在一次有争议的点球判罚后离开球场的决定。"
       }
+    },
+    {
+      "id": "2026-11-24-nvidia-reinstated",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "reinstated",
+      "meaning_zh": "恢复职务",
+      "example": "Jensen Huang was reinstated as Nvidia's chief executive less than a week after the board had ruled out his return.",
+      "cloze": "Jensen Huang was ______ as Nvidia's chief executive less than a week after the board had ruled out his return.",
+      "answer": "reinstated",
+      "accepted": [
+        "restored"
+      ],
+      "hint_zh": "恢复职务",
+      "analysis_zh": "be reinstated as chief executive 是恢复原职的常用被动结构，as 后接具体职位。reinstate 强调曾失去或被撤销的身份重新生效，区别于 appoint，后者不要求曾任该职。had ruled out 用过去完成时，说明董事会此前的决定先于复职。",
+      "why_zh": "be reinstated as chief executive 是恢复原职的常用被动结构，as 后接具体职位。",
+      "imitation": {
+        "background_zh": "假设项目组织调整",
+        "sentence_en": "The former project director was reinstated after the internal review.",
+        "translation_zh": "内部审查结束后，原项目总监恢复了职务。"
+      },
+      "context": {
+        "en": "Jensen Huang was reinstated as Nvidia's chief executive less than a week after the board had ruled out his return.",
+        "zh": "英伟达董事会排除黄仁勋回归的可能性后不到一周，他便恢复了首席执行官职务。"
+      }
+    },
+    {
+      "id": "2026-11-24-nvidia-credit",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "credit",
+      "meaning_zh": "邀功；归功于自己",
+      "example": "Donald Trump, who holds Nvidia shares, took credit for the board's reversal.",
+      "cloze": "Donald Trump, who holds Nvidia shares, took ______ for the board's reversal.",
+      "answer": "credit",
+      "accepted": [],
+      "hint_zh": "邀功；归功于自己",
+      "analysis_zh": "take credit for something 表示把某项成果归功于自己，其中 credit 为不可数名词。for 后接成果或动名词；与 give somebody credit for something 的归功方向相反。报道描述特朗普的自我归因，不证明他的行动确实促成董事会决定。",
+      "why_zh": "take credit for something 表示把某项成果归功于自己，其中 credit 为不可数名词。",
+      "imitation": {
+        "background_zh": "假设项目复盘",
+        "sentence_en": "No single department should take credit for the successful launch.",
+        "translation_zh": "任何单一部门都不应独揽成功上市的功劳。"
+      },
+      "context": {
+        "en": "Donald Trump, who holds Nvidia shares, took credit for the board's reversal.",
+        "zh": "持有英伟达股票的唐纳德·特朗普将董事会的决定逆转归功于自己。"
+      }
+    },
+    {
+      "id": "2026-11-24-nvidia-capitalisation",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "capitalisation",
+      "meaning_zh": "市值",
+      "example": "The stock jumped 31%, adding nearly $1trn to Nvidia's market capitalisation before slipping in Tuesday's pre-market session.",
+      "cloze": "The stock jumped 31%, adding nearly $1trn to Nvidia's market ______ before slipping in Tuesday's pre-market session.",
+      "answer": "capitalisation",
+      "accepted": [
+        "capitalization",
+        "value"
+      ],
+      "hint_zh": "市值",
+      "analysis_zh": "market capitalisation 是英式拼写的金融术语，指股票价格乘以流通在外的股份总数；美式拼写是 capitalization。market value 在公司股权估值语境下也可成立。adding 引出股价变动带来的结果，区别于营业收入或公司收到的现金增加。",
+      "why_zh": "market capitalisation 是英式拼写的金融术语，指股票价格乘以流通在外的股份总数；美式拼写是 capitalization。",
+      "imitation": {
+        "background_zh": "假设研究上市公司",
+        "sentence_en": "A sharp increase in its share price lifted the company's market capitalisation.",
+        "translation_zh": "股价大幅上涨推高了该公司的市值。"
+      },
+      "context": {
+        "en": "The stock jumped 31%, adding nearly $1trn to Nvidia's market capitalisation before slipping in Tuesday's pre-market session.",
+        "zh": "该股上涨31%，使英伟达市值增加近一万亿美元，随后在周二盘前交易中回落。"
+      }
+    },
+    {
+      "id": "2026-11-24-satellite-cited",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "cited",
+      "meaning_zh": "援引",
+      "example": "A German media report cited Western intelligence as its source for a warning about a possible Russian satellite launch.",
+      "cloze": "A German media report ______ Western intelligence as its source for a warning about a possible Russian satellite launch.",
+      "answer": "cited",
+      "accepted": [
+        "named",
+        "identified"
+      ],
+      "hint_zh": "援引",
+      "analysis_zh": "cite A as B 表示将 A 援引或列为 B，此处 B 是消息来源。cite an intelligence assessment 也常用于新闻归因。过去式 cited 表示报道采用了这一来源，不能由此把媒体报道所述的可能性写成已确认的发射计划。",
+      "why_zh": "cite A as B 表示将 A 援引或列为 B，此处 B 是消息来源。",
+      "imitation": {
+        "background_zh": "假设撰写行业报告",
+        "sentence_en": "The analyst cited official customs data as the basis for her forecast.",
+        "translation_zh": "分析师援引官方海关数据作为预测依据。"
+      },
+      "context": {
+        "en": "A German media report cited Western intelligence as its source for a warning about a possible Russian satellite launch.",
+        "zh": "德国媒体的一篇报道援引西方情报作为消息来源，对俄罗斯可能发射卫星发出警告。"
+      }
+    },
+    {
+      "id": "2026-11-24-satellite-threat",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "threat",
+      "meaning_zh": "威胁",
+      "example": "The report suggested the satellite could pose a threat to other satellites if launched.",
+      "cloze": "The report suggested the satellite could pose a ______ to other satellites if launched.",
+      "answer": "threat",
+      "accepted": [
+        "danger",
+        "risk"
+      ],
+      "hint_zh": "威胁",
+      "analysis_zh": "pose a threat to 是表示构成威胁的固定搭配，to 后接受威胁对象。risk 强调不利结果发生的可能性，danger 强调潜在伤害。could 和 if launched 共同限定为假设情形，不能据此认定发射已发生或危害已经出现。",
+      "why_zh": "pose a threat to 是表示构成威胁的固定搭配，to 后接受威胁对象。",
+      "imitation": {
+        "background_zh": "假设供应链风险分析",
+        "sentence_en": "A prolonged port closure could pose a threat to delivery schedules.",
+        "translation_zh": "港口长期关闭可能威胁交付进度。"
+      },
+      "context": {
+        "en": "The report suggested the satellite could pose a threat to other satellites if launched.",
+        "zh": "报道称，如果发射，该卫星可能对其他卫星构成威胁。"
+      }
+    },
+    {
+      "id": "2026-11-24-satellite-working",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "working",
+      "meaning_zh": "从事；推进",
+      "example": "Germany's chancellor said similar warnings had been issued before, while Russia denied working on such plans.",
+      "cloze": "Germany's chancellor said similar warnings had been issued before, while Russia denied ______ on such plans.",
+      "answer": "working",
+      "accepted": [],
+      "hint_zh": "从事；推进",
+      "analysis_zh": "deny doing something 是否认某行为的结构，后接动名词；work on a plan 表示着手或持续推进某项计划。若写 deny that，后面必须是完整从句。此处 while 并列不同方面的表态，既没有确认俄方说法，也没有把情报警告当作事实。",
+      "why_zh": "deny doing something 是否认某行为的结构，后接动名词；work on a plan 表示着手或持续推进某项计划。",
+      "imitation": {
+        "background_zh": "假设合同谈判",
+        "sentence_en": "The distributor denied working on a competing agreement.",
+        "translation_zh": "经销商否认正在推进一项竞争性的协议。"
+      },
+      "context": {
+        "en": "Germany's chancellor said similar warnings had been issued before, while Russia denied working on such plans.",
+        "zh": "德国总理表示此前已发出类似警告，而俄罗斯否认在推进此类计划。"
+      }
+    },
+    {
+      "id": "2026-11-24-hungary-bilateral",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "bilateral",
+      "meaning_zh": "双边的",
+      "example": "Hungary's prime minister and foreign minister were due to meet Ukraine's president on Tuesday in a sign of improving bilateral relations.",
+      "cloze": "Hungary's prime minister and foreign minister were due to meet Ukraine's president on Tuesday in a sign of improving ______ relations.",
+      "answer": "bilateral",
+      "accepted": [],
+      "hint_zh": "双边的",
+      "analysis_zh": "bilateral relations 专指两个国家或主体之间的关系，bi 表示二，与涉及多方的 multilateral 相对。be due to do 表示按计划即将发生的事项，不能用来证明会谈已经举行。in a sign of improving 表达对关系变化的观察，不保证争议已经解决。",
+      "why_zh": "bilateral relations 专指两个国家或主体之间的关系，bi 表示二，与涉及多方的 multilateral 相对。",
+      "imitation": {
+        "background_zh": "假设国际经贸合作",
+        "sentence_en": "The two governments held talks to strengthen bilateral trade relations.",
+        "translation_zh": "两国政府举行会谈以加强双边贸易关系。"
+      },
+      "context": {
+        "en": "Hungary's prime minister and foreign minister were due to meet Ukraine's president on Tuesday in a sign of improving bilateral relations.",
+        "zh": "匈牙利总理和外长原定周二会见乌克兰总统，这是两国双边关系改善的迹象。"
+      }
+    },
+    {
+      "id": "2026-11-24-hungary-deteriorated",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "deteriorated",
+      "meaning_zh": "恶化",
+      "example": "Relations had deteriorated sharply during Viktor Orban's time as Hungary's leader.",
+      "cloze": "Relations had ______ sharply during Viktor Orban's time as Hungary's leader.",
+      "answer": "deteriorated",
+      "accepted": [
+        "worsened",
+        "declined"
+      ],
+      "hint_zh": "恶化",
+      "analysis_zh": "relations deteriorate 是外交报道常用搭配，deteriorate 不及物，表示关系、状况或质量逐渐变差。had deteriorated 将恶化放在本次会谈安排之前。sharply 强调变化幅度，worsen 同样自然，decline 则在经济指标下降时更常见。",
+      "why_zh": "relations deteriorate 是外交报道常用搭配，deteriorate 不及物，表示关系、状况或质量逐渐变差。",
+      "imitation": {
+        "background_zh": "假设合作商管理",
+        "sentence_en": "Relations with the distributor deteriorated after repeated delivery disputes.",
+        "translation_zh": "在多次交付争议后，与经销商的关系恶化了。"
+      },
+      "context": {
+        "en": "Relations had deteriorated sharply during Viktor Orban's time as Hungary's leader.",
+        "zh": "在维克托·欧尔班担任匈牙利领导人期间，两国关系曾急剧恶化。"
+      }
+    },
+    {
+      "id": "2026-11-24-hungary-aligned",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "aligned",
+      "meaning_zh": "立场接近",
+      "example": "The former Hungarian leader had been closely aligned with Russia's president Vladimir Putin and had criticised Zelensky over the war.",
+      "cloze": "The former Hungarian leader had been closely ______ with Russia's president Vladimir Putin and had criticised Zelensky over the war.",
+      "answer": "aligned",
+      "accepted": [
+        "associated"
+      ],
+      "hint_zh": "立场接近",
+      "analysis_zh": "be aligned with somebody 表示在政策、目标或利益上与某人立场一致，closely 强化这种接近程度。associated with 更宽泛，只强调联系，不必意味着政策一致。had been 和 had criticised 回顾前任领导人时期的背景，帮助理解此次会谈的变化。",
+      "why_zh": "be aligned with somebody 表示在政策、目标或利益上与某人立场一致，closely 强化这种接近程度。",
+      "imitation": {
+        "background_zh": "假设项目目标协调",
+        "sentence_en": "The regional team is closely aligned with headquarters on the localisation strategy.",
+        "translation_zh": "区域团队与总部在本地化策略上高度一致。"
+      },
+      "context": {
+        "en": "The former Hungarian leader had been closely aligned with Russia's president Vladimir Putin and had criticised Zelensky over the war.",
+        "zh": "匈牙利前领导人此前与俄罗斯总统普京立场接近，并曾因战争问题批评泽连斯基。"
+      }
+    },
+    {
+      "id": "2026-11-24-espionage-sentenced",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "sentenced",
+      "meaning_zh": "被判处",
+      "example": "Chinese authorities said a government employee had been sentenced to death for espionage.",
+      "cloze": "Chinese authorities said a government employee had been ______ to death for espionage.",
+      "answer": "sentenced",
+      "accepted": [
+        "condemned"
+      ],
+      "hint_zh": "被判处",
+      "analysis_zh": "be sentenced to death 是法律报道中表示法院判处死刑的固定结构，to 后接刑罚。condemn somebody to death 也可成立，但在现代正式司法报道中 sentence 更常见。had been sentenced 为过去完成时被动语态，并不说明刑罚已经执行。",
+      "why_zh": "be sentenced to death 是法律报道中表示法院判处死刑的固定结构，to 后接刑罚。",
+      "imitation": {
+        "background_zh": "假设阅读司法报道",
+        "sentence_en": "The defendant was sentenced to five years in prison.",
+        "translation_zh": "被告被判处五年监禁。"
+      },
+      "context": {
+        "en": "Chinese authorities said a government employee had been sentenced to death for espionage.",
+        "zh": "中国有关部门称，一名政府工作人员因间谍罪被判处死刑。"
+      }
+    },
+    {
+      "id": "2026-11-24-espionage-disclose",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "disclose",
+      "meaning_zh": "披露",
+      "example": "The authorities identified the man only by his surname, Ma, and did not disclose which ministry employed him.",
+      "cloze": "The authorities identified the man only by his surname, Ma, and did not ______ which ministry employed him.",
+      "answer": "disclose",
+      "accepted": [
+        "reveal",
+        "specify",
+        "state",
+        "say"
+      ],
+      "hint_zh": "披露",
+      "analysis_zh": "disclose information 表示将此前未公开的信息披露出来，也可接 which 引导的名词性从句。reveal 更强调揭示，specify 强调明确细节。did not 后必须使用动词原形；which ministry employed him 是间接疑问句，采用陈述语序。",
+      "why_zh": "disclose information 表示将此前未公开的信息披露出来，也可接 which 引导的名词性从句。",
+      "imitation": {
+        "background_zh": "假设阅读供应商公告",
+        "sentence_en": "The manufacturer did not disclose which facility would be closed.",
+        "translation_zh": "制造商没有披露哪座工厂将关闭。"
+      },
+      "context": {
+        "en": "The authorities identified the man only by his surname, Ma, and did not disclose which ministry employed him.",
+        "zh": "有关部门仅公布该男子姓马，未披露其任职的具体部委。"
+      }
+    },
+    {
+      "id": "2026-11-24-espionage-exchange",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "exchange",
+      "meaning_zh": "作为交换",
+      "example": "He was alleged to have provided information in exchange for more than one million yuan, but officials did not say whether the punishment had been carried out.",
+      "cloze": "He was alleged to have provided information in ______ for more than one million yuan, but officials did not say whether the punishment had been carried out.",
+      "answer": "exchange",
+      "accepted": [
+        "return"
+      ],
+      "hint_zh": "作为交换",
+      "analysis_zh": "in exchange for 和 in return for 均表示以某事物作为交换或回报，for 后接交换所得。be alleged to have done 使用完成式不定式，将被指称的行为置于报道之前。whether 引出尚未确定的问题，不能推断刑罚已经执行。",
+      "why_zh": "in exchange for 和 in return for 均表示以某事物作为交换或回报，for 后接交换所得。",
+      "imitation": {
+        "background_zh": "假设商务谈判",
+        "sentence_en": "The partner offered a volume commitment in exchange for a lower unit price.",
+        "translation_zh": "合作方提出以采购量承诺换取更低的单价。"
+      },
+      "context": {
+        "en": "He was alleged to have provided information in exchange for more than one million yuan, but officials did not say whether the punishment had been carried out.",
+        "zh": "据称他以提供信息换取超过一百万元人民币，但有关部门未说明刑罚是否已经执行。"
+      }
+    },
+    {
+      "id": "2026-11-24-brazil-approved",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "approved",
+      "meaning_zh": "批准",
+      "example": "Brazil's lower house approved spending reductions after the Senate backed the measures the previous week.",
+      "cloze": "Brazil's lower house ______ spending reductions after the Senate backed the measures the previous week.",
+      "answer": "approved",
+      "accepted": [
+        "endorsed",
+        "passed"
+      ],
+      "hint_zh": "批准",
+      "analysis_zh": "approve spending reductions 表示正式同意削减支出，议会语境下 pass a measure 也可表示通过法案，endorse 更侧重表态支持。after 引出先发生的参议院行动。过去式 approved 描述已经发生的投票，不表示预计节省的资金已经实现。",
+      "why_zh": "approve spending reductions 表示正式同意削减支出，议会语境下 pass a measure 也可表示通过法案，endorse 更侧重表态支持。",
+      "imitation": {
+        "background_zh": "假设预算审批",
+        "sentence_en": "The steering committee approved the revised capital expenditure plan.",
+        "translation_zh": "指导委员会批准了修订后的资本支出计划。"
+      },
+      "context": {
+        "en": "Brazil's lower house approved spending reductions after the Senate backed the measures the previous week.",
+        "zh": "巴西参议院前一周支持相关措施后，下议院批准了削减支出的方案。"
+      }
+    },
+    {
+      "id": "2026-11-24-brazil-curb",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "curb",
+      "meaning_zh": "遏制",
+      "example": "The measures are expected to save up to 60bn reais in 2027 as the president faces pressure to curb the budget deficit.",
+      "cloze": "The measures are expected to save up to 60bn reais in 2027 as the president faces pressure to ______ the budget deficit.",
+      "answer": "curb",
+      "accepted": [
+        "reduce",
+        "contain",
+        "tame",
+        "cut",
+        "limit",
+        "control"
+      ],
+      "hint_zh": "遏制",
+      "analysis_zh": "curb the budget deficit 表示约束或减轻财政赤字，curb 常用于控制不利趋势，如 curb inflation。reduce 强调减少实际规模，contain 偏向防止继续扩大。up to 表示上限，are expected to 表示预测，因此600亿雷亚尔不能当作已实现的节省额。",
+      "why_zh": "curb the budget deficit 表示约束或减轻财政赤字，curb 常用于控制不利趋势，如 curb inflation。",
+      "imitation": {
+        "background_zh": "假设制造成本改善",
+        "sentence_en": "The factory introduced stricter material controls to curb waste.",
+        "translation_zh": "工厂实施更严格的物料管控，以遏制浪费。"
+      },
+      "context": {
+        "en": "The measures are expected to save up to 60bn reais in 2027 as the president faces pressure to curb the budget deficit.",
+        "zh": "总统面临遏制财政赤字的压力，预计这些措施将在2027年节省最多600亿雷亚尔。"
+      }
+    },
+    {
+      "id": "2026-11-24-brazil-scepticism",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "scepticism",
+      "meaning_zh": "怀疑",
+      "example": "The real's slide to a nineteen-month intraday low reflected investors' scepticism about the fiscal plans.",
+      "cloze": "The real's slide to a nineteen-month intraday low reflected investors' ______ about the fiscal plans.",
+      "answer": "scepticism",
+      "accepted": [
+        "skepticism",
+        "doubts",
+        "concerns",
+        "misgivings"
+      ],
+      "hint_zh": "怀疑",
+      "analysis_zh": "scepticism about something 表示对某项说法、计划或结果持怀疑态度，英式拼写 scepticism 对应美式 skepticism。doubts 为复数名词，也可接 about。reflected 在此描述报道对市场反应的解读，不能单凭汇率走势断定所有投资者都持相同观点。",
+      "why_zh": "scepticism about something 表示对某项说法、计划或结果持怀疑态度，英式拼写 scepticism 对应美式 skepticism。",
+      "imitation": {
+        "background_zh": "假设讨论产能方案",
+        "sentence_en": "The proposed timeline met with scepticism from the engineering team.",
+        "translation_zh": "拟议的时间表受到工程团队的质疑。"
+      },
+      "context": {
+        "en": "The real's slide to a nineteen-month intraday low reflected investors' scepticism about the fiscal plans.",
+        "zh": "雷亚尔跌至19个月来的盘中低点，反映出投资者对财政计划的怀疑。"
+      }
+    },
+    {
+      "id": "2026-11-24-australia-support",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "support",
+      "meaning_zh": "支持",
+      "example": "Australian lawmakers said parliament was set to pass an online-safety bill after the Greens agreed to support it.",
+      "cloze": "Australian lawmakers said parliament was set to pass an online-safety bill after the Greens agreed to ______ it.",
+      "answer": "support",
+      "accepted": [
+        "back",
+        "endorse"
+      ],
+      "hint_zh": "支持",
+      "analysis_zh": "agree to do something 表示同意采取行动，to 后接动词原形。support a bill 指支持法案，back 是新闻报道中常见的简洁同义词，endorse 更突出公开或正式认可。was set to 保留预期时间，不能将法案写成已经通过并生效。",
+      "why_zh": "agree to do something 表示同意采取行动，to 后接动词原形。",
+      "imitation": {
+        "background_zh": "假设项目决策会议",
+        "sentence_en": "The operations team agreed to support the revised launch plan.",
+        "translation_zh": "运营团队同意支持修订后的上市计划。"
+      },
+      "context": {
+        "en": "Australian lawmakers said parliament was set to pass an online-safety bill after the Greens agreed to support it.",
+        "zh": "澳大利亚议员称，在绿党同意支持该法案后，议会将通过一项网络安全法案。"
+      }
+    },
+    {
+      "id": "2026-11-24-australia-equivalent",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "equivalent",
+      "meaning_zh": "相当于",
+      "example": "Platforms that failed to protect users from harmful material could face fines equivalent to 5% of their global revenue.",
+      "cloze": "Platforms that failed to protect users from harmful material could face fines ______ to 5% of their global revenue.",
+      "answer": "equivalent",
+      "accepted": [
+        "equal",
+        "amounting"
+      ],
+      "hint_zh": "相当于",
+      "analysis_zh": "equivalent to a percentage 表示数值相当于某个比例，在此修饰 fines。equal to 同样成立，amounting to 则是现在分词短语。global revenue 指全球营业收入，区别于利润；could face 明确这是可能的法律后果，不能当作已实施的罚款。",
+      "why_zh": "equivalent to a percentage 表示数值相当于某个比例，在此修饰 fines。",
+      "imitation": {
+        "background_zh": "假设合同违约条款",
+        "sentence_en": "The agreement specifies a penalty equivalent to 2% of the order value.",
+        "translation_zh": "协议规定了相当于订单金额2%的违约金。"
+      },
+      "context": {
+        "en": "Platforms that failed to protect users from harmful material could face fines equivalent to 5% of their global revenue.",
+        "zh": "未能保护用户免受有害内容侵害的平台可能面临相当于其全球营收5%的罚款。"
+      }
+    },
+    {
+      "id": "2026-11-24-australia-safeguard",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "safeguard",
+      "meaning_zh": "保护",
+      "example": "The European Union was considering a similar penalty of 6% for companies that failed to safeguard children from harm.",
+      "cloze": "The European Union was considering a similar penalty of 6% for companies that failed to ______ children from harm.",
+      "answer": "safeguard",
+      "accepted": [
+        "protect",
+        "shield"
+      ],
+      "hint_zh": "保护",
+      "analysis_zh": "safeguard somebody from harm 表示采取措施保护某人免受伤害，常用于儿童、数据和权益保护。protect 适用范围更广，shield 更强调隔绝某种威胁。was considering 是过去进行时，说明政策仍在讨论阶段，尚不能确定其最终内容。",
+      "why_zh": "safeguard somebody from harm 表示采取措施保护某人免受伤害，常用于儿童、数据和权益保护。",
+      "imitation": {
+        "background_zh": "假设设计学习网站",
+        "sentence_en": "The platform introduced measures to safeguard users from unauthorised access.",
+        "translation_zh": "该平台推出措施，保护用户免受未经授权的访问。"
+      },
+      "context": {
+        "en": "The European Union was considering a similar penalty of 6% for companies that failed to safeguard children from harm.",
+        "zh": "欧盟正在考虑对未能保护儿童免受伤害的公司处以类似的6%罚款。"
+      }
+    },
+    {
+      "id": "2026-11-24-batmobile-auction",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "auction",
+      "meaning_zh": "拍卖会",
+      "example": "A custom-built Batmobile failed to sell at a Los Angeles auction.",
+      "cloze": "A custom-built Batmobile failed to sell at a Los Angeles ______.",
+      "answer": "auction",
+      "accepted": [],
+      "hint_zh": "拍卖会",
+      "analysis_zh": "sell at an auction 表示通过公开竞价方式出售，auction 是可数名词，此处用 a Los Angeles auction 限定地点。fail to sell 意为未能成交，与 sell for a price 表示实际成交价不同，也不能据此推断车辆以后无法售出。",
+      "why_zh": "sell at an auction 表示通过公开竞价方式出售，auction 是可数名词，此处用 a Los Angeles auction 限定地点。",
+      "imitation": {
+        "background_zh": "假设旅行时参观艺术品交易",
+        "sentence_en": "The painting sold at an auction in London.",
+        "translation_zh": "这幅画在伦敦的一场拍卖会上售出。"
+      },
+      "context": {
+        "en": "A custom-built Batmobile failed to sell at a Los Angeles auction.",
+        "zh": "一辆定制蝙蝠车在洛杉矶的一场拍卖会上未能售出。"
+      }
+    },
+    {
+      "id": "2026-11-24-batmobile-stalled",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "stalled",
+      "meaning_zh": "停滞",
+      "example": "The auction house had hoped for $7m, but bidding stalled at $3.25m.",
+      "cloze": "The auction house had hoped for $7m, but bidding ______ at $3.25m.",
+      "answer": "stalled",
+      "accepted": [
+        "stopped",
+        "ended",
+        "halted"
+      ],
+      "hint_zh": "停滞",
+      "analysis_zh": "bidding stalls at a price 表示竞价推进到某个金额便停住，stall 强调进展受阻，与 end 仅描述结束不同。had hoped 将预期放在竞价结果之前。at 后接停滞的价格水平，该金额是最高竞价，不能写成已经成交的价格。",
+      "why_zh": "bidding stalls at a price 表示竞价推进到某个金额便停住，stall 强调进展受阻，与 end 仅描述结束不同。",
+      "imitation": {
+        "background_zh": "假设加工费谈判",
+        "sentence_en": "Negotiations stalled at a price that neither side was willing to accept.",
+        "translation_zh": "谈判在双方均不愿接受的价格上陷入停滞。"
+      },
+      "context": {
+        "en": "The auction house had hoped for $7m, but bidding stalled at $3.25m.",
+        "zh": "拍卖行原本希望获得700万美元，但竞价在325万美元时停滞。"
+      }
+    },
+    {
+      "id": "2026-11-24-batmobile-deterred",
+      "date": "2026-11-24",
+      "type": "word",
+      "expression": "deterred",
+      "meaning_zh": "使却步",
+      "example": "The vehicle was one of three built for the 1992 film Batman Returns, and its lack of road legality may have deterred potential buyers.",
+      "cloze": "The vehicle was one of three built for the 1992 film Batman Returns, and its lack of road legality may have ______ potential buyers.",
+      "answer": "deterred",
+      "accepted": [
+        "discouraged"
+      ],
+      "hint_zh": "使却步",
+      "analysis_zh": "deter potential buyers 表示某种障碍使潜在买家打消购买念头，常见扩展为 deter somebody from doing something。discourage 意思接近，但不一定涉及明显阻碍。may have deterred 是对过去可能原因的推测，未断定不能上路就是流拍的真实原因。",
+      "why_zh": "deter potential buyers 表示某种障碍使潜在买家打消购买念头，常见扩展为 deter somebody from doing something。",
+      "imitation": {
+        "background_zh": "假设分析海外市场准入",
+        "sentence_en": "High maintenance costs may deter potential customers from adopting the equipment.",
+        "translation_zh": "高昂的维护成本可能使潜在客户不愿采用该设备。"
+      },
+      "context": {
+        "en": "The vehicle was one of three built for the 1992 film Batman Returns, and its lack of road legality may have deterred potential buyers.",
+        "zh": "该车是为1992年电影《蝙蝠侠归来》打造的三辆车之一，无法合法上路可能使潜在买家却步。"
+      }
     }
   ],
   "passages": [
@@ -7728,6 +8266,48 @@
       "date": "2026-11-25",
       "title": "Senegal recovers continental football title",
       "body": "The Court of Arbitration for Sport {{2026-11-25-football-restored}} Senegal's status as champions of the 2025 Africa Cup of Nations. Senegal had won the final against Morocco in January, but the African football confederation later {{2026-11-25-football-transferred}} the title to Morocco. The dispute followed the Senegalese players' decision to walk off the pitch after a controversial penalty was {{2026-11-25-football-awarded}}."
+    },
+    {
+      "id": "2026-11-24-nvidia",
+      "date": "2026-11-24",
+      "title": "Nvidia chief returns to the company",
+      "body": "Jensen Huang was {{2026-11-24-nvidia-reinstated}} as Nvidia's chief executive less than a week after the board had ruled out his return. Donald Trump, who holds Nvidia shares, took {{2026-11-24-nvidia-credit}} for the board's reversal. The stock jumped 31%, adding nearly $1trn to Nvidia's market {{2026-11-24-nvidia-capitalisation}} before slipping in Tuesday's pre-market session."
+    },
+    {
+      "id": "2026-11-24-satellite",
+      "date": "2026-11-24",
+      "title": "German report raises concerns about Russia in space",
+      "body": "A German media report {{2026-11-24-satellite-cited}} Western intelligence as its source for a warning about a possible Russian satellite launch. The report suggested the satellite could pose a {{2026-11-24-satellite-threat}} to other satellites if launched. Germany's chancellor said similar warnings had been issued before, while Russia denied {{2026-11-24-satellite-working}} on such plans."
+    },
+    {
+      "id": "2026-11-24-hungary",
+      "date": "2026-11-24",
+      "title": "Hungarian leaders arrange talks with Zelensky",
+      "body": "Hungary's prime minister and foreign minister were due to meet Ukraine's president on Tuesday in a sign of improving {{2026-11-24-hungary-bilateral}} relations. Relations had {{2026-11-24-hungary-deteriorated}} sharply during Viktor Orban's time as Hungary's leader. The former Hungarian leader had been closely {{2026-11-24-hungary-aligned}} with Russia's president Vladimir Putin and had criticised Zelensky over the war."
+    },
+    {
+      "id": "2026-11-24-espionage",
+      "date": "2026-11-24",
+      "title": "Chinese official faces death sentence in spying case",
+      "body": "Chinese authorities said a government employee had been {{2026-11-24-espionage-sentenced}} to death for espionage. The authorities identified the man only by his surname, Ma, and did not {{2026-11-24-espionage-disclose}} which ministry employed him. He was alleged to have provided information in {{2026-11-24-espionage-exchange}} for more than one million yuan, but officials did not say whether the punishment had been carried out."
+    },
+    {
+      "id": "2026-11-24-brazil",
+      "date": "2026-11-24",
+      "title": "Brazil's lawmakers approve fiscal package",
+      "body": "Brazil's lower house {{2026-11-24-brazil-approved}} spending reductions after the Senate backed the measures the previous week. The measures are expected to save up to 60bn reais in 2027 as the president faces pressure to {{2026-11-24-brazil-curb}} the budget deficit. The real's slide to a nineteen-month intraday low reflected investors' {{2026-11-24-brazil-scepticism}} about the fiscal plans."
+    },
+    {
+      "id": "2026-11-24-australia",
+      "date": "2026-11-24",
+      "title": "Australia moves towards platform safety law",
+      "body": "Australian lawmakers said parliament was set to pass an online-safety bill after the Greens agreed to {{2026-11-24-australia-support}} it. Platforms that failed to protect users from harmful material could face fines {{2026-11-24-australia-equivalent}} to 5% of their global revenue. The European Union was considering a similar penalty of 6% for companies that failed to {{2026-11-24-australia-safeguard}} children from harm."
+    },
+    {
+      "id": "2026-11-24-batmobile",
+      "date": "2026-11-24",
+      "title": "Movie vehicle fails to find a buyer",
+      "body": "A custom-built Batmobile failed to sell at a Los Angeles {{2026-11-24-batmobile-auction}}. The auction house had hoped for $7m, but bidding {{2026-11-24-batmobile-stalled}} at $3.25m. The vehicle was one of three built for the 1992 film Batman Returns, and its lack of road legality may have {{2026-11-24-batmobile-deterred}} potential buyers."
     }
   ]
 }
