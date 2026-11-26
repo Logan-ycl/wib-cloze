@@ -6675,6 +6675,533 @@
         "en": "His family later sold its stake to French",
         "zh": "他的家族后来于2011年将股份出售给法国奢侈品集团路威酩轩。"
       }
+    },
+    {
+      "id": "2026-11-25-markets-retreated",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "retreated",
+      "meaning_zh": "回落",
+      "example": "US equity indices retreated on Tuesday after rising sharply in the previous session.",
+      "cloze": "US equity indices ______ on Tuesday after rising sharply in the previous session.",
+      "answer": "retreated",
+      "accepted": [
+        "fell",
+        "declined",
+        "slipped",
+        "dropped"
+      ],
+      "hint_zh": "回落",
+      "analysis_zh": "retreat 在金融报道中是不及物动词，表示价格从较高水平退回，常与 from recent highs 连用。on Tuesday 限定具体交易日，因此使用过去式。fall 也能表达下跌，但 retreat 更强调此前涨幅被部分收回，并不暗示市场已经进入熊市。",
+      "why_zh": "retreat 在金融报道中是不及物动词，表示价格从较高水平退回，常与 from recent highs 连用。",
+      "imitation": {
+        "background_zh": "假设观察科技股走势",
+        "sentence_en": "The index retreated from its record high after the earnings announcement.",
+        "translation_zh": "财报公布后，该指数从历史高位回落。"
+      },
+      "context": {
+        "en": "US equity indices retreated on Tuesday after rising sharply in the previous session.",
+        "zh": "美国股指在前一交易日大涨后于周二回落。"
+      }
+    },
+    {
+      "id": "2026-11-25-markets-surging",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "surging",
+      "meaning_zh": "飙升",
+      "example": "Nvidia shares fell nearly 6% after surging by 31% a day earlier.",
+      "cloze": "Nvidia shares fell nearly 6% after ______ by 31% a day earlier.",
+      "answer": "surging",
+      "accepted": [
+        "jumping",
+        "rising",
+        "climbing",
+        "soaring"
+      ],
+      "hint_zh": "飙升",
+      "analysis_zh": "surge 指短时间内幅度显著的上升，后接 by 表示变动幅度，接 to 则表示达到的新水平。after 是介词，后接动名词 surging，隐含主语为 Nvidia shares；若用完整从句才可写 after they surged。rise 语气较中性，soar 同样突出大幅上涨。",
+      "why_zh": "surge 指短时间内幅度显著的上升，后接 by 表示变动幅度，接 to 则表示达到的新水平。",
+      "imitation": {
+        "background_zh": "假设观察新产品上市",
+        "sentence_en": "Orders stabilised after surging by 40% during the launch week.",
+        "translation_zh": "上市首周订单量激增40%后趋于稳定。"
+      },
+      "context": {
+        "en": "Nvidia shares fell nearly 6% after surging by 31% a day earlier.",
+        "zh": "英伟达股价前一天飙升31%，随后下跌近6%。"
+      }
+    },
+    {
+      "id": "2026-11-25-markets-offering",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "offering",
+      "meaning_zh": "发行",
+      "example": "Anthropic's stock also traded below its initial public offering price less than a week after listing.",
+      "cloze": "Anthropic's stock also traded below its initial public ______ price less than a week after listing.",
+      "answer": "offering",
+      "accepted": [],
+      "hint_zh": "发行",
+      "analysis_zh": "initial public offering 是首次公开募股的固定术语，简称 IPO；offering price 指发行时确定的价格，区别于上市后形成的 market price。below 后接价格水平，less than a week after listing 说明时间间隔。不能用 offer 替换 offering，因为完整的金融术语固定使用后者。",
+      "why_zh": "initial public offering 是首次公开募股的固定术语，简称 IPO；offering price 指发行时确定的价格，区别于上市后形成的 market price。",
+      "imitation": {
+        "background_zh": "假设研究一家上市公司",
+        "sentence_en": "The shares closed well above their initial public offering price.",
+        "translation_zh": "该股收盘价远高于首次公开发行价。"
+      },
+      "context": {
+        "en": "Anthropic's stock also traded below its initial public offering price less than a week after listing.",
+        "zh": "上市不足一周，Anthropic的股价也跌破首次公开发行价。"
+      }
+    },
+    {
+      "id": "2026-11-25-huang-violating",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "violating",
+      "meaning_zh": "违反",
+      "example": "Nvidia's chief executive apologised to employees for violating the company's code of conduct.",
+      "cloze": "Nvidia's chief executive apologised to employees for ______ the company's code of conduct.",
+      "answer": "violating",
+      "accepted": [
+        "breaching",
+        "breaking",
+        "contravening"
+      ],
+      "hint_zh": "违反",
+      "analysis_zh": "apologise to somebody for doing something 指向某人就某行为道歉，for 后接动名词。violate a code of conduct 强调违反正式规范，breach 常用于合同或规则，break 更口语化。道歉是当事人的行为，句子没有自行判断违规的具体性质。",
+      "why_zh": "apologise to somebody for doing something 指向某人就某行为道歉，for 后接动名词。",
+      "imitation": {
+        "background_zh": "假设供应商违反质量协议",
+        "sentence_en": "The supplier apologised for violating the agreed inspection procedure.",
+        "translation_zh": "供应商因违反约定的检验程序而道歉。"
+      },
+      "context": {
+        "en": "Nvidia's chief executive apologised to employees for violating the company's code of conduct.",
+        "zh": "英伟达首席执行官因违反公司行为准则向员工道歉。"
+      }
+    },
+    {
+      "id": "2026-11-25-huang-admitted",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "admitted",
+      "meaning_zh": "承认",
+      "example": "Jensen Huang admitted making serious mistakes and said he was attending therapy every day.",
+      "cloze": "Jensen Huang ______ making serious mistakes and said he was attending therapy every day.",
+      "answer": "admitted",
+      "accepted": [
+        "acknowledged"
+      ],
+      "hint_zh": "承认",
+      "analysis_zh": "admit doing something 可直接接动名词，表示承认曾做过某事，通常涉及不利事实。acknowledge 也可接动名词，但语气较中性。这里使用过去式 admitted，后半句 said 保留对治疗情况的当事人归因，不能将其扩大为独立医学结论。",
+      "why_zh": "admit doing something 可直接接动名词，表示承认曾做过某事，通常涉及不利事实。",
+      "imitation": {
+        "background_zh": "假设项目复盘",
+        "sentence_en": "The project lead admitted underestimating the validation workload.",
+        "translation_zh": "项目负责人承认低估了验证工作量。"
+      },
+      "context": {
+        "en": "Jensen Huang admitted making serious mistakes and said he was attending therapy every day.",
+        "zh": "黄仁勋承认犯下严重错误，并称自己每天接受心理治疗。"
+      }
+    },
+    {
+      "id": "2026-11-25-huang-succession",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "succession",
+      "meaning_zh": "接班",
+      "example": "He denied that political pressure had secured his return and dismissed the idea of succession planning.",
+      "cloze": "He denied that political pressure had secured his return and dismissed the idea of ______ planning.",
+      "answer": "succession",
+      "accepted": [],
+      "hint_zh": "接班",
+      "analysis_zh": "succession planning 是公司治理中的固定名词搭配，指预先识别并培养关键岗位继任者。succession 在此为不可数抽象概念，用作名词定语。dismiss the idea of 表示不认可某个理念，区别于 abandon a plan，后者暗示已有具体计划被放弃。",
+      "why_zh": "succession planning 是公司治理中的固定名词搭配，指预先识别并培养关键岗位继任者。",
+      "imitation": {
+        "background_zh": "假设团队人员管理",
+        "sentence_en": "Succession planning helps a team prepare for the departure of key managers.",
+        "translation_zh": "接班规划有助于团队为关键管理人员离职做好准备。"
+      },
+      "context": {
+        "en": "He denied that political pressure had secured his return and dismissed the idea of succession planning.",
+        "zh": "他否认政治压力促成其复职，并排斥接班规划的理念。"
+      }
+    },
+    {
+      "id": "2026-11-25-huawei-guilty",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "guilty",
+      "meaning_zh": "有罪的",
+      "example": "A US federal jury found Huawei guilty of ten criminal charges.",
+      "cloze": "A US federal jury found Huawei ______ of ten criminal charges.",
+      "answer": "guilty",
+      "accepted": [],
+      "hint_zh": "有罪的",
+      "analysis_zh": "find somebody guilty of an offence 属于司法判决常见结构，guilty 是宾语补足语，of 引出罪名。find 在此表示经审理作出认定，区别于发现物品的 find。convicted 通常用于 be convicted of，直接填入本句不如 guilty 自然。",
+      "why_zh": "find somebody guilty of an offence 属于司法判决常见结构，guilty 是宾语补足语，of 引出罪名。",
+      "imitation": {
+        "background_zh": "假设阅读法律新闻",
+        "sentence_en": "The jury found the defendant guilty of fraud.",
+        "translation_zh": "陪审团认定被告犯有欺诈罪。"
+      },
+      "context": {
+        "en": "A US federal jury found Huawei guilty of ten criminal charges.",
+        "zh": "美国联邦陪审团认定华为涉及的十项刑事指控成立。"
+      }
+    },
+    {
+      "id": "2026-11-25-huawei-evasion",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "evasion",
+      "meaning_zh": "规避",
+      "example": "The case included allegations of trade-secret theft and evasion of sanctions against Iran.",
+      "cloze": "The case included allegations of trade-secret theft and ______ of sanctions against Iran.",
+      "answer": "evasion",
+      "accepted": [
+        "circumvention"
+      ],
+      "hint_zh": "规避",
+      "analysis_zh": "evasion of sanctions 是名词结构，表示逃避或规避制裁限制，与 tax evasion 同属常见法律财经搭配。circumvention 强调绕过规则的手段。allegations of 统领并列的 theft 和 evasion，保留指控的法律语境，不能据此推断每项行为的具体细节。",
+      "why_zh": "evasion of sanctions 是名词结构，表示逃避或规避制裁限制，与 tax evasion 同属常见法律财经搭配。",
+      "imitation": {
+        "background_zh": "假设合规培训",
+        "sentence_en": "The compliance team reviewed transactions for possible evasion of export restrictions.",
+        "translation_zh": "合规团队审查交易是否可能规避出口限制。"
+      },
+      "context": {
+        "en": "The case included allegations of trade-secret theft and evasion of sanctions against Iran.",
+        "zh": "该案涉及窃取商业秘密和规避针对伊朗的制裁等指控。"
+      }
+    },
+    {
+      "id": "2026-11-25-huawei-acquitted",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "acquitted",
+      "meaning_zh": "获判无罪",
+      "example": "The company denied wrongdoing and was acquitted of racketeering and obstruction of justice.",
+      "cloze": "The company denied wrongdoing and was ______ of racketeering and obstruction of justice.",
+      "answer": "acquitted",
+      "accepted": [
+        "cleared"
+      ],
+      "hint_zh": "获判无罪",
+      "analysis_zh": "be acquitted of a charge 表示法院或陪审团裁定该项指控不成立，常与 be convicted of 对照。acquitted 是过去分词，和 was 构成被动语态。cleared of 更宽泛，可能包括调查后解除嫌疑；此处陪审团裁决使 acquitted 尤为精准。",
+      "why_zh": "be acquitted of a charge 表示法院或陪审团裁定该项指控不成立，常与 be convicted of 对照。",
+      "imitation": {
+        "background_zh": "假设阅读商业诉讼报道",
+        "sentence_en": "The executive was acquitted of the criminal charge after a lengthy trial.",
+        "translation_zh": "经过漫长审理，该高管被判该项刑事指控无罪。"
+      },
+      "context": {
+        "en": "The company denied wrongdoing and was acquitted of racketeering and obstruction of justice.",
+        "zh": "该公司否认违法行为，并就敲诈勒索及妨碍司法公正的指控获判无罪。"
+      }
+    },
+    {
+      "id": "2026-11-25-china-into",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "into",
+      "meaning_zh": "对……展开调查",
+      "example": "China opened an investigation into Chen Jining, Shanghai's Communist Party secretary.",
+      "cloze": "China opened an investigation ______ Chen Jining, Shanghai's Communist Party secretary.",
+      "answer": "into",
+      "accepted": [],
+      "hint_zh": "对……展开调查",
+      "analysis_zh": "open an investigation into somebody or something 是正式报道的常见搭配，into 引出被调查的人或事项，强调深入审查。investigation of 也可构成名词短语，但 open an investigation into 在此更加固定自然。启动调查仅表示程序开始，尚无定罪结论。",
+      "why_zh": "open an investigation into somebody or something 是正式报道的常见搭配，into 引出被调查的人或事项，强调深入审查。",
+      "imitation": {
+        "background_zh": "假设工厂质量异常",
+        "sentence_en": "The quality team opened an investigation into the recurring packaging defect.",
+        "translation_zh": "质量团队对反复出现的包装缺陷展开调查。"
+      },
+      "context": {
+        "en": "China opened an investigation into Chen Jining, Shanghai's Communist Party secretary.",
+        "zh": "中国对上海市委书记陈吉宁展开调查。"
+      }
+    },
+    {
+      "id": "2026-11-25-china-suspected",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "suspected",
+      "meaning_zh": "涉嫌",
+      "example": "The anti-corruption body said he was suspected of serious breaches of party discipline and the law.",
+      "cloze": "The anti-corruption body said he was ______ of serious breaches of party discipline and the law.",
+      "answer": "suspected",
+      "accepted": [
+        "accused"
+      ],
+      "hint_zh": "涉嫌",
+      "analysis_zh": "be suspected of doing something 或 of an offence 表示被怀疑涉及某行为；过去分词 suspected 与 was 构成被动语态。accused of 也能构成语法完整句子，但语气更接近受到正式指控；said 明确保留消息归因，不能把嫌疑写成已经证实的事实。",
+      "why_zh": "be suspected of doing something 或 of an offence 表示被怀疑涉及某行为；过去分词 suspected 与 was 构成被动语态。",
+      "imitation": {
+        "background_zh": "假设内部审计",
+        "sentence_en": "A contractor was suspected of submitting duplicate invoices.",
+        "translation_zh": "一家承包商涉嫌重复提交发票。"
+      },
+      "context": {
+        "en": "The anti-corruption body said he was suspected of serious breaches of party discipline and the law.",
+        "zh": "反腐机构称他涉嫌严重违反党纪和法律。"
+      }
+    },
+    {
+      "id": "2026-11-25-china-targeted",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "targeted",
+      "meaning_zh": "被列为调查对象",
+      "example": "The inquiry adds another name to the list of Politburo members targeted by Xi Jinping's anti-corruption campaign.",
+      "cloze": "The inquiry adds another name to the list of Politburo members ______ by Xi Jinping's anti-corruption campaign.",
+      "answer": "targeted",
+      "accepted": [
+        "investigated"
+      ],
+      "hint_zh": "被列为调查对象",
+      "analysis_zh": "members targeted by the campaign 是过去分词短语作后置定语，等同于 members who were targeted by the campaign。target 强调行动将某人或某群体作为对象；investigate 更具体地指调查取证。该句只说明调查涉及的对象，不能推断最终处分。",
+      "why_zh": "members targeted by the campaign 是过去分词短语作后置定语，等同于 members who were targeted by the campaign。",
+      "imitation": {
+        "background_zh": "假设审计风险筛选",
+        "sentence_en": "The suppliers targeted by the review accounted for most of the procurement budget.",
+        "translation_zh": "此次审查涉及的供应商占采购预算的大部分。"
+      },
+      "context": {
+        "en": "The inquiry adds another name to the list of Politburo members targeted by Xi Jinping's anti-corruption campaign.",
+        "zh": "这项调查使又一位政治局成员成为习近平反腐行动的对象。"
+      }
+    },
+    {
+      "id": "2026-11-25-israel-secured",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "secured",
+      "meaning_zh": "获得",
+      "example": "According to Reuters, Gadi Eisenkot secured the backing of Yisrael Beiteinu in his efforts to form a government.",
+      "cloze": "According to Reuters, Gadi Eisenkot ______ the backing of Yisrael Beiteinu in his efforts to form a government.",
+      "answer": "secured",
+      "accepted": [
+        "obtained",
+        "gained",
+        "won"
+      ],
+      "hint_zh": "获得",
+      "analysis_zh": "secure the backing of somebody 表示成功取得某人的支持，secure 强调努力后获得所需资源，常见于 secure funding 或 secure approval。backing 在此为不可数名词。According to Reuters 明确来源，获得一个政党的支持并不等于已经组成政府。",
+      "why_zh": "secure the backing of somebody 表示成功取得某人的支持，secure 强调努力后获得所需资源，常见于 secure funding 或 secure approval。",
+      "imitation": {
+        "background_zh": "假设推动海外项目",
+        "sentence_en": "The project manager secured the backing of the finance department before requesting approval.",
+        "translation_zh": "项目经理在申请批准前获得了财务部门的支持。"
+      },
+      "context": {
+        "en": "According to Reuters, Gadi Eisenkot secured the backing of Yisrael Beiteinu in his efforts to form a government.",
+        "zh": "据路透社报道，加迪·艾森科特在组建政府的努力中获得了以色列我们的家园党的支持。"
+      }
+    },
+    {
+      "id": "2026-11-25-israel-coalition",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "coalition",
+      "meaning_zh": "联合政府",
+      "example": "The move was unexpected because the party had previously refused to join a coalition that included Arab parties.",
+      "cloze": "The move was unexpected because the party had previously refused to join a ______ that included Arab parties.",
+      "answer": "coalition",
+      "accepted": [
+        "government"
+      ],
+      "hint_zh": "联合政府",
+      "analysis_zh": "join a coalition 指加入由多个政治团体组成的执政联盟，coalition 强调不同政党为共同执政而合作。had previously refused 是过去完成时，交代先于本次表态的立场；that included 引出联盟的组成条件。government 也可成立，但缺少多党合作的具体含义。",
+      "why_zh": "join a coalition 指加入由多个政治团体组成的执政联盟，coalition 强调不同政党为共同执政而合作。",
+      "imitation": {
+        "background_zh": "假设行业协会联合行动",
+        "sentence_en": "Several industry groups formed a coalition to advocate for clearer import rules.",
+        "translation_zh": "几个行业组织结成联盟，推动更明确的进口规则。"
+      },
+      "context": {
+        "en": "The move was unexpected because the party had previously refused to join a coalition that included Arab parties.",
+        "zh": "这一举动出人意料，因为该党此前拒绝加入包含阿拉伯政党的联合政府。"
+      }
+    },
+    {
+      "id": "2026-11-25-israel-short",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "short",
+      "meaning_zh": "缺少",
+      "example": "Eisenkot nevertheless remained thirteen seats short of a parliamentary majority.",
+      "cloze": "Eisenkot nevertheless remained thirteen seats ______ of a parliamentary majority.",
+      "answer": "short",
+      "accepted": [],
+      "hint_zh": "缺少",
+      "analysis_zh": "be or remain a number short of something 表示距离目标还差某个数量，数量放在 short 前面，of 引出目标。这里 thirteen seats 是差额，并非已经拥有的席位。nevertheless 承接获得支持的好消息，强调组阁所需多数仍未达到。",
+      "why_zh": "be or remain a number short of something 表示距离目标还差某个数量，数量放在 short 前面，of 引出目标。",
+      "imitation": {
+        "background_zh": "假设库存补货",
+        "sentence_en": "The warehouse remained 200 units short of its safety-stock target.",
+        "translation_zh": "仓库距离安全库存目标仍差200件。"
+      },
+      "context": {
+        "en": "Eisenkot nevertheless remained thirteen seats short of a parliamentary majority.",
+        "zh": "不过艾森科特仍差十三个议席才能达到议会多数。"
+      }
+    },
+    {
+      "id": "2026-11-25-tariffs-unveil",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "unveil",
+      "meaning_zh": "公布",
+      "example": "Donald Trump is expected to unveil another round of tariffs affecting sixteen trading partners.",
+      "cloze": "Donald Trump is expected to ______ another round of tariffs affecting sixteen trading partners.",
+      "answer": "unveil",
+      "accepted": [
+        "announce",
+        "introduce"
+      ],
+      "hint_zh": "公布",
+      "analysis_zh": "be expected to do 表示根据已有消息预计某事将发生，不表示措施已经生效。unveil 常用于首次公开政策、方案或产品，突出披露动作；announce 更通用，introduce 可强调推出措施。another round of 指又一轮政策行动。",
+      "why_zh": "be expected to do 表示根据已有消息预计某事将发生，不表示措施已经生效。",
+      "imitation": {
+        "background_zh": "假设产品发布会",
+        "sentence_en": "The company is expected to unveil its new reagent platform next month.",
+        "translation_zh": "预计公司将在下个月公布新的试剂平台。"
+      },
+      "context": {
+        "en": "Donald Trump is expected to unveil another round of tariffs affecting sixteen trading partners.",
+        "zh": "预计唐纳德·特朗普将公布影响十六个贸易伙伴的新一轮关税。"
+      }
+    },
+    {
+      "id": "2026-11-25-tariffs-alleged",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "alleged",
+      "meaning_zh": "被指称的",
+      "example": "The proposed duties follow an inquiry into alleged industrial overcapacity.",
+      "cloze": "The proposed duties follow an inquiry into ______ industrial overcapacity.",
+      "answer": "alleged",
+      "accepted": [
+        "suspected",
+        "reported"
+      ],
+      "hint_zh": "被指称的",
+      "analysis_zh": "alleged 作前置形容词，表示某情况被提出或指称但尚未在句中认定为事实。alleged overcapacity 保留调查对象的争议性质，suspected 更侧重怀疑，reported 强调消息来自报道。inquiry into 后接调查主题，不宜将 proposed duties 描述为已经征收。",
+      "why_zh": "alleged 作前置形容词，表示某情况被提出或指称但尚未在句中认定为事实。",
+      "imitation": {
+        "background_zh": "假设处理供应商投诉",
+        "sentence_en": "The audit examined alleged breaches of the distribution agreement.",
+        "translation_zh": "审计调查了被指称的违反经销协议的行为。"
+      },
+      "context": {
+        "en": "The proposed duties follow an inquiry into alleged industrial overcapacity.",
+        "zh": "拟议关税源于一项针对被指称的工业产能过剩的调查。"
+      }
+    },
+    {
+      "id": "2026-11-25-tariffs-struck",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "struck",
+      "meaning_zh": "裁定无效",
+      "example": "They are intended to replace levies that the Supreme Court had struck down in February; the goods affected remain unclear.",
+      "cloze": "They are intended to replace levies that the Supreme Court had ______ down in February; the goods affected remain unclear.",
+      "answer": "struck",
+      "accepted": [],
+      "hint_zh": "裁定无效",
+      "analysis_zh": "strike down a law or measure 是法律报道中的短语动词，指法院宣布某项法律或措施无效。strike 的过去分词为 struck，与 had 构成过去完成时，突出裁决先于新政策。replace 指替代旧措施，remain unclear 明确商品范围尚未确定。",
+      "why_zh": "strike down a law or measure 是法律报道中的短语动词，指法院宣布某项法律或措施无效。",
+      "imitation": {
+        "background_zh": "假设讨论监管政策",
+        "sentence_en": "The court struck down the disputed licensing requirement.",
+        "translation_zh": "法院裁定有争议的许可要求无效。"
+      },
+      "context": {
+        "en": "They are intended to replace levies that the Supreme Court had struck down in February; the goods affected remain unclear.",
+        "zh": "这些关税旨在取代最高法院于二月裁定无效的税费；涉及哪些商品仍不清楚。"
+      }
+    },
+    {
+      "id": "2026-11-25-football-restored",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "restored",
+      "meaning_zh": "恢复",
+      "example": "The Court of Arbitration for Sport restored Senegal's status as champions of the 2025 Africa Cup of Nations.",
+      "cloze": "The Court of Arbitration for Sport ______ Senegal's status as champions of the 2025 Africa Cup of Nations.",
+      "answer": "restored",
+      "accepted": [
+        "reinstated"
+      ],
+      "hint_zh": "恢复",
+      "analysis_zh": "restore somebody's status as something 指恢复某人此前拥有的身份或资格，过去式 restored 对应已经作出的裁决。reinstate 也可用于恢复职务、资格或头衔，常见于 be reinstated as champion。status as 后接身份，区别于重新获得一场比赛的胜利。",
+      "why_zh": "restore somebody's status as something 指恢复某人此前拥有的身份或资格，过去式 restored 对应已经作出的裁决。",
+      "imitation": {
+        "background_zh": "假设恢复供应商资格",
+        "sentence_en": "The audit committee restored the supplier's status as an approved vendor.",
+        "translation_zh": "审核委员会恢复了该供应商的合格供应商资格。"
+      },
+      "context": {
+        "en": "The Court of Arbitration for Sport restored Senegal's status as champions of the 2025 Africa Cup of Nations.",
+        "zh": "国际体育仲裁法庭恢复了塞内加尔2025年非洲国家杯冠军的身份。"
+      }
+    },
+    {
+      "id": "2026-11-25-football-transferred",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "transferred",
+      "meaning_zh": "转授",
+      "example": "Senegal had won the final against Morocco in January, but the African football confederation later transferred the title to Morocco.",
+      "cloze": "Senegal had won the final against Morocco in January, but the African football confederation later ______ the title to Morocco.",
+      "answer": "transferred",
+      "accepted": [
+        "awarded",
+        "assigned",
+        "gave"
+      ],
+      "hint_zh": "转授",
+      "analysis_zh": "transfer something to somebody 表示将原属于一方的东西转交另一方，突出归属发生变化。awarded 更强调授予结果。had won 使用过去完成时说明原比赛结果先于后续决定；later 体现两个机构决定之间的时间关系。",
+      "why_zh": "transfer something to somebody 表示将原属于一方的东西转交另一方，突出归属发生变化。",
+      "imitation": {
+        "background_zh": "假设项目交接",
+        "sentence_en": "The committee transferred responsibility for the rollout to the regional team.",
+        "translation_zh": "委员会将推广实施的责任转交给区域团队。"
+      },
+      "context": {
+        "en": "Senegal had won the final against Morocco in January, but the African football confederation later transferred the title to Morocco.",
+        "zh": "塞内加尔一月战胜摩洛哥赢得决赛，但非洲足球联合会后来将冠军头衔转授摩洛哥。"
+      }
+    },
+    {
+      "id": "2026-11-25-football-awarded",
+      "date": "2026-11-25",
+      "type": "word",
+      "expression": "awarded",
+      "meaning_zh": "判罚",
+      "example": "The dispute followed the Senegalese players' decision to walk off the pitch after a controversial penalty was awarded.",
+      "cloze": "The dispute followed the Senegalese players' decision to walk off the pitch after a controversial penalty was ______.",
+      "answer": "awarded",
+      "accepted": [
+        "given"
+      ],
+      "hint_zh": "判罚",
+      "analysis_zh": "award a penalty 是足球裁判术语，表示判给某队点球；was awarded 是被动结构，因为句子关注点球判罚本身而未交代裁判身份。give a penalty 同样自然，score a penalty 指罚进点球，含义不同。controversial 表明判罚受到争议，未认定判罚错误。",
+      "why_zh": "award a penalty 是足球裁判术语，表示判给某队点球；was awarded 是被动结构，因为句子关注点球判罚本身而未交代裁判身份。",
+      "imitation": {
+        "background_zh": "假设讨论周末足球赛",
+        "sentence_en": "A penalty was awarded in the final minute of the match.",
+        "translation_zh": "比赛最后一分钟裁判判罚了一个点球。"
+      },
+      "context": {
+        "en": "The dispute followed the Senegalese players' decision to walk off the pitch after a controversial penalty was awarded.",
+        "zh": "争议源于塞内加尔球员在一次有争议的点球判罚后离开球场的决定。"
+      }
     }
   ],
   "passages": [
@@ -7159,6 +7686,48 @@
       "date": "2026-11-23",
       "title": "Jewellery house remembers a family pioneer",
       "body": "Italian jeweller Paolo Bulgari {{2026-11-23-bulgari-died}} at the age of 89 after decades in the family luxury business. He {{2026-11-23-bulgari-joined}} the company in 1960 and developed a reputation for expertise in precious stones. His family later {{2026-11-23-bulgari-sold}} its stake to French luxury group LVMH in 2011. His career helped transform a business founded by his grandfather into an internationally recognised jewellery brand."
+    },
+    {
+      "id": "2026-11-25-markets",
+      "date": "2026-11-25",
+      "title": "Wall Street loses ground after Monday's rally",
+      "body": "US equity indices {{2026-11-25-markets-retreated}} on Tuesday after rising sharply in the previous session. Nvidia shares fell nearly 6% after {{2026-11-25-markets-surging}} by 31% a day earlier. Anthropic's stock also traded below its initial public {{2026-11-25-markets-offering}} price less than a week after listing."
+    },
+    {
+      "id": "2026-11-25-huang",
+      "date": "2026-11-25",
+      "title": "Nvidia chief addresses employees",
+      "body": "Nvidia's chief executive apologised to employees for {{2026-11-25-huang-violating}} the company's code of conduct. Jensen Huang {{2026-11-25-huang-admitted}} making serious mistakes and said he was attending therapy every day. He denied that political pressure had secured his return and dismissed the idea of {{2026-11-25-huang-succession}} planning."
+    },
+    {
+      "id": "2026-11-25-huawei",
+      "date": "2026-11-25",
+      "title": "New York jury reaches a verdict in Huawei case",
+      "body": "A US federal jury found Huawei {{2026-11-25-huawei-guilty}} of ten criminal charges. The case included allegations of trade-secret theft and {{2026-11-25-huawei-evasion}} of sanctions against Iran. The company denied wrongdoing and was {{2026-11-25-huawei-acquitted}} of racketeering and obstruction of justice."
+    },
+    {
+      "id": "2026-11-25-china",
+      "date": "2026-11-25",
+      "title": "Chinese authorities investigate Shanghai party chief",
+      "body": "China opened an investigation {{2026-11-25-china-into}} Chen Jining, Shanghai's Communist Party secretary. The anti-corruption body said he was {{2026-11-25-china-suspected}} of serious breaches of party discipline and the law. The inquiry adds another name to the list of Politburo members {{2026-11-25-china-targeted}} by Xi Jinping's anti-corruption campaign."
+    },
+    {
+      "id": "2026-11-25-israel",
+      "date": "2026-11-25",
+      "title": "Israeli party leader seeks parliamentary majority",
+      "body": "According to Reuters, Gadi Eisenkot {{2026-11-25-israel-secured}} the backing of Yisrael Beiteinu in his efforts to form a government. The move was unexpected because the party had previously refused to join a {{2026-11-25-israel-coalition}} that included Arab parties. Eisenkot nevertheless remained thirteen seats {{2026-11-25-israel-short}} of a parliamentary majority."
+    },
+    {
+      "id": "2026-11-25-tariffs",
+      "date": "2026-11-25",
+      "title": "Washington considers further import duties",
+      "body": "Donald Trump is expected to {{2026-11-25-tariffs-unveil}} another round of tariffs affecting sixteen trading partners. The proposed duties follow an inquiry into {{2026-11-25-tariffs-alleged}} industrial overcapacity. They are intended to replace levies that the Supreme Court had {{2026-11-25-tariffs-struck}} down in February; the goods affected remain unclear."
+    },
+    {
+      "id": "2026-11-25-football",
+      "date": "2026-11-25",
+      "title": "Senegal recovers continental football title",
+      "body": "The Court of Arbitration for Sport {{2026-11-25-football-restored}} Senegal's status as champions of the 2025 Africa Cup of Nations. Senegal had won the final against Morocco in January, but the African football confederation later {{2026-11-25-football-transferred}} the title to Morocco. The dispute followed the Senegalese players' decision to walk off the pitch after a controversial penalty was {{2026-11-25-football-awarded}}."
     }
   ]
 }
