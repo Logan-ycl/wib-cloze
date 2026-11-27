@@ -2,6 +2,536 @@
   "schema_version": 3,
   "items": [
     {
+      "id": "2026-11-27-ukraine-exception",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "exception",
+      "meaning_zh": "对……表示异议",
+      "example": "Zelensky took exception to Trump's description of Putin as a friend, openly questioning the language used about Russia's leader.",
+      "analysis_zh": "take exception to 是固定搭配，表示对某个说法或行为感到不满并提出异议；to 是介词，后接名词或动名词。exception 单独常指例外，但在此搭配中表示反感，openly questioning 给出了明确的态度线索。",
+      "cloze": "Zelensky took ______ to Trump's description of Putin as a friend, openly questioning the language used about Russia's leader.",
+      "answer": "exception",
+      "accepted": [],
+      "hint_zh": "对……表示异议",
+      "why_zh": "公开质疑措辞表明 take exception to 所表达的反对态度。",
+      "imitation": {
+        "background_zh": "审查合同措辞",
+        "sentence_en": "The supplier took exception to the clause on unlimited liability.",
+        "translation_zh": "供应商对无限责任条款提出异议。"
+      },
+      "context": {
+        "en": "Zelensky took exception to Trump's description of Putin as a friend, openly questioning the language used about Russia's leader.",
+        "zh": "泽连斯基对特朗普称普京为朋友的说法表示异议，公开质疑这种描述俄罗斯领导人的措辞。"
+      }
+    },
+    {
+      "id": "2026-11-27-ukraine-likened",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "likened",
+      "meaning_zh": "将……比作",
+      "example": "He likened the description to calling Hitler a friend during the second world war.",
+      "analysis_zh": "liken A to B 表示把A比作B，用类比突出共同特征，通常含评价意味。这里用过去式转述泽连斯基的历史类比；compare A to B 也可以表达类比，而 compare A with B 更常用于逐项比较差异。",
+      "cloze": "He ______ the description to calling Hitler a friend during the second world war.",
+      "answer": "likened",
+      "accepted": [
+        "compared"
+      ],
+      "hint_zh": "将……比作",
+      "why_zh": "后面的 to 与历史类比构成 liken A to B 的典型结构。",
+      "imitation": {
+        "background_zh": "解释项目延期",
+        "sentence_en": "She likened the repeated delays to a chain reaction.",
+        "translation_zh": "她将反复延期比作连锁反应。"
+      },
+      "context": {
+        "en": "He likened the description to calling Hitler a friend during the second world war.",
+        "zh": "他将这一描述比作在第二次世界大战期间称希特勒为朋友。"
+      }
+    },
+    {
+      "id": "2026-11-27-ukraine-cessation",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "cessation",
+      "meaning_zh": "停止",
+      "example": "Trump, meanwhile, said he had pressed Putin for a cessation of military aggression in Europe as a way to end the war.",
+      "analysis_zh": "cessation of aggression 指停止侵略活动，属于正式外交和法律用语，常见搭配还有 cessation of hostilities。a cessation of 后接被停止的行为；这里是特朗普所称的要求，未说明该要求已经实现。halt 同样可指停止，语体略普通。",
+      "cloze": "Trump, meanwhile, said he had pressed Putin for a ______ of military aggression in Europe as a way to end the war.",
+      "answer": "cessation",
+      "accepted": [
+        "end",
+        "halt"
+      ],
+      "hint_zh": "停止",
+      "why_zh": "as a way to end the war 表明这里指停止军事行动，且 press for 只表示提出要求。",
+      "imitation": {
+        "background_zh": "生产线停工协调",
+        "sentence_en": "The team negotiated a temporary cessation of construction work.",
+        "translation_zh": "团队协商暂时停止施工。"
+      },
+      "context": {
+        "en": "Trump, meanwhile, said he had pressed Putin for a cessation of military aggression in Europe as a way to end the war.",
+        "zh": "与此同时，特朗普说他已敦促普京停止在欧洲的军事侵略，以结束战争。"
+      }
+    },
+    {
+      "id": "2026-11-27-ecb-weight",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "weight",
+      "meaning_zh": "支持、声援",
+      "example": "The Netherlands dropped its campaign for Klaas Knot and threw its weight behind the Spanish economist Pablo Hernández de Cos.",
+      "analysis_zh": "throw one's weight behind 是政治和商业报道常用的习语，指动用自身影响力支持某人或方案。weight 在此指影响力，不指物理重量；behind 标记支持对象，前半句放弃另一候选人的竞选活动体现立场转变。",
+      "cloze": "The Netherlands dropped its campaign for Klaas Knot and threw its ______ behind the Spanish economist Pablo Hernández de Cos.",
+      "answer": "weight",
+      "accepted": [
+        "support"
+      ],
+      "hint_zh": "支持、声援",
+      "why_zh": "throw its weight behind 体现由支持原候选人转向为新候选人背书。",
+      "imitation": {
+        "background_zh": "内部方案评审",
+        "sentence_en": "The steering committee threw its weight behind the revised launch plan.",
+        "translation_zh": "指导委员会全力支持修订后的上市计划。"
+      },
+      "context": {
+        "en": "The Netherlands dropped its campaign for Klaas Knot and threw its weight behind the Spanish economist Pablo Hernández de Cos.",
+        "zh": "荷兰放弃为克拉斯·诺特争取职位，转而支持西班牙经济学家巴勃罗·埃尔南德斯·德科斯。"
+      }
+    },
+    {
+      "id": "2026-11-27-ecb-cut",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "cut",
+      "meaning_zh": "面临艰巨任务",
+      "example": "The European Council chose him to lead the ECB from February, and he will have his work cut out for him.",
+      "analysis_zh": "have one's work cut out for one 是完整习语，表示任务困难且需要大量努力，cut 为过去分词，不应按字面理解为工作已经被裁剪或分配。下句通胀及公共债务两项压力解释为什么新任行长面临挑战。",
+      "cloze": "The European Council chose him to lead the ECB from February, and he will have his work ______ out for him.",
+      "answer": "cut",
+      "accepted": [],
+      "hint_zh": "面临艰巨任务",
+      "why_zh": "his work 与 out for him 组成固定表达，后文进一步说明困难。",
+      "imitation": {
+        "background_zh": "接手延期项目",
+        "sentence_en": "With three overdue milestones, the new manager has her work cut out for her.",
+        "translation_zh": "有三个里程碑已经延期，新经理面临艰巨任务。"
+      },
+      "context": {
+        "en": "The European Council chose him to lead the ECB from February, and he will have his work cut out for him.",
+        "zh": "欧洲理事会选定他从二月起领导欧洲央行，他将面临艰巨任务。"
+      }
+    },
+    {
+      "id": "2026-11-27-ecb-servicing",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "servicing",
+      "meaning_zh": "偿付债务本息",
+      "example": "An energy shock is raising inflation, while several countries face growing burdens from servicing their public debt.",
+      "analysis_zh": "service debt 是金融专业搭配，表示按债务合同支付利息及到期本金；from 后使用动名词 servicing。与 repay 相比，service 更强调持续履行偿债义务，并不意味着一次性还清全部债务。此处描述债务带来的压力。",
+      "cloze": "An energy shock is raising inflation, while several countries face growing burdens from ______ their public debt.",
+      "answer": "servicing",
+      "accepted": [
+        "repaying"
+      ],
+      "hint_zh": "偿付债务本息",
+      "why_zh": "public debt 与 growing burdens 指向持续的债务偿付负担。",
+      "imitation": {
+        "background_zh": "评估融资压力",
+        "sentence_en": "The company spends a growing share of its cash flow on servicing debt.",
+        "translation_zh": "公司将越来越多的现金流用于偿付债务。"
+      },
+      "context": {
+        "en": "An energy shock is raising inflation, while several countries face growing burdens from servicing their public debt.",
+        "zh": "能源冲击正在推高通胀，同时多个国家面临日益沉重的公共债务偿付负担。"
+      }
+    },
+    {
+      "id": "2026-11-27-spacex-apiece",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "apiece",
+      "meaning_zh": "各自、每人各一份",
+      "example": "Musk described a two-share gift for each American child, with himself and SpaceX contributing one share apiece.",
+      "analysis_zh": "apiece 放在数量短语之后，表示每个参与者分别拥有、支付或贡献相同数量。one share apiece 明确两方各一股，而非两方合计一股；each 在这个位置也成立。该词尤其适用于价格、配额或均分数量的报道。",
+      "cloze": "Musk described a two-share gift for each American child, with himself and SpaceX contributing one share ______.",
+      "answer": "apiece",
+      "accepted": [
+        "each"
+      ],
+      "hint_zh": "各自、每人各一份",
+      "why_zh": "两名出资方与总共两股共同限定为每方各一股。",
+      "imitation": {
+        "background_zh": "分配测试样品",
+        "sentence_en": "The two laboratories received five test kits apiece.",
+        "translation_zh": "两家实验室各收到五套测试试剂盒。"
+      },
+      "context": {
+        "en": "Musk described a two-share gift for each American child, with himself and SpaceX contributing one share apiece.",
+        "zh": "马斯克描述了一项为每名美国儿童赠送两股股票的计划，他本人和SpaceX各提供一股。"
+      }
+    },
+    {
+      "id": "2026-11-27-spacex-contingent",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "contingent",
+      "meaning_zh": "取决于、有条件的",
+      "example": "SpaceX made the gift contingent on having an active Trump investment account, so the offer is subject to an explicit condition.",
+      "analysis_zh": "make something contingent on something 是合同和政策中常见的结构，表示某项权利或承诺只有满足先决条件才成立。on 后可接名词或动名词；相比 dependent，contingent 更突出尚待满足的条件。后半句 explicit condition 是直接线索。",
+      "cloze": "SpaceX made the gift ______ on having an active Trump investment account, so the offer is subject to an explicit condition.",
+      "answer": "contingent",
+      "accepted": [
+        "dependent",
+        "conditional"
+      ],
+      "hint_zh": "取决于、有条件的",
+      "why_zh": "on having 与明确的先决条件要求使用表示条件依赖的形容词。",
+      "imitation": {
+        "background_zh": "设备付款谈判",
+        "sentence_en": "Final payment is contingent on successful site acceptance testing.",
+        "translation_zh": "最终付款以现场验收测试成功为条件。"
+      },
+      "context": {
+        "en": "SpaceX made the gift contingent on having an active Trump investment account, so the offer is subject to an explicit condition.",
+        "zh": "SpaceX将赠股与持有活跃的特朗普投资账户挂钩，因此该计划有明确的限制条件。"
+      }
+    },
+    {
+      "id": "2026-11-27-spacex-qualify",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "qualify",
+      "meaning_zh": "符合领取资格",
+      "example": "The administration estimates that roughly 70m accounts exist, but whether the 60m created automatically qualify for the gift remains unclear.",
+      "analysis_zh": "qualify for a benefit 指满足获得某项权益的资格条件；此处 whether 引导名词性从句，复数主语 accounts 后用 qualify。它与 qualify as（被认定为某类对象）不同，也不等同于已经领取权益。remains unclear 保留了报道中的不确定性。",
+      "cloze": "The administration estimates that roughly 70m accounts exist, but whether the 60m created automatically ______ for the gift remains unclear.",
+      "answer": "qualify",
+      "accepted": [],
+      "hint_zh": "符合领取资格",
+      "why_zh": "for the gift 与此前的活跃账户限制共同指向是否满足资格条件。",
+      "imitation": {
+        "background_zh": "申请费用补贴",
+        "sentence_en": "Only projects that meet the regional criteria qualify for the grant.",
+        "translation_zh": "只有符合区域条件的项目才有资格获得补助。"
+      },
+      "context": {
+        "en": "The administration estimates that roughly 70m accounts exist, but whether the 60m created automatically qualify for the gift remains unclear.",
+        "zh": "政府估计约有7000万个账户，但自动创建的6000万个账户是否符合赠股资格仍不明确。"
+      }
+    },
+    {
+      "id": "2026-11-27-argentina-monetising",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "monetising",
+      "meaning_zh": "将财政赤字货币化",
+      "example": "Argentina's lawmakers approved a ban on monetising government deficits, meaning the central bank could no longer create money to fund state expenditure.",
+      "analysis_zh": "monetise a deficit 是宏观经济学术语，指通过央行创造货币等方式为财政赤字融资。on 后使用动名词，英式拼写为 monetising，美式为 monetizing；这里并非互联网行业所说的流量变现。后面的 create money to fund state expenditure 明确具体含义。",
+      "cloze": "Argentina's lawmakers approved a ban on ______ government deficits, meaning the central bank could no longer create money to fund state expenditure.",
+      "answer": "monetising",
+      "accepted": [
+        "monetizing"
+      ],
+      "hint_zh": "将财政赤字货币化",
+      "why_zh": "后半句直接解释通过创造货币为财政支出融资的机制。",
+      "imitation": {
+        "background_zh": "讨论宏观政策",
+        "sentence_en": "Economists warned against monetising persistent budget deficits.",
+        "translation_zh": "经济学家警告不要持续将预算赤字货币化。"
+      },
+      "context": {
+        "en": "Argentina's lawmakers approved a ban on monetising government deficits, meaning the central bank could no longer create money to fund state expenditure.",
+        "zh": "阿根廷立法者批准禁止财政赤字货币化，即央行不能再通过创造货币为政府支出融资。"
+      }
+    },
+    {
+      "id": "2026-11-27-argentina-dispense",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "dispense",
+      "meaning_zh": "免除、取消",
+      "example": "The Senate also advanced a separate measure that would dispense with next year's primary elections, effectively doing away with that stage of the electoral process.",
+      "analysis_zh": "dispense with 是固定短语，表示在没有某物的情况下继续，或取消某个程序、要求。would 后用动词原形，with 不可省略；dispense 单独作及物动词可以表示分发药物，意义完全不同。doing away with 给出了这里的程序取消义。",
+      "cloze": "The Senate also advanced a separate measure that would ______ with next year's primary elections, effectively doing away with that stage of the electoral process.",
+      "answer": "dispense",
+      "accepted": [
+        "do"
+      ],
+      "hint_zh": "免除、取消",
+      "why_zh": "with 与后半句 doing away with 对应取消某项程序的表达。",
+      "imitation": {
+        "background_zh": "简化审批流程",
+        "sentence_en": "For routine orders, we could dispense with a second manual approval.",
+        "translation_zh": "对于常规订单，我们可以取消第二次人工审批。"
+      },
+      "context": {
+        "en": "The Senate also advanced a separate measure that would dispense with next year's primary elections, effectively doing away with that stage of the electoral process.",
+        "zh": "参议院还推进另一项措施，拟取消明年的初选，相当于省去这一选举环节。"
+      }
+    },
+    {
+      "id": "2026-11-27-argentina-tilt",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "tilt",
+      "meaning_zh": "使竞争偏向一方",
+      "example": "Opponents say President Javier Milei is trying to tilt the electoral playing field in his favour, rather than merely simplifying the process.",
+      "analysis_zh": "tilt the playing field in someone's favour 是从体育场地引申出的政治商业表达，指改变竞争条件以使一方占优。tilt 后直接接宾语，in favour of 或 in one's favour 表明受益方；这里明确是反对者的指控，尚未作为已证实的动机陈述。",
+      "cloze": "Opponents say President Javier Milei is trying to ______ the electoral playing field in his favour, rather than merely simplifying the process.",
+      "answer": "tilt",
+      "accepted": [
+        "skew",
+        "rig"
+      ],
+      "hint_zh": "使竞争偏向一方",
+      "why_zh": "playing field 与 in his favour 共同说明争议涉及竞争公平性。",
+      "imitation": {
+        "background_zh": "招标条件评审",
+        "sentence_en": "The bidder argued that the new criteria would tilt the playing field in favour of larger firms.",
+        "translation_zh": "投标方认为新标准会让竞争向大型企业倾斜。"
+      },
+      "context": {
+        "en": "Opponents say President Javier Milei is trying to tilt the electoral playing field in his favour, rather than merely simplifying the process.",
+        "zh": "反对者认为总统哈维尔·米莱试图让选举竞争向自己倾斜，而非仅仅简化流程。"
+      }
+    },
+    {
+      "id": "2026-11-27-nz-shy",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "shy",
+      "meaning_zh": "差一点达到",
+      "example": "New Zealand's governing conservative coalition finished one seat shy of a parliamentary majority.",
+      "analysis_zh": "shy of 是常见的数量比较短语，表示低于某个明确的目标或门槛，one seat 指差额。shy 在此与害羞无关；short of 可直接替换，但 above 或 over 会颠倒新闻事实。该搭配也用于销售指标、预算和投票结果。",
+      "cloze": "New Zealand's governing conservative coalition finished one seat ______ of a parliamentary majority.",
+      "answer": "shy",
+      "accepted": [
+        "short"
+      ],
+      "hint_zh": "差一点达到",
+      "why_zh": "one seat 和 of a majority 指向尚差一个席位的数量关系。",
+      "imitation": {
+        "background_zh": "检查季度交付目标",
+        "sentence_en": "We finished the quarter 200 units shy of our delivery target.",
+        "translation_zh": "季度结束时，我们距离交付目标还差200件。"
+      },
+      "context": {
+        "en": "New Zealand's governing conservative coalition finished one seat shy of a parliamentary majority.",
+        "zh": "新西兰执政的保守派联盟距离议会多数席位还差一个席位。"
+      }
+    },
+    {
+      "id": "2026-11-27-nz-incumbent",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "incumbent",
+      "meaning_zh": "现任的",
+      "example": "Christopher Luxon, the incumbent prime minister seeking to remain in office, has faced economic stagnation and persistent inflation during his time in power.",
+      "analysis_zh": "incumbent 作形容词修饰职位，表示目前担任该职务的人；作名词时 the incumbent 可直接指现任者。seeking to remain in office 说明此人已经在任，并非首次竞选者。current 较通用，sitting 在政治语境也可直接修饰现任公职人员。",
+      "cloze": "Christopher Luxon, the ______ prime minister seeking to remain in office, has faced economic stagnation and persistent inflation during his time in power.",
+      "answer": "incumbent",
+      "accepted": [
+        "current",
+        "sitting"
+      ],
+      "hint_zh": "现任的",
+      "why_zh": "remain in office 和 during his time in power 明确表示当前已任职。",
+      "imitation": {
+        "background_zh": "行业竞争分析",
+        "sentence_en": "The incumbent supplier must compete with two new entrants.",
+        "translation_zh": "现有供应商必须与两家新进入者竞争。"
+      },
+      "context": {
+        "en": "Christopher Luxon, the incumbent prime minister seeking to remain in office, has faced economic stagnation and persistent inflation during his time in power.",
+        "zh": "正在争取继续执政的现任总理克里斯托弗·卢克森，在任期间面临经济停滞和持续通胀。"
+      }
+    },
+    {
+      "id": "2026-11-27-nz-kingmaker",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "kingmaker",
+      "meaning_zh": "关键造王者、决定胜负的一方",
+      "example": "The centrist Opportunity Party could become a kingmaker, since its backing may determine whether Luxon can form a government or has to seek another election.",
+      "analysis_zh": "kingmaker 是政治报道中的比喻名词，指自身未必掌握最高职位、却可以决定谁取得权力的个人或组织。a kingmaker 为可数名词单数，后面的 backing may determine 明确其决定性作用；could 保留潜在角色的限定。",
+      "cloze": "The centrist Opportunity Party could become a ______, since its backing may determine whether Luxon can form a government or has to seek another election.",
+      "answer": "kingmaker",
+      "accepted": [],
+      "hint_zh": "关键造王者、决定胜负的一方",
+      "why_zh": "后文说明该党支持可能决定组阁成败，对应 kingmaker 的政治含义。",
+      "imitation": {
+        "background_zh": "模拟商务谈判",
+        "sentence_en": "A small distributor became a kingmaker in the negotiations because it controlled access to the region.",
+        "translation_zh": "一家小型经销商因掌握进入该区域的渠道，成为谈判中的关键力量。"
+      },
+      "context": {
+        "en": "The centrist Opportunity Party could become a kingmaker, since its backing may determine whether Luxon can form a government or has to seek another election.",
+        "zh": "中间派机会党可能成为决定政权归属的关键力量，因为它的支持可能决定卢克森能否组建政府或需要再次选举。"
+      }
+    },
+    {
+      "id": "2026-11-27-tobacco-mulling",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "mulling",
+      "meaning_zh": "仔细考虑",
+      "example": "Bloomberg reported that Japan Tobacco was mulling a joint cash offer with Altria for Imperial Brands, with no completed transaction announced.",
+      "analysis_zh": "mull an offer 或 mull over an offer 都表示仔细权衡某项提议，常用于尚处讨论阶段的并购报道。was 后用现在分词构成过去进行时；与 make an offer 不同，mull 不代表已经正式报价。报道来源及 no completed transaction 限定了进展。",
+      "cloze": "Bloomberg reported that Japan Tobacco was ______ a joint cash offer with Altria for Imperial Brands, with no completed transaction announced.",
+      "answer": "mulling",
+      "accepted": [
+        "considering",
+        "contemplating",
+        "weighing",
+        "pondering"
+      ],
+      "hint_zh": "仔细考虑",
+      "why_zh": "尚无已完成交易的公告，结合 reported 与 was 表明仍在考虑阶段。",
+      "imitation": {
+        "background_zh": "物流方案选择",
+        "sentence_en": "We are mulling an alternative shipping route before committing to a carrier.",
+        "translation_zh": "我们正在考虑备选运输路线，然后再确定承运商。"
+      },
+      "context": {
+        "en": "Bloomberg reported that Japan Tobacco was mulling a joint cash offer with Altria for Imperial Brands, with no completed transaction announced.",
+        "zh": "彭博社报道，日本烟草正考虑与奥驰亚联合现金收购帝国品牌，目前尚无已完成交易的消息。"
+      }
+    },
+    {
+      "id": "2026-11-27-tobacco-prospective",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "prospective",
+      "meaning_zh": "潜在的、拟议中的",
+      "example": "The prospective target is a smaller London-listed rival that was worth about $30bn before Altria acknowledged it was considering an offer.",
+      "analysis_zh": "prospective 作形容词放在名词前，表示预期可能成为某种对象的人或事物，如 prospective buyer 或 prospective target。这里强调帝国品牌仍是潜在标的；与 respective（各自的）不同，也不表示已经签约。potential 可直接替换。",
+      "cloze": "The ______ target is a smaller London-listed rival that was worth about $30bn before Altria acknowledged it was considering an offer.",
+      "answer": "prospective",
+      "accepted": [
+        "potential",
+        "possible",
+        "proposed"
+      ],
+      "hint_zh": "潜在的、拟议中的",
+      "why_zh": "此前仅确认考虑报价，因此收购对象仍具有潜在性质。",
+      "imitation": {
+        "background_zh": "海外合作伙伴筛选",
+        "sentence_en": "We visited the prospective manufacturing partner before starting due diligence.",
+        "translation_zh": "我们在启动尽职调查前拜访了潜在生产合作伙伴。"
+      },
+      "context": {
+        "en": "The prospective target is a smaller London-listed rival that was worth about $30bn before Altria acknowledged it was considering an offer.",
+        "zh": "潜在收购标的是一家规模较小的伦敦上市竞争对手，在奥驰亚确认正考虑报价前价值约300亿美元。"
+      }
+    },
+    {
+      "id": "2026-11-27-tobacco-rank",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "rank",
+      "meaning_zh": "位列、跻身",
+      "example": "If completed, the purchase would rank among the biggest acquisitions of British companies in the past decade.",
+      "analysis_zh": "rank among the biggest 指按规模等标准归入最靠前的一组，不需要给出精确名次。would 后接动词原形，among 后接复数群体；if completed 使判断依赖交易完成，避免把假设中的并购写成既成事实。count among 也可表示列入其中。",
+      "cloze": "If completed, the purchase would ______ among the biggest acquisitions of British companies in the past decade.",
+      "answer": "rank",
+      "accepted": [
+        "count",
+        "feature"
+      ],
+      "hint_zh": "位列、跻身",
+      "why_zh": "among the biggest 与 if completed 共同限定假设性排名。",
+      "imitation": {
+        "background_zh": "比较生产项目规模",
+        "sentence_en": "The expansion would rank among the largest investments in the division.",
+        "translation_zh": "这项扩建将跻身该事业部规模最大的投资之列。"
+      },
+      "context": {
+        "en": "If completed, the purchase would rank among the biggest acquisitions of British companies in the past decade.",
+        "zh": "如果完成，这笔收购将跻身过去十年英国企业规模最大的收购交易之列。"
+      }
+    },
+    {
+      "id": "2026-11-27-marathon-sportsmanship",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "sportsmanship",
+      "meaning_zh": "体育精神",
+      "example": "Two Boston marathon runners received an international fair-play award in recognition of their sportsmanship towards a struggling fellow competitor.",
+      "analysis_zh": "sportsmanship 是不可数名词，表示运动中尊重对手、遵守公平原则及展现风度，不指运动技能。in recognition of 表示为表彰某种贡献或品质；fair-play award 与帮助对手的行为给出具体线索，区别于单纯的竞技成绩。",
+      "cloze": "Two Boston marathon runners received an international fair-play award in recognition of their ______ towards a struggling fellow competitor.",
+      "answer": "sportsmanship",
+      "accepted": [
+        "fairness"
+      ],
+      "hint_zh": "体育精神",
+      "why_zh": "公平竞赛奖和帮助竞争者共同说明奖项表彰的是体育精神。",
+      "imitation": {
+        "background_zh": "篮球比赛",
+        "sentence_en": "The players showed sportsmanship by helping an injured opponent off the court.",
+        "translation_zh": "球员们扶受伤的对手离场，展现了体育精神。"
+      },
+      "context": {
+        "en": "Two Boston marathon runners received an international fair-play award in recognition of their sportsmanship towards a struggling fellow competitor.",
+        "zh": "两名波士顿马拉松跑者因对一名陷入困难的竞争者展现出的体育精神而获得国际公平竞赛奖。"
+      }
+    },
+    {
+      "id": "2026-11-27-marathon-propped",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "propped",
+      "meaning_zh": "撑住、扶住",
+      "example": "Aaron Beggs and Robson De Oliveira propped up Ajay Haridasse with their shoulders when he could barely stay on his feet, helping him finish the race.",
+      "analysis_zh": "prop up 表示给无法自行保持直立的人或物提供物理支撑，也可比喻维持濒临困难的机构。这里 propped 为过去式，双写 p 后加 ed；with their shoulders 和 barely stay on his feet 明确是身体支撑，不能理解为一般鼓励。",
+      "cloze": "Aaron Beggs and Robson De Oliveira ______ up Ajay Haridasse with their shoulders when he could barely stay on his feet, helping him finish the race.",
+      "answer": "propped",
+      "accepted": [
+        "held",
+        "supported"
+      ],
+      "hint_zh": "撑住、扶住",
+      "why_zh": "肩膀提供支撑、对方无法站稳，构成 prop up 的直接物理语境。",
+      "imitation": {
+        "background_zh": "户外摄影",
+        "sentence_en": "We propped up the reflector with a spare tripod.",
+        "translation_zh": "我们用备用三脚架撑住反光板。"
+      },
+      "context": {
+        "en": "Aaron Beggs and Robson De Oliveira propped up Ajay Haridasse with their shoulders when he could barely stay on his feet, helping him finish the race.",
+        "zh": "阿贾伊·哈里达塞几乎无法站稳时，亚伦·贝格斯和罗布森·德奥利韦拉用肩膀扶住他，帮助他完成比赛。"
+      }
+    },
+    {
+      "id": "2026-11-27-marathon-unaided",
+      "date": "2026-11-27",
+      "type": "word",
+      "expression": "unaided",
+      "meaning_zh": "独力地、在无人协助下",
+      "example": "De Oliveira later collapsed and said he would not have been strong enough to help Haridasse unaided, without the other runner's assistance.",
+      "analysis_zh": "unaided 可以作副词或形容词，强调没有外部帮助或辅助设备。此处修饰 help，后面的 without the other runner's assistance 直接解释含义。alone 有时只强调独处，unaided 更关注完成任务所需的支持；would not have been 表示假设条件下的能力限制。",
+      "cloze": "De Oliveira later collapsed and said he would not have been strong enough to help Haridasse ______, without the other runner's assistance.",
+      "answer": "unaided",
+      "accepted": [
+        "alone",
+        "independently",
+        "unassisted"
+      ],
+      "hint_zh": "独力地、在无人协助下",
+      "why_zh": "without assistance 与两人共同扶持的事实明确限定独力完成的含义。",
+      "imitation": {
+        "background_zh": "独立完成设备搬运",
+        "sentence_en": "The technician could not lift the equipment unaided.",
+        "translation_zh": "技术员无法在无人协助的情况下抬起设备。"
+      },
+      "context": {
+        "en": "De Oliveira later collapsed and said he would not have been strong enough to help Haridasse unaided, without the other runner's assistance.",
+        "zh": "德奥利韦拉后来倒下，并表示如果没有另一名跑者的帮助，他没有足够的力气独自帮助哈里达塞。"
+      }
+    },
+    {
       "id": "2026-11-26-tariffs-mooted",
       "date": "2026-11-26",
       "type": "word",
@@ -8310,6 +8840,48 @@
     }
   ],
   "passages": [
+    {
+      "id": "2026-11-27-ukraine",
+      "date": "2026-11-27",
+      "title": "Kyiv responds to Washington",
+      "body": "Zelensky took {{2026-11-27-ukraine-exception}} to Trump's description of Putin as a friend, openly questioning the language used about Russia's leader. He {{2026-11-27-ukraine-likened}} the description to calling Hitler a friend during the second world war. Trump, meanwhile, said he had pressed Putin for a {{2026-11-27-ukraine-cessation}} of military aggression in Europe as a way to end the war."
+    },
+    {
+      "id": "2026-11-27-ecb",
+      "date": "2026-11-27",
+      "title": "Europe chooses its next monetary chief",
+      "body": "The Netherlands dropped its campaign for Klaas Knot and threw its {{2026-11-27-ecb-weight}} behind the Spanish economist Pablo Hernández de Cos. The European Council chose him to lead the ECB from February, and he will have his work {{2026-11-27-ecb-cut}} out for him. An energy shock is raising inflation, while several countries face growing burdens from {{2026-11-27-ecb-servicing}} their public debt."
+    },
+    {
+      "id": "2026-11-27-spacex",
+      "date": "2026-11-27",
+      "title": "A share giveaway for American children",
+      "body": "Musk described a two-share gift for each American child, with himself and SpaceX contributing one share {{2026-11-27-spacex-apiece}}. SpaceX made the gift {{2026-11-27-spacex-contingent}} on having an active Trump investment account, so the offer is subject to an explicit condition. The administration estimates that roughly 70m accounts exist, but whether the 60m created automatically {{2026-11-27-spacex-qualify}} for the gift remains unclear."
+    },
+    {
+      "id": "2026-11-27-argentina",
+      "date": "2026-11-27",
+      "title": "Buenos Aires changes monetary rules",
+      "body": "Argentina's lawmakers approved a ban on {{2026-11-27-argentina-monetising}} government deficits, meaning the central bank could no longer create money to fund state expenditure. The Senate also advanced a separate measure that would {{2026-11-27-argentina-dispense}} with next year's primary elections, effectively doing away with that stage of the electoral process. Opponents say President Javier Milei is trying to {{2026-11-27-argentina-tilt}} the electoral playing field in his favour, rather than merely simplifying the process."
+    },
+    {
+      "id": "2026-11-27-nz",
+      "date": "2026-11-27",
+      "title": "A narrow result in Wellington",
+      "body": "New Zealand's governing conservative coalition finished one seat {{2026-11-27-nz-shy}} of a parliamentary majority. Christopher Luxon, the {{2026-11-27-nz-incumbent}} prime minister seeking to remain in office, has faced economic stagnation and persistent inflation during his time in power. The centrist Opportunity Party could become a {{2026-11-27-nz-kingmaker}}, since its backing may determine whether Luxon can form a government or has to seek another election."
+    },
+    {
+      "id": "2026-11-27-tobacco",
+      "date": "2026-11-27",
+      "title": "Cigarette groups explore a British deal",
+      "body": "Bloomberg reported that Japan Tobacco was {{2026-11-27-tobacco-mulling}} a joint cash offer with Altria for Imperial Brands, with no completed transaction announced. The {{2026-11-27-tobacco-prospective}} target is a smaller London-listed rival that was worth about $30bn before Altria acknowledged it was considering an offer. If completed, the purchase would {{2026-11-27-tobacco-rank}} among the biggest acquisitions of British companies in the past decade."
+    },
+    {
+      "id": "2026-11-27-marathon",
+      "date": "2026-11-27",
+      "title": "An award for two Boston runners",
+      "body": "Two Boston marathon runners received an international fair-play award in recognition of their {{2026-11-27-marathon-sportsmanship}} towards a struggling fellow competitor. Aaron Beggs and Robson De Oliveira {{2026-11-27-marathon-propped}} up Ajay Haridasse with their shoulders when he could barely stay on his feet, helping him finish the race. De Oliveira later collapsed and said he would not have been strong enough to help Haridasse {{2026-11-27-marathon-unaided}}, without the other runner's assistance."
+    },
     {
       "id": "2026-11-26-tariffs",
       "date": "2026-11-26",
